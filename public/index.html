@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OCCT Bus Planner</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="card">
+        <h1>OCCT Bus Planner</h1>
+        <p class="muted">Enter where you are and where you are going.</p>
+        <form id="route-form">
+          <label for="from">From</label>
+          <input id="from" type="text" placeholder="Binghamton University" required />
+          <label for="to">To</label>
+          <input id="to" type="text" placeholder="6 Riverside Drive" required />
+          <button type="submit" id="submit-btn">Find Routes</button>
+        </form>
+        <p id="status" class="status"></p>
+        <div id="results"></div>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>
+

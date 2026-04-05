@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: #f1f5f9;
+  color: #0f172a;
+}
+.container {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+.card {
+  width: 100%;
+  max-width: 760px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.1);
+}
+h1 {
+  margin: 0 0 6px;
+}
+.muted {
+  margin: 0 0 18px;
+  color: #475569;
+}
+form {
+  display: grid;
+  gap: 8px;
+}
+input,
+button {
+  padding: 11px 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 1rem;
+}
+button {
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+.status {
+  min-height: 20px;
+  margin: 12px 0;
+}
+.error {
+  color: #b91c1c;
+}
+.route {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+.route h3 {
+  margin: 0 0 8px;
+}
+.route p {
+  margin: 4px 0;
+}
+

@@ -1,0 +1,4984 @@
+[
+  {
+    "route": "Westside Outbound",
+    "url": "https://occtransport.org/pages/routes/ws-out.html",
+    "stops": [
+      "University Union",
+      "Physical Facilities",
+      "Bunn Hill/Bunn Hill Access Rd",
+      "New York Avenue",
+      "Ackley Avenue",
+      "Harrison Street",
+      "Roberts Street",
+      "Willow Street",
+      "Burbank Avenue",
+      "Cleveland Avenue",
+      "Floral Av & Main St",
+      "Matthews Street",
+      "Crestmont Road",
+      "Helen Street",
+      "Schiller Street",
+      "Clarke Street",
+      "Cedar Street",
+      "Arthur Street",
+      "Murray Street",
+      "Front Street",
+      "Hawley & Court Streets",
+      "University Downtown Center"
+    ],
+    "schedules": {
+      "weekday": [
+        {
+          "stop_times": {
+            "University Union": "7:15 AM",
+            "Physical Facilities": "7:24 AM",
+            "Bunn Hill/Bunn Hill Access Rd": "7:30 AM",
+            "New York Avenue": "7:40 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "8:00 AM",
+            "Physical Facilities": "8:09 AM",
+            "Bunn Hill/Bunn Hill Access Rd": "8:15 AM",
+            "New York Avenue": "8:25 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "8:20 AM",
+            "Physical Facilities": "8:29 AM",
+            "Bunn Hill/Bunn Hill Access Rd": "8:35 AM",
+            "New York Avenue": "8:45 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "9:25 AM",
+            "Physical Facilities": "9:34 AM",
+            "Bunn Hill/Bunn Hill Access Rd": "9:40 AM",
+            "New York Avenue": "9:50 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "9:55 AM",
+            "Physical Facilities": "10:04 AM",
+            "Bunn Hill/Bunn Hill Access Rd": "10:10 AM",
+            "New York Avenue": "10:20 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "10:45 AM",
+            "Physical Facilities": "10:54 AM",
+            "Bunn Hill/Bunn Hill Access Rd": "11:00 AM",
+            "New York Avenue": "11:10 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "11:15 AM",
+            "Physical Facilities": "11:24 AM",
+            "Bunn Hill/Bunn Hill Access Rd": "11:30 AM",
+            "New York Avenue": "11:40 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "11:45 AM",
+            "Physical Facilities": "11:54 AM",
+            "Bunn Hill/Bunn Hill Access Rd": "12:00 PM",
+            "New York Avenue": "12:10 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "12:10 PM",
+            "Physical Facilities": "12:19 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "12:25 PM",
+            "New York Avenue": "12:35 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "12:40 PM",
+            "Physical Facilities": "12:49 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "12:55 PM",
+            "New York Avenue": "1:05 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "1:25 PM",
+            "Physical Facilities": "1:34 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "1:40 PM",
+            "New York Avenue": "1:50 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "2:10 PM",
+            "Physical Facilities": "2:19 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "2:25 PM",
+            "New York Avenue": "2:35 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "2:45 PM",
+            "Physical Facilities": "2:54 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "3:00 PM",
+            "New York Avenue": "3:10 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "3:10 PM",
+            "Physical Facilities": "3:19 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "3:25 PM",
+            "New York Avenue": "3:35 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "3:45 PM",
+            "Physical Facilities": "3:54 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "4:00 PM",
+            "New York Avenue": "4:10 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "4:45 PM",
+            "Physical Facilities": "4:54 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "5:00 PM",
+            "New York Avenue": "5:10 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "4:55 PM",
+            "Physical Facilities": "5:04 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "5:10 PM",
+            "New York Avenue": "5:20 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "5:25 PM",
+            "Physical Facilities": "5:34 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "5:40 PM",
+            "New York Avenue": "5:50 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "5:45 PM",
+            "Physical Facilities": "5:54 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "6:00 PM",
+            "New York Avenue": "6:10 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "6:20 PM",
+            "Physical Facilities": "6:29 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "6:35 PM",
+            "New York Avenue": "6:45 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "7:10 PM",
+            "Physical Facilities": "7:19 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "7:25 PM",
+            "New York Avenue": "7:35 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "7:25 PM",
+            "Physical Facilities": "7:34 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "7:40 PM",
+            "New York Avenue": "7:50 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "7:45 PM",
+            "Physical Facilities": "7:54 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "8:00 PM",
+            "New York Avenue": "8:10 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "8:15 PM",
+            "Physical Facilities": "8:24 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "8:30 PM",
+            "New York Avenue": "8:40 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "8:35 PM",
+            "Physical Facilities": "8:44 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "8:50 PM",
+            "New York Avenue": "9:00 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "9:10 PM",
+            "Physical Facilities": "9:19 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "9:25 PM",
+            "New York Avenue": "9:35 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "9:40 PM",
+            "Physical Facilities": "9:49 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "9:55 PM",
+            "New York Avenue": "10:05 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "10:35 PMF",
+            "Physical Facilities": "10:44 PMF",
+            "Bunn Hill/Bunn Hill Access Rd": "10:50 PMF",
+            "New York Avenue": "11:00 PMF"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "10:50 PMM-T",
+            "Physical Facilities": "10:59 PMM-T",
+            "Bunn Hill/Bunn Hill Access Rd": "11:05 PMM-T",
+            "New York Avenue": "11:10 PMM-T"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "11:45 PM",
+            "Physical Facilities": "11:54 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "12:00 AM",
+            "New York Avenue": "12:05 AM"
+          }
+        }
+      ],
+      "weekend": [
+        {
+          "stop_times": {
+            "University Union": "9:15 AM",
+            "Physical Facilities": "9:24 AM",
+            "Bunn Hill/Bunn Hill Access Rd": "9:30 AM",
+            "New York Avenue": "9:40 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "10:00 AM",
+            "Physical Facilities": "10:09 AM",
+            "Bunn Hill/Bunn Hill Access Rd": "10:15 AM",
+            "New York Avenue": "10:25 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "11:15 AM",
+            "Physical Facilities": "11:24 AM",
+            "Bunn Hill/Bunn Hill Access Rd": "11:30 AM",
+            "New York Avenue": "11:40 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "12:00 PM",
+            "Physical Facilities": "12:09 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "12:15 PM",
+            "New York Avenue": "12:25 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "1:25 PM",
+            "Physical Facilities": "1:34 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "1:40 PM",
+            "New York Avenue": "1:50 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "2:30 PM",
+            "Physical Facilities": "2:39 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "2:45 PM",
+            "New York Avenue": "2:55 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "3:40 PM",
+            "Physical Facilities": "3:49 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "3:55 PM",
+            "New York Avenue": "4:05 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "4:30 PM",
+            "Physical Facilities": "4:39 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "4:45 PM",
+            "New York Avenue": "4:55 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "6:25 PM",
+            "Physical Facilities": "6:34 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "6:40 PM",
+            "New York Avenue": "6:50 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "7:15 PM",
+            "Physical Facilities": "7:24 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "7:30 PM",
+            "New York Avenue": "7:40 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "9:00 PM",
+            "Physical Facilities": "9:09 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "9:15 PM",
+            "New York Avenue": "9:25 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "9:15 PM",
+            "Physical Facilities": "9:24 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "9:30 PM",
+            "New York Avenue": "9:40 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "10:00 PMSu",
+            "Physical Facilities": "10:09 PMSu",
+            "Bunn Hill/Bunn Hill Access Rd": "10:15 PMSu",
+            "New York Avenue": "10:20 PMSu"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "10:35 PM",
+            "Physical Facilities": "10:44 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "10:50 PM",
+            "New York Avenue": "11:00 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "11:45 PM",
+            "Physical Facilities": "11:54 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "12:00 AM",
+            "New York Avenue": "12:05 AM"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "route": "Westside Inbound",
+    "url": "https://occtransport.org/pages/routes/ws-in.html",
+    "stops": [
+      "Visions Memorial Arena",
+      "Court & Hawley Streets",
+      "Front Street",
+      "Murray Street",
+      "Mather Street",
+      "Cedar Street",
+      "Clarke Street",
+      "Schiller Street",
+      "Helen Street",
+      "Crestmont Road",
+      "Crary Avenue",
+      "Floral Av & Main St",
+      "Cleveland Avenue",
+      "Burbank Avenue",
+      "Willow Street",
+      "Roberts Street",
+      "Harrison Street",
+      "St Charles Street",
+      "Cook Street",
+      "Hinman / Academic A"
+    ],
+    "schedules": {
+      "weekday": [
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "7:15 AM",
+            "Court & Hawley Streets": "7:18 AM",
+            "Front Street": "7:24 AM",
+            "Murray Street": "7:40 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "7:45 AM",
+            "Court & Hawley Streets": "7:48 AM",
+            "Front Street": "7:54 AM",
+            "Murray Street": "8:10 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "8:05 AM",
+            "Court & Hawley Streets": "8:08 AM",
+            "Front Street": "8:14 AM",
+            "Murray Street": "8:30 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "8:35 AM",
+            "Court & Hawley Streets": "8:38 AM",
+            "Front Street": "8:44 AM",
+            "Murray Street": "9:00 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "8:55 AM",
+            "Court & Hawley Streets": "8:58 AM",
+            "Front Street": "9:04 AM",
+            "Murray Street": "9:20 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "9:25 AM",
+            "Court & Hawley Streets": "9:28 AM",
+            "Front Street": "9:34 AM",
+            "Murray Street": "9:50 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "10:15 AM",
+            "Court & Hawley Streets": "10:18 AM",
+            "Front Street": "10:24 AM",
+            "Murray Street": "10:40 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "10:40 AM",
+            "Court & Hawley Streets": "10:43 AM",
+            "Front Street": "10:49 AM",
+            "Murray Street": "11:05 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "11:05 AM",
+            "Court & Hawley Streets": "11:08 AM",
+            "Front Street": "11:14 AM",
+            "Murray Street": "11:30 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "11:25 AM",
+            "Court & Hawley Streets": "11:28 AM",
+            "Front Street": "11:34 AM",
+            "Murray Street": "11:50 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "11:40 AM",
+            "Court & Hawley Streets": "11:43 AM",
+            "Front Street": "11:49 AM",
+            "Murray Street": "12:05 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "12:15 PM",
+            "Court & Hawley Streets": "12:18 PM",
+            "Front Street": "12:24 PM",
+            "Murray Street": "12:40 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "12:50 PMAA",
+            "Court & Hawley Streets": "12:53 PMAA",
+            "Front Street": "12:59 PMAA",
+            "Murray Street": "1:15 PMAA"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "1:40 PM",
+            "Court & Hawley Streets": "1:43 PM",
+            "Front Street": "1:49 PM",
+            "Murray Street": "2:05 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "2:30 PM",
+            "Court & Hawley Streets": "2:33 PM",
+            "Front Street": "2:39 PM",
+            "Murray Street": "2:55 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "3:23 PMAA",
+            "Court & Hawley Streets": "3:26 PMAA",
+            "Front Street": "3:32 PMAA",
+            "Murray Street": "3:48 PMAA"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "3:58 PM",
+            "Court & Hawley Streets": "4:01 PM",
+            "Front Street": "4:07 PM",
+            "Murray Street": "4:23 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "4:38 PM",
+            "Court & Hawley Streets": "4:41 PM",
+            "Front Street": "4:47 PM",
+            "Murray Street": "5:03 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "6:03 PM",
+            "Court & Hawley Streets": "6:06 PM",
+            "Front Street": "6:12 PM",
+            "Murray Street": "6:28 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "6:40 PM",
+            "Court & Hawley Streets": "6:43 PM",
+            "Front Street": "6:49 PM",
+            "Murray Street": "7:05 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "7:00 PM",
+            "Court & Hawley Streets": "7:03 PM",
+            "Front Street": "7:09 PM",
+            "Murray Street": "7:25 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "7:30 PM",
+            "Court & Hawley Streets": "7:33 PM",
+            "Front Street": "7:39 PM",
+            "Murray Street": "7:55 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "8:00 PM",
+            "Court & Hawley Streets": "8:03 PM",
+            "Front Street": "8:09 PM",
+            "Murray Street": "8:25 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "8:45 PM",
+            "Court & Hawley Streets": "8:48 PM",
+            "Front Street": "8:54 PM",
+            "Murray Street": "9:10 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "9:15 PM",
+            "Court & Hawley Streets": "9:18 PM",
+            "Front Street": "9:24 PM",
+            "Murray Street": "9:40 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "9:48 PM",
+            "Court & Hawley Streets": "9:51 PM",
+            "Front Street": "9:57 PM",
+            "Murray Street": "10:13 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "10:13 PM",
+            "Court & Hawley Streets": "10:16 PM",
+            "Front Street": "10:22 PM",
+            "Murray Street": "10:33 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "11:08 PMM-T",
+            "Court & Hawley Streets": "11:11 PMM-T",
+            "Front Street": "11:17 PMM-T",
+            "Murray Street": "11:28 PMM-T"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "11:20 PMF",
+            "Court & Hawley Streets": "11:23 PMF",
+            "Front Street": "11:29 PMF",
+            "Murray Street": "11:40 PMF"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "12:03 AM",
+            "Court & Hawley Streets": "12:06 AM",
+            "Front Street": "12:12 AM",
+            "Murray Street": "12:23 AM"
+          }
+        }
+      ],
+      "weekend": [
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "9:05 AM",
+            "Court & Hawley Streets": "9:08 AM",
+            "Front Street": "9:14 AM",
+            "Murray Street": "9:30 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "9:50 AM",
+            "Court & Hawley Streets": "9:53 AM",
+            "Front Street": "9:59 AM",
+            "Murray Street": "10:15 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "11:05 AM",
+            "Court & Hawley Streets": "11:08 AM",
+            "Front Street": "11:14 AM",
+            "Murray Street": "11:30 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "1:05 PM",
+            "Court & Hawley Streets": "1:08 PM",
+            "Front Street": "1:14 PM",
+            "Murray Street": "1:30 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "2:05 PM",
+            "Court & Hawley Streets": "2:08 PM",
+            "Front Street": "2:14 PM",
+            "Murray Street": "2:30 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "3:15 PM",
+            "Court & Hawley Streets": "3:18 PM",
+            "Front Street": "3:24 PM",
+            "Murray Street": "3:40 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "4:45 PM",
+            "Court & Hawley Streets": "4:48 PM",
+            "Front Street": "4:54 PM",
+            "Murray Street": "5:10 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "6:00 PM",
+            "Court & Hawley Streets": "6:03 PM",
+            "Front Street": "6:09 PM",
+            "Murray Street": "6:25 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "7:30 PM",
+            "Court & Hawley Streets": "7:33 PM",
+            "Front Street": "7:39 PM",
+            "Murray Street": "7:55 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "8:50\u202fPM",
+            "Court & Hawley Streets": "8:53 PM",
+            "Front Street": "8:59\u202fPM",
+            "Murray Street": "9:15\u202fPM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "10:05\u202fPMSu",
+            "Court & Hawley Streets": "10:08 PMSu",
+            "Front Street": "10:14\u202fPMSu",
+            "Murray Street": "10:30\u202fPMSu"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "10:15 PM",
+            "Court & Hawley Streets": "10:18 PM",
+            "Front Street": "10:24 PM",
+            "Murray Street": "10:40 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "10:48 PMSu",
+            "Court & Hawley Streets": "10:51 PMSu",
+            "Front Street": "10:57 PMSu",
+            "Murray Street": "11:10 PMSu"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "11:20\u202fPMSa",
+            "Court & Hawley Streets": "11:23 PMSa",
+            "Front Street": "11:29\u202fPMSa",
+            "Murray Street": "11:45\u202fPMSa"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "11:28\u202fPMSu",
+            "Court & Hawley Streets": "11:31 PMSu",
+            "Front Street": "11:37\u202fPMSu",
+            "Murray Street": "11:53\u202fPMSu"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "12:05 AMSa",
+            "Court & Hawley Streets": "12:08 AMSa",
+            "Front Street": "12:14 AMSa",
+            "Murray Street": "12:30 AMSa"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "route": "Late Nite Westside Outbound",
+    "url": "https://occtransport.org/pages/routes/lnws-out.html",
+    "stops": [
+      "University Union",
+      "New York Avenue",
+      "Ackley Avenue",
+      "Harrison Street",
+      "Roberts Street",
+      "Willow Street",
+      "Burbank Avenue",
+      "Cleveland Avenue",
+      "Floral Av & Main St",
+      "Matthews Street",
+      "Crestmont Road",
+      "Helen Street",
+      "Schiller Street",
+      "Clarke Street",
+      "Cedar Street",
+      "Arthur Street",
+      "Murray Street",
+      "Front Street",
+      "State & Hawley Streets"
+    ],
+    "schedules": {
+      "weekday": [
+        {
+          "stop_times": {
+            "University Union": "12:45 AM",
+            "New York Avenue": "12:54 AM",
+            "Ackley Avenue": "1:00 AM",
+            "Harrison Street": "1:05 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "1:10 AM",
+            "New York Avenue": "1:19 AM",
+            "Ackley Avenue": "1:25 AM",
+            "Harrison Street": "1:30 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "2:10 AM",
+            "New York Avenue": "2:19 AM",
+            "Ackley Avenue": "2:25 AM",
+            "Harrison Street": "2:30 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "3:00 AM",
+            "New York Avenue": "3:09 AM",
+            "Ackley Avenue": "3:15 AM",
+            "Harrison Street": "3:20 AM"
+          }
+        }
+      ],
+      "weekend": [
+        {
+          "stop_times": {
+            "University Union": "12:45 AM",
+            "New York Avenue": "12:54 AM",
+            "Ackley Avenue": "1:00 AM",
+            "Harrison Street": "1:05 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "1:10 AM",
+            "New York Avenue": "1:19 AM",
+            "Ackley Avenue": "1:25 AM",
+            "Harrison Street": "1:30 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "2:10 AM",
+            "New York Avenue": "2:19 AM",
+            "Ackley Avenue": "2:25 AM",
+            "Harrison Street": "2:30 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "3:00 AM",
+            "New York Avenue": "3:09 AM",
+            "Ackley Avenue": "3:15 AM",
+            "Harrison Street": "3:20 AM"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "route": "Late Nite Westside Inbound",
+    "url": "https://occtransport.org/pages/routes/lnws-in.html",
+    "stops": [
+      "State & Hawley Streets",
+      "Court & Hawley Streets",
+      "Front Street",
+      "Murray Street",
+      "Mather Street",
+      "Cedar Street",
+      "Clarke Street",
+      "Schiller Street",
+      "Helen Street",
+      "Crestmont Road",
+      "Crary Avenue",
+      "Floral Av & Main St",
+      "Cleveland Avenue",
+      "Burbank Avenue",
+      "Willow Street",
+      "Roberts Street",
+      "Harrison Street",
+      "St Charles Street",
+      "Cook Street",
+      "Hinman / Academic A"
+    ],
+    "schedules": {
+      "weekday": [
+        {
+          "stop_times": {
+            "State & Hawley Streets": "12:45 AM",
+            "Court & Hawley Streets": "12:48 AM",
+            "Front Street": "12:54 AM",
+            "Murray Street": "1:05 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "State & Hawley Streets": "1:20 AM",
+            "Court & Hawley Streets": "1:23 AM",
+            "Front Street": "1:29 AM",
+            "Murray Street": "1:40 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "State & Hawley Streets": "1:50 AM",
+            "Court & Hawley Streets": "1:53 AM",
+            "Front Street": "1:59 AM",
+            "Murray Street": "2:10 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "State & Hawley Streets": "2:35 AM",
+            "Court & Hawley Streets": "2:38 AM",
+            "Front Street": "2:44 AM",
+            "Murray Street": "2:55 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "State & Hawley Streets": "3:25 AM",
+            "Court & Hawley Streets": "3:28 AM",
+            "Front Street": "3:34 AM",
+            "Murray Street": "3:45 AM"
+          }
+        }
+      ],
+      "weekend": [
+        {
+          "stop_times": {
+            "State & Hawley Streets": "12:45 AM",
+            "Court & Hawley Streets": "12:48 AM",
+            "Front Street": "12:54 AM",
+            "Murray Street": "1:05 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "State & Hawley Streets": "1:20 AM",
+            "Court & Hawley Streets": "1:23 AM",
+            "Front Street": "1:29 AM",
+            "Murray Street": "1:40 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "State & Hawley Streets": "1:50 AM",
+            "Court & Hawley Streets": "1:53 AM",
+            "Front Street": "1:59 AM",
+            "Murray Street": "2:10 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "State & Hawley Streets": "2:35 AM",
+            "Court & Hawley Streets": "2:38 AM",
+            "Front Street": "2:44 AM",
+            "Murray Street": "2:55 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "State & Hawley Streets": "3:25 AM",
+            "Court & Hawley Streets": "3:28 AM",
+            "Front Street": "3:34 AM",
+            "Murray Street": "3:45 AM"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "route": "Main Street Outbound",
+    "url": "https://occtransport.org/pages/routes/ms-out.html",
+    "stops": [
+      "University Union",
+      "Physical Facilities",
+      "Bunn Hill/Bunn Hill Access Rd",
+      "Baker Street",
+      "Albert Street",
+      "St Charles Street",
+      "Baldwin Street",
+      "Pharmacy School",
+      "Nursing School",
+      "Lester Avenue",
+      "Gannett Building",
+      "Helen Street",
+      "Schiller Street",
+      "Clarke Street",
+      "Cedar Street",
+      "Arthur Street",
+      "Murray Street",
+      "Oak Street & Seminary Ave",
+      "Oak & Leroy Streets",
+      "Visions Memorial Arena"
+    ],
+    "schedules": {
+      "weekday": [
+        {
+          "stop_times": {
+            "University Union": "7:30 AM",
+            "Physical Facilities": "7:39 AM",
+            "Bunn Hill/Bunn Hill Access Rd": "7:48 AM",
+            "Baker Street": "7:55 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "8:35 AM",
+            "Physical Facilities": "8:44 AM",
+            "Bunn Hill/Bunn Hill Access Rd": "8:53 AM",
+            "Baker Street": "9:05 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "9:30 AM",
+            "Physical Facilities": "9:39 AM",
+            "Bunn Hill/Bunn Hill Access Rd": "9:48 AM",
+            "Baker Street": "10:00 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "10:25 AM",
+            "Physical Facilities": "10:34 AM",
+            "Bunn Hill/Bunn Hill Access Rd": "10:43 AM",
+            "Baker Street": "10:55 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "11:35 AM",
+            "Physical Facilities": "11:44 AM",
+            "Bunn Hill/Bunn Hill Access Rd": "11:53 AM",
+            "Baker Street": "12:05 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "12:25 PM",
+            "Physical Facilities": "12:34 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "12:43 PM",
+            "Baker Street": "12:55 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "1:15 PM",
+            "Physical Facilities": "1:24 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "1:33 PM",
+            "Baker Street": "1:45 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "2:15 PM",
+            "Physical Facilities": "2:24 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "2:33 PM",
+            "Baker Street": "2:45 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "3:35 PM",
+            "Physical Facilities": "3:44 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "3:53 PM",
+            "Baker Street": "4:05 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "4:30 PM",
+            "Physical Facilities": "4:39 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "4:48 PM",
+            "Baker Street": "5:00 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "5:40 PM",
+            "Physical Facilities": "5:49 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "5:58 PM",
+            "Baker Street": "6:10 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "6:40 PM",
+            "Physical Facilities": "6:49 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "6:58 PM",
+            "Baker Street": "7:10 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "7:40 PM",
+            "Physical Facilities": "7:49 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "7:58 PM",
+            "Baker Street": "8:10 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "8:40 PM",
+            "Physical Facilities": "8:49 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "8:58 PM",
+            "Baker Street": "9:10 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "9:40 PMM-T",
+            "Physical Facilities": "9:49 PMM-T",
+            "Bunn Hill/Bunn Hill Access Rd": "9:58 PMM-T",
+            "Baker Street": "10:10 PMM-T"
+          }
+        }
+      ],
+      "weekend": [
+        {
+          "stop_times": {
+            "University Union": "10:40 AM",
+            "Physical Facilities": "10:49 AM",
+            "Bunn Hill/Bunn Hill Access Rd": "10:58 AM",
+            "Baker Street": "11:05 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "12:40 PM",
+            "Physical Facilities": "12:49 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "12:58 PM",
+            "Baker Street": "1:05 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "3:00 PM",
+            "Physical Facilities": "3:09 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "3:18 PM",
+            "Baker Street": "3:25 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "5:15 PM",
+            "Physical Facilities": "5:24 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "5:33 PM",
+            "Baker Street": "5:40 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "8:00 PM",
+            "Physical Facilities": "8:09 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "8:18 PM",
+            "Baker Street": "8:25 PM"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "route": "Main Street Inbound",
+    "url": "https://occtransport.org/pages/routes/ms-in.html",
+    "stops": [
+      "University Downtown Center",
+      "Front & Leroy Streets",
+      "Murray Street",
+      "Mather Street",
+      "Cedar Street",
+      "Clarke Street",
+      "Schiller Street",
+      "Helen Street",
+      "Gannett Building",
+      "Lester Avenue",
+      "Nursing School -Jenison & Corliss Avenues",
+      "Pharmacy School",
+      "Baldwin Street",
+      "St Charles Street",
+      "First Street",
+      "Hinman / Academic A"
+    ],
+    "schedules": {
+      "weekday": [
+        {
+          "stop_times": {
+            "University Downtown Center": "7:10 AM",
+            "Front & Leroy Streets": "7:13 AM",
+            "Murray Street": "7:22 AM",
+            "Mather Street": "7:40 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "8:10 AM",
+            "Front & Leroy Streets": "8:13 AM",
+            "Murray Street": "8:22 AM",
+            "Mather Street": "8:40 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "9:10 AMAA",
+            "Front & Leroy Streets": "9:13 AMAA",
+            "Murray Street": "9:22 AMAA",
+            "Mather Street": "9:40 AMAA"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "9:55 AM",
+            "Front & Leroy Streets": "9:58 AM",
+            "Murray Street": "10:07 AM",
+            "Mather Street": "10:25 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "10:30 AMAA",
+            "Front & Leroy Streets": "10:33 AMAA",
+            "Murray Street": "10:42 AMAA",
+            "Mather Street": "11:00 AMAA"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "11:10 AM",
+            "Front & Leroy Streets": "11:13 AM",
+            "Murray Street": "11:22 AM",
+            "Mather Street": "11:40 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "12:00 PM",
+            "Front & Leroy Streets": "12:03 PM",
+            "Murray Street": "12:12 PM",
+            "Mather Street": "12:30 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "1:00 PMAA",
+            "Front & Leroy Streets": "1:03 PMAA",
+            "Murray Street": "1:12 PMAA",
+            "Mather Street": "1:30 PMAA"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "2:00 PM",
+            "Front & Leroy Streets": "2:03 PM",
+            "Murray Street": "2:12 PM",
+            "Mather Street": "2:30 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "3:05 PM",
+            "Front & Leroy Streets": "3:08 PM",
+            "Murray Street": "3:17 PM",
+            "Mather Street": "3:35 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "4:20 PM",
+            "Front & Leroy Streets": "4:23 PM",
+            "Murray Street": "4:32 PM",
+            "Mather Street": "4:50 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "5:50 PM",
+            "Front & Leroy Streets": "5:53 PM",
+            "Murray Street": "6:02 PM",
+            "Mather Street": "6:20 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "7:00 PM",
+            "Front & Leroy Streets": "7:03 PM",
+            "Murray Street": "7:12 PM",
+            "Mather Street": "7:30 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "7:55 PM",
+            "Front & Leroy Streets": "7:58 PM",
+            "Murray Street": "8:07 PM",
+            "Mather Street": "8:25 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "9:00 PM",
+            "Front & Leroy Streets": "9:03 PM",
+            "Murray Street": "9:12 PM",
+            "Mather Street": "9:30 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "9:40 PM",
+            "Front & Leroy Streets": "9:43 PM",
+            "Murray Street": "9:52 PM",
+            "Mather Street": "10:10 PM"
+          }
+        }
+      ],
+      "weekend": [
+        {
+          "stop_times": {
+            "University Downtown Center": "10:20 AM",
+            "Front & Leroy Streets": "10:23 AM",
+            "Murray Street": "10:32 AM",
+            "Mather Street": "10:45 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "12:15 PM",
+            "Front & Leroy Streets": "12:18 PM",
+            "Murray Street": "12:27 PM",
+            "Mather Street": "12:40 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "2:30 PM",
+            "Front & Leroy Streets": "2:33 PM",
+            "Murray Street": "2:42 PM",
+            "Mather Street": "2:55 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "4:05 PM",
+            "Front & Leroy Streets": "4:08 PM",
+            "Murray Street": "4:17 PM",
+            "Mather Street": "4:30 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "6:50 PM",
+            "Front & Leroy Streets": "6:53 PM",
+            "Murray Street": "7:02 PM",
+            "Mather Street": "7:15 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "8:35 PM",
+            "Front & Leroy Streets": "8:38 PM",
+            "Murray Street": "8:47 PM",
+            "Mather Street": "9:00 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "9:35 PM",
+            "Front & Leroy Streets": "9:38 PM",
+            "Murray Street": "9:47 PM",
+            "Mather Street": "10:00 PM"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "route": "Downtown Center-Leroy St Outbound",
+    "url": "https://occtransport.org/pages/routes/dcl-out.html",
+    "stops": [
+      "University Union",
+      "Physical Facilities",
+      "Bunn Hill/Bunn Hill Access Rd",
+      "Ethel Street",
+      "Elfred Street",
+      "Columbus Place",
+      "Margaret Street",
+      "Riverside Dr & Beethoven St -Lourdes Hospital",
+      "Beethoven & Leroy Streets",
+      "Laurel Avenue",
+      "Chestnut Street",
+      "Murray Street",
+      "Riverside Dr & Front St",
+      "Visions Memorial Arena"
+    ],
+    "schedules": {
+      "weekday": [
+        {
+          "stop_times": {
+            "University Union": "N/AUU",
+            "Physical Facilities": "7:01 AM",
+            "Bunn Hill/Bunn Hill Access Rd": "7:06 AM",
+            "Ethel Street": "7:13 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "7:45 AM",
+            "Physical Facilities": "7:51 AM",
+            "Bunn Hill/Bunn Hill Access Rd": "7:56 AM",
+            "Ethel Street": "8:03 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "8:15 AM",
+            "Physical Facilities": "8:21 AM",
+            "Bunn Hill/Bunn Hill Access Rd": "8:26 AM",
+            "Ethel Street": "8:33 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "9:05 AM",
+            "Physical Facilities": "9:11 AM",
+            "Bunn Hill/Bunn Hill Access Rd": "9:16 AM",
+            "Ethel Street": "9:23 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "9:55 AM",
+            "Physical Facilities": "10:01 AM",
+            "Bunn Hill/Bunn Hill Access Rd": "10:06 AM",
+            "Ethel Street": "10:13 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "10:25 AM",
+            "Physical Facilities": "10:31 AM",
+            "Bunn Hill/Bunn Hill Access Rd": "10:36 AM",
+            "Ethel Street": "10:43 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "10:45 AM",
+            "Physical Facilities": "10:51 AM",
+            "Bunn Hill/Bunn Hill Access Rd": "10:56 AM",
+            "Ethel Street": "11:03 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "11:05 AM",
+            "Physical Facilities": "11:11 AM",
+            "Bunn Hill/Bunn Hill Access Rd": "11:16 AM",
+            "Ethel Street": "11:23 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "11:20 AM",
+            "Physical Facilities": "11:26 AM",
+            "Bunn Hill/Bunn Hill Access Rd": "11:31 AM",
+            "Ethel Street": "11:38 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "11:55 AM",
+            "Physical Facilities": "12:01 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "12:06 PM",
+            "Ethel Street": "12:13 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "12:30 PM",
+            "Physical Facilities": "12:36 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "12:41 PM",
+            "Ethel Street": "12:48 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "1:20 PM",
+            "Physical Facilities": "1:26 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "1:31 PM",
+            "Ethel Street": "1:38 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "2:10 PM",
+            "Physical Facilities": "2:16 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "2:21 PM",
+            "Ethel Street": "2:28 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "3:00 PM",
+            "Physical Facilities": "3:06 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "3:11 PM",
+            "Ethel Street": "3:18 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "3:35 PM",
+            "Physical Facilities": "3:41 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "3:46 PM",
+            "Ethel Street": "3:53 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "4:15 PM",
+            "Physical Facilities": "4:21 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "4:26 PM",
+            "Ethel Street": "4:33 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "4:50 PM",
+            "Physical Facilities": "4:56 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "5:01 PM",
+            "Ethel Street": "5:08 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "5:05 PM",
+            "Physical Facilities": "5:11 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "5:16 PM",
+            "Ethel Street": "5:23 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "5:40 PM",
+            "Physical Facilities": "5:46 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "5:51 PM",
+            "Ethel Street": "5:58 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "6:00 PM",
+            "Physical Facilities": "6:06 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "6:11 PM",
+            "Ethel Street": "6:18 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "6:20 PM",
+            "Physical Facilities": "6:26 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "6:31 PM",
+            "Ethel Street": "6:38 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "6:40 PM",
+            "Physical Facilities": "6:46 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "6:51 PM",
+            "Ethel Street": "6:58 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "7:10 PM",
+            "Physical Facilities": "7:16 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "7:21 PM",
+            "Ethel Street": "7:28 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "7:40 PM",
+            "Physical Facilities": "7:46 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "7:51 PM",
+            "Ethel Street": "7:58 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "8:25 PM",
+            "Physical Facilities": "8:31 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "8:36 PM",
+            "Ethel Street": "8:43 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "8:55 PM",
+            "Physical Facilities": "9:01 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "9:06 PM",
+            "Ethel Street": "9:13 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "9:30 PM",
+            "Physical Facilities": "9:36 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "9:41 PM",
+            "Ethel Street": "9:48 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "9:55 PM",
+            "Physical Facilities": "10:01 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "10:06 PM",
+            "Ethel Street": "10:13 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "10:50 PMM-T",
+            "Physical Facilities": "10:56 PMM-T",
+            "Bunn Hill/Bunn Hill Access Rd": "11:01 PMM-T",
+            "Ethel Street": "11:08 PMM-T"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "11:00 PMF",
+            "Physical Facilities": "11:06 PMF",
+            "Bunn Hill/Bunn Hill Access Rd": "11:11 PMF",
+            "Ethel Street": "11:18 PMF"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "11:45 PM",
+            "Physical Facilities": "11:51 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "11:56 PM",
+            "Ethel Street": "12:03 AM"
+          }
+        }
+      ],
+      "weekend": [
+        {
+          "stop_times": {
+            "University Union": "8:45 AM",
+            "Physical Facilities": "8:51 AM",
+            "Bunn Hill/Bunn Hill Access Rd": "8:56 AM",
+            "Ethel Street": "9:03 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "9:30 AM",
+            "Physical Facilities": "9:36 AM",
+            "Bunn Hill/Bunn Hill Access Rd": "9:41 AM",
+            "Ethel Street": "9:48 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "10:45 AM",
+            "Physical Facilities": "10:51 AM",
+            "Bunn Hill/Bunn Hill Access Rd": "10:56 AM",
+            "Ethel Street": "11:03 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "12:45 PM",
+            "Physical Facilities": "12:51 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "12:56 PM",
+            "Ethel Street": "1:03 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "1:45 PM",
+            "Physical Facilities": "1:51 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "1:56 PM",
+            "Ethel Street": "2:03 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "2:55 PM",
+            "Physical Facilities": "3:01 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "3:06 PM",
+            "Ethel Street": "3:13 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "4:25 PM",
+            "Physical Facilities": "4:31 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "4:36 PM",
+            "Ethel Street": "4:43 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "5:40 PM",
+            "Physical Facilities": "5:46 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "5:51 PM",
+            "Ethel Street": "5:58 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "7:10 PM",
+            "Physical Facilities": "7:16 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "7:21 PM",
+            "Ethel Street": "7:28 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "8:30 PM",
+            "Physical Facilities": "8:36 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "8:41 PM",
+            "Ethel Street": "8:48 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "9:45 PMSu",
+            "Physical Facilities": "9:51 PMSu",
+            "Bunn Hill/Bunn Hill Access Rd": "9:56 PMSu",
+            "Ethel Street": "10:03 PMSu"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "9:55 PM",
+            "Physical Facilities": "10:01 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "10:06 PM",
+            "Ethel Street": "10:13 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "10:30 PMSu",
+            "Physical Facilities": "10:36 PMSu",
+            "Bunn Hill/Bunn Hill Access Rd": "10:41 PMSu",
+            "Ethel Street": "10:48 PMSu"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "11:00 PMSa",
+            "Physical Facilities": "11:06 PMSa",
+            "Bunn Hill/Bunn Hill Access Rd": "11:11 PMSa",
+            "Ethel Street": "11:18 PMSa"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "11:10 PMSu",
+            "Physical Facilities": "11:16 PMSu",
+            "Bunn Hill/Bunn Hill Access Rd": "11:21 PMSu",
+            "Ethel Street": "11:28 PMSu"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "11:45 PMSa",
+            "Physical Facilities": "11:51 PMSa",
+            "Bunn Hill/Bunn Hill Access Rd": "11:56 PMSa",
+            "Ethel Street": "12:03 AMSa"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "route": "Downtown Center-Leroy St Inbound",
+    "url": "https://occtransport.org/pages/routes/dcl-in.html",
+    "stops": [
+      "University Downtown Center",
+      "Leroy & Front Streets",
+      "Murray Street",
+      "Chestnut Street",
+      "Laurel Avenue",
+      "Leroy & Beethoven Streets",
+      "Riverside Dr & Beethoven St -Lourdes Hospital",
+      "Margaret Street",
+      "Columbus Place",
+      "Elfred Street",
+      "Ethel Street",
+      "Hinman / Academic A"
+    ],
+    "schedules": {
+      "weekday": [
+        {
+          "stop_times": {
+            "University Downtown Center": "7:20 AM",
+            "Leroy & Front Streets": "7:23 AM",
+            "Murray Street": "7:29 AM",
+            "Chestnut Street": "7:40 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "7:35 AM",
+            "Leroy & Front Streets": "7:38 AM",
+            "Murray Street": "7:44 AM",
+            "Chestnut Street": "7:55 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "7:55 AM",
+            "Leroy & Front Streets": "7:58 AM",
+            "Murray Street": "8:04 AM",
+            "Chestnut Street": "8:15 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "8:20 AM",
+            "Leroy & Front Streets": "8:23 AM",
+            "Murray Street": "8:29 AM",
+            "Chestnut Street": "8:40 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "8:45 AM",
+            "Leroy & Front Streets": "8:48 AM",
+            "Murray Street": "8:54 AM",
+            "Chestnut Street": "9:05 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "9:15 AMAA",
+            "Leroy & Front Streets": "9:18 AMAA",
+            "Murray Street": "9:24 AMAA",
+            "Chestnut Street": "9:35 AMAA"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "9:40 AM",
+            "Leroy & Front Streets": "9:43 AM",
+            "Murray Street": "9:49 AM",
+            "Chestnut Street": "10:00 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "9:50 AM",
+            "Leroy & Front Streets": "9:53 AM",
+            "Murray Street": "9:59 AM",
+            "Chestnut Street": "10:10 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "10:20 AM",
+            "Leroy & Front Streets": "10:23 AM",
+            "Murray Street": "10:29 AM",
+            "Chestnut Street": "10:40 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "10:30 AMAA",
+            "Leroy & Front Streets": "10:33 AMAA",
+            "Murray Street": "10:39 AMAA",
+            "Chestnut Street": "10:50 AMAA"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "11:10 AM",
+            "Leroy & Front Streets": "11:13 AM",
+            "Murray Street": "11:19 AM",
+            "Chestnut Street": "11:30 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "11:40 AM",
+            "Leroy & Front Streets": "11:43 AM",
+            "Murray Street": "11:49 AM",
+            "Chestnut Street": "12:00 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "12:10 PM",
+            "Leroy & Front Streets": "12:13 PM",
+            "Murray Street": "12:19 PM",
+            "Chestnut Street": "12:30 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "12:35 PM",
+            "Leroy & Front Streets": "12:38 PM",
+            "Murray Street": "12:44 PM",
+            "Chestnut Street": "12:55 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "1:05 PMAA",
+            "Leroy & Front Streets": "1:08 PMAA",
+            "Murray Street": "1:14 PMAA",
+            "Chestnut Street": "1:25 PMAA"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "1:50 PM",
+            "Leroy & Front Streets": "1:53 PM",
+            "Murray Street": "1:59 PM",
+            "Chestnut Street": "2:10 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "2:35 PM",
+            "Leroy & Front Streets": "2:38 PM",
+            "Murray Street": "2:44 PM",
+            "Chestnut Street": "2:55 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "3:12 PM",
+            "Leroy & Front Streets": "3:15 PM",
+            "Murray Street": "3:21 PM",
+            "Chestnut Street": "3:32 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "3:37 PM",
+            "Leroy & Front Streets": "3:40 PM",
+            "Murray Street": "3:46 PM",
+            "Chestnut Street": "3:57 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "4:15 PM",
+            "Leroy & Front Streets": "4:18 PM",
+            "Murray Street": "4:24 PM",
+            "Chestnut Street": "4:35 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "5:15 PM",
+            "Leroy & Front Streets": "5:18 PM",
+            "Murray Street": "5:24 PM",
+            "Chestnut Street": "5:35 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "5:55 PM",
+            "Leroy & Front Streets": "5:58 PM",
+            "Murray Street": "6:04 PM",
+            "Chestnut Street": "6:15 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "6:15 PM",
+            "Leroy & Front Streets": "6:18 PM",
+            "Murray Street": "6:24 PM",
+            "Chestnut Street": "6:35 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "6:45 PM",
+            "Leroy & Front Streets": "6:48 PM",
+            "Murray Street": "6:54 PM",
+            "Chestnut Street": "7:05 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "7:35 PM",
+            "Leroy & Front Streets": "7:38 PM",
+            "Murray Street": "7:44 PM",
+            "Chestnut Street": "7:55 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "7:50 PM",
+            "Leroy & Front Streets": "7:53 PM",
+            "Murray Street": "7:59 PM",
+            "Chestnut Street": "8:10 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "8:10 PM",
+            "Leroy & Front Streets": "8:13 PM",
+            "Murray Street": "8:19 PM",
+            "Chestnut Street": "8:30 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "8:40 PM",
+            "Leroy & Front Streets": "8:43 PM",
+            "Murray Street": "8:49 PM",
+            "Chestnut Street": "9:00 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "9:00 PM",
+            "Leroy & Front Streets": "9:03 PM",
+            "Murray Street": "9:09 PM",
+            "Chestnut Street": "9:20 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "9:35 PM",
+            "Leroy & Front Streets": "9:38 PM",
+            "Murray Street": "9:44 PM",
+            "Chestnut Street": "9:55 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "10:05 PM",
+            "Leroy & Front Streets": "10:08 PM",
+            "Murray Street": "10:14 PM",
+            "Chestnut Street": "10:25 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "11:00 PMF",
+            "Leroy & Front Streets": "11:03 PMF",
+            "Murray Street": "11:09 PMF",
+            "Chestnut Street": "11:20 PMF"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "11:10 PMM-T",
+            "Leroy & Front Streets": "11:13 PMM-T",
+            "Murray Street": "11:19 PMM-T",
+            "Chestnut Street": "11:30 PMM-T"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "12:05 AM",
+            "Leroy & Front Streets": "12:08 AM",
+            "Murray Street": "12:14 AM",
+            "Chestnut Street": "12:25 AM"
+          }
+        }
+      ],
+      "weekend": [
+        {
+          "stop_times": {
+            "University Downtown Center": "9:40 AM",
+            "Leroy & Front Streets": "9:43 AM",
+            "Murray Street": "9:49 AM",
+            "Chestnut Street": "10:00 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "10:25 AM",
+            "Leroy & Front Streets": "10:28 AM",
+            "Murray Street": "10:34 AM",
+            "Chestnut Street": "10:45 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "11:40 AM",
+            "Leroy & Front Streets": "11:43 AM",
+            "Murray Street": "11:49 AM",
+            "Chestnut Street": "12:00 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "12:25 PM",
+            "Leroy & Front Streets": "12:28 PM",
+            "Murray Street": "12:34 PM",
+            "Chestnut Street": "12:45 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "1:50 PM",
+            "Leroy & Front Streets": "1:53 PM",
+            "Murray Street": "1:59 PM",
+            "Chestnut Street": "2:10 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "2:55 PM",
+            "Leroy & Front Streets": "2:58 PM",
+            "Murray Street": "3:04 PM",
+            "Chestnut Street": "3:15 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "4:05 PM",
+            "Leroy & Front Streets": "4:08 PM",
+            "Murray Street": "4:14 PM",
+            "Chestnut Street": "4:25 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "4:55 PM",
+            "Leroy & Front Streets": "4:58 PM",
+            "Murray Street": "5:04 PM",
+            "Chestnut Street": "5:15 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "6:50 PM",
+            "Leroy & Front Streets": "6:53 PM",
+            "Murray Street": "6:59 PM",
+            "Chestnut Street": "7:10 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "7:40 PM",
+            "Leroy & Front Streets": "7:43 PM",
+            "Murray Street": "7:49 PM",
+            "Chestnut Street": "8:00 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "9:25 PM",
+            "Leroy & Front Streets": "9:28 PM",
+            "Murray Street": "9:34 PM",
+            "Chestnut Street": "9:45 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "9:40 PM",
+            "Leroy & Front Streets": "9:43 PM",
+            "Murray Street": "9:49 PM",
+            "Chestnut Street": "10:00 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "10:20 PMSu",
+            "Leroy & Front Streets": "10:23 PMSu",
+            "Murray Street": "10:29 PMSu",
+            "Chestnut Street": "10:40 PMSu"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "10:55 PM",
+            "Leroy & Front Streets": "10:58 PM",
+            "Murray Street": "11:04 PM",
+            "Chestnut Street": "11:15 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "12:05 AM",
+            "Leroy & Front Streets": "12:08 AM",
+            "Murray Street": "12:14 AM",
+            "Chestnut Street": "12:25 AM"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "route": "Late Nite DCL Outbound",
+    "url": "https://occtransport.org/pages/routes/lndcl-out.html",
+    "stops": [
+      "University Union",
+      "Ethel Street",
+      "Elfred Street",
+      "Columbus Place",
+      "Margaret Street",
+      "Riverside Dr & Beethoven St -Lourdes Hospital",
+      "Beethoven & Leroy Streets",
+      "Laurel Avenue",
+      "Chestnut Street",
+      "Murray Street",
+      "Riverside Dr & Front St",
+      "State & Hawley Streets"
+    ],
+    "schedules": {
+      "weekday": [
+        {
+          "stop_times": {
+            "University Union": "12:25 AM",
+            "Ethel Street": "12:31 AM",
+            "Elfred Street": "12:36 AM",
+            "Columbus Place": "12:40 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "1:00 AM",
+            "Ethel Street": "1:06 AM",
+            "Elfred Street": "1:11 AM",
+            "Columbus Place": "1:15 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "1:30 AM",
+            "Ethel Street": "1:36 AM",
+            "Elfred Street": "1:41 AM",
+            "Columbus Place": "1:45 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "2:15 AM",
+            "Ethel Street": "2:21 AM",
+            "Elfred Street": "2:26 AM",
+            "Columbus Place": "2:30 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "3:05 AM",
+            "Ethel Street": "3:11 AM",
+            "Elfred Street": "3:16 AM",
+            "Columbus Place": "3:20 AM"
+          }
+        }
+      ],
+      "weekend": [
+        {
+          "stop_times": {
+            "University Union": "12:25 AM",
+            "Ethel Street": "12:31 AM",
+            "Elfred Street": "12:36 AM",
+            "Columbus Place": "12:40 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "1:00 AM",
+            "Ethel Street": "1:06 AM",
+            "Elfred Street": "1:11 AM",
+            "Columbus Place": "1:15 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "1:30 AM",
+            "Ethel Street": "1:36 AM",
+            "Elfred Street": "1:41 AM",
+            "Columbus Place": "1:45 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "2:15 AM",
+            "Ethel Street": "2:21 AM",
+            "Elfred Street": "2:26 AM",
+            "Columbus Place": "2:30 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "3:05 AM",
+            "Ethel Street": "3:11 AM",
+            "Elfred Street": "3:16 AM",
+            "Columbus Place": "3:20 AM"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "route": "Late Nite DCL Inbound",
+    "url": "https://occtransport.org/pages/routes/lndcl-in.html",
+    "stops": [
+      "State & Hawley Streets",
+      "Leroy & Front Streets",
+      "Murray Street",
+      "Chestnut Street",
+      "Laurel Avenue",
+      "Leroy & Beethoven Streets",
+      "Riverside Dr & Beethoven St -Lourdes Hospital",
+      "Margaret Street",
+      "Columbus Place",
+      "Elfred Street",
+      "Ethel Street",
+      "Hinman / Academic A"
+    ],
+    "schedules": {
+      "weekday": [
+        {
+          "stop_times": {
+            "State & Hawley Streets": "1:10 AM",
+            "Leroy & Front Streets": "1:13 AM",
+            "Murray Street": "1:19 AM",
+            "Chestnut Street": "1:29 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "State & Hawley Streets": "1:35 AM",
+            "Leroy & Front Streets": "1:38 AM",
+            "Murray Street": "1:44 AM",
+            "Chestnut Street": "1:54 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "State & Hawley Streets": "2:30 AM",
+            "Leroy & Front Streets": "2:33 AM",
+            "Murray Street": "2:39 AM",
+            "Chestnut Street": "2:49 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "State & Hawley Streets": "3:25 AM",
+            "Leroy & Front Streets": "3:28 AM",
+            "Murray Street": "3:34 AM",
+            "Chestnut Street": "3:44 AM"
+          }
+        }
+      ],
+      "weekend": [
+        {
+          "stop_times": {
+            "State & Hawley Streets": "1:10 AM",
+            "Leroy & Front Streets": "1:13 AM",
+            "Murray Street": "1:19 AM",
+            "Chestnut Street": "1:29 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "State & Hawley Streets": "1:35 AM",
+            "Leroy & Front Streets": "1:38 AM",
+            "Murray Street": "1:44 AM",
+            "Chestnut Street": "1:54 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "State & Hawley Streets": "2:30 AM",
+            "Leroy & Front Streets": "2:33 AM",
+            "Murray Street": "2:39 AM",
+            "Chestnut Street": "2:49 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "State & Hawley Streets": "3:25 AM",
+            "Leroy & Front Streets": "3:28 AM",
+            "Murray Street": "3:34 AM",
+            "Chestnut Street": "3:44 AM"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "route": "University Downtown Center Outbound",
+    "url": "https://occtransport.org/pages/routes/udc-out.html",
+    "stops": [
+      "University Union",
+      "University Downtown Center"
+    ],
+    "schedules": {
+      "weekday": [
+        {
+          "stop_times": {
+            "University Union": "7:15 AM",
+            "University Downtown Center": "7:30 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "7:30 AM",
+            "University Downtown Center": "7:45 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "7:40 AM",
+            "University Downtown Center": "7:55 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "7:45 AM",
+            "University Downtown Center": "8:00 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "7:55 AM",
+            "University Downtown Center": "8:10 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "8:15 AM",
+            "University Downtown Center": "8:30 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "8:20 AM",
+            "University Downtown Center": "8:35 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "8:40 AM",
+            "University Downtown Center": "8:55 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "8:45 AM",
+            "University Downtown Center": "9:00 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "8:55 AM",
+            "University Downtown Center": "9:10 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "9:00 AM",
+            "University Downtown Center": "9:15 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "9:15 AM",
+            "University Downtown Center": "9:30 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "9:25 AM",
+            "University Downtown Center": "9:40 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "9:40 AM",
+            "University Downtown Center": "9:55 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "9:45 AM",
+            "University Downtown Center": "10:00 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "10:15 AM",
+            "University Downtown Center": "10:30 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "10:45 AM",
+            "University Downtown Center": "11:00 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "10:55 AM",
+            "University Downtown Center": "11:10 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "11:15 AM",
+            "University Downtown Center": "11:30 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "11:45 AM",
+            "University Downtown Center": "12:00 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "12:15 PM",
+            "University Downtown Center": "12:30 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "12:45 PM",
+            "University Downtown Center": "1:00 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "1:15 PM",
+            "University Downtown Center": "1:30 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "1:45 PM",
+            "University Downtown Center": "2:00 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "2:15 PM",
+            "University Downtown Center": "2:30 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "2:45 PM",
+            "University Downtown Center": "3:00 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "3:15 PM",
+            "University Downtown Center": "3:30 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "3:45 PM",
+            "University Downtown Center": "4:00 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "4:15 PM",
+            "University Downtown Center": "4:30 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "4:45 PM",
+            "University Downtown Center": "5:00 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "5:30 PM",
+            "University Downtown Center": "5:45 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "6:45 PM",
+            "University Downtown Center": "7:00 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "7:15 PM",
+            "University Downtown Center": "7:30 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "8:00 PM",
+            "University Downtown Center": "8:15 PM"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "route": "University Downtown Center Inbound",
+    "url": "https://occtransport.org/pages/routes/udc-in.html",
+    "stops": [
+      "University Downtown Center",
+      "Hinman / Academic A"
+    ],
+    "schedules": {
+      "weekday": [
+        {
+          "stop_times": {
+            "University Downtown Center": "7:30 AM",
+            "Hinman / Academic A": "7:45 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "8:00 AM",
+            "Hinman / Academic A": "8:15 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "8:30 AM",
+            "Hinman / Academic A": "8:45 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "9:00 AM",
+            "Hinman / Academic A": "9:15 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "9:30 AMAA",
+            "Hinman / Academic A": "9:45 AMAA"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "10:00 AM",
+            "Hinman / Academic A": "10:15 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "10:30 AM",
+            "Hinman / Academic A": "10:45 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "11:00 AM",
+            "Hinman / Academic A": "11:15 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "11:30 AM",
+            "Hinman / Academic A": "11:45 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "12:00 PMAA",
+            "Hinman / Academic A": "12:15 PMAA"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "12:30 PM",
+            "Hinman / Academic A": "12:45 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "1:00 PM",
+            "Hinman / Academic A": "1:15 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "1:30 PM",
+            "Hinman / Academic A": "1:45 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "2:00 PM",
+            "Hinman / Academic A": "2:15 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "2:30 PMAA",
+            "Hinman / Academic A": "2:45 PMAA"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "3:00 PM",
+            "Hinman / Academic A": "3:15 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "3:30 PM",
+            "Hinman / Academic A": "3:45 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "4:00 PMAA",
+            "Hinman / Academic A": "4:15 PMAA"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "4:30 PM",
+            "Hinman / Academic A": "4:45 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "5:00 PM",
+            "Hinman / Academic A": "5:15 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "5:15 PMAA",
+            "Hinman / Academic A": "5:30 PMAA"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "5:25 PM",
+            "Hinman / Academic A": "5:40 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "5:30 PM",
+            "Hinman / Academic A": "5:45 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "5:45 PM",
+            "Hinman / Academic A": "6:00 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "6:25 PM",
+            "Hinman / Academic A": "6:40 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "7:00 PM",
+            "Hinman / Academic A": "7:15 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "7:30 PM",
+            "Hinman / Academic A": "7:45 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Downtown Center": "8:15 PM",
+            "Hinman / Academic A": "8:30 PM"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "route": "Downtown Southside Outbound",
+    "url": "https://occtransport.org/pages/routes/ds-out.html",
+    "stops": [
+      "University Union",
+      "South Washington Street",
+      "Tremont Avenue",
+      "Livingston Street",
+      "Park Diner - High Street",
+      "Telegraph Street",
+      "Alfred Street",
+      "Tompkins St & Conklin Av",
+      "Jackson Street",
+      "Webster Street",
+      "Henry & Liberty Streets",
+      "Mirabito Stadium -Henry & Fayette Streets",
+      "BC Junction Bus Terminal -Henry & Chenango Streets",
+      "Henry & Water Streets",
+      "Hawley & Court Streets",
+      "University Downtown Center"
+    ],
+    "schedules": {
+      "weekday": [
+        {
+          "stop_times": {
+            "University Union": "10:05 AM",
+            "South Washington Street": "10:13 AM",
+            "Tremont Avenue": "10:16 AM",
+            "Livingston Street": "10:20 AM",
+            "Park Diner - High Street": "10:30 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "11:35 AM",
+            "South Washington Street": "11:43 AM",
+            "Tremont Avenue": "11:46 AM",
+            "Livingston Street": "11:50 AM",
+            "Park Diner - High Street": "12:00 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "12:35 PM",
+            "South Washington Street": "12:43 PM",
+            "Tremont Avenue": "12:46 PM",
+            "Livingston Street": "12:50 PM",
+            "Park Diner - High Street": "1:00 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "1:35 PM",
+            "South Washington Street": "1:43 PM",
+            "Tremont Avenue": "1:46 PM",
+            "Livingston Street": "1:50 PM",
+            "Park Diner - High Street": "2:00 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "2:40 PM",
+            "South Washington Street": "2:48 PM",
+            "Tremont Avenue": "2:51 PM",
+            "Livingston Street": "2:55 PM",
+            "Park Diner - High Street": "3:05 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "3:55 PM",
+            "South Washington Street": "4:03 PM",
+            "Tremont Avenue": "4:06 PM",
+            "Livingston Street": "4:10 PM",
+            "Park Diner - High Street": "4:20 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "5:25 PM",
+            "South Washington Street": "5:33 PM",
+            "Tremont Avenue": "5:36 PM",
+            "Livingston Street": "5:40 PM",
+            "Park Diner - High Street": "5:50 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "6:35 PM",
+            "South Washington Street": "6:43 PM",
+            "Tremont Avenue": "6:46 PM",
+            "Livingston Street": "6:50 PM",
+            "Park Diner - High Street": "7:00 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "7:30 PM",
+            "South Washington Street": "7:38 PM",
+            "Tremont Avenue": "7:41 PM",
+            "Livingston Street": "7:45 PM",
+            "Park Diner - High Street": "7:55 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "8:35 PM",
+            "South Washington Street": "8:43 PM",
+            "Tremont Avenue": "8:46 PM",
+            "Livingston Street": "8:50 PM",
+            "Park Diner - High Street": "9:00 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "9:20 PM",
+            "South Washington Street": "9:28 PM",
+            "Tremont Avenue": "9:31 PM",
+            "Livingston Street": "9:35 PM",
+            "Park Diner - High Street": "9:45 PM"
+          }
+        }
+      ],
+      "weekend": [
+        {
+          "stop_times": {
+            "University Union": "10:00 AM",
+            "South Washington Street": "10:08 AM",
+            "Tremont Avenue": "10:11 AM",
+            "Livingston Street": "10:15 AM",
+            "Park Diner - High Street": "10:20 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "11:55 AM",
+            "South Washington Street": "12:03 PM",
+            "Tremont Avenue": "12:06 PM",
+            "Livingston Street": "12:10 PM",
+            "Park Diner - High Street": "12:15 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "2:10 PM",
+            "South Washington Street": "2:18 PM",
+            "Tremont Avenue": "2:21 PM",
+            "Livingston Street": "2:25 PM",
+            "Park Diner - High Street": "2:30 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "3:45 PM",
+            "South Washington Street": "3:53 PM",
+            "Tremont Avenue": "3:56 PM",
+            "Livingston Street": "4:00 PM",
+            "Park Diner - High Street": "4:05 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "6:30 PM",
+            "South Washington Street": "6:38 PM",
+            "Tremont Avenue": "6:41 PM",
+            "Livingston Street": "6:45 PM",
+            "Park Diner - High Street": "6:50 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "8:15 PM",
+            "South Washington Street": "8:23 PM",
+            "Tremont Avenue": "8:26 PM",
+            "Livingston Street": "8:30 PM",
+            "Park Diner - High Street": "8:35 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "9:15 PM",
+            "South Washington Street": "9:23 PM",
+            "Tremont Avenue": "9:26 PM",
+            "Livingston Street": "9:30 PM",
+            "Park Diner - High Street": "9:35 PM"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "route": "Downtown Southside Inbound",
+    "url": "https://occtransport.org/pages/routes/ds-in.html",
+    "stops": [
+      "Visions Memorial Arena",
+      "Court & Hawley Streets",
+      "Henry & Water Streets",
+      "BC Junction Bus Terminal -Henry & Chenango Streets",
+      "Mirabito Stadium -Fayette & Henry Streets",
+      "Henry & Liberty Streets",
+      "Webster Street",
+      "Jackson Street",
+      "Tompkins St & Conklin Av",
+      "Alfred Street",
+      "Telegraph Street",
+      "Park Diner - High Street",
+      "Livingston Street",
+      "Tremont Avenue",
+      "South Washington Street",
+      "University Union"
+    ],
+    "schedules": {
+      "weekday": [
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "7:55 AM",
+            "Court & Hawley Streets": "7:58 AM",
+            "Henry & Water Streets": "8:05 AM",
+            "BC Junction Bus Terminal -Henry & Chenango Streets": "8:10 AM",
+            "Mirabito Stadium -Fayette & Henry Streets": "8:20 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "8:35 AM",
+            "Court & Hawley Streets": "8:38 AM",
+            "Henry & Water Streets": "8:45 AM",
+            "BC Junction Bus Terminal -Henry & Chenango Streets": "8:50 AM",
+            "Mirabito Stadium -Fayette & Henry Streets": "9:00 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "9:05 AM",
+            "Court & Hawley Streets": "9:08 AM",
+            "Henry & Water Streets": "9:15 AM",
+            "BC Junction Bus Terminal -Henry & Chenango Streets": "9:20 AM",
+            "Mirabito Stadium -Fayette & Henry Streets": "9:30 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "10:00 AM",
+            "Court & Hawley Streets": "10:03 AM",
+            "Henry & Water Streets": "10:10 AM",
+            "BC Junction Bus Terminal -Henry & Chenango Streets": "10:15 AM",
+            "Mirabito Stadium -Fayette & Henry Streets": "10:25 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "10:55 AM",
+            "Court & Hawley Streets": "10:58 AM",
+            "Henry & Water Streets": "11:05 AM",
+            "BC Junction Bus Terminal -Henry & Chenango Streets": "11:10 AM",
+            "Mirabito Stadium -Fayette & Henry Streets": "11:20 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "12:05 PM",
+            "Court & Hawley Streets": "12:08 PM",
+            "Henry & Water Streets": "12:15 PM",
+            "BC Junction Bus Terminal -Henry & Chenango Streets": "12:20 PM",
+            "Mirabito Stadium -Fayette & Henry Streets": "12:30 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "12:55 PMAA",
+            "Court & Hawley Streets": "12:58 PMAA",
+            "Henry & Water Streets": "1:05 PMAA",
+            "BC Junction Bus Terminal -Henry & Chenango Streets": "1:10 PMAA",
+            "Mirabito Stadium -Fayette & Henry Streets": "1:20 PMAA"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "1:45 PM",
+            "Court & Hawley Streets": "1:48 PM",
+            "Henry & Water Streets": "1:55 PM",
+            "BC Junction Bus Terminal -Henry & Chenango Streets": "2:00 PM",
+            "Mirabito Stadium -Fayette & Henry Streets": "2:10 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "2:45 PM",
+            "Court & Hawley Streets": "2:48 PM",
+            "Henry & Water Streets": "2:55 PM",
+            "BC Junction Bus Terminal -Henry & Chenango Streets": "3:00 PM",
+            "Mirabito Stadium -Fayette & Henry Streets": "3:10 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "4:08 PMAA",
+            "Court & Hawley Streets": "4:11 PMAA",
+            "Henry & Water Streets": "4:18 PMAA",
+            "BC Junction Bus Terminal -Henry & Chenango Streets": "4:23 PMAA",
+            "Mirabito Stadium -Fayette & Henry Streets": "4:33 PMAA"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "5:05 PMAA",
+            "Court & Hawley Streets": "5:08 PMAA",
+            "Henry & Water Streets": "5:15 PMAA",
+            "BC Junction Bus Terminal -Henry & Chenango Streets": "5:20 PMAA",
+            "Mirabito Stadium -Fayette & Henry Streets": "5:30 PMAA"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "6:10 PM",
+            "Court & Hawley Streets": "6:13 PM",
+            "Henry & Water Streets": "6:20 PM",
+            "BC Junction Bus Terminal -Henry & Chenango Streets": "6:25 PM",
+            "Mirabito Stadium -Fayette & Henry Streets": "6:35 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "7:10 PM",
+            "Court & Hawley Streets": "7:13 PM",
+            "Henry & Water Streets": "7:20 PM",
+            "BC Junction Bus Terminal -Henry & Chenango Streets": "7:25 PM",
+            "Mirabito Stadium -Fayette & Henry Streets": "7:35 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "8:10 PM",
+            "Court & Hawley Streets": "8:13 PM",
+            "Henry & Water Streets": "8:20 PM",
+            "BC Junction Bus Terminal -Henry & Chenango Streets": "8:25 PM",
+            "Mirabito Stadium -Fayette & Henry Streets": "8:35 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "9:10 PM",
+            "Court & Hawley Streets": "9:13 PM",
+            "Henry & Water Streets": "9:20 PM",
+            "BC Junction Bus Terminal -Henry & Chenango Streets": "9:25 PM",
+            "Mirabito Stadium -Fayette & Henry Streets": "9:35 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "10:10 PMM-T",
+            "Court & Hawley Streets": "10:13 PMM-T",
+            "Henry & Water Streets": "10:20 PMM-T",
+            "BC Junction Bus Terminal -Henry & Chenango Streets": "10:25 PMM-T",
+            "Mirabito Stadium -Fayette & Henry Streets": "10:35 PMM-T"
+          }
+        }
+      ],
+      "weekend": [
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "11:05 AM",
+            "Court & Hawley Streets": "11:08 AM",
+            "Henry & Water Streets": "11:15 AM",
+            "BC Junction Bus Terminal -Henry & Chenango Streets": "11:20 AM",
+            "Mirabito Stadium -Fayette & Henry Streets": "11:25 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "1:05 PM",
+            "Court & Hawley Streets": "1:08 PM",
+            "Henry & Water Streets": "1:15 PM",
+            "BC Junction Bus Terminal -Henry & Chenango Streets": "1:20 PM",
+            "Mirabito Stadium -Fayette & Henry Streets": "1:25 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "3:25 PM",
+            "Court & Hawley Streets": "3:28 PM",
+            "Henry & Water Streets": "3:35 PM",
+            "BC Junction Bus Terminal -Henry & Chenango Streets": "3:40 PM",
+            "Mirabito Stadium -Fayette & Henry Streets": "3:45 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "5:40 PM",
+            "Court & Hawley Streets": "5:43 PM",
+            "Henry & Water Streets": "5:50 PM",
+            "BC Junction Bus Terminal -Henry & Chenango Streets": "5:55 PM",
+            "Mirabito Stadium -Fayette & Henry Streets": "6:00 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Visions Memorial Arena": "8:25 PM",
+            "Court & Hawley Streets": "8:28 PM",
+            "Henry & Water Streets": "8:35 PM",
+            "BC Junction Bus Terminal -Henry & Chenango Streets": "8:40 PM",
+            "Mirabito Stadium -Fayette & Henry Streets": "8:45 PM"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "route": "Campus Shuttle",
+    "url": "https://occtransport.org/pages/routes/cs.html",
+    "stops": [
+      "Engineering Building",
+      "Mohawk",
+      "Decker Health Services(By Request Only)",
+      "Dickinson",
+      "Newing",
+      "Couper Administration",
+      "East Gym",
+      "Welcome Center",
+      "West Gym",
+      "McGuire / Physical Facilities",
+      "Clearview",
+      "Susquehanna",
+      "Hillside",
+      "Mountainview",
+      "Hinman / Academic A"
+    ],
+    "schedules": {
+      "weekday": [
+        {
+          "stop_times": {
+            "Engineering Building": "10:10 PM",
+            "Mohawk": "10:14 PM",
+            "Decker Health Services(By Request Only)": "10:16 PM",
+            "Dickinson": "10:18 PM",
+            "Newing": "10:23 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Engineering Building": "10:30 PMF",
+            "Mohawk": "10:34 PMF",
+            "Decker Health Services(By Request Only)": "10:36 PMF",
+            "Dickinson": "10:38 PMF",
+            "Newing": "10:43 PMF"
+          }
+        },
+        {
+          "stop_times": {
+            "Engineering Building": "10:35 PMM-T",
+            "Mohawk": "10:39 PMM-T",
+            "Decker Health Services(By Request Only)": "10:41 PMM-T",
+            "Dickinson": "10:43 PMM-T",
+            "Newing": "10:48 PMM-T"
+          }
+        },
+        {
+          "stop_times": {
+            "Engineering Building": "11:30 PM",
+            "Mohawk": "11:34 PM",
+            "Decker Health Services(By Request Only)": "11:36 PM",
+            "Dickinson": "11:38 PM",
+            "Newing": "11:43 PM"
+          }
+        }
+      ],
+      "weekend": [
+        {
+          "stop_times": {
+            "Engineering Building": "8:45 AM",
+            "Mohawk": "8:49 AM",
+            "Decker Health Services(By Request Only)": "8:51 AM",
+            "Dickinson": "8:53 AM",
+            "Newing": "8:58 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Engineering Building": "9:30 AM",
+            "Mohawk": "9:34 AM",
+            "Decker Health Services(By Request Only)": "9:36 AM",
+            "Dickinson": "9:38 AM",
+            "Newing": "9:43 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Engineering Building": "10:15 AM",
+            "Mohawk": "10:19 AM",
+            "Decker Health Services(By Request Only)": "10:21 AM",
+            "Dickinson": "10:23 AM",
+            "Newing": "10:28 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Engineering Building": "10:45 AM",
+            "Mohawk": "10:49 AM",
+            "Decker Health Services(By Request Only)": "10:51 AM",
+            "Dickinson": "10:53 AM",
+            "Newing": "10:58 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Engineering Building": "11:30 AM",
+            "Mohawk": "11:34 AM",
+            "Decker Health Services(By Request Only)": "11:36 AM",
+            "Dickinson": "11:38 AM",
+            "Newing": "11:43 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Engineering Building": "12:00 PM",
+            "Mohawk": "12:04 PM",
+            "Decker Health Services(By Request Only)": "12:06 PM",
+            "Dickinson": "12:08 PM",
+            "Newing": "12:13 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Engineering Building": "12:30 PM",
+            "Mohawk": "12:34 PM",
+            "Decker Health Services(By Request Only)": "12:36 PM",
+            "Dickinson": "12:38 PM",
+            "Newing": "12:43 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Engineering Building": "1:00 PM",
+            "Mohawk": "1:04 PM",
+            "Decker Health Services(By Request Only)": "1:06 PM",
+            "Dickinson": "1:08 PM",
+            "Newing": "1:13 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Engineering Building": "1:30 PM",
+            "Mohawk": "1:34 PM",
+            "Decker Health Services(By Request Only)": "1:36 PM",
+            "Dickinson": "1:38 PM",
+            "Newing": "1:43 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Engineering Building": "2:15 PM",
+            "Mohawk": "2:19 PM",
+            "Decker Health Services(By Request Only)": "2:21 PM",
+            "Dickinson": "2:23 PM",
+            "Newing": "2:28 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Engineering Building": "2:45 PM",
+            "Mohawk": "2:49 PM",
+            "Decker Health Services(By Request Only)": "2:51 PM",
+            "Dickinson": "2:53 PM",
+            "Newing": "2:58 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Engineering Building": "3:30 PM",
+            "Mohawk": "3:34 PM",
+            "Decker Health Services(By Request Only)": "3:36 PM",
+            "Dickinson": "3:38 PM",
+            "Newing": "3:43 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Engineering Building": "4:30 PM",
+            "Mohawk": "4:34 PM",
+            "Decker Health Services(By Request Only)": "4:36 PM",
+            "Dickinson": "4:38 PM",
+            "Newing": "4:43 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Engineering Building": "5:30 PM",
+            "Mohawk": "5:34 PM",
+            "Decker Health Services(By Request Only)": "5:36 PM",
+            "Dickinson": "5:38 PM",
+            "Newing": "5:43 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Engineering Building": "6:15 PM",
+            "Mohawk": "6:19 PM",
+            "Decker Health Services(By Request Only)": "6:21 PM",
+            "Dickinson": "6:23 PM",
+            "Newing": "6:28 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Engineering Building": "7:00 PM",
+            "Mohawk": "7:04 PM",
+            "Decker Health Services(By Request Only)": "7:06 PM",
+            "Dickinson": "7:08 PM",
+            "Newing": "7:13 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Engineering Building": "8:00 PM",
+            "Mohawk": "8:04 PM",
+            "Decker Health Services(By Request Only)": "8:06 PM",
+            "Dickinson": "8:08 PM",
+            "Newing": "8:13 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Engineering Building": "9:00 PM",
+            "Mohawk": "9:04 PM",
+            "Decker Health Services(By Request Only)": "9:06 PM",
+            "Dickinson": "9:08 PM",
+            "Newing": "9:13 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Engineering Building": "10:15 PM",
+            "Mohawk": "10:19 PM",
+            "Decker Health Services(By Request Only)": "10:21 PM",
+            "Dickinson": "10:23 PM",
+            "Newing": "10:28 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Engineering Building": "10:30 PMSa",
+            "Mohawk": "10:34 PMSa",
+            "Decker Health Services(By Request Only)": "10:36 PMSa",
+            "Dickinson": "10:38 PMSa",
+            "Newing": "10:43 PMSa"
+          }
+        },
+        {
+          "stop_times": {
+            "Engineering Building": "10:45 PMSu",
+            "Mohawk": "10:49 PMSu",
+            "Decker Health Services(By Request Only)": "10:51 PMSu",
+            "Dickinson": "10:53 PMSu",
+            "Newing": "10:58 PMSu"
+          }
+        },
+        {
+          "stop_times": {
+            "Engineering Building": "11:30 PM",
+            "Mohawk": "11:34 PM",
+            "Decker Health Services(By Request Only)": "11:36 PM",
+            "Dickinson": "11:38 PM",
+            "Newing": "11:43 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Engineering Building": "12:30 AMLN",
+            "Mohawk": "12:34 AMLN",
+            "Decker Health Services(By Request Only)": "12:36 AMLN",
+            "Dickinson": "12:38 AMLN",
+            "Newing": "12:43 AMLN"
+          }
+        },
+        {
+          "stop_times": {
+            "Engineering Building": "12:45 AMLN",
+            "Mohawk": "12:49 AMLN",
+            "Decker Health Services(By Request Only)": "12:51 AMLN",
+            "Dickinson": "12:53 AMLN",
+            "Newing": "12:58 AMLN"
+          }
+        },
+        {
+          "stop_times": {
+            "Engineering Building": "1:55 AMLN",
+            "Mohawk": "1:59 AMLN",
+            "Decker Health Services(By Request Only)": "2:01 AMLN",
+            "Dickinson": "2:03 AMLN",
+            "Newing": "2:08 AMLN"
+          }
+        },
+        {
+          "stop_times": {
+            "Engineering Building": "2:50 AMLN",
+            "Mohawk": "2:54 AMLN",
+            "Decker Health Services(By Request Only)": "2:56 AMLN",
+            "Dickinson": "2:58 AMLN",
+            "Newing": "3:03 AMLN"
+          }
+        },
+        {
+          "stop_times": {
+            "Engineering Building": "3:30 AMLN",
+            "Mohawk": "3:34 AMLN",
+            "Decker Health Services(By Request Only)": "3:36 AMLN",
+            "Dickinson": "3:38 AMLN",
+            "Newing": "3:43 AMLN"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "route": "UClub Shuttle",
+    "url": "https://occtransport.org/pages/routes/uc.html",
+    "stops": [
+      "Mohawk",
+      "Newing",
+      "Couper Administration",
+      "East Gym",
+      "UClub - University Plaza",
+      "Meadows",
+      "Hayes",
+      "Oxford Pl & Murray Hill Rd",
+      "Washington Dr & Lehigh Av",
+      "University Union"
+    ],
+    "schedules": {
+      "weekday": [
+        {
+          "stop_times": {
+            "Mohawk": "8:45 AM",
+            "Newing": "8:50 AM",
+            "Couper Administration": "8:54 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "9:15 AM",
+            "Newing": "9:20 AM",
+            "Couper Administration": "9:24 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "9:40 AM",
+            "Newing": "9:45 AM",
+            "Couper Administration": "9:49 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "10:50 AM",
+            "Newing": "10:55 AM",
+            "Couper Administration": "10:59 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "4:40 PM",
+            "Newing": "4:45 PM",
+            "Couper Administration": "4:49 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "5:15 PM",
+            "Newing": "5:20 PM",
+            "Couper Administration": "5:24 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "5:45 PM",
+            "Newing": "5:50 PM",
+            "Couper Administration": "5:54 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "10:10 PM",
+            "Newing": "10:15 PM",
+            "Couper Administration": "10:19 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "10:35 PMM-T",
+            "Newing": "10:40 PMM-T",
+            "Couper Administration": "10:44 PMM-T"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "10:45 PMF",
+            "Newing": "10:50 PMF",
+            "Couper Administration": "10:54 PMF"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "11:15 PMF",
+            "Newing": "11:20 PMF",
+            "Couper Administration": "11:24 PMF"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "11:30 PMM-T",
+            "Newing": "11:35 PMM-T",
+            "Couper Administration": "11:39 PMM-T"
+          }
+        }
+      ],
+      "weekend": [
+        {
+          "stop_times": {
+            "Mohawk": "9:00 AM",
+            "Newing": "9:05 AM",
+            "Couper Administration": "9:09 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "9:45 AM",
+            "Newing": "9:50 AM",
+            "Couper Administration": "9:54 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "10:30 AM",
+            "Newing": "10:35 AM",
+            "Couper Administration": "10:39 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "11:00 AM",
+            "Newing": "11:05 AM",
+            "Couper Administration": "11:09 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "11:45 AM",
+            "Newing": "11:50 AM",
+            "Couper Administration": "11:54 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "12:15 PM",
+            "Newing": "12:20 PM",
+            "Couper Administration": "12:24 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "12:45 PM",
+            "Newing": "12:50 PM",
+            "Couper Administration": "12:54 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "1:15 PM",
+            "Newing": "1:20 PM",
+            "Couper Administration": "1:24 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "2:00 PM",
+            "Newing": "2:05 PM",
+            "Couper Administration": "2:09 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "2:30 PM",
+            "Newing": "2:35 PM",
+            "Couper Administration": "2:39 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "3:15 PM",
+            "Newing": "3:20 PM",
+            "Couper Administration": "3:24 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "4:15 PM",
+            "Newing": "4:20 PM",
+            "Couper Administration": "4:24 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "5:15 PM",
+            "Newing": "5:20 PM",
+            "Couper Administration": "5:24 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "6:00 PM",
+            "Newing": "6:05 PM",
+            "Couper Administration": "6:09 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "6:45 PM",
+            "Newing": "6:50 PM",
+            "Couper Administration": "6:54 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "7:45 PM",
+            "Newing": "7:50 PM",
+            "Couper Administration": "7:54 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "8:45 PM",
+            "Newing": "8:50 PM",
+            "Couper Administration": "8:54 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "10:00 PM",
+            "Newing": "10:05 PM",
+            "Couper Administration": "10:09 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "10:30 PMSu",
+            "Newing": "10:35 PMSu",
+            "Couper Administration": "10:39 PMSu"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "10:45 PMSa",
+            "Newing": "10:50 PMSa",
+            "Couper Administration": "10:54 PMSa"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "11:15 PM",
+            "Newing": "11:20 PM",
+            "Couper Administration": "11:24 PM"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "route": "ITC-UClub Shuttle",
+    "url": "https://occtransport.org/pages/routes/iu.html",
+    "stops": [
+      "Mohawk",
+      "Newing",
+      "Couper Administration",
+      "East Gym",
+      "Innovative Technologies Complex (ITC)",
+      "UClub - University Plaza",
+      "Meadows",
+      "Hayes",
+      "Oxford Pl & Murray Hill Rd",
+      "Washington Dr & Lehigh Av",
+      "University Union"
+    ],
+    "schedules": {
+      "weekday": [
+        {
+          "stop_times": {
+            "Mohawk": "7:30 AM",
+            "Newing": "7:35 AM",
+            "Couper Administration": "7:40 AM",
+            "East Gym": "7:42 AM",
+            "Innovative Technologies Complex (ITC)": "7:52 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "7:40 AM",
+            "Newing": "7:45 AM",
+            "Couper Administration": "7:50 AM",
+            "East Gym": "7:52 AM",
+            "Innovative Technologies Complex (ITC)": "8:02 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "8:00 AM",
+            "Newing": "8:05 AM",
+            "Couper Administration": "8:10 AM",
+            "East Gym": "8:12 AM",
+            "Innovative Technologies Complex (ITC)": "8:22 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "8:30 AM",
+            "Newing": "8:35 AM",
+            "Couper Administration": "8:40 AM",
+            "East Gym": "8:42 AM",
+            "Innovative Technologies Complex (ITC)": "8:52 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "9:00 AM",
+            "Newing": "9:05 AM",
+            "Couper Administration": "9:10 AM",
+            "East Gym": "9:12 AM",
+            "Innovative Technologies Complex (ITC)": "9:22 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "9:30 AM",
+            "Newing": "9:35 AM",
+            "Couper Administration": "9:40 AM",
+            "East Gym": "9:42 AM",
+            "Innovative Technologies Complex (ITC)": "9:52 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "10:00 AM",
+            "Newing": "10:05 AM",
+            "Couper Administration": "10:10 AM",
+            "East Gym": "10:12 AM",
+            "Innovative Technologies Complex (ITC)": "10:22 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "10:30 AM",
+            "Newing": "10:35 AM",
+            "Couper Administration": "10:40 AM",
+            "East Gym": "10:42 AM",
+            "Innovative Technologies Complex (ITC)": "10:52 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "11:00 AM",
+            "Newing": "11:05 AM",
+            "Couper Administration": "11:10 AM",
+            "East Gym": "11:12 AM",
+            "Innovative Technologies Complex (ITC)": "11:22 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "11:30 AM",
+            "Newing": "11:35 AM",
+            "Couper Administration": "11:40 AM",
+            "East Gym": "11:42 AM",
+            "Innovative Technologies Complex (ITC)": "11:52 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "12:00 PM",
+            "Newing": "12:05 PM",
+            "Couper Administration": "12:10 PM",
+            "East Gym": "12:12 PM",
+            "Innovative Technologies Complex (ITC)": "12:22 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "12:30 PM",
+            "Newing": "12:35 PM",
+            "Couper Administration": "12:40 PM",
+            "East Gym": "12:42 PM",
+            "Innovative Technologies Complex (ITC)": "12:52 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "1:00 PM",
+            "Newing": "1:05 PM",
+            "Couper Administration": "1:10 PM",
+            "East Gym": "1:12 PM",
+            "Innovative Technologies Complex (ITC)": "1:22 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "1:30 PM",
+            "Newing": "1:35 PM",
+            "Couper Administration": "1:40 PM",
+            "East Gym": "1:42 PM",
+            "Innovative Technologies Complex (ITC)": "1:52 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "2:00 PM",
+            "Newing": "2:05 PM",
+            "Couper Administration": "2:10 PM",
+            "East Gym": "2:12 PM",
+            "Innovative Technologies Complex (ITC)": "2:22 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "2:30 PM",
+            "Newing": "2:35 PM",
+            "Couper Administration": "2:40 PM",
+            "East Gym": "2:42 PM",
+            "Innovative Technologies Complex (ITC)": "2:52 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "3:00 PM",
+            "Newing": "3:05 PM",
+            "Couper Administration": "3:10 PM",
+            "East Gym": "3:12 PM",
+            "Innovative Technologies Complex (ITC)": "3:22 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "3:30 PM",
+            "Newing": "3:35 PM",
+            "Couper Administration": "3:40 PM",
+            "East Gym": "3:42 PM",
+            "Innovative Technologies Complex (ITC)": "3:52 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "4:00 PM",
+            "Newing": "4:05 PM",
+            "Couper Administration": "4:10 PM",
+            "East Gym": "4:12 PM",
+            "Innovative Technologies Complex (ITC)": "4:22 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "4:30 PM",
+            "Newing": "4:35 PM",
+            "Couper Administration": "4:40 PM",
+            "East Gym": "4:42 PM",
+            "Innovative Technologies Complex (ITC)": "4:52 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "5:00 PM",
+            "Newing": "5:05 PM",
+            "Couper Administration": "5:10 PM",
+            "East Gym": "5:12 PM",
+            "Innovative Technologies Complex (ITC)": "5:22 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "5:30 PM",
+            "Newing": "5:35 PM",
+            "Couper Administration": "5:40 PM",
+            "East Gym": "5:42 PM",
+            "Innovative Technologies Complex (ITC)": "5:52 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "6:00 PM",
+            "Newing": "6:05 PM",
+            "Couper Administration": "6:10 PM",
+            "East Gym": "6:12 PM",
+            "Innovative Technologies Complex (ITC)": "6:22 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "6:30 PM",
+            "Newing": "6:35 PM",
+            "Couper Administration": "6:40 PM",
+            "East Gym": "6:42 PM",
+            "Innovative Technologies Complex (ITC)": "6:52 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "7:00 PM",
+            "Newing": "7:05 PM",
+            "Couper Administration": "7:10 PM",
+            "East Gym": "7:12 PM",
+            "Innovative Technologies Complex (ITC)": "7:22 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "7:30 PM",
+            "Newing": "7:35 PM",
+            "Couper Administration": "7:40 PM",
+            "East Gym": "7:42 PM",
+            "Innovative Technologies Complex (ITC)": "7:52 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "8:00 PM",
+            "Newing": "8:05 PM",
+            "Couper Administration": "8:10 PM",
+            "East Gym": "8:12 PM",
+            "Innovative Technologies Complex (ITC)": "8:22 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "8:30 PM",
+            "Newing": "8:35 PM",
+            "Couper Administration": "8:40 PM",
+            "East Gym": "8:42 PM",
+            "Innovative Technologies Complex (ITC)": "8:52 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "9:00 PM",
+            "Newing": "9:05 PM",
+            "Couper Administration": "9:10 PM",
+            "East Gym": "9:12 PM",
+            "Innovative Technologies Complex (ITC)": "9:22 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "9:30 PM",
+            "Newing": "9:35 PM",
+            "Couper Administration": "9:40 PM",
+            "East Gym": "9:42 PM",
+            "Innovative Technologies Complex (ITC)": "9:52 PM"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "route": "Vestal Shopping Shuttle",
+    "url": "https://occtransport.org/pages/routes/vs.html",
+    "stops": [
+      "University Union",
+      "Physical Facilities (Outbound)",
+      "Bunn Hill/Bunn Hill Access Rd (Outbound)",
+      "Chuck E Cheese / Vestal Parkway",
+      "Riviera Ridge Stop #1",
+      "Riviera Ridge Stop #2",
+      "Hollybrook",
+      "Burris Rd & Rano Blvd",
+      "Target / Parkway Plaza",
+      "Barnes & Noble /Town Square Mall Stop #1",
+      "Walmart /Town Square Mall Stop #2",
+      "The Shoppes at Vestal",
+      "Rail Trail",
+      "Willow Point",
+      "Westminster Gardens",
+      "Campus Plaza",
+      "Bunn Hill/Bunn Hill Access Rd (Inbound)",
+      "Physical Facilities (Inbound)",
+      "Hinman / Academic A",
+      "University Union"
+    ],
+    "schedules": {
+      "weekday": [
+        {
+          "stop_times": {
+            "University Union": "12:00 PM",
+            "Physical Facilities (Outbound)": "12:09 PM",
+            "Bunn Hill/Bunn Hill Access Rd (Outbound)": "12:15 PM",
+            "Chuck E Cheese / Vestal Parkway": "12:20 PM",
+            "Riviera Ridge Stop #1": "12:40 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "1:00 PM",
+            "Physical Facilities (Outbound)": "1:09 PM",
+            "Bunn Hill/Bunn Hill Access Rd (Outbound)": "1:15 PM",
+            "Chuck E Cheese / Vestal Parkway": "1:20 PM",
+            "Riviera Ridge Stop #1": "1:40 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "2:00 PM",
+            "Physical Facilities (Outbound)": "2:09 PM",
+            "Bunn Hill/Bunn Hill Access Rd (Outbound)": "2:15 PM",
+            "Chuck E Cheese / Vestal Parkway": "2:20 PM",
+            "Riviera Ridge Stop #1": "2:40 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "3:00 PM",
+            "Physical Facilities (Outbound)": "3:09 PM",
+            "Bunn Hill/Bunn Hill Access Rd (Outbound)": "3:15 PM",
+            "Chuck E Cheese / Vestal Parkway": "3:20 PM",
+            "Riviera Ridge Stop #1": "3:40 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "4:00 PM",
+            "Physical Facilities (Outbound)": "4:09 PM",
+            "Bunn Hill/Bunn Hill Access Rd (Outbound)": "4:15 PM",
+            "Chuck E Cheese / Vestal Parkway": "4:20 PM",
+            "Riviera Ridge Stop #1": "4:40 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "5:00 PM",
+            "Physical Facilities (Outbound)": "5:09 PM",
+            "Bunn Hill/Bunn Hill Access Rd (Outbound)": "5:15 PM",
+            "Chuck E Cheese / Vestal Parkway": "5:20 PM",
+            "Riviera Ridge Stop #1": "5:40 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "6:00 PM",
+            "Physical Facilities (Outbound)": "6:09 PM",
+            "Bunn Hill/Bunn Hill Access Rd (Outbound)": "6:15 PM",
+            "Chuck E Cheese / Vestal Parkway": "6:20 PM",
+            "Riviera Ridge Stop #1": "6:40 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "7:00 PM",
+            "Physical Facilities (Outbound)": "7:09 PM",
+            "Bunn Hill/Bunn Hill Access Rd (Outbound)": "7:10 PM",
+            "Chuck E Cheese / Vestal Parkway": "7:20 PM",
+            "Riviera Ridge Stop #1": "7:40 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "8:00 PM",
+            "Physical Facilities (Outbound)": "8:09 PM",
+            "Bunn Hill/Bunn Hill Access Rd (Outbound)": "8:10 PM",
+            "Chuck E Cheese / Vestal Parkway": "8:20 PM",
+            "Riviera Ridge Stop #1": "8:40 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "9:00 PM",
+            "Physical Facilities (Outbound)": "9:09 PM",
+            "Bunn Hill/Bunn Hill Access Rd (Outbound)": "9:10 PM",
+            "Chuck E Cheese / Vestal Parkway": "9:20 PM",
+            "Riviera Ridge Stop #1": "9:40 PM"
+          }
+        }
+      ],
+      "weekend": [
+        {
+          "stop_times": {
+            "University Union": "10:00 AM",
+            "Physical Facilities (Outbound)": "10:09 AM",
+            "Bunn Hill/Bunn Hill Access Rd (Outbound)": "10:15 AM",
+            "Chuck E Cheese / Vestal Parkway": "10:20 AM",
+            "Riviera Ridge Stop #1": "10:40 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "10:45 AM",
+            "Physical Facilities (Outbound)": "10:54 AM",
+            "Bunn Hill/Bunn Hill Access Rd (Outbound)": "11:00 AM",
+            "Chuck E Cheese / Vestal Parkway": "11:05 AM",
+            "Riviera Ridge Stop #1": "11:25 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "11:30 AM",
+            "Physical Facilities (Outbound)": "11:39 AM",
+            "Bunn Hill/Bunn Hill Access Rd (Outbound)": "11:45 AM",
+            "Chuck E Cheese / Vestal Parkway": "11:50 AM",
+            "Riviera Ridge Stop #1": "12:10 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "12:15 PM",
+            "Physical Facilities (Outbound)": "12:24 PM",
+            "Bunn Hill/Bunn Hill Access Rd (Outbound)": "12:30 PM",
+            "Chuck E Cheese / Vestal Parkway": "12:35 PM",
+            "Riviera Ridge Stop #1": "12:55 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "1:00 PM",
+            "Physical Facilities (Outbound)": "1:09 PM",
+            "Bunn Hill/Bunn Hill Access Rd (Outbound)": "1:15 PM",
+            "Chuck E Cheese / Vestal Parkway": "1:20 PM",
+            "Riviera Ridge Stop #1": "1:40 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "1:45 PM",
+            "Physical Facilities (Outbound)": "1:54 PM",
+            "Bunn Hill/Bunn Hill Access Rd (Outbound)": "2:00 PM",
+            "Chuck E Cheese / Vestal Parkway": "2:05 PM",
+            "Riviera Ridge Stop #1": "2:25 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "2:30 PM",
+            "Physical Facilities (Outbound)": "2:39 PM",
+            "Bunn Hill/Bunn Hill Access Rd (Outbound)": "2:45 PM",
+            "Chuck E Cheese / Vestal Parkway": "2:50 PM",
+            "Riviera Ridge Stop #1": "3:10 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "3:15 PM",
+            "Physical Facilities (Outbound)": "3:24 PM",
+            "Bunn Hill/Bunn Hill Access Rd (Outbound)": "3:30 PM",
+            "Chuck E Cheese / Vestal Parkway": "3:35 PM",
+            "Riviera Ridge Stop #1": "3:55 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "4:00 PM",
+            "Physical Facilities (Outbound)": "4:09 PM",
+            "Bunn Hill/Bunn Hill Access Rd (Outbound)": "4:15 PM",
+            "Chuck E Cheese / Vestal Parkway": "4:20 PM",
+            "Riviera Ridge Stop #1": "4:40 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "4:45 PM",
+            "Physical Facilities (Outbound)": "4:54 PM",
+            "Bunn Hill/Bunn Hill Access Rd (Outbound)": "5:00 PM",
+            "Chuck E Cheese / Vestal Parkway": "5:05 PM",
+            "Riviera Ridge Stop #1": "5:25 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "5:30 PM",
+            "Physical Facilities (Outbound)": "5:39 PM",
+            "Bunn Hill/Bunn Hill Access Rd (Outbound)": "5:45 PM",
+            "Chuck E Cheese / Vestal Parkway": "5:50 PM",
+            "Riviera Ridge Stop #1": "6:10 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "6:15 PM",
+            "Physical Facilities (Outbound)": "6:24 PM",
+            "Bunn Hill/Bunn Hill Access Rd (Outbound)": "6:30 PM",
+            "Chuck E Cheese / Vestal Parkway": "6:35 PM",
+            "Riviera Ridge Stop #1": "6:55 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "7:00 PM",
+            "Physical Facilities (Outbound)": "7:09 PM",
+            "Bunn Hill/Bunn Hill Access Rd (Outbound)": "7:15 PM",
+            "Chuck E Cheese / Vestal Parkway": "7:20 PM",
+            "Riviera Ridge Stop #1": "7:40 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "7:45 PM",
+            "Physical Facilities (Outbound)": "7:54 PM",
+            "Bunn Hill/Bunn Hill Access Rd (Outbound)": "8:00 PM",
+            "Chuck E Cheese / Vestal Parkway": "8:05 PM",
+            "Riviera Ridge Stop #1": "8:25 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "8:30 PM",
+            "Physical Facilities (Outbound)": "8:39 PM",
+            "Bunn Hill/Bunn Hill Access Rd (Outbound)": "8:45 PM",
+            "Chuck E Cheese / Vestal Parkway": "8:50 PM",
+            "Riviera Ridge Stop #1": "9:10 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "9:15 PM",
+            "Physical Facilities (Outbound)": "9:24 PM",
+            "Bunn Hill/Bunn Hill Access Rd (Outbound)": "9:30 PM",
+            "Chuck E Cheese / Vestal Parkway": "9:35 PM",
+            "Riviera Ridge Stop #1": "9:55 PM"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "route": "Oakdale Commons Shuttle",
+    "url": "https://occtransport.org/pages/routes/oc.html",
+    "stops": [
+      "The Union",
+      "Physical Facilities",
+      "Bunn Hill/Bunn Hill Access Rd",
+      "Aldi",
+      "Oakdale Commons",
+      "Wegmans",
+      "Hinman / Academic A",
+      "University Union"
+    ],
+    "schedules": {
+      "weekday": [
+        {
+          "stop_times": {
+            "The Union": "2:30 PM",
+            "Physical Facilities": "2:38 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "2:43 PM",
+            "Aldi": "2:47 PM",
+            "Oakdale Commons": "3:00 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "The Union": "4:30 PM",
+            "Physical Facilities": "4:38 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "4:43 PM",
+            "Aldi": "4:47 PM",
+            "Oakdale Commons": "5:00 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "The Union": "6:30 PM",
+            "Physical Facilities": "6:38 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "6:43 PM",
+            "Aldi": "6:47 PM",
+            "Oakdale Commons": "7:00 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "The Union": "8:25 PM",
+            "Physical Facilities": "8:33 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "8:38 PM",
+            "Aldi": "8:42 PM",
+            "Oakdale Commons": "8:55 PM"
+          }
+        }
+      ],
+      "weekend": [
+        {
+          "stop_times": {
+            "The Union": "11:25 AM",
+            "Physical Facilities": "11:33 AM",
+            "Bunn Hill/Bunn Hill Access Rd": "11:38 AM",
+            "Aldi": "11:42 AM",
+            "Oakdale Commons": "11:55 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "The Union": "1:30 PM",
+            "Physical Facilities": "1:38 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "1:43 PM",
+            "Aldi": "1:47 PM",
+            "Oakdale Commons": "2:00 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "The Union": "3:45 PM",
+            "Physical Facilities": "3:53 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "3:58 PM",
+            "Aldi": "4:02 PM",
+            "Oakdale Commons": "4:15 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "The Union": "5:45 PM",
+            "Physical Facilities": "5:53 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "5:58 PM",
+            "Aldi": "6:02 PM",
+            "Oakdale Commons": "6:15 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "The Union": "7:55 PM",
+            "Physical Facilities": "8:03 PM",
+            "Bunn Hill/Bunn Hill Access Rd": "8:08 PM",
+            "Aldi": "8:12 PM",
+            "Oakdale Commons": "8:25 PM"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "route": "ITC-Campus Shuttle",
+    "url": "https://occtransport.org/pages/routes/ics.html",
+    "stops": [
+      "Mohawk",
+      "Newing",
+      "Couper Administration",
+      "East Gym",
+      "Innovative Technologies Complex (ITC)",
+      "West Gym",
+      "McGuire / Physical Facilities",
+      "Clearview",
+      "Susquehanna",
+      "Hillside",
+      "Mountainview",
+      "Hinman / Academic A",
+      "Mohawk"
+    ],
+    "schedules": {
+      "weekday": [
+        {
+          "stop_times": {
+            "Mohawk": "8:00 AM",
+            "Newing": "8:05 AM",
+            "Couper Administration": "8:12 AM",
+            "East Gym": "8:18 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "8:30 AM",
+            "Newing": "8:35 AM",
+            "Couper Administration": "8:42 AM",
+            "East Gym": "8:48 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "9:00 AM",
+            "Newing": "9:05 AM",
+            "Couper Administration": "9:12 AM",
+            "East Gym": "9:18 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "9:30 AM",
+            "Newing": "9:35 AM",
+            "Couper Administration": "9:42 AM",
+            "East Gym": "9:48 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "10:00 AM",
+            "Newing": "10:05 AM",
+            "Couper Administration": "10:12 AM",
+            "East Gym": "10:18 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "10:30 AM",
+            "Newing": "10:35 AM",
+            "Couper Administration": "10:42 AM",
+            "East Gym": "10:48 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "11:00 AM",
+            "Newing": "11:05 AM",
+            "Couper Administration": "11:12 AM",
+            "East Gym": "11:18 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "11:30 AM",
+            "Newing": "11:35 AM",
+            "Couper Administration": "11:42 AM",
+            "East Gym": "11:48 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "12:00 PM",
+            "Newing": "12:05 PM",
+            "Couper Administration": "12:12 PM",
+            "East Gym": "12:18 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "12:30 PM",
+            "Newing": "12:35 PM",
+            "Couper Administration": "12:42 PM",
+            "East Gym": "12:48 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "1:00 PM",
+            "Newing": "1:05 PM",
+            "Couper Administration": "1:12 PM",
+            "East Gym": "1:18 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "1:30 PM",
+            "Newing": "1:35 PM",
+            "Couper Administration": "1:42 PM",
+            "East Gym": "1:48 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "2:00 PM",
+            "Newing": "2:05 PM",
+            "Couper Administration": "2:12 PM",
+            "East Gym": "2:18 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "2:30 PM",
+            "Newing": "2:35 PM",
+            "Couper Administration": "2:42 PM",
+            "East Gym": "2:48 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "3:00 PM",
+            "Newing": "3:05 PM",
+            "Couper Administration": "3:12 PM",
+            "East Gym": "3:18 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "3:30 PM",
+            "Newing": "3:35 PM",
+            "Couper Administration": "3:42 PM",
+            "East Gym": "3:48 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "4:00 PM",
+            "Newing": "4:05 PM",
+            "Couper Administration": "4:12 PM",
+            "East Gym": "4:18 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "4:30 PM",
+            "Newing": "4:35 PM",
+            "Couper Administration": "4:42 PM",
+            "East Gym": "4:48 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "5:00 PM",
+            "Newing": "5:05 PM",
+            "Couper Administration": "5:12 PM",
+            "East Gym": "5:18 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "Mohawk": "5:30 PM",
+            "Newing": "5:35 PM",
+            "Couper Administration": "5:42 PM",
+            "East Gym": "5:48 PM"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "route": "Downtown Express",
+    "url": "https://occtransport.org/pages/routes/de-b1.html",
+    "stops": [
+      "University Union",
+      "Hayes",
+      "Meadows",
+      "UClub / University Plaza",
+      "Downtown - State & Hawley Streets",
+      "Hinman / Academic A",
+      "University Union"
+    ],
+    "schedules": {
+      "weekday": [
+        {
+          "stop_times": {
+            "University Union": "9:30\u202fPM",
+            "Hayes": "9:35\u202fPM",
+            "Meadows": "9:45\u202fPM",
+            "UClub / University Plaza": "10:00\u202fPM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "9:45\u202fPM",
+            "Hayes": "9:50\u202fPM",
+            "Meadows": "10:00\u202fPM",
+            "UClub / University Plaza": "10:15\u202fPM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "10:00\u202fPM",
+            "Hayes": "10:05\u202fPM",
+            "Meadows": "10:15\u202fPM",
+            "UClub / University Plaza": "10:30\u202fPM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "10:15\u202fPM",
+            "Hayes": "10:20\u202fPM",
+            "Meadows": "10:30\u202fPM",
+            "UClub / University Plaza": "10:45\u202fPM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "10:30\u202fPM",
+            "Hayes": "10:35\u202fPM",
+            "Meadows": "10:45\u202fPM",
+            "UClub / University Plaza": "11:00\u202fPM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "10:45 PM",
+            "Hayes": "10:50 PM",
+            "Meadows": "11:00\u202fPM",
+            "UClub / University Plaza": "11:15\u202fPM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "11:00 PM",
+            "Hayes": "11:05 PM",
+            "Meadows": "11:15\u202fPM",
+            "UClub / University Plaza": "11:30\u202fPM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "11:15\u202fPM",
+            "Hayes": "11:20\u202fPM",
+            "Meadows": "11:30\u202fPM",
+            "UClub / University Plaza": "11:45\u202fPM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "11:30 PM",
+            "Hayes": "11:35 PM",
+            "Meadows": "11:45\u202fPM",
+            "UClub / University Plaza": "12:00\u202fAM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "11:45 PM",
+            "Hayes": "11:50 PM",
+            "Meadows": "12:00\u202fAM",
+            "UClub / University Plaza": "12:15\u202fAM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "12:00 AM",
+            "Hayes": "12:05 AM",
+            "Meadows": "12:15\u202fAM",
+            "UClub / University Plaza": "12:30\u202fAM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "12:15 AM",
+            "Hayes": "12:20 AM",
+            "Meadows": "12:30\u202fAM",
+            "UClub / University Plaza": "12:45\u202fAM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "12:30 AM",
+            "Hayes": "12:35 AM",
+            "Meadows": "12:45\u202fAM",
+            "UClub / University Plaza": "1:00\u202fAM"
+          }
+        }
+      ],
+      "weekend": [
+        {
+          "stop_times": {
+            "University Union": "9:45 PM",
+            "Hayes": "9:50 PM",
+            "Meadows": "10:00\u202fPM",
+            "UClub / University Plaza": "10:15 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "10:00\u202fPM",
+            "Hayes": "10:05\u202fPM",
+            "Meadows": "10:15\u202fPM",
+            "UClub / University Plaza": "10:30\u202fPM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "10:15 PM",
+            "Hayes": "10:20 PM",
+            "Meadows": "10:30\u202fPM",
+            "UClub / University Plaza": "10:45 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "10:30\u202fPM",
+            "Hayes": "10:35\u202fPM",
+            "Meadows": "10:45\u202fPM",
+            "UClub / University Plaza": "11:00\u202fPM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "10:45 PM",
+            "Hayes": "10:50 PM",
+            "Meadows": "11:00\u202fPM",
+            "UClub / University Plaza": "11:15 PM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "11:00\u202fPM",
+            "Hayes": "11:05\u202fPM",
+            "Meadows": "11:15\u202fPM",
+            "UClub / University Plaza": "11:30\u202fPM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "11:15\u202fPM",
+            "Hayes": "11:20\u202fPM",
+            "Meadows": "11:30\u202fPM",
+            "UClub / University Plaza": "11:45\u202fPM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "11:30 PM",
+            "Hayes": "11:35 PM",
+            "Meadows": "11:45\u202fPM",
+            "UClub / University Plaza": "12:00 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "11:45\u202fPM",
+            "Hayes": "11:50\u202fPM",
+            "Meadows": "12:00\u202fAM",
+            "UClub / University Plaza": "12:15\u202fAM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "12:00 AM",
+            "Hayes": "12:05 AM",
+            "Meadows": "12:15\u202fAM",
+            "UClub / University Plaza": "12:30 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "12:15\u202fAM",
+            "Hayes": "12:20\u202fAM",
+            "Meadows": "12:30\u202fAM",
+            "UClub / University Plaza": "12:45\u202fAM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "12:30\u202fAM",
+            "Hayes": "12:35\u202fAM",
+            "Meadows": "12:45\u202fAM",
+            "UClub / University Plaza": "1:00\u202fAM"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "route": "Downtown Express",
+    "url": "https://occtransport.org/pages/routes/de-a1.html",
+    "stops": [
+      "University Union",
+      "Downtown - State & Hawley Streets",
+      "UClub / University Plaza",
+      "Hinman / Academic A",
+      "University Union"
+    ],
+    "schedules": {
+      "weekday": [
+        {
+          "stop_times": {
+            "University Union": "1:00 AM",
+            "Downtown - State & Hawley Streets": "1:15\u202fAM",
+            "UClub / University Plaza": "1:20\u202fAM",
+            "Hinman / Academic A": "1:30\u202fAM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "1:30 AM",
+            "Downtown - State & Hawley Streets": "1:45\u202fAM",
+            "UClub / University Plaza": "1:50\u202fAM",
+            "Hinman / Academic A": "2:00\u202fAM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "1:45 AM",
+            "Downtown - State & Hawley Streets": "2:00\u202fAM",
+            "UClub / University Plaza": "2:05\u202fAM",
+            "Hinman / Academic A": "2:15\u202fAM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "2:00 AM",
+            "Downtown - State & Hawley Streets": "2:15\u202fAM",
+            "UClub / University Plaza": "2:20\u202fAM",
+            "Hinman / Academic A": "2:30\u202fAM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "2:15 AM",
+            "Downtown - State & Hawley Streets": "2:30\u202fAM",
+            "UClub / University Plaza": "2:35\u202fAM",
+            "Hinman / Academic A": "2:45\u202fAM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "2:30 AM",
+            "Downtown - State & Hawley Streets": "2:45\u202fAM",
+            "UClub / University Plaza": "2:50\u202fAM",
+            "Hinman / Academic A": "3:00\u202fAM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "2:45 AM",
+            "Downtown - State & Hawley Streets": "3:00\u202fAM",
+            "UClub / University Plaza": "3:05\u202fAM",
+            "Hinman / Academic A": "3:15\u202fAM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "3:00 AM",
+            "Downtown - State & Hawley Streets": "3:15\u202fAM",
+            "UClub / University Plaza": "3:20\u202fAM",
+            "Hinman / Academic A": "3:30\u202fAM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "3:15 AM",
+            "Downtown - State & Hawley Streets": "3:30\u202fAM",
+            "UClub / University Plaza": "3:35\u202fAM",
+            "Hinman / Academic A": "3:45\u202fAM"
+          }
+        }
+      ],
+      "weekend": [
+        {
+          "stop_times": {
+            "University Union": "1:00\u202fAM",
+            "Downtown - State & Hawley Streets": "1:15\u202fAM",
+            "UClub / University Plaza": "1:20\u202fAM",
+            "Hinman / Academic A": "1:30\u202fAM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "1:15\u202fAM",
+            "Downtown - State & Hawley Streets": "1:30\u202fAM",
+            "UClub / University Plaza": "1:35\u202fAM",
+            "Hinman / Academic A": "1:45\u202fAM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "1:45\u202fAM",
+            "Downtown - State & Hawley Streets": "2:00\u202fAM",
+            "UClub / University Plaza": "2:05\u202fAM",
+            "Hinman / Academic A": "2:15\u202fAM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "2:15\u202fAM",
+            "Downtown - State & Hawley Streets": "2:30\u202fAM",
+            "UClub / University Plaza": "2:35\u202fAM",
+            "Hinman / Academic A": "2:45\u202fAM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "2:45\u202fAM",
+            "Downtown - State & Hawley Streets": "3:00\u202fAM",
+            "UClub / University Plaza": "3:05\u202fAM",
+            "Hinman / Academic A": "3:15\u202fAM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "3:00 AM",
+            "Downtown - State & Hawley Streets": "3:15\u202fAM",
+            "UClub / University Plaza": "3:20\u202fAM",
+            "Hinman / Academic A": "3:30 AM"
+          }
+        },
+        {
+          "stop_times": {
+            "University Union": "3:15 AM",
+            "Downtown - State & Hawley Streets": "3:30\u202fAM",
+            "UClub / University Plaza": "3:35\u202fAM",
+            "Hinman / Academic A": "3:45 AM"
+          }
+        }
+      ]
+    }
+  }
+]
