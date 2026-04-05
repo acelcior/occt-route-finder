@@ -11,7 +11,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 
-DATA_PATH = Path(__file__).resolve().parent.parent / "occt_routes_geo.json"
+DATA_PATH = Path(__file__).resolve().parent.parent.parent / "data" / "occt_routes_geo.json"
 NOMINATIM_URL = "https://nominatim.openstreetmap.org/search"
 NOMINATIM_UA = "occt-vercel-planner/1.0"
 MAX_STOP_DISTANCE_M = 2000
