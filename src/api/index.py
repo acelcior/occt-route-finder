@@ -1,7 +1,7 @@
 import json
 import os
 import re
-from datetime import datetime
+from datetime import datetime, timedelta
 from math import atan2, cos, radians, sin, sqrt
 from pathlib import Path
 from typing import Any
@@ -50,6 +50,80 @@ def get_all_stops() -> list[str]:
 
 # Load routes at startup
 ROUTES: list[dict[str, Any]] = get_routes_data()
+
+
+def _load_place_snaps() -> tuple[
+    tuple[float, float] | None,
+    tuple[float, float] | None,
+    tuple[float, float] | None,
+]:
+    """Campus default (UU), Town Square mall centroid, BC Junction terminal — from route data."""
+    by_name: dict[str, tuple[float, float]] = {}
+    mall: list[tuple[float, float]] = []
+    for route in ROUTES:
+        for name, loc in route.get("stop_coords", {}).items():
+            if not loc or name in by_name:
+                continue
+            lat, lon = float(loc["lat"]), float(loc["lon"])
+            by_name[name] = (lat, lon)
+            if "town square mall" in name.lower():
+                mall.append((lat, lon))
+    uu = by_name.get("University Union")
+    bc = by_name.get("BC Junction Bus Terminal -Henry & Chenango Streets")
+    if not mall:
+        town_sq = None
+    else:
+        town_sq = (
+            sum(m[0] for m in mall) / len(mall),
+            sum(m[1] for m in mall) / len(mall),
+        )
+    return uu, town_sq, bc
+
+
+UNION_COORDS, TOWN_SQUARE_COORDS, BC_TERMINAL_COORDS = _load_place_snaps()
+# Maryam's Mart (Court St, Binghamton) — OSM/Nominatim often miss small businesses; used as fallback
+MARYAMS_MART_COORDS: tuple[float, float] = (42.0988299, -75.9119763)
+
+
+def _snap_known_place(raw: str) -> tuple[float, float] | None:
+    """Map student colloquial names to OCCT stop coordinates (no external geocoder)."""
+    norm = re.sub(r"[^\w\s]", " ", raw.lower())
+    norm = re.sub(r"\s+", " ", norm).strip()
+    if not norm:
+        return None
+
+    # "Binghamton" alone → Binghamton University (campus hub)
+    if re.fullmatch(r"binghamton(,?\s*(ny|new york))?", norm) or norm in (
+        "binghamton ny",
+        "bu",
+        "b u",
+        "binghamton university",
+        "binghamton uni",
+        "bu campus",
+        "bing campus",
+    ):
+        return UNION_COORDS or None
+    if norm in ("campus", "uni") and "off campus" not in norm:
+        return UNION_COORDS or None
+
+    if TOWN_SQUARE_COORDS and (
+        "town square mall" in norm
+        or norm in ("town square", "townsquare mall", "vestal mall", "the mall vestal")
+    ):
+        return TOWN_SQUARE_COORDS
+
+    if BC_TERMINAL_COORDS and (
+        "bc junction" in norm
+        or "binghamton bus terminal" in norm
+        or ("bus terminal" in norm and "binghamton" in norm)
+        or ("bc " in norm and "terminal" in norm)
+    ):
+        return BC_TERMINAL_COORDS
+
+    if "maryam" in norm and "mart" in norm:
+        return MARYAMS_MART_COORDS
+
+    return None
 
 
 def _already_has_local_context(s: str) -> bool:
@@ -146,6 +220,10 @@ def geocode(address: str) -> tuple[float, float]:
     raw = address.strip()
     if not raw:
         raise HTTPException(status_code=400, detail="Address is empty.")
+
+    snapped = _snap_known_place(raw)
+    if snapped is not None:
+        return snapped
 
     queries = _binghamton_search_queries(raw)
     if not queries:
@@ -263,6 +341,79 @@ def parse_time(raw: str):
         return None
 
 
+def _parse_clock_today(raw: str) -> datetime | None:
+    """Clock time from schedule string on today's calendar date (for comparisons with 'now')."""
+    pt = parse_time(raw)
+    if not pt:
+        return None
+    return datetime.combine(datetime.now().date(), pt.time())
+
+
+def _dense_stop_times_today(route: dict[str, Any], trip: dict[str, Any]) -> dict[str, datetime]:
+    """Fill times along the route from sparse OCCT tables (linear / edge extrapolation)."""
+    stops = route.get("stops") or []
+    raw = trip.get("stop_times") or {}
+    indexed: list[tuple[int, datetime]] = []
+    for name, r in raw.items():
+        if name not in stops:
+            continue
+        dt = _parse_clock_today(r)
+        if dt:
+            indexed.append((stops.index(name), dt))
+    indexed.sort(key=lambda x: x[0])
+    if not indexed:
+        return {}
+
+    default_seg_s = 240.0
+    n = len(stops)
+    out: dict[str, datetime] = {}
+
+    def time_at_index(i: int) -> datetime | None:
+        exact = next((t for ix, t in indexed if ix == i), None)
+        if exact is not None:
+            return exact
+        prev = [(ix, t) for ix, t in indexed if ix < i]
+        nxt = [(ix, t) for ix, t in indexed if ix > i]
+        if prev and nxt:
+            ix0, t0 = prev[-1]
+            ix1, t1 = nxt[0]
+            if ix1 == ix0:
+                return t0
+            frac = (i - ix0) / (ix1 - ix0)
+            return t0 + timedelta(seconds=(t1 - t0).total_seconds() * frac)
+        if prev and not nxt:
+            ix0, t0 = prev[-1]
+            if len(prev) >= 2:
+                ix_1, t_1 = prev[-2]
+                spd = (
+                    (t0 - t_1).total_seconds() / (ix0 - ix_1)
+                    if ix0 != ix_1
+                    else default_seg_s
+                )
+            else:
+                spd = default_seg_s
+            return t0 + timedelta(seconds=spd * (i - ix0))
+        if nxt and not prev:
+            ix0, t0 = nxt[0]
+            if len(nxt) >= 2:
+                ix1, t1 = nxt[1]
+                spd = (
+                    (t1 - t0).total_seconds() / (ix1 - ix0)
+                    if ix1 != ix0
+                    else default_seg_s
+                )
+            else:
+                spd = default_seg_s
+            return t0 - timedelta(seconds=spd * (ix0 - i))
+        return None
+
+    for i in range(n):
+        tt = time_at_index(i)
+        if tt is not None:
+            out[stops[i]] = tt
+    return out
+
+
 def active_schedule(route: dict[str, Any]) -> list[dict[str, Any]]:
     return route.get("schedules", {}).get("weekday" if datetime.now().weekday() < 5 else "weekend", [])
 
@@ -332,14 +483,9 @@ def find_top_routes(origin: str, destination: str) -> list[dict[str, Any]]:
         depart = None
         arrive = None
         for trip in active_schedule(route):
-            times = trip.get("stop_times", {})
-            dep_raw = times.get(origin_stop)
-            arr_raw = times.get(dest_stop)
-            if not dep_raw or not arr_raw:
-                continue
-
-            dep_dt = parse_time(dep_raw)
-            arr_dt = parse_time(arr_raw)
+            dense = _dense_stop_times_today(route, trip)
+            dep_dt = dense.get(origin_stop)
+            arr_dt = dense.get(dest_stop)
             if not dep_dt or not arr_dt:
                 continue
             if dep_dt < now:
