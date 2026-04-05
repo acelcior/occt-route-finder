@@ -5,7 +5,7 @@
     "stops": [
       "University Union",
       "Physical Facilities",
-      "Bunn Hill/Bunn Hill Access Rd",
+      "Bunn Hill / Bunn Hill Access Rd",
       "New York Avenue",
       "Ackley Avenue",
       "Harrison Street",
@@ -23,7 +23,7 @@
       "Arthur Street",
       "Murray Street",
       "Front Street",
-      "Hawley & Court Streets",
+      "Court & Hawley Streets",
       "University Downtown Center"
     ],
     "schedules": {
@@ -32,7 +32,7 @@
           "stop_times": {
             "University Union": "7:15 AM",
             "Physical Facilities": "7:24 AM",
-            "Bunn Hill/Bunn Hill Access Rd": "7:30 AM",
+            "Bunn Hill / Bunn Hill Access Rd": "7:30 AM",
             "New York Avenue": "7:40 AM"
           }
         },
@@ -40,7 +40,7 @@
           "stop_times": {
             "University Union": "8:00 AM",
             "Physical Facilities": "8:09 AM",
-            "Bunn Hill/Bunn Hill Access Rd": "8:15 AM",
+            "Bunn Hill / Bunn Hill Access Rd": "8:15 AM",
             "New York Avenue": "8:25 AM"
           }
         },
@@ -48,7 +48,7 @@
           "stop_times": {
             "University Union": "8:20 AM",
             "Physical Facilities": "8:29 AM",
-            "Bunn Hill/Bunn Hill Access Rd": "8:35 AM",
+            "Bunn Hill / Bunn Hill Access Rd": "8:35 AM",
             "New York Avenue": "8:45 AM"
           }
         },
@@ -56,7 +56,7 @@
           "stop_times": {
             "University Union": "9:25 AM",
             "Physical Facilities": "9:34 AM",
-            "Bunn Hill/Bunn Hill Access Rd": "9:40 AM",
+            "Bunn Hill / Bunn Hill Access Rd": "9:40 AM",
             "New York Avenue": "9:50 AM"
           }
         },
@@ -64,7 +64,7 @@
           "stop_times": {
             "University Union": "9:55 AM",
             "Physical Facilities": "10:04 AM",
-            "Bunn Hill/Bunn Hill Access Rd": "10:10 AM",
+            "Bunn Hill / Bunn Hill Access Rd": "10:10 AM",
             "New York Avenue": "10:20 AM"
           }
         },
@@ -72,7 +72,7 @@
           "stop_times": {
             "University Union": "10:45 AM",
             "Physical Facilities": "10:54 AM",
-            "Bunn Hill/Bunn Hill Access Rd": "11:00 AM",
+            "Bunn Hill / Bunn Hill Access Rd": "11:00 AM",
             "New York Avenue": "11:10 AM"
           }
         },
@@ -80,7 +80,7 @@
           "stop_times": {
             "University Union": "11:15 AM",
             "Physical Facilities": "11:24 AM",
-            "Bunn Hill/Bunn Hill Access Rd": "11:30 AM",
+            "Bunn Hill / Bunn Hill Access Rd": "11:30 AM",
             "New York Avenue": "11:40 AM"
           }
         },
@@ -88,7 +88,7 @@
           "stop_times": {
             "University Union": "11:45 AM",
             "Physical Facilities": "11:54 AM",
-            "Bunn Hill/Bunn Hill Access Rd": "12:00 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "12:00 PM",
             "New York Avenue": "12:10 PM"
           }
         },
@@ -96,7 +96,7 @@
           "stop_times": {
             "University Union": "12:10 PM",
             "Physical Facilities": "12:19 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "12:25 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "12:25 PM",
             "New York Avenue": "12:35 PM"
           }
         },
@@ -104,7 +104,7 @@
           "stop_times": {
             "University Union": "12:40 PM",
             "Physical Facilities": "12:49 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "12:55 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "12:55 PM",
             "New York Avenue": "1:05 PM"
           }
         },
@@ -112,7 +112,7 @@
           "stop_times": {
             "University Union": "1:25 PM",
             "Physical Facilities": "1:34 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "1:40 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "1:40 PM",
             "New York Avenue": "1:50 PM"
           }
         },
@@ -120,7 +120,7 @@
           "stop_times": {
             "University Union": "2:10 PM",
             "Physical Facilities": "2:19 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "2:25 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "2:25 PM",
             "New York Avenue": "2:35 PM"
           }
         },
@@ -128,7 +128,7 @@
           "stop_times": {
             "University Union": "2:45 PM",
             "Physical Facilities": "2:54 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "3:00 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "3:00 PM",
             "New York Avenue": "3:10 PM"
           }
         },
@@ -136,7 +136,7 @@
           "stop_times": {
             "University Union": "3:10 PM",
             "Physical Facilities": "3:19 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "3:25 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "3:25 PM",
             "New York Avenue": "3:35 PM"
           }
         },
@@ -144,7 +144,7 @@
           "stop_times": {
             "University Union": "3:45 PM",
             "Physical Facilities": "3:54 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "4:00 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "4:00 PM",
             "New York Avenue": "4:10 PM"
           }
         },
@@ -152,7 +152,7 @@
           "stop_times": {
             "University Union": "4:45 PM",
             "Physical Facilities": "4:54 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "5:00 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "5:00 PM",
             "New York Avenue": "5:10 PM"
           }
         },
@@ -160,7 +160,7 @@
           "stop_times": {
             "University Union": "4:55 PM",
             "Physical Facilities": "5:04 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "5:10 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "5:10 PM",
             "New York Avenue": "5:20 PM"
           }
         },
@@ -168,7 +168,7 @@
           "stop_times": {
             "University Union": "5:25 PM",
             "Physical Facilities": "5:34 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "5:40 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "5:40 PM",
             "New York Avenue": "5:50 PM"
           }
         },
@@ -176,7 +176,7 @@
           "stop_times": {
             "University Union": "5:45 PM",
             "Physical Facilities": "5:54 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "6:00 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "6:00 PM",
             "New York Avenue": "6:10 PM"
           }
         },
@@ -184,7 +184,7 @@
           "stop_times": {
             "University Union": "6:20 PM",
             "Physical Facilities": "6:29 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "6:35 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "6:35 PM",
             "New York Avenue": "6:45 PM"
           }
         },
@@ -192,7 +192,7 @@
           "stop_times": {
             "University Union": "7:10 PM",
             "Physical Facilities": "7:19 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "7:25 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "7:25 PM",
             "New York Avenue": "7:35 PM"
           }
         },
@@ -200,7 +200,7 @@
           "stop_times": {
             "University Union": "7:25 PM",
             "Physical Facilities": "7:34 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "7:40 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "7:40 PM",
             "New York Avenue": "7:50 PM"
           }
         },
@@ -208,7 +208,7 @@
           "stop_times": {
             "University Union": "7:45 PM",
             "Physical Facilities": "7:54 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "8:00 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "8:00 PM",
             "New York Avenue": "8:10 PM"
           }
         },
@@ -216,7 +216,7 @@
           "stop_times": {
             "University Union": "8:15 PM",
             "Physical Facilities": "8:24 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "8:30 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "8:30 PM",
             "New York Avenue": "8:40 PM"
           }
         },
@@ -224,7 +224,7 @@
           "stop_times": {
             "University Union": "8:35 PM",
             "Physical Facilities": "8:44 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "8:50 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "8:50 PM",
             "New York Avenue": "9:00 PM"
           }
         },
@@ -232,7 +232,7 @@
           "stop_times": {
             "University Union": "9:10 PM",
             "Physical Facilities": "9:19 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "9:25 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "9:25 PM",
             "New York Avenue": "9:35 PM"
           }
         },
@@ -240,7 +240,7 @@
           "stop_times": {
             "University Union": "9:40 PM",
             "Physical Facilities": "9:49 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "9:55 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "9:55 PM",
             "New York Avenue": "10:05 PM"
           }
         },
@@ -248,7 +248,7 @@
           "stop_times": {
             "University Union": "10:35 PMF",
             "Physical Facilities": "10:44 PMF",
-            "Bunn Hill/Bunn Hill Access Rd": "10:50 PMF",
+            "Bunn Hill / Bunn Hill Access Rd": "10:50 PMF",
             "New York Avenue": "11:00 PMF"
           }
         },
@@ -256,7 +256,7 @@
           "stop_times": {
             "University Union": "10:50 PMM-T",
             "Physical Facilities": "10:59 PMM-T",
-            "Bunn Hill/Bunn Hill Access Rd": "11:05 PMM-T",
+            "Bunn Hill / Bunn Hill Access Rd": "11:05 PMM-T",
             "New York Avenue": "11:10 PMM-T"
           }
         },
@@ -264,7 +264,7 @@
           "stop_times": {
             "University Union": "11:45 PM",
             "Physical Facilities": "11:54 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "12:00 AM",
+            "Bunn Hill / Bunn Hill Access Rd": "12:00 AM",
             "New York Avenue": "12:05 AM"
           }
         }
@@ -274,7 +274,7 @@
           "stop_times": {
             "University Union": "9:15 AM",
             "Physical Facilities": "9:24 AM",
-            "Bunn Hill/Bunn Hill Access Rd": "9:30 AM",
+            "Bunn Hill / Bunn Hill Access Rd": "9:30 AM",
             "New York Avenue": "9:40 AM"
           }
         },
@@ -282,7 +282,7 @@
           "stop_times": {
             "University Union": "10:00 AM",
             "Physical Facilities": "10:09 AM",
-            "Bunn Hill/Bunn Hill Access Rd": "10:15 AM",
+            "Bunn Hill / Bunn Hill Access Rd": "10:15 AM",
             "New York Avenue": "10:25 AM"
           }
         },
@@ -290,7 +290,7 @@
           "stop_times": {
             "University Union": "11:15 AM",
             "Physical Facilities": "11:24 AM",
-            "Bunn Hill/Bunn Hill Access Rd": "11:30 AM",
+            "Bunn Hill / Bunn Hill Access Rd": "11:30 AM",
             "New York Avenue": "11:40 AM"
           }
         },
@@ -298,7 +298,7 @@
           "stop_times": {
             "University Union": "12:00 PM",
             "Physical Facilities": "12:09 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "12:15 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "12:15 PM",
             "New York Avenue": "12:25 PM"
           }
         },
@@ -306,7 +306,7 @@
           "stop_times": {
             "University Union": "1:25 PM",
             "Physical Facilities": "1:34 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "1:40 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "1:40 PM",
             "New York Avenue": "1:50 PM"
           }
         },
@@ -314,7 +314,7 @@
           "stop_times": {
             "University Union": "2:30 PM",
             "Physical Facilities": "2:39 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "2:45 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "2:45 PM",
             "New York Avenue": "2:55 PM"
           }
         },
@@ -322,7 +322,7 @@
           "stop_times": {
             "University Union": "3:40 PM",
             "Physical Facilities": "3:49 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "3:55 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "3:55 PM",
             "New York Avenue": "4:05 PM"
           }
         },
@@ -330,7 +330,7 @@
           "stop_times": {
             "University Union": "4:30 PM",
             "Physical Facilities": "4:39 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "4:45 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "4:45 PM",
             "New York Avenue": "4:55 PM"
           }
         },
@@ -338,7 +338,7 @@
           "stop_times": {
             "University Union": "6:25 PM",
             "Physical Facilities": "6:34 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "6:40 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "6:40 PM",
             "New York Avenue": "6:50 PM"
           }
         },
@@ -346,7 +346,7 @@
           "stop_times": {
             "University Union": "7:15 PM",
             "Physical Facilities": "7:24 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "7:30 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "7:30 PM",
             "New York Avenue": "7:40 PM"
           }
         },
@@ -354,7 +354,7 @@
           "stop_times": {
             "University Union": "9:00 PM",
             "Physical Facilities": "9:09 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "9:15 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "9:15 PM",
             "New York Avenue": "9:25 PM"
           }
         },
@@ -362,7 +362,7 @@
           "stop_times": {
             "University Union": "9:15 PM",
             "Physical Facilities": "9:24 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "9:30 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "9:30 PM",
             "New York Avenue": "9:40 PM"
           }
         },
@@ -370,7 +370,7 @@
           "stop_times": {
             "University Union": "10:00 PMSu",
             "Physical Facilities": "10:09 PMSu",
-            "Bunn Hill/Bunn Hill Access Rd": "10:15 PMSu",
+            "Bunn Hill / Bunn Hill Access Rd": "10:15 PMSu",
             "New York Avenue": "10:20 PMSu"
           }
         },
@@ -378,7 +378,7 @@
           "stop_times": {
             "University Union": "10:35 PM",
             "Physical Facilities": "10:44 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "10:50 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "10:50 PM",
             "New York Avenue": "11:00 PM"
           }
         },
@@ -386,100 +386,100 @@
           "stop_times": {
             "University Union": "11:45 PM",
             "Physical Facilities": "11:54 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "12:00 AM",
+            "Bunn Hill / Bunn Hill Access Rd": "12:00 AM",
             "New York Avenue": "12:05 AM"
           }
         }
       ]
     },
     "stop_coords": {
-      "University Union": {
-        "lat": 42.0878147,
-        "lon": -75.9669597
-      },
-      "Physical Facilities": {
-        "lat": 42.090995,
-        "lon": -75.9733282
-      },
-      "Bunn Hill/Bunn Hill Access Rd": {
-        "lat": 42.09216409426842,
-        "lon": -75.97456363280493
-      },
-      "New York Avenue": {
-        "lat": 42.1053975,
-        "lon": -75.9622644
-      },
       "Ackley Avenue": {
         "lat": 42.1035335,
         "lon": -75.958513
-      },
-      "Harrison Street": {
-        "lat": 42.1030815,
-        "lon": -75.9444105
-      },
-      "Roberts Street": {
-        "lat": 42.1094519,
-        "lon": -75.9017236
-      },
-      "Willow Street": {
-        "lat": 42.1106888,
-        "lon": -75.9544986
-      },
-      "Burbank Avenue": {
-        "lat": 42.1022672,
-        "lon": -75.9519296
-      },
-      "Cleveland Avenue": {
-        "lat": 42.1064621,
-        "lon": -75.948449
-      },
-      "Floral Av & Main St": {
-        "lat": 42.11117673469614,
-        "lon": -75.94504207513248
-      },
-      "Matthews Street": {
-        "lat": 42.100612,
-        "lon": -75.9426101
-      },
-      "Crestmont Road": {
-        "lat": 42.1056131,
-        "lon": -75.9418972
-      },
-      "Helen Street": {
-        "lat": 42.1018129,
-        "lon": -75.940559
-      },
-      "Schiller Street": {
-        "lat": 42.10335,
-        "lon": -75.936082
-      },
-      "Clarke Street": {
-        "lat": 42.1011424,
-        "lon": -75.9299103
-      },
-      "Cedar Street": {
-        "lat": 42.1007204,
-        "lon": -75.9284275
       },
       "Arthur Street": {
         "lat": 42.099065,
         "lon": -75.924912
       },
-      "Murray Street": {
-        "lat": 42.1026284,
-        "lon": -75.9199777
+      "Bunn Hill / Bunn Hill Access Rd": {
+        "lat": 42.09216409426842,
+        "lon": -75.97456363280493
+      },
+      "Burbank Avenue": {
+        "lat": 42.1022672,
+        "lon": -75.9519296
+      },
+      "Cedar Street": {
+        "lat": 42.1007204,
+        "lon": -75.9284275
+      },
+      "Clarke Street": {
+        "lat": 42.1011424,
+        "lon": -75.9299103
+      },
+      "Cleveland Avenue": {
+        "lat": 42.1064621,
+        "lon": -75.948449
+      },
+      "Crestmont Road": {
+        "lat": 42.1056131,
+        "lon": -75.9418972
+      },
+      "Floral Av & Main St": {
+        "lat": 42.11117673469614,
+        "lon": -75.94504207513248
       },
       "Front Street": {
         "lat": 42.1093226,
         "lon": -75.9121503
       },
-      "Hawley & Court Streets": {
+      "Harrison Street": {
+        "lat": 42.1030815,
+        "lon": -75.9444105
+      },
+      "Court & Hawley Streets": {
         "lat": 42.09869704982519,
         "lon": -75.91461589047606
+      },
+      "Helen Street": {
+        "lat": 42.1018129,
+        "lon": -75.940559
+      },
+      "Matthews Street": {
+        "lat": 42.100612,
+        "lon": -75.9426101
+      },
+      "Murray Street": {
+        "lat": 42.1026284,
+        "lon": -75.9199777
+      },
+      "New York Avenue": {
+        "lat": 42.1053975,
+        "lon": -75.9622644
+      },
+      "Physical Facilities": {
+        "lat": 42.090995,
+        "lon": -75.9733282
+      },
+      "Roberts Street": {
+        "lat": 42.1094519,
+        "lon": -75.9017236
+      },
+      "Schiller Street": {
+        "lat": 42.10335,
+        "lon": -75.936082
       },
       "University Downtown Center": {
         "lat": 42.0957925,
         "lon": -75.9149564
+      },
+      "University Union": {
+        "lat": 42.0878147,
+        "lon": -75.9669597
+      },
+      "Willow Street": {
+        "lat": 42.1106888,
+        "lon": -75.9544986
       }
     }
   },
@@ -488,7 +488,7 @@
     "url": "https://occtransport.org/pages/routes/ws-in.html",
     "stops": [
       "Visions Memorial Arena",
-      "Hawley & Court Streets",
+      "Court & Hawley Streets",
       "Front Street",
       "Murray Street",
       "Mather Street",
@@ -514,7 +514,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "7:15 AM",
-            "Hawley & Court Streets": "7:18 AM",
+            "Court & Hawley Streets": "7:18 AM",
             "Front Street": "7:24 AM",
             "Murray Street": "7:40 AM"
           }
@@ -522,7 +522,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "7:45 AM",
-            "Hawley & Court Streets": "7:48 AM",
+            "Court & Hawley Streets": "7:48 AM",
             "Front Street": "7:54 AM",
             "Murray Street": "8:10 AM"
           }
@@ -530,7 +530,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "8:05 AM",
-            "Hawley & Court Streets": "8:08 AM",
+            "Court & Hawley Streets": "8:08 AM",
             "Front Street": "8:14 AM",
             "Murray Street": "8:30 AM"
           }
@@ -538,7 +538,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "8:35 AM",
-            "Hawley & Court Streets": "8:38 AM",
+            "Court & Hawley Streets": "8:38 AM",
             "Front Street": "8:44 AM",
             "Murray Street": "9:00 AM"
           }
@@ -546,7 +546,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "8:55 AM",
-            "Hawley & Court Streets": "8:58 AM",
+            "Court & Hawley Streets": "8:58 AM",
             "Front Street": "9:04 AM",
             "Murray Street": "9:20 AM"
           }
@@ -554,7 +554,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "9:25 AM",
-            "Hawley & Court Streets": "9:28 AM",
+            "Court & Hawley Streets": "9:28 AM",
             "Front Street": "9:34 AM",
             "Murray Street": "9:50 AM"
           }
@@ -562,7 +562,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "10:15 AM",
-            "Hawley & Court Streets": "10:18 AM",
+            "Court & Hawley Streets": "10:18 AM",
             "Front Street": "10:24 AM",
             "Murray Street": "10:40 AM"
           }
@@ -570,7 +570,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "10:40 AM",
-            "Hawley & Court Streets": "10:43 AM",
+            "Court & Hawley Streets": "10:43 AM",
             "Front Street": "10:49 AM",
             "Murray Street": "11:05 AM"
           }
@@ -578,7 +578,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "11:05 AM",
-            "Hawley & Court Streets": "11:08 AM",
+            "Court & Hawley Streets": "11:08 AM",
             "Front Street": "11:14 AM",
             "Murray Street": "11:30 AM"
           }
@@ -586,7 +586,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "11:25 AM",
-            "Hawley & Court Streets": "11:28 AM",
+            "Court & Hawley Streets": "11:28 AM",
             "Front Street": "11:34 AM",
             "Murray Street": "11:50 AM"
           }
@@ -594,7 +594,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "11:40 AM",
-            "Hawley & Court Streets": "11:43 AM",
+            "Court & Hawley Streets": "11:43 AM",
             "Front Street": "11:49 AM",
             "Murray Street": "12:05 PM"
           }
@@ -602,7 +602,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "12:15 PM",
-            "Hawley & Court Streets": "12:18 PM",
+            "Court & Hawley Streets": "12:18 PM",
             "Front Street": "12:24 PM",
             "Murray Street": "12:40 PM"
           }
@@ -610,7 +610,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "12:50 PMAA",
-            "Hawley & Court Streets": "12:53 PMAA",
+            "Court & Hawley Streets": "12:53 PMAA",
             "Front Street": "12:59 PMAA",
             "Murray Street": "1:15 PMAA"
           }
@@ -618,7 +618,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "1:40 PM",
-            "Hawley & Court Streets": "1:43 PM",
+            "Court & Hawley Streets": "1:43 PM",
             "Front Street": "1:49 PM",
             "Murray Street": "2:05 PM"
           }
@@ -626,7 +626,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "2:30 PM",
-            "Hawley & Court Streets": "2:33 PM",
+            "Court & Hawley Streets": "2:33 PM",
             "Front Street": "2:39 PM",
             "Murray Street": "2:55 PM"
           }
@@ -634,7 +634,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "3:23 PMAA",
-            "Hawley & Court Streets": "3:26 PMAA",
+            "Court & Hawley Streets": "3:26 PMAA",
             "Front Street": "3:32 PMAA",
             "Murray Street": "3:48 PMAA"
           }
@@ -642,7 +642,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "3:58 PM",
-            "Hawley & Court Streets": "4:01 PM",
+            "Court & Hawley Streets": "4:01 PM",
             "Front Street": "4:07 PM",
             "Murray Street": "4:23 PM"
           }
@@ -650,7 +650,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "4:38 PM",
-            "Hawley & Court Streets": "4:41 PM",
+            "Court & Hawley Streets": "4:41 PM",
             "Front Street": "4:47 PM",
             "Murray Street": "5:03 PM"
           }
@@ -658,7 +658,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "6:03 PM",
-            "Hawley & Court Streets": "6:06 PM",
+            "Court & Hawley Streets": "6:06 PM",
             "Front Street": "6:12 PM",
             "Murray Street": "6:28 PM"
           }
@@ -666,7 +666,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "6:40 PM",
-            "Hawley & Court Streets": "6:43 PM",
+            "Court & Hawley Streets": "6:43 PM",
             "Front Street": "6:49 PM",
             "Murray Street": "7:05 PM"
           }
@@ -674,7 +674,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "7:00 PM",
-            "Hawley & Court Streets": "7:03 PM",
+            "Court & Hawley Streets": "7:03 PM",
             "Front Street": "7:09 PM",
             "Murray Street": "7:25 PM"
           }
@@ -682,7 +682,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "7:30 PM",
-            "Hawley & Court Streets": "7:33 PM",
+            "Court & Hawley Streets": "7:33 PM",
             "Front Street": "7:39 PM",
             "Murray Street": "7:55 PM"
           }
@@ -690,7 +690,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "8:00 PM",
-            "Hawley & Court Streets": "8:03 PM",
+            "Court & Hawley Streets": "8:03 PM",
             "Front Street": "8:09 PM",
             "Murray Street": "8:25 PM"
           }
@@ -698,7 +698,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "8:45 PM",
-            "Hawley & Court Streets": "8:48 PM",
+            "Court & Hawley Streets": "8:48 PM",
             "Front Street": "8:54 PM",
             "Murray Street": "9:10 PM"
           }
@@ -706,7 +706,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "9:15 PM",
-            "Hawley & Court Streets": "9:18 PM",
+            "Court & Hawley Streets": "9:18 PM",
             "Front Street": "9:24 PM",
             "Murray Street": "9:40 PM"
           }
@@ -714,7 +714,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "9:48 PM",
-            "Hawley & Court Streets": "9:51 PM",
+            "Court & Hawley Streets": "9:51 PM",
             "Front Street": "9:57 PM",
             "Murray Street": "10:13 PM"
           }
@@ -722,7 +722,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "10:13 PM",
-            "Hawley & Court Streets": "10:16 PM",
+            "Court & Hawley Streets": "10:16 PM",
             "Front Street": "10:22 PM",
             "Murray Street": "10:33 PM"
           }
@@ -730,7 +730,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "11:08 PMM-T",
-            "Hawley & Court Streets": "11:11 PMM-T",
+            "Court & Hawley Streets": "11:11 PMM-T",
             "Front Street": "11:17 PMM-T",
             "Murray Street": "11:28 PMM-T"
           }
@@ -738,7 +738,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "11:20 PMF",
-            "Hawley & Court Streets": "11:23 PMF",
+            "Court & Hawley Streets": "11:23 PMF",
             "Front Street": "11:29 PMF",
             "Murray Street": "11:40 PMF"
           }
@@ -746,7 +746,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "12:03 AM",
-            "Hawley & Court Streets": "12:06 AM",
+            "Court & Hawley Streets": "12:06 AM",
             "Front Street": "12:12 AM",
             "Murray Street": "12:23 AM"
           }
@@ -756,7 +756,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "9:05 AM",
-            "Hawley & Court Streets": "9:08 AM",
+            "Court & Hawley Streets": "9:08 AM",
             "Front Street": "9:14 AM",
             "Murray Street": "9:30 AM"
           }
@@ -764,7 +764,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "9:50 AM",
-            "Hawley & Court Streets": "9:53 AM",
+            "Court & Hawley Streets": "9:53 AM",
             "Front Street": "9:59 AM",
             "Murray Street": "10:15 AM"
           }
@@ -772,7 +772,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "11:05 AM",
-            "Hawley & Court Streets": "11:08 AM",
+            "Court & Hawley Streets": "11:08 AM",
             "Front Street": "11:14 AM",
             "Murray Street": "11:30 AM"
           }
@@ -780,7 +780,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "1:05 PM",
-            "Hawley & Court Streets": "1:08 PM",
+            "Court & Hawley Streets": "1:08 PM",
             "Front Street": "1:14 PM",
             "Murray Street": "1:30 PM"
           }
@@ -788,7 +788,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "2:05 PM",
-            "Hawley & Court Streets": "2:08 PM",
+            "Court & Hawley Streets": "2:08 PM",
             "Front Street": "2:14 PM",
             "Murray Street": "2:30 PM"
           }
@@ -796,7 +796,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "3:15 PM",
-            "Hawley & Court Streets": "3:18 PM",
+            "Court & Hawley Streets": "3:18 PM",
             "Front Street": "3:24 PM",
             "Murray Street": "3:40 PM"
           }
@@ -804,7 +804,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "4:45 PM",
-            "Hawley & Court Streets": "4:48 PM",
+            "Court & Hawley Streets": "4:48 PM",
             "Front Street": "4:54 PM",
             "Murray Street": "5:10 PM"
           }
@@ -812,7 +812,7 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "6:00 PM",
-            "Hawley & Court Streets": "6:03 PM",
+            "Court & Hawley Streets": "6:03 PM",
             "Front Street": "6:09 PM",
             "Murray Street": "6:25 PM"
           }
@@ -820,31 +820,31 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "7:30 PM",
-            "Hawley & Court Streets": "7:33 PM",
+            "Court & Hawley Streets": "7:33 PM",
             "Front Street": "7:39 PM",
             "Murray Street": "7:55 PM"
           }
         },
         {
           "stop_times": {
-            "Visions Memorial Arena": "8:50\u202fPM",
-            "Hawley & Court Streets": "8:53 PM",
-            "Front Street": "8:59\u202fPM",
-            "Murray Street": "9:15\u202fPM"
+            "Visions Memorial Arena": "8:50 PM",
+            "Court & Hawley Streets": "8:53 PM",
+            "Front Street": "8:59 PM",
+            "Murray Street": "9:15 PM"
           }
         },
         {
           "stop_times": {
-            "Visions Memorial Arena": "10:05\u202fPMSu",
-            "Hawley & Court Streets": "10:08 PMSu",
-            "Front Street": "10:14\u202fPMSu",
-            "Murray Street": "10:30\u202fPMSu"
+            "Visions Memorial Arena": "10:05 PMSu",
+            "Court & Hawley Streets": "10:08 PMSu",
+            "Front Street": "10:14 PMSu",
+            "Murray Street": "10:30 PMSu"
           }
         },
         {
           "stop_times": {
             "Visions Memorial Arena": "10:15 PM",
-            "Hawley & Court Streets": "10:18 PM",
+            "Court & Hawley Streets": "10:18 PM",
             "Front Street": "10:24 PM",
             "Murray Street": "10:40 PM"
           }
@@ -852,31 +852,31 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "10:48 PMSu",
-            "Hawley & Court Streets": "10:51 PMSu",
+            "Court & Hawley Streets": "10:51 PMSu",
             "Front Street": "10:57 PMSu",
             "Murray Street": "11:10 PMSu"
           }
         },
         {
           "stop_times": {
-            "Visions Memorial Arena": "11:20\u202fPMSa",
-            "Hawley & Court Streets": "11:23 PMSa",
-            "Front Street": "11:29\u202fPMSa",
-            "Murray Street": "11:45\u202fPMSa"
+            "Visions Memorial Arena": "11:20 PMSa",
+            "Court & Hawley Streets": "11:23 PMSa",
+            "Front Street": "11:29 PMSa",
+            "Murray Street": "11:45 PMSa"
           }
         },
         {
           "stop_times": {
-            "Visions Memorial Arena": "11:28\u202fPMSu",
-            "Hawley & Court Streets": "11:31 PMSu",
-            "Front Street": "11:37\u202fPMSu",
-            "Murray Street": "11:53\u202fPMSu"
+            "Visions Memorial Arena": "11:28 PMSu",
+            "Court & Hawley Streets": "11:31 PMSu",
+            "Front Street": "11:37 PMSu",
+            "Murray Street": "11:53 PMSu"
           }
         },
         {
           "stop_times": {
             "Visions Memorial Arena": "12:05 AMSa",
-            "Hawley & Court Streets": "12:08 AMSa",
+            "Court & Hawley Streets": "12:08 AMSa",
             "Front Street": "12:14 AMSa",
             "Murray Street": "12:30 AMSa"
           }
@@ -884,25 +884,9 @@
       ]
     },
     "stop_coords": {
-      "Visions Memorial Arena": {
-        "lat": 42.0957335,
-        "lon": -75.9131945
-      },
-      "Court & Hawley Streets": {
-        "lat": 42.09872085772586,
-        "lon": -75.91461591218776
-      },
-      "Front Street": {
-        "lat": 42.1093226,
-        "lon": -75.9121503
-      },
-      "Murray Street": {
-        "lat": 42.1026284,
-        "lon": -75.9199777
-      },
-      "Mather Street": {
-        "lat": 42.101208,
-        "lon": -75.9244775
+      "Burbank Avenue": {
+        "lat": 42.1022672,
+        "lon": -75.9519296
       },
       "Cedar Street": {
         "lat": 42.1007204,
@@ -912,57 +896,73 @@
         "lat": 42.1011424,
         "lon": -75.9299103
       },
-      "Schiller Street": {
-        "lat": 42.10335,
-        "lon": -75.936082
-      },
-      "Helen Street": {
-        "lat": 42.1018129,
-        "lon": -75.940559
-      },
-      "Crestmont Road": {
-        "lat": 42.1056131,
-        "lon": -75.9418972
-      },
-      "Crary Avenue": {
-        "lat": 42.1008476,
-        "lon": -75.9435537
-      },
-      "Floral Av & Main St": {
-        "lat": 42.11117673469614,
-        "lon": -75.94504207513248
-      },
       "Cleveland Avenue": {
         "lat": 42.1064621,
         "lon": -75.948449
-      },
-      "Burbank Avenue": {
-        "lat": 42.1022672,
-        "lon": -75.9519296
-      },
-      "Willow Street": {
-        "lat": 42.1106888,
-        "lon": -75.9544986
-      },
-      "Roberts Street": {
-        "lat": 42.1094519,
-        "lon": -75.9017236
-      },
-      "Harrison Street": {
-        "lat": 42.1030815,
-        "lon": -75.9444105
-      },
-      "St Charles Street": {
-        "lat": 42.1097442,
-        "lon": -75.9285616
       },
       "Cook Street": {
         "lat": 42.1085516,
         "lon": -75.9637017
       },
+      "Court & Hawley Streets": {
+        "lat": 42.09869704982519,
+        "lon": -75.91461589047606
+      },
+      "Crary Avenue": {
+        "lat": 42.1008476,
+        "lon": -75.9435537
+      },
+      "Crestmont Road": {
+        "lat": 42.1056131,
+        "lon": -75.9418972
+      },
+      "Floral Av & Main St": {
+        "lat": 42.11117673469614,
+        "lon": -75.94504207513248
+      },
+      "Front Street": {
+        "lat": 42.1093226,
+        "lon": -75.9121503
+      },
+      "Harrison Street": {
+        "lat": 42.1030815,
+        "lon": -75.9444105
+      },
+      "Helen Street": {
+        "lat": 42.1018129,
+        "lon": -75.940559
+      },
       "Hinman / Academic A": {
         "lat": 42.08872203054464,
         "lon": -75.97315228570167
+      },
+      "Mather Street": {
+        "lat": 42.101208,
+        "lon": -75.9244775
+      },
+      "Murray Street": {
+        "lat": 42.1026284,
+        "lon": -75.9199777
+      },
+      "Roberts Street": {
+        "lat": 42.1094519,
+        "lon": -75.9017236
+      },
+      "Schiller Street": {
+        "lat": 42.10335,
+        "lon": -75.936082
+      },
+      "St Charles Street": {
+        "lat": 42.1097442,
+        "lon": -75.9285616
+      },
+      "Visions Memorial Arena": {
+        "lat": 42.0957335,
+        "lon": -75.9131945
+      },
+      "Willow Street": {
+        "lat": 42.1106888,
+        "lon": -75.9544986
       }
     }
   },
@@ -1061,81 +1061,81 @@
       ]
     },
     "stop_coords": {
-      "University Union": {
-        "lat": 42.0878147,
-        "lon": -75.9669597
-      },
-      "New York Avenue": {
-        "lat": 42.1053975,
-        "lon": -75.9622644
-      },
       "Ackley Avenue": {
         "lat": 42.1035335,
         "lon": -75.958513
-      },
-      "Harrison Street": {
-        "lat": 42.1030815,
-        "lon": -75.9444105
-      },
-      "Roberts Street": {
-        "lat": 42.1094519,
-        "lon": -75.9017236
-      },
-      "Willow Street": {
-        "lat": 42.1106888,
-        "lon": -75.9544986
-      },
-      "Burbank Avenue": {
-        "lat": 42.1022672,
-        "lon": -75.9519296
-      },
-      "Cleveland Avenue": {
-        "lat": 42.1064621,
-        "lon": -75.948449
-      },
-      "Floral Av & Main St": {
-        "lat": 42.11117673469614,
-        "lon": -75.94504207513248
-      },
-      "Matthews Street": {
-        "lat": 42.100612,
-        "lon": -75.9426101
-      },
-      "Crestmont Road": {
-        "lat": 42.1056131,
-        "lon": -75.9418972
-      },
-      "Helen Street": {
-        "lat": 42.1018129,
-        "lon": -75.940559
-      },
-      "Schiller Street": {
-        "lat": 42.10335,
-        "lon": -75.936082
-      },
-      "Clarke Street": {
-        "lat": 42.1011424,
-        "lon": -75.9299103
-      },
-      "Cedar Street": {
-        "lat": 42.1007204,
-        "lon": -75.9284275
       },
       "Arthur Street": {
         "lat": 42.099065,
         "lon": -75.924912
       },
-      "Murray Street": {
-        "lat": 42.1026284,
-        "lon": -75.9199777
+      "Burbank Avenue": {
+        "lat": 42.1022672,
+        "lon": -75.9519296
+      },
+      "Cedar Street": {
+        "lat": 42.1007204,
+        "lon": -75.9284275
+      },
+      "Clarke Street": {
+        "lat": 42.1011424,
+        "lon": -75.9299103
+      },
+      "Cleveland Avenue": {
+        "lat": 42.1064621,
+        "lon": -75.948449
+      },
+      "Crestmont Road": {
+        "lat": 42.1056131,
+        "lon": -75.9418972
+      },
+      "Floral Av & Main St": {
+        "lat": 42.11117673469614,
+        "lon": -75.94504207513248
       },
       "Front Street": {
         "lat": 42.1093226,
         "lon": -75.9121503
       },
+      "Harrison Street": {
+        "lat": 42.1030815,
+        "lon": -75.9444105
+      },
+      "Helen Street": {
+        "lat": 42.1018129,
+        "lon": -75.940559
+      },
+      "Matthews Street": {
+        "lat": 42.100612,
+        "lon": -75.9426101
+      },
+      "Murray Street": {
+        "lat": 42.1026284,
+        "lon": -75.9199777
+      },
+      "New York Avenue": {
+        "lat": 42.1053975,
+        "lon": -75.9622644
+      },
+      "Roberts Street": {
+        "lat": 42.1094519,
+        "lon": -75.9017236
+      },
+      "Schiller Street": {
+        "lat": 42.10335,
+        "lon": -75.936082
+      },
       "State & Hawley Streets": {
         "lat": 42.09716773831353,
         "lon": -75.91249679662828
+      },
+      "University Union": {
+        "lat": 42.0878147,
+        "lon": -75.9669597
+      },
+      "Willow Street": {
+        "lat": 42.1106888,
+        "lon": -75.9544986
       }
     }
   },
@@ -1144,7 +1144,7 @@
     "url": "https://occtransport.org/pages/routes/lnws-in.html",
     "stops": [
       "State & Hawley Streets",
-      "Hawley & Court Streets",
+      "Court & Hawley Streets",
       "Front Street",
       "Murray Street",
       "Mather Street",
@@ -1169,7 +1169,7 @@
         {
           "stop_times": {
             "State & Hawley Streets": "12:45 AM",
-            "Hawley & Court Streets": "12:48 AM",
+            "Court & Hawley Streets": "12:48 AM",
             "Front Street": "12:54 AM",
             "Murray Street": "1:05 AM"
           }
@@ -1177,7 +1177,7 @@
         {
           "stop_times": {
             "State & Hawley Streets": "1:20 AM",
-            "Hawley & Court Streets": "1:23 AM",
+            "Court & Hawley Streets": "1:23 AM",
             "Front Street": "1:29 AM",
             "Murray Street": "1:40 AM"
           }
@@ -1185,7 +1185,7 @@
         {
           "stop_times": {
             "State & Hawley Streets": "1:50 AM",
-            "Hawley & Court Streets": "1:53 AM",
+            "Court & Hawley Streets": "1:53 AM",
             "Front Street": "1:59 AM",
             "Murray Street": "2:10 AM"
           }
@@ -1193,7 +1193,7 @@
         {
           "stop_times": {
             "State & Hawley Streets": "2:35 AM",
-            "Hawley & Court Streets": "2:38 AM",
+            "Court & Hawley Streets": "2:38 AM",
             "Front Street": "2:44 AM",
             "Murray Street": "2:55 AM"
           }
@@ -1201,7 +1201,7 @@
         {
           "stop_times": {
             "State & Hawley Streets": "3:25 AM",
-            "Hawley & Court Streets": "3:28 AM",
+            "Court & Hawley Streets": "3:28 AM",
             "Front Street": "3:34 AM",
             "Murray Street": "3:45 AM"
           }
@@ -1211,7 +1211,7 @@
         {
           "stop_times": {
             "State & Hawley Streets": "12:45 AM",
-            "Hawley & Court Streets": "12:48 AM",
+            "Court & Hawley Streets": "12:48 AM",
             "Front Street": "12:54 AM",
             "Murray Street": "1:05 AM"
           }
@@ -1219,7 +1219,7 @@
         {
           "stop_times": {
             "State & Hawley Streets": "1:20 AM",
-            "Hawley & Court Streets": "1:23 AM",
+            "Court & Hawley Streets": "1:23 AM",
             "Front Street": "1:29 AM",
             "Murray Street": "1:40 AM"
           }
@@ -1227,7 +1227,7 @@
         {
           "stop_times": {
             "State & Hawley Streets": "1:50 AM",
-            "Hawley & Court Streets": "1:53 AM",
+            "Court & Hawley Streets": "1:53 AM",
             "Front Street": "1:59 AM",
             "Murray Street": "2:10 AM"
           }
@@ -1235,7 +1235,7 @@
         {
           "stop_times": {
             "State & Hawley Streets": "2:35 AM",
-            "Hawley & Court Streets": "2:38 AM",
+            "Court & Hawley Streets": "2:38 AM",
             "Front Street": "2:44 AM",
             "Murray Street": "2:55 AM"
           }
@@ -1243,7 +1243,7 @@
         {
           "stop_times": {
             "State & Hawley Streets": "3:25 AM",
-            "Hawley & Court Streets": "3:28 AM",
+            "Court & Hawley Streets": "3:28 AM",
             "Front Street": "3:34 AM",
             "Murray Street": "3:45 AM"
           }
@@ -1251,25 +1251,9 @@
       ]
     },
     "stop_coords": {
-      "State & Hawley Streets": {
-        "lat": 42.09716773831353,
-        "lon": -75.91249679662828
-      },
-      "Court & Hawley Streets": {
-        "lat": 42.09872085772586,
-        "lon": -75.91461591218776
-      },
-      "Front Street": {
-        "lat": 42.1093226,
-        "lon": -75.9121503
-      },
-      "Murray Street": {
-        "lat": 42.1026284,
-        "lon": -75.9199777
-      },
-      "Mather Street": {
-        "lat": 42.101208,
-        "lon": -75.9244775
+      "Burbank Avenue": {
+        "lat": 42.1022672,
+        "lon": -75.9519296
       },
       "Cedar Street": {
         "lat": 42.1007204,
@@ -1279,57 +1263,73 @@
         "lat": 42.1011424,
         "lon": -75.9299103
       },
-      "Schiller Street": {
-        "lat": 42.10335,
-        "lon": -75.936082
-      },
-      "Helen Street": {
-        "lat": 42.1018129,
-        "lon": -75.940559
-      },
-      "Crestmont Road": {
-        "lat": 42.1056131,
-        "lon": -75.9418972
-      },
-      "Crary Avenue": {
-        "lat": 42.1008476,
-        "lon": -75.9435537
-      },
-      "Floral Av & Main St": {
-        "lat": 42.11117673469614,
-        "lon": -75.94504207513248
-      },
       "Cleveland Avenue": {
         "lat": 42.1064621,
         "lon": -75.948449
-      },
-      "Burbank Avenue": {
-        "lat": 42.1022672,
-        "lon": -75.9519296
-      },
-      "Willow Street": {
-        "lat": 42.1106888,
-        "lon": -75.9544986
-      },
-      "Roberts Street": {
-        "lat": 42.1094519,
-        "lon": -75.9017236
-      },
-      "Harrison Street": {
-        "lat": 42.1030815,
-        "lon": -75.9444105
-      },
-      "St Charles Street": {
-        "lat": 42.1097442,
-        "lon": -75.9285616
       },
       "Cook Street": {
         "lat": 42.1085516,
         "lon": -75.9637017
       },
+      "Court & Hawley Streets": {
+        "lat": 42.09869704982519,
+        "lon": -75.91461589047606
+      },
+      "Crary Avenue": {
+        "lat": 42.1008476,
+        "lon": -75.9435537
+      },
+      "Crestmont Road": {
+        "lat": 42.1056131,
+        "lon": -75.9418972
+      },
+      "Floral Av & Main St": {
+        "lat": 42.11117673469614,
+        "lon": -75.94504207513248
+      },
+      "Front Street": {
+        "lat": 42.1093226,
+        "lon": -75.9121503
+      },
+      "Harrison Street": {
+        "lat": 42.1030815,
+        "lon": -75.9444105
+      },
+      "Helen Street": {
+        "lat": 42.1018129,
+        "lon": -75.940559
+      },
       "Hinman / Academic A": {
         "lat": 42.08872203054464,
         "lon": -75.97315228570167
+      },
+      "Mather Street": {
+        "lat": 42.101208,
+        "lon": -75.9244775
+      },
+      "Murray Street": {
+        "lat": 42.1026284,
+        "lon": -75.9199777
+      },
+      "Roberts Street": {
+        "lat": 42.1094519,
+        "lon": -75.9017236
+      },
+      "Schiller Street": {
+        "lat": 42.10335,
+        "lon": -75.936082
+      },
+      "St Charles Street": {
+        "lat": 42.1097442,
+        "lon": -75.9285616
+      },
+      "State & Hawley Streets": {
+        "lat": 42.09716773831353,
+        "lon": -75.91249679662828
+      },
+      "Willow Street": {
+        "lat": 42.1106888,
+        "lon": -75.9544986
       }
     }
   },
@@ -1339,7 +1339,7 @@
     "stops": [
       "University Union",
       "Physical Facilities",
-      "Bunn Hill/Bunn Hill Access Rd",
+      "Bunn Hill / Bunn Hill Access Rd",
       "Baker Street",
       "Albert Street",
       "St Charles Street",
@@ -1364,7 +1364,7 @@
           "stop_times": {
             "University Union": "7:30 AM",
             "Physical Facilities": "7:39 AM",
-            "Bunn Hill/Bunn Hill Access Rd": "7:48 AM",
+            "Bunn Hill / Bunn Hill Access Rd": "7:48 AM",
             "Baker Street": "7:55 AM"
           }
         },
@@ -1372,7 +1372,7 @@
           "stop_times": {
             "University Union": "8:35 AM",
             "Physical Facilities": "8:44 AM",
-            "Bunn Hill/Bunn Hill Access Rd": "8:53 AM",
+            "Bunn Hill / Bunn Hill Access Rd": "8:53 AM",
             "Baker Street": "9:05 AM"
           }
         },
@@ -1380,7 +1380,7 @@
           "stop_times": {
             "University Union": "9:30 AM",
             "Physical Facilities": "9:39 AM",
-            "Bunn Hill/Bunn Hill Access Rd": "9:48 AM",
+            "Bunn Hill / Bunn Hill Access Rd": "9:48 AM",
             "Baker Street": "10:00 AM"
           }
         },
@@ -1388,7 +1388,7 @@
           "stop_times": {
             "University Union": "10:25 AM",
             "Physical Facilities": "10:34 AM",
-            "Bunn Hill/Bunn Hill Access Rd": "10:43 AM",
+            "Bunn Hill / Bunn Hill Access Rd": "10:43 AM",
             "Baker Street": "10:55 AM"
           }
         },
@@ -1396,7 +1396,7 @@
           "stop_times": {
             "University Union": "11:35 AM",
             "Physical Facilities": "11:44 AM",
-            "Bunn Hill/Bunn Hill Access Rd": "11:53 AM",
+            "Bunn Hill / Bunn Hill Access Rd": "11:53 AM",
             "Baker Street": "12:05 PM"
           }
         },
@@ -1404,7 +1404,7 @@
           "stop_times": {
             "University Union": "12:25 PM",
             "Physical Facilities": "12:34 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "12:43 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "12:43 PM",
             "Baker Street": "12:55 PM"
           }
         },
@@ -1412,7 +1412,7 @@
           "stop_times": {
             "University Union": "1:15 PM",
             "Physical Facilities": "1:24 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "1:33 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "1:33 PM",
             "Baker Street": "1:45 PM"
           }
         },
@@ -1420,7 +1420,7 @@
           "stop_times": {
             "University Union": "2:15 PM",
             "Physical Facilities": "2:24 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "2:33 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "2:33 PM",
             "Baker Street": "2:45 PM"
           }
         },
@@ -1428,7 +1428,7 @@
           "stop_times": {
             "University Union": "3:35 PM",
             "Physical Facilities": "3:44 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "3:53 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "3:53 PM",
             "Baker Street": "4:05 PM"
           }
         },
@@ -1436,7 +1436,7 @@
           "stop_times": {
             "University Union": "4:30 PM",
             "Physical Facilities": "4:39 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "4:48 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "4:48 PM",
             "Baker Street": "5:00 PM"
           }
         },
@@ -1444,7 +1444,7 @@
           "stop_times": {
             "University Union": "5:40 PM",
             "Physical Facilities": "5:49 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "5:58 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "5:58 PM",
             "Baker Street": "6:10 PM"
           }
         },
@@ -1452,7 +1452,7 @@
           "stop_times": {
             "University Union": "6:40 PM",
             "Physical Facilities": "6:49 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "6:58 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "6:58 PM",
             "Baker Street": "7:10 PM"
           }
         },
@@ -1460,7 +1460,7 @@
           "stop_times": {
             "University Union": "7:40 PM",
             "Physical Facilities": "7:49 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "7:58 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "7:58 PM",
             "Baker Street": "8:10 PM"
           }
         },
@@ -1468,7 +1468,7 @@
           "stop_times": {
             "University Union": "8:40 PM",
             "Physical Facilities": "8:49 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "8:58 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "8:58 PM",
             "Baker Street": "9:10 PM"
           }
         },
@@ -1476,7 +1476,7 @@
           "stop_times": {
             "University Union": "9:40 PMM-T",
             "Physical Facilities": "9:49 PMM-T",
-            "Bunn Hill/Bunn Hill Access Rd": "9:58 PMM-T",
+            "Bunn Hill / Bunn Hill Access Rd": "9:58 PMM-T",
             "Baker Street": "10:10 PMM-T"
           }
         }
@@ -1486,7 +1486,7 @@
           "stop_times": {
             "University Union": "10:40 AM",
             "Physical Facilities": "10:49 AM",
-            "Bunn Hill/Bunn Hill Access Rd": "10:58 AM",
+            "Bunn Hill / Bunn Hill Access Rd": "10:58 AM",
             "Baker Street": "11:05 AM"
           }
         },
@@ -1494,7 +1494,7 @@
           "stop_times": {
             "University Union": "12:40 PM",
             "Physical Facilities": "12:49 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "12:58 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "12:58 PM",
             "Baker Street": "1:05 PM"
           }
         },
@@ -1502,7 +1502,7 @@
           "stop_times": {
             "University Union": "3:00 PM",
             "Physical Facilities": "3:09 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "3:18 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "3:18 PM",
             "Baker Street": "3:25 PM"
           }
         },
@@ -1510,7 +1510,7 @@
           "stop_times": {
             "University Union": "5:15 PM",
             "Physical Facilities": "5:24 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "5:33 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "5:33 PM",
             "Baker Street": "5:40 PM"
           }
         },
@@ -1518,88 +1518,88 @@
           "stop_times": {
             "University Union": "8:00 PM",
             "Physical Facilities": "8:09 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "8:18 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "8:18 PM",
             "Baker Street": "8:25 PM"
           }
         }
       ]
     },
     "stop_coords": {
-      "University Union": {
-        "lat": 42.0878147,
-        "lon": -75.9669597
-      },
-      "Physical Facilities": {
-        "lat": 42.090995,
-        "lon": -75.9733282
-      },
-      "Bunn Hill/Bunn Hill Access Rd": {
-        "lat": 42.09216409426842,
-        "lon": -75.97456363280493
-      },
-      "Baker Street": {
-        "lat": 42.1136505,
-        "lon": -75.9653395
-      },
       "Albert Street": {
         "lat": 42.113739,
         "lon": -75.963348
-      },
-      "St Charles Street": {
-        "lat": 42.1097442,
-        "lon": -75.9285616
-      },
-      "Baldwin Street": {
-        "lat": 42.0976712,
-        "lon": -75.8926088
-      },
-      "Pharmacy School": {
-        "lat": 43.117086,
-        "lon": -77.51375
-      },
-      "Nursing School": {
-        "lat": 40.8417528,
-        "lon": -73.9403994
-      },
-      "Lester Avenue": {
-        "lat": 42.1138435,
-        "lon": -75.9501023
-      },
-      "Gannett Building": {
-        "lat": 43.154078,
-        "lon": -77.612706
-      },
-      "Helen Street": {
-        "lat": 42.1018129,
-        "lon": -75.940559
-      },
-      "Schiller Street": {
-        "lat": 42.10335,
-        "lon": -75.936082
-      },
-      "Clarke Street": {
-        "lat": 42.1011424,
-        "lon": -75.9299103
-      },
-      "Cedar Street": {
-        "lat": 42.1007204,
-        "lon": -75.9284275
       },
       "Arthur Street": {
         "lat": 42.099065,
         "lon": -75.924912
       },
+      "Baker Street": {
+        "lat": 42.1136505,
+        "lon": -75.9653395
+      },
+      "Baldwin Street": {
+        "lat": 42.0976712,
+        "lon": -75.8926088
+      },
+      "Bunn Hill / Bunn Hill Access Rd": {
+        "lat": 42.09216409426842,
+        "lon": -75.97456363280493
+      },
+      "Cedar Street": {
+        "lat": 42.1007204,
+        "lon": -75.9284275
+      },
+      "Clarke Street": {
+        "lat": 42.1011424,
+        "lon": -75.9299103
+      },
+      "Gannett Building": {
+        "lat": 42.0888,
+        "lon": -75.967
+      },
+      "Helen Street": {
+        "lat": 42.1018129,
+        "lon": -75.940559
+      },
+      "Lester Avenue": {
+        "lat": 42.1138435,
+        "lon": -75.9501023
+      },
       "Murray Street": {
         "lat": 42.1026284,
         "lon": -75.9199777
+      },
+      "Nursing School": {
+        "lat": 42.11278062483488,
+        "lon": -75.95472014099
+      },
+      "Oak & Leroy Streets": {
+        "lat": 42.09533512674223,
+        "lon": -75.92110146164052
       },
       "Oak Street & Seminary Ave": {
         "lat": 42.09705726811361,
         "lon": -75.92054373095141
       },
-      "Oak & Leroy Streets": {
-        "lat": 42.09533512674223,
-        "lon": -75.92110146164052
+      "Pharmacy School": {
+        "lat": 42.1128116,
+        "lon": -75.956198
+      },
+      "Physical Facilities": {
+        "lat": 42.090995,
+        "lon": -75.9733282
+      },
+      "Schiller Street": {
+        "lat": 42.10335,
+        "lon": -75.936082
+      },
+      "St Charles Street": {
+        "lat": 42.1097442,
+        "lon": -75.9285616
+      },
+      "University Union": {
+        "lat": 42.0878147,
+        "lon": -75.9669597
       },
       "Visions Memorial Arena": {
         "lat": 42.0957335,
@@ -1621,7 +1621,7 @@
       "Helen Street",
       "Gannett Building",
       "Lester Avenue",
-      "Nursing School -Jenison & Corliss Avenues",
+      "Nursing School - Jenison & Corliss Avenues",
       "Pharmacy School",
       "Baldwin Street",
       "St Charles Street",
@@ -1819,21 +1819,9 @@
       ]
     },
     "stop_coords": {
-      "University Downtown Center": {
-        "lat": 42.0957925,
-        "lon": -75.9149564
-      },
-      "Front & Leroy Streets": {
-        "lat": 42.0949330100522,
-        "lon": -75.91881400396909
-      },
-      "Murray Street": {
-        "lat": 42.1026284,
-        "lon": -75.9199777
-      },
-      "Mather Street": {
-        "lat": 42.101208,
-        "lon": -75.9244775
+      "Baldwin Street": {
+        "lat": 42.0976712,
+        "lon": -75.8926088
       },
       "Cedar Street": {
         "lat": 42.1007204,
@@ -1843,45 +1831,57 @@
         "lat": 42.1011424,
         "lon": -75.9299103
       },
-      "Schiller Street": {
-        "lat": 42.10335,
-        "lon": -75.936082
+      "First Street": {
+        "lat": 42.0991667,
+        "lon": -75.9177778
+      },
+      "Front & Leroy Streets": {
+        "lat": 42.0949330100522,
+        "lon": -75.91881400396909
+      },
+      "Gannett Building": {
+        "lat": 42.0888,
+        "lon": -75.967
       },
       "Helen Street": {
         "lat": 42.1018129,
         "lon": -75.940559
       },
-      "Gannett Building": {
-        "lat": 43.154078,
-        "lon": -77.612706
+      "Hinman / Academic A": {
+        "lat": 42.08872203054464,
+        "lon": -75.97315228570167
       },
       "Lester Avenue": {
         "lat": 42.1138435,
         "lon": -75.9501023
       },
-      "Nursing School -Jenison & Corliss Avenues": {
+      "Mather Street": {
+        "lat": 42.101208,
+        "lon": -75.9244775
+      },
+      "Murray Street": {
+        "lat": 42.1026284,
+        "lon": -75.9199777
+      },
+      "Nursing School - Jenison & Corliss Avenues": {
         "lat": 42.11278062483488,
         "lon": -75.95472014020399
       },
       "Pharmacy School": {
-        "lat": 43.117086,
-        "lon": -77.51375
+        "lat": 42.1128116,
+        "lon": -75.956198
       },
-      "Baldwin Street": {
-        "lat": 42.0976712,
-        "lon": -75.8926088
+      "Schiller Street": {
+        "lat": 42.10335,
+        "lon": -75.936082
       },
       "St Charles Street": {
         "lat": 42.1097442,
         "lon": -75.9285616
       },
-      "First Street": {
-        "lat": 42.0991667,
-        "lon": -75.9177778
-      },
-      "Hinman / Academic A": {
-        "lat": 42.08872203054464,
-        "lon": -75.97315228570167
+      "University Downtown Center": {
+        "lat": 42.0957925,
+        "lon": -75.9149564
       }
     }
   },
@@ -1891,12 +1891,12 @@
     "stops": [
       "University Union",
       "Physical Facilities",
-      "Bunn Hill/Bunn Hill Access Rd",
+      "Bunn Hill / Bunn Hill Access Rd",
       "Ethel Street",
       "Elfred Street",
       "Columbus Place",
       "Margaret Street",
-      "Riverside Dr & Beethoven St -Lourdes Hospital",
+      "Riverside Dr & Beethoven St - Lourdes Hospital",
       "Leroy & Beethoven Streets",
       "Laurel Avenue",
       "Chestnut Street",
@@ -1910,7 +1910,7 @@
           "stop_times": {
             "University Union": "N/AUU",
             "Physical Facilities": "7:01 AM",
-            "Bunn Hill/Bunn Hill Access Rd": "7:06 AM",
+            "Bunn Hill / Bunn Hill Access Rd": "7:06 AM",
             "Ethel Street": "7:13 AM"
           }
         },
@@ -1918,7 +1918,7 @@
           "stop_times": {
             "University Union": "7:45 AM",
             "Physical Facilities": "7:51 AM",
-            "Bunn Hill/Bunn Hill Access Rd": "7:56 AM",
+            "Bunn Hill / Bunn Hill Access Rd": "7:56 AM",
             "Ethel Street": "8:03 AM"
           }
         },
@@ -1926,7 +1926,7 @@
           "stop_times": {
             "University Union": "8:15 AM",
             "Physical Facilities": "8:21 AM",
-            "Bunn Hill/Bunn Hill Access Rd": "8:26 AM",
+            "Bunn Hill / Bunn Hill Access Rd": "8:26 AM",
             "Ethel Street": "8:33 AM"
           }
         },
@@ -1934,7 +1934,7 @@
           "stop_times": {
             "University Union": "9:05 AM",
             "Physical Facilities": "9:11 AM",
-            "Bunn Hill/Bunn Hill Access Rd": "9:16 AM",
+            "Bunn Hill / Bunn Hill Access Rd": "9:16 AM",
             "Ethel Street": "9:23 AM"
           }
         },
@@ -1942,7 +1942,7 @@
           "stop_times": {
             "University Union": "9:55 AM",
             "Physical Facilities": "10:01 AM",
-            "Bunn Hill/Bunn Hill Access Rd": "10:06 AM",
+            "Bunn Hill / Bunn Hill Access Rd": "10:06 AM",
             "Ethel Street": "10:13 AM"
           }
         },
@@ -1950,7 +1950,7 @@
           "stop_times": {
             "University Union": "10:25 AM",
             "Physical Facilities": "10:31 AM",
-            "Bunn Hill/Bunn Hill Access Rd": "10:36 AM",
+            "Bunn Hill / Bunn Hill Access Rd": "10:36 AM",
             "Ethel Street": "10:43 AM"
           }
         },
@@ -1958,7 +1958,7 @@
           "stop_times": {
             "University Union": "10:45 AM",
             "Physical Facilities": "10:51 AM",
-            "Bunn Hill/Bunn Hill Access Rd": "10:56 AM",
+            "Bunn Hill / Bunn Hill Access Rd": "10:56 AM",
             "Ethel Street": "11:03 AM"
           }
         },
@@ -1966,7 +1966,7 @@
           "stop_times": {
             "University Union": "11:05 AM",
             "Physical Facilities": "11:11 AM",
-            "Bunn Hill/Bunn Hill Access Rd": "11:16 AM",
+            "Bunn Hill / Bunn Hill Access Rd": "11:16 AM",
             "Ethel Street": "11:23 AM"
           }
         },
@@ -1974,7 +1974,7 @@
           "stop_times": {
             "University Union": "11:20 AM",
             "Physical Facilities": "11:26 AM",
-            "Bunn Hill/Bunn Hill Access Rd": "11:31 AM",
+            "Bunn Hill / Bunn Hill Access Rd": "11:31 AM",
             "Ethel Street": "11:38 AM"
           }
         },
@@ -1982,7 +1982,7 @@
           "stop_times": {
             "University Union": "11:55 AM",
             "Physical Facilities": "12:01 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "12:06 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "12:06 PM",
             "Ethel Street": "12:13 PM"
           }
         },
@@ -1990,7 +1990,7 @@
           "stop_times": {
             "University Union": "12:30 PM",
             "Physical Facilities": "12:36 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "12:41 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "12:41 PM",
             "Ethel Street": "12:48 PM"
           }
         },
@@ -1998,7 +1998,7 @@
           "stop_times": {
             "University Union": "1:20 PM",
             "Physical Facilities": "1:26 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "1:31 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "1:31 PM",
             "Ethel Street": "1:38 PM"
           }
         },
@@ -2006,7 +2006,7 @@
           "stop_times": {
             "University Union": "2:10 PM",
             "Physical Facilities": "2:16 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "2:21 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "2:21 PM",
             "Ethel Street": "2:28 PM"
           }
         },
@@ -2014,7 +2014,7 @@
           "stop_times": {
             "University Union": "3:00 PM",
             "Physical Facilities": "3:06 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "3:11 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "3:11 PM",
             "Ethel Street": "3:18 PM"
           }
         },
@@ -2022,7 +2022,7 @@
           "stop_times": {
             "University Union": "3:35 PM",
             "Physical Facilities": "3:41 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "3:46 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "3:46 PM",
             "Ethel Street": "3:53 PM"
           }
         },
@@ -2030,7 +2030,7 @@
           "stop_times": {
             "University Union": "4:15 PM",
             "Physical Facilities": "4:21 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "4:26 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "4:26 PM",
             "Ethel Street": "4:33 PM"
           }
         },
@@ -2038,7 +2038,7 @@
           "stop_times": {
             "University Union": "4:50 PM",
             "Physical Facilities": "4:56 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "5:01 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "5:01 PM",
             "Ethel Street": "5:08 PM"
           }
         },
@@ -2046,7 +2046,7 @@
           "stop_times": {
             "University Union": "5:05 PM",
             "Physical Facilities": "5:11 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "5:16 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "5:16 PM",
             "Ethel Street": "5:23 PM"
           }
         },
@@ -2054,7 +2054,7 @@
           "stop_times": {
             "University Union": "5:40 PM",
             "Physical Facilities": "5:46 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "5:51 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "5:51 PM",
             "Ethel Street": "5:58 PM"
           }
         },
@@ -2062,7 +2062,7 @@
           "stop_times": {
             "University Union": "6:00 PM",
             "Physical Facilities": "6:06 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "6:11 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "6:11 PM",
             "Ethel Street": "6:18 PM"
           }
         },
@@ -2070,7 +2070,7 @@
           "stop_times": {
             "University Union": "6:20 PM",
             "Physical Facilities": "6:26 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "6:31 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "6:31 PM",
             "Ethel Street": "6:38 PM"
           }
         },
@@ -2078,7 +2078,7 @@
           "stop_times": {
             "University Union": "6:40 PM",
             "Physical Facilities": "6:46 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "6:51 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "6:51 PM",
             "Ethel Street": "6:58 PM"
           }
         },
@@ -2086,7 +2086,7 @@
           "stop_times": {
             "University Union": "7:10 PM",
             "Physical Facilities": "7:16 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "7:21 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "7:21 PM",
             "Ethel Street": "7:28 PM"
           }
         },
@@ -2094,7 +2094,7 @@
           "stop_times": {
             "University Union": "7:40 PM",
             "Physical Facilities": "7:46 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "7:51 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "7:51 PM",
             "Ethel Street": "7:58 PM"
           }
         },
@@ -2102,7 +2102,7 @@
           "stop_times": {
             "University Union": "8:25 PM",
             "Physical Facilities": "8:31 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "8:36 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "8:36 PM",
             "Ethel Street": "8:43 PM"
           }
         },
@@ -2110,7 +2110,7 @@
           "stop_times": {
             "University Union": "8:55 PM",
             "Physical Facilities": "9:01 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "9:06 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "9:06 PM",
             "Ethel Street": "9:13 PM"
           }
         },
@@ -2118,7 +2118,7 @@
           "stop_times": {
             "University Union": "9:30 PM",
             "Physical Facilities": "9:36 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "9:41 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "9:41 PM",
             "Ethel Street": "9:48 PM"
           }
         },
@@ -2126,7 +2126,7 @@
           "stop_times": {
             "University Union": "9:55 PM",
             "Physical Facilities": "10:01 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "10:06 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "10:06 PM",
             "Ethel Street": "10:13 PM"
           }
         },
@@ -2134,7 +2134,7 @@
           "stop_times": {
             "University Union": "10:50 PMM-T",
             "Physical Facilities": "10:56 PMM-T",
-            "Bunn Hill/Bunn Hill Access Rd": "11:01 PMM-T",
+            "Bunn Hill / Bunn Hill Access Rd": "11:01 PMM-T",
             "Ethel Street": "11:08 PMM-T"
           }
         },
@@ -2142,7 +2142,7 @@
           "stop_times": {
             "University Union": "11:00 PMF",
             "Physical Facilities": "11:06 PMF",
-            "Bunn Hill/Bunn Hill Access Rd": "11:11 PMF",
+            "Bunn Hill / Bunn Hill Access Rd": "11:11 PMF",
             "Ethel Street": "11:18 PMF"
           }
         },
@@ -2150,7 +2150,7 @@
           "stop_times": {
             "University Union": "11:45 PM",
             "Physical Facilities": "11:51 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "11:56 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "11:56 PM",
             "Ethel Street": "12:03 AM"
           }
         }
@@ -2160,7 +2160,7 @@
           "stop_times": {
             "University Union": "8:45 AM",
             "Physical Facilities": "8:51 AM",
-            "Bunn Hill/Bunn Hill Access Rd": "8:56 AM",
+            "Bunn Hill / Bunn Hill Access Rd": "8:56 AM",
             "Ethel Street": "9:03 AM"
           }
         },
@@ -2168,7 +2168,7 @@
           "stop_times": {
             "University Union": "9:30 AM",
             "Physical Facilities": "9:36 AM",
-            "Bunn Hill/Bunn Hill Access Rd": "9:41 AM",
+            "Bunn Hill / Bunn Hill Access Rd": "9:41 AM",
             "Ethel Street": "9:48 AM"
           }
         },
@@ -2176,7 +2176,7 @@
           "stop_times": {
             "University Union": "10:45 AM",
             "Physical Facilities": "10:51 AM",
-            "Bunn Hill/Bunn Hill Access Rd": "10:56 AM",
+            "Bunn Hill / Bunn Hill Access Rd": "10:56 AM",
             "Ethel Street": "11:03 AM"
           }
         },
@@ -2184,7 +2184,7 @@
           "stop_times": {
             "University Union": "12:45 PM",
             "Physical Facilities": "12:51 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "12:56 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "12:56 PM",
             "Ethel Street": "1:03 PM"
           }
         },
@@ -2192,7 +2192,7 @@
           "stop_times": {
             "University Union": "1:45 PM",
             "Physical Facilities": "1:51 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "1:56 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "1:56 PM",
             "Ethel Street": "2:03 PM"
           }
         },
@@ -2200,7 +2200,7 @@
           "stop_times": {
             "University Union": "2:55 PM",
             "Physical Facilities": "3:01 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "3:06 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "3:06 PM",
             "Ethel Street": "3:13 PM"
           }
         },
@@ -2208,7 +2208,7 @@
           "stop_times": {
             "University Union": "4:25 PM",
             "Physical Facilities": "4:31 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "4:36 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "4:36 PM",
             "Ethel Street": "4:43 PM"
           }
         },
@@ -2216,7 +2216,7 @@
           "stop_times": {
             "University Union": "5:40 PM",
             "Physical Facilities": "5:46 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "5:51 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "5:51 PM",
             "Ethel Street": "5:58 PM"
           }
         },
@@ -2224,7 +2224,7 @@
           "stop_times": {
             "University Union": "7:10 PM",
             "Physical Facilities": "7:16 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "7:21 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "7:21 PM",
             "Ethel Street": "7:28 PM"
           }
         },
@@ -2232,7 +2232,7 @@
           "stop_times": {
             "University Union": "8:30 PM",
             "Physical Facilities": "8:36 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "8:41 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "8:41 PM",
             "Ethel Street": "8:48 PM"
           }
         },
@@ -2240,7 +2240,7 @@
           "stop_times": {
             "University Union": "9:45 PMSu",
             "Physical Facilities": "9:51 PMSu",
-            "Bunn Hill/Bunn Hill Access Rd": "9:56 PMSu",
+            "Bunn Hill / Bunn Hill Access Rd": "9:56 PMSu",
             "Ethel Street": "10:03 PMSu"
           }
         },
@@ -2248,7 +2248,7 @@
           "stop_times": {
             "University Union": "9:55 PM",
             "Physical Facilities": "10:01 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "10:06 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "10:06 PM",
             "Ethel Street": "10:13 PM"
           }
         },
@@ -2256,7 +2256,7 @@
           "stop_times": {
             "University Union": "10:30 PMSu",
             "Physical Facilities": "10:36 PMSu",
-            "Bunn Hill/Bunn Hill Access Rd": "10:41 PMSu",
+            "Bunn Hill / Bunn Hill Access Rd": "10:41 PMSu",
             "Ethel Street": "10:48 PMSu"
           }
         },
@@ -2264,7 +2264,7 @@
           "stop_times": {
             "University Union": "11:00 PMSa",
             "Physical Facilities": "11:06 PMSa",
-            "Bunn Hill/Bunn Hill Access Rd": "11:11 PMSa",
+            "Bunn Hill / Bunn Hill Access Rd": "11:11 PMSa",
             "Ethel Street": "11:18 PMSa"
           }
         },
@@ -2272,7 +2272,7 @@
           "stop_times": {
             "University Union": "11:10 PMSu",
             "Physical Facilities": "11:16 PMSu",
-            "Bunn Hill/Bunn Hill Access Rd": "11:21 PMSu",
+            "Bunn Hill / Bunn Hill Access Rd": "11:21 PMSu",
             "Ethel Street": "11:28 PMSu"
           }
         },
@@ -2280,64 +2280,64 @@
           "stop_times": {
             "University Union": "11:45 PMSa",
             "Physical Facilities": "11:51 PMSa",
-            "Bunn Hill/Bunn Hill Access Rd": "11:56 PMSa",
+            "Bunn Hill / Bunn Hill Access Rd": "11:56 PMSa",
             "Ethel Street": "12:03 AMSa"
           }
         }
       ]
     },
     "stop_coords": {
-      "University Union": {
-        "lat": 42.0878147,
-        "lon": -75.9669597
-      },
-      "Physical Facilities": {
-        "lat": 42.090995,
-        "lon": -75.9733282
-      },
-      "Bunn Hill/Bunn Hill Access Rd": {
-        "lat": 42.09216409426842,
-        "lon": -75.97456363280493
-      },
-      "Ethel Street": {
-        "lat": 42.103361,
-        "lon": -75.958456
-      },
-      "Elfred Street": {
-        "lat": 42.100835,
-        "lon": -75.9582355
-      },
-      "Columbus Place": {
-        "lat": 42.1001055,
-        "lon": -75.9550694
-      },
-      "Margaret Street": {
-        "lat": 42.1072929,
-        "lon": -75.9498316
-      },
-      "Riverside Dr & Beethoven St -Lourdes Hospital": {
-        "lat": 42.09256241852081,
-        "lon": -75.93491469962213
-      },
       "Beethoven & Leroy Streets": {
         "lat": 42.09533190281066,
         "lon": -75.93463327116427
       },
-      "Laurel Avenue": {
-        "lat": 42.0955758,
-        "lon": -75.93082
+      "Bunn Hill / Bunn Hill Access Rd": {
+        "lat": 42.09216409426842,
+        "lon": -75.97456363280493
       },
       "Chestnut Street": {
         "lat": 42.0968036,
         "lon": -75.926814
       },
+      "Columbus Place": {
+        "lat": 42.1001055,
+        "lon": -75.9550694
+      },
+      "Elfred Street": {
+        "lat": 42.100835,
+        "lon": -75.9582355
+      },
+      "Ethel Street": {
+        "lat": 42.103361,
+        "lon": -75.958456
+      },
+      "Laurel Avenue": {
+        "lat": 42.0955758,
+        "lon": -75.93082
+      },
+      "Margaret Street": {
+        "lat": 42.1072929,
+        "lon": -75.9498316
+      },
       "Murray Street": {
         "lat": 42.1026284,
         "lon": -75.9199777
       },
+      "Physical Facilities": {
+        "lat": 42.090995,
+        "lon": -75.9733282
+      },
+      "Riverside Dr & Beethoven St - Lourdes Hospital": {
+        "lat": 42.09256241852081,
+        "lon": -75.93491469962213
+      },
       "Riverside Dr & Front St": {
         "lat": 42.09275141019801,
         "lon": -75.92176110017888
+      },
+      "University Union": {
+        "lat": 42.0878147,
+        "lon": -75.9669597
       },
       "Visions Memorial Arena": {
         "lat": 42.0957335,
@@ -2355,7 +2355,7 @@
       "Chestnut Street",
       "Laurel Avenue",
       "Leroy & Beethoven Streets",
-      "Riverside Dr & Beethoven St -Lourdes Hospital",
+      "Riverside Dr & Beethoven St - Lourdes Hospital",
       "Margaret Street",
       "Columbus Place",
       "Elfred Street",
@@ -2761,37 +2761,9 @@
       ]
     },
     "stop_coords": {
-      "University Downtown Center": {
-        "lat": 42.0957925,
-        "lon": -75.9149564
-      },
-      "Leroy & Front Streets": {
-        "lat": 42.094917087704026,
-        "lon": -75.91880327513331
-      },
-      "Murray Street": {
-        "lat": 42.1026284,
-        "lon": -75.9199777
-      },
       "Chestnut Street": {
         "lat": 42.0968036,
         "lon": -75.926814
-      },
-      "Laurel Avenue": {
-        "lat": 42.0955758,
-        "lon": -75.93082
-      },
-      "Leroy & Beethoven Streets": {
-        "lat": 42.09529604897163,
-        "lon": -75.93463327513332
-      },
-      "Riverside Dr & Beethoven St -Lourdes Hospital": {
-        "lat": 42.09256241852081,
-        "lon": -75.93491469962213
-      },
-      "Margaret Street": {
-        "lat": 42.1072929,
-        "lon": -75.9498316
       },
       "Columbus Place": {
         "lat": 42.1001055,
@@ -2808,6 +2780,34 @@
       "Hinman / Academic A": {
         "lat": 42.08872203054464,
         "lon": -75.97315228570167
+      },
+      "Laurel Avenue": {
+        "lat": 42.0955758,
+        "lon": -75.93082
+      },
+      "Leroy & Beethoven Streets": {
+        "lat": 42.09533190281066,
+        "lon": -75.93463327116427
+      },
+      "Leroy & Front Streets": {
+        "lat": 42.094917087704026,
+        "lon": -75.91880327513331
+      },
+      "Margaret Street": {
+        "lat": 42.1072929,
+        "lon": -75.9498316
+      },
+      "Murray Street": {
+        "lat": 42.1026284,
+        "lon": -75.9199777
+      },
+      "Riverside Dr & Beethoven St - Lourdes Hospital": {
+        "lat": 42.09256241852081,
+        "lon": -75.93491469962213
+      },
+      "University Downtown Center": {
+        "lat": 42.0957925,
+        "lon": -75.9149564
       }
     }
   },
@@ -2820,7 +2820,7 @@
       "Elfred Street",
       "Columbus Place",
       "Margaret Street",
-      "Riverside Dr & Beethoven St -Lourdes Hospital",
+      "Riverside Dr & Beethoven St - Lourdes Hospital",
       "Leroy & Beethoven Streets",
       "Laurel Avenue",
       "Chestnut Street",
@@ -2915,45 +2915,41 @@
       ]
     },
     "stop_coords": {
-      "University Union": {
-        "lat": 42.0878147,
-        "lon": -75.9669597
-      },
-      "Ethel Street": {
-        "lat": 42.103361,
-        "lon": -75.958456
-      },
-      "Elfred Street": {
-        "lat": 42.100835,
-        "lon": -75.9582355
-      },
-      "Columbus Place": {
-        "lat": 42.1001055,
-        "lon": -75.9550694
-      },
-      "Margaret Street": {
-        "lat": 42.1072929,
-        "lon": -75.9498316
-      },
-      "Riverside Dr & Beethoven St -Lourdes Hospital": {
-        "lat": 42.09256241852081,
-        "lon": -75.93491469962213
-      },
       "Beethoven & Leroy Streets": {
         "lat": 42.09533190281066,
         "lon": -75.93463327116427
-      },
-      "Laurel Avenue": {
-        "lat": 42.0955758,
-        "lon": -75.93082
       },
       "Chestnut Street": {
         "lat": 42.0968036,
         "lon": -75.926814
       },
+      "Columbus Place": {
+        "lat": 42.1001055,
+        "lon": -75.9550694
+      },
+      "Elfred Street": {
+        "lat": 42.100835,
+        "lon": -75.9582355
+      },
+      "Ethel Street": {
+        "lat": 42.103361,
+        "lon": -75.958456
+      },
+      "Laurel Avenue": {
+        "lat": 42.0955758,
+        "lon": -75.93082
+      },
+      "Margaret Street": {
+        "lat": 42.1072929,
+        "lon": -75.9498316
+      },
       "Murray Street": {
         "lat": 42.1026284,
         "lon": -75.9199777
+      },
+      "Riverside Dr & Beethoven St - Lourdes Hospital": {
+        "lat": 42.09256241852081,
+        "lon": -75.93491469962213
       },
       "Riverside Dr & Front St": {
         "lat": 42.09275141019801,
@@ -2962,6 +2958,10 @@
       "State & Hawley Streets": {
         "lat": 42.09716773831353,
         "lon": -75.91249679662828
+      },
+      "University Union": {
+        "lat": 42.0878147,
+        "lon": -75.9669597
       }
     }
   },
@@ -2975,7 +2975,7 @@
       "Chestnut Street",
       "Laurel Avenue",
       "Leroy & Beethoven Streets",
-      "Riverside Dr & Beethoven St -Lourdes Hospital",
+      "Riverside Dr & Beethoven St - Lourdes Hospital",
       "Margaret Street",
       "Columbus Place",
       "Elfred Street",
@@ -3053,37 +3053,9 @@
       ]
     },
     "stop_coords": {
-      "State & Hawley Streets": {
-        "lat": 42.09716773831353,
-        "lon": -75.91249679662828
-      },
-      "Leroy & Front Streets": {
-        "lat": 42.094917087704026,
-        "lon": -75.91880327513331
-      },
-      "Murray Street": {
-        "lat": 42.1026284,
-        "lon": -75.9199777
-      },
       "Chestnut Street": {
         "lat": 42.0968036,
         "lon": -75.926814
-      },
-      "Laurel Avenue": {
-        "lat": 42.0955758,
-        "lon": -75.93082
-      },
-      "Leroy & Beethoven Streets": {
-        "lat": 42.09529604897163,
-        "lon": -75.93463327513332
-      },
-      "Riverside Dr & Beethoven St -Lourdes Hospital": {
-        "lat": 42.09256241852081,
-        "lon": -75.93491469962213
-      },
-      "Margaret Street": {
-        "lat": 42.1072929,
-        "lon": -75.9498316
       },
       "Columbus Place": {
         "lat": 42.1001055,
@@ -3100,6 +3072,34 @@
       "Hinman / Academic A": {
         "lat": 42.08872203054464,
         "lon": -75.97315228570167
+      },
+      "Laurel Avenue": {
+        "lat": 42.0955758,
+        "lon": -75.93082
+      },
+      "Leroy & Beethoven Streets": {
+        "lat": 42.09533190281066,
+        "lon": -75.93463327116427
+      },
+      "Leroy & Front Streets": {
+        "lat": 42.094917087704026,
+        "lon": -75.91880327513331
+      },
+      "Margaret Street": {
+        "lat": 42.1072929,
+        "lon": -75.9498316
+      },
+      "Murray Street": {
+        "lat": 42.1026284,
+        "lon": -75.9199777
+      },
+      "Riverside Dr & Beethoven St - Lourdes Hospital": {
+        "lat": 42.09256241852081,
+        "lon": -75.93491469962213
+      },
+      "State & Hawley Streets": {
+        "lat": 42.09716773831353,
+        "lon": -75.91249679662828
       }
     }
   },
@@ -3316,16 +3316,17 @@
             "University Downtown Center": "8:15 PM"
           }
         }
-      ]
+      ],
+      "weekend": []
     },
     "stop_coords": {
-      "University Union": {
-        "lat": 42.0878147,
-        "lon": -75.9669597
-      },
       "University Downtown Center": {
         "lat": 42.0957925,
         "lon": -75.9149564
+      },
+      "University Union": {
+        "lat": 42.0878147,
+        "lon": -75.9669597
       }
     }
   },
@@ -3506,16 +3507,17 @@
             "Hinman / Academic A": "8:30 PM"
           }
         }
-      ]
+      ],
+      "weekend": []
     },
     "stop_coords": {
-      "University Downtown Center": {
-        "lat": 42.0957925,
-        "lon": -75.9149564
-      },
       "Hinman / Academic A": {
         "lat": 42.08872203054464,
         "lon": -75.97315228570167
+      },
+      "University Downtown Center": {
+        "lat": 42.0957925,
+        "lon": -75.9149564
       }
     }
   },
@@ -3535,9 +3537,9 @@
       "Webster Street",
       "Henry & Liberty Streets",
       "Mirabito Stadium -Henry & Fayette Streets",
-      "BC Junction Bus Terminal -Henry & Chenango Streets",
+      "BC Junction Bus Terminal - Henry & Chenango Streets",
       "Henry & Water Streets",
-      "Hawley & Court Streets",
+      "Court & Hawley Streets",
       "University Downtown Center"
     ],
     "schedules": {
@@ -3709,69 +3711,69 @@
       ]
     },
     "stop_coords": {
-      "University Union": {
-        "lat": 42.0878147,
-        "lon": -75.9669597
-      },
-      "South Washington Street": {
-        "lat": 42.0876001,
-        "lon": -75.9128074
-      },
-      "Tremont Avenue": {
-        "lat": 42.0908852,
-        "lon": -75.9096584
-      },
-      "Livingston Street": {
-        "lat": 42.0915453,
-        "lon": -75.9083036
-      },
-      "Park Diner - High Street": {
-        "lat": 42.0929815870476,
-        "lon": -75.90494687946698
-      },
-      "Telegraph Street": {
-        "lat": 42.0923641,
-        "lon": -75.9016151
-      },
       "Alfred Street": {
         "lat": 42.0929303,
         "lon": -75.897551
       },
-      "Tompkins St & Conklin Av": {
-        "lat": 42.09514295994718,
-        "lon": -75.89381143448456
+      "BC Junction Bus Terminal - Henry & Chenango Streets": {
+        "lat": 42.100817,
+        "lon": -75.91007
       },
-      "Jackson Street": {
-        "lat": 42.0978483,
-        "lon": -75.895246
-      },
-      "Webster Street": {
-        "lat": 42.0995754,
-        "lon": -75.8944804
+      "Court & Hawley Streets": {
+        "lat": 42.09869704982519,
+        "lon": -75.91461589047606
       },
       "Henry & Liberty Streets": {
         "lat": 42.10350973132064,
         "lon": -75.89916560396864
       },
-      "Mirabito Stadium -Henry & Fayette Streets": {
-        "lat": 42.102194933269324,
-        "lon": -75.90494908790288
-      },
-      "BC Junction Bus Terminal -Henry & Chenango Streets": {
-        "lat": 42.100817,
-        "lon": -75.91007
-      },
       "Henry & Water Streets": {
         "lat": 42.10075455034154,
         "lon": -75.91396990396879
       },
-      "Hawley & Court Streets": {
-        "lat": 42.09869704982519,
-        "lon": -75.91461589047606
+      "Jackson Street": {
+        "lat": 42.0978483,
+        "lon": -75.895246
+      },
+      "Livingston Street": {
+        "lat": 42.0915453,
+        "lon": -75.9083036
+      },
+      "Mirabito Stadium -Henry & Fayette Streets": {
+        "lat": 42.102194933269324,
+        "lon": -75.90494908790288
+      },
+      "Park Diner - High Street": {
+        "lat": 42.0929815870476,
+        "lon": -75.90494687946698
+      },
+      "South Washington Street": {
+        "lat": 42.0876001,
+        "lon": -75.9128074
+      },
+      "Telegraph Street": {
+        "lat": 42.0923641,
+        "lon": -75.9016151
+      },
+      "Tompkins St & Conklin Av": {
+        "lat": 42.09514295994718,
+        "lon": -75.89381143448456
+      },
+      "Tremont Avenue": {
+        "lat": 42.0908852,
+        "lon": -75.9096584
       },
       "University Downtown Center": {
         "lat": 42.0957925,
         "lon": -75.9149564
+      },
+      "University Union": {
+        "lat": 42.0878147,
+        "lon": -75.9669597
+      },
+      "Webster Street": {
+        "lat": 42.0995754,
+        "lon": -75.8944804
       }
     }
   },
@@ -3780,9 +3782,9 @@
     "url": "https://occtransport.org/pages/routes/ds-in.html",
     "stops": [
       "Visions Memorial Arena",
-      "Hawley & Court Streets",
+      "Court & Hawley Streets",
       "Henry & Water Streets",
-      "BC Junction Bus Terminal -Henry & Chenango Streets",
+      "BC Junction Bus Terminal - Henry & Chenango Streets",
       "Mirabito Stadium -Henry & Fayette Streets",
       "Henry & Liberty Streets",
       "Webster Street",
@@ -3801,144 +3803,144 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "7:55 AM",
-            "Hawley & Court Streets": "7:58 AM",
+            "Court & Hawley Streets": "7:58 AM",
             "Henry & Water Streets": "8:05 AM",
-            "BC Junction Bus Terminal -Henry & Chenango Streets": "8:10 AM",
+            "BC Junction Bus Terminal - Henry & Chenango Streets": "8:10 AM",
             "Mirabito Stadium -Henry & Fayette Streets": "8:20 AM"
           }
         },
         {
           "stop_times": {
             "Visions Memorial Arena": "8:35 AM",
-            "Hawley & Court Streets": "8:38 AM",
+            "Court & Hawley Streets": "8:38 AM",
             "Henry & Water Streets": "8:45 AM",
-            "BC Junction Bus Terminal -Henry & Chenango Streets": "8:50 AM",
+            "BC Junction Bus Terminal - Henry & Chenango Streets": "8:50 AM",
             "Mirabito Stadium -Henry & Fayette Streets": "9:00 AM"
           }
         },
         {
           "stop_times": {
             "Visions Memorial Arena": "9:05 AM",
-            "Hawley & Court Streets": "9:08 AM",
+            "Court & Hawley Streets": "9:08 AM",
             "Henry & Water Streets": "9:15 AM",
-            "BC Junction Bus Terminal -Henry & Chenango Streets": "9:20 AM",
+            "BC Junction Bus Terminal - Henry & Chenango Streets": "9:20 AM",
             "Mirabito Stadium -Henry & Fayette Streets": "9:30 AM"
           }
         },
         {
           "stop_times": {
             "Visions Memorial Arena": "10:00 AM",
-            "Hawley & Court Streets": "10:03 AM",
+            "Court & Hawley Streets": "10:03 AM",
             "Henry & Water Streets": "10:10 AM",
-            "BC Junction Bus Terminal -Henry & Chenango Streets": "10:15 AM",
+            "BC Junction Bus Terminal - Henry & Chenango Streets": "10:15 AM",
             "Mirabito Stadium -Henry & Fayette Streets": "10:25 AM"
           }
         },
         {
           "stop_times": {
             "Visions Memorial Arena": "10:55 AM",
-            "Hawley & Court Streets": "10:58 AM",
+            "Court & Hawley Streets": "10:58 AM",
             "Henry & Water Streets": "11:05 AM",
-            "BC Junction Bus Terminal -Henry & Chenango Streets": "11:10 AM",
+            "BC Junction Bus Terminal - Henry & Chenango Streets": "11:10 AM",
             "Mirabito Stadium -Henry & Fayette Streets": "11:20 AM"
           }
         },
         {
           "stop_times": {
             "Visions Memorial Arena": "12:05 PM",
-            "Hawley & Court Streets": "12:08 PM",
+            "Court & Hawley Streets": "12:08 PM",
             "Henry & Water Streets": "12:15 PM",
-            "BC Junction Bus Terminal -Henry & Chenango Streets": "12:20 PM",
+            "BC Junction Bus Terminal - Henry & Chenango Streets": "12:20 PM",
             "Mirabito Stadium -Henry & Fayette Streets": "12:30 PM"
           }
         },
         {
           "stop_times": {
             "Visions Memorial Arena": "12:55 PMAA",
-            "Hawley & Court Streets": "12:58 PMAA",
+            "Court & Hawley Streets": "12:58 PMAA",
             "Henry & Water Streets": "1:05 PMAA",
-            "BC Junction Bus Terminal -Henry & Chenango Streets": "1:10 PMAA",
+            "BC Junction Bus Terminal - Henry & Chenango Streets": "1:10 PMAA",
             "Mirabito Stadium -Henry & Fayette Streets": "1:20 PMAA"
           }
         },
         {
           "stop_times": {
             "Visions Memorial Arena": "1:45 PM",
-            "Hawley & Court Streets": "1:48 PM",
+            "Court & Hawley Streets": "1:48 PM",
             "Henry & Water Streets": "1:55 PM",
-            "BC Junction Bus Terminal -Henry & Chenango Streets": "2:00 PM",
+            "BC Junction Bus Terminal - Henry & Chenango Streets": "2:00 PM",
             "Mirabito Stadium -Henry & Fayette Streets": "2:10 PM"
           }
         },
         {
           "stop_times": {
             "Visions Memorial Arena": "2:45 PM",
-            "Hawley & Court Streets": "2:48 PM",
+            "Court & Hawley Streets": "2:48 PM",
             "Henry & Water Streets": "2:55 PM",
-            "BC Junction Bus Terminal -Henry & Chenango Streets": "3:00 PM",
+            "BC Junction Bus Terminal - Henry & Chenango Streets": "3:00 PM",
             "Mirabito Stadium -Henry & Fayette Streets": "3:10 PM"
           }
         },
         {
           "stop_times": {
             "Visions Memorial Arena": "4:08 PMAA",
-            "Hawley & Court Streets": "4:11 PMAA",
+            "Court & Hawley Streets": "4:11 PMAA",
             "Henry & Water Streets": "4:18 PMAA",
-            "BC Junction Bus Terminal -Henry & Chenango Streets": "4:23 PMAA",
+            "BC Junction Bus Terminal - Henry & Chenango Streets": "4:23 PMAA",
             "Mirabito Stadium -Henry & Fayette Streets": "4:33 PMAA"
           }
         },
         {
           "stop_times": {
             "Visions Memorial Arena": "5:05 PMAA",
-            "Hawley & Court Streets": "5:08 PMAA",
+            "Court & Hawley Streets": "5:08 PMAA",
             "Henry & Water Streets": "5:15 PMAA",
-            "BC Junction Bus Terminal -Henry & Chenango Streets": "5:20 PMAA",
+            "BC Junction Bus Terminal - Henry & Chenango Streets": "5:20 PMAA",
             "Mirabito Stadium -Henry & Fayette Streets": "5:30 PMAA"
           }
         },
         {
           "stop_times": {
             "Visions Memorial Arena": "6:10 PM",
-            "Hawley & Court Streets": "6:13 PM",
+            "Court & Hawley Streets": "6:13 PM",
             "Henry & Water Streets": "6:20 PM",
-            "BC Junction Bus Terminal -Henry & Chenango Streets": "6:25 PM",
+            "BC Junction Bus Terminal - Henry & Chenango Streets": "6:25 PM",
             "Mirabito Stadium -Henry & Fayette Streets": "6:35 PM"
           }
         },
         {
           "stop_times": {
             "Visions Memorial Arena": "7:10 PM",
-            "Hawley & Court Streets": "7:13 PM",
+            "Court & Hawley Streets": "7:13 PM",
             "Henry & Water Streets": "7:20 PM",
-            "BC Junction Bus Terminal -Henry & Chenango Streets": "7:25 PM",
+            "BC Junction Bus Terminal - Henry & Chenango Streets": "7:25 PM",
             "Mirabito Stadium -Henry & Fayette Streets": "7:35 PM"
           }
         },
         {
           "stop_times": {
             "Visions Memorial Arena": "8:10 PM",
-            "Hawley & Court Streets": "8:13 PM",
+            "Court & Hawley Streets": "8:13 PM",
             "Henry & Water Streets": "8:20 PM",
-            "BC Junction Bus Terminal -Henry & Chenango Streets": "8:25 PM",
+            "BC Junction Bus Terminal - Henry & Chenango Streets": "8:25 PM",
             "Mirabito Stadium -Henry & Fayette Streets": "8:35 PM"
           }
         },
         {
           "stop_times": {
             "Visions Memorial Arena": "9:10 PM",
-            "Hawley & Court Streets": "9:13 PM",
+            "Court & Hawley Streets": "9:13 PM",
             "Henry & Water Streets": "9:20 PM",
-            "BC Junction Bus Terminal -Henry & Chenango Streets": "9:25 PM",
+            "BC Junction Bus Terminal - Henry & Chenango Streets": "9:25 PM",
             "Mirabito Stadium -Henry & Fayette Streets": "9:35 PM"
           }
         },
         {
           "stop_times": {
             "Visions Memorial Arena": "10:10 PMM-T",
-            "Hawley & Court Streets": "10:13 PMM-T",
+            "Court & Hawley Streets": "10:13 PMM-T",
             "Henry & Water Streets": "10:20 PMM-T",
-            "BC Junction Bus Terminal -Henry & Chenango Streets": "10:25 PMM-T",
+            "BC Junction Bus Terminal - Henry & Chenango Streets": "10:25 PMM-T",
             "Mirabito Stadium -Henry & Fayette Streets": "10:35 PMM-T"
           }
         }
@@ -3947,114 +3949,114 @@
         {
           "stop_times": {
             "Visions Memorial Arena": "11:05 AM",
-            "Hawley & Court Streets": "11:08 AM",
+            "Court & Hawley Streets": "11:08 AM",
             "Henry & Water Streets": "11:15 AM",
-            "BC Junction Bus Terminal -Henry & Chenango Streets": "11:20 AM",
+            "BC Junction Bus Terminal - Henry & Chenango Streets": "11:20 AM",
             "Mirabito Stadium -Henry & Fayette Streets": "11:25 AM"
           }
         },
         {
           "stop_times": {
             "Visions Memorial Arena": "1:05 PM",
-            "Hawley & Court Streets": "1:08 PM",
+            "Court & Hawley Streets": "1:08 PM",
             "Henry & Water Streets": "1:15 PM",
-            "BC Junction Bus Terminal -Henry & Chenango Streets": "1:20 PM",
+            "BC Junction Bus Terminal - Henry & Chenango Streets": "1:20 PM",
             "Mirabito Stadium -Henry & Fayette Streets": "1:25 PM"
           }
         },
         {
           "stop_times": {
             "Visions Memorial Arena": "3:25 PM",
-            "Hawley & Court Streets": "3:28 PM",
+            "Court & Hawley Streets": "3:28 PM",
             "Henry & Water Streets": "3:35 PM",
-            "BC Junction Bus Terminal -Henry & Chenango Streets": "3:40 PM",
+            "BC Junction Bus Terminal - Henry & Chenango Streets": "3:40 PM",
             "Mirabito Stadium -Henry & Fayette Streets": "3:45 PM"
           }
         },
         {
           "stop_times": {
             "Visions Memorial Arena": "5:40 PM",
-            "Hawley & Court Streets": "5:43 PM",
+            "Court & Hawley Streets": "5:43 PM",
             "Henry & Water Streets": "5:50 PM",
-            "BC Junction Bus Terminal -Henry & Chenango Streets": "5:55 PM",
+            "BC Junction Bus Terminal - Henry & Chenango Streets": "5:55 PM",
             "Mirabito Stadium -Henry & Fayette Streets": "6:00 PM"
           }
         },
         {
           "stop_times": {
             "Visions Memorial Arena": "8:25 PM",
-            "Hawley & Court Streets": "8:28 PM",
+            "Court & Hawley Streets": "8:28 PM",
             "Henry & Water Streets": "8:35 PM",
-            "BC Junction Bus Terminal -Henry & Chenango Streets": "8:40 PM",
+            "BC Junction Bus Terminal - Henry & Chenango Streets": "8:40 PM",
             "Mirabito Stadium -Henry & Fayette Streets": "8:45 PM"
           }
         }
       ]
     },
     "stop_coords": {
-      "Visions Memorial Arena": {
-        "lat": 42.0957335,
-        "lon": -75.9131945
+      "Alfred Street": {
+        "lat": 42.0929303,
+        "lon": -75.897551
       },
-      "Court & Hawley Streets": {
-        "lat": 42.09872085772586,
-        "lon": -75.91461591218776
-      },
-      "Henry & Water Streets": {
-        "lat": 42.10075455034154,
-        "lon": -75.91396990396879
-      },
-      "BC Junction Bus Terminal -Henry & Chenango Streets": {
+      "BC Junction Bus Terminal - Henry & Chenango Streets": {
         "lat": 42.100817,
         "lon": -75.91007
       },
-      "Mirabito Stadium -Henry & Fayette Streets": {
-        "lat": 42.102194933269324,
-        "lon": -75.90494908790288
+      "Court & Hawley Streets": {
+        "lat": 42.09869704982519,
+        "lon": -75.91461589047606
       },
       "Henry & Liberty Streets": {
         "lat": 42.10350973132064,
         "lon": -75.89916560396864
       },
-      "Webster Street": {
-        "lat": 42.0995754,
-        "lon": -75.8944804
+      "Henry & Water Streets": {
+        "lat": 42.10075455034154,
+        "lon": -75.91396990396879
       },
       "Jackson Street": {
         "lat": 42.0978483,
         "lon": -75.895246
       },
-      "Tompkins St & Conklin Av": {
-        "lat": 42.09514295994718,
-        "lon": -75.89381143448456
+      "Livingston Street": {
+        "lat": 42.0915453,
+        "lon": -75.9083036
       },
-      "Alfred Street": {
-        "lat": 42.0929303,
-        "lon": -75.897551
-      },
-      "Telegraph Street": {
-        "lat": 42.0923641,
-        "lon": -75.9016151
+      "Mirabito Stadium -Henry & Fayette Streets": {
+        "lat": 42.102194933269324,
+        "lon": -75.90494908790288
       },
       "Park Diner - High Street": {
         "lat": 42.0929815870476,
         "lon": -75.90494687946698
       },
-      "Livingston Street": {
-        "lat": 42.0915453,
-        "lon": -75.9083036
+      "South Washington Street": {
+        "lat": 42.0876001,
+        "lon": -75.9128074
+      },
+      "Telegraph Street": {
+        "lat": 42.0923641,
+        "lon": -75.9016151
+      },
+      "Tompkins St & Conklin Av": {
+        "lat": 42.09514295994718,
+        "lon": -75.89381143448456
       },
       "Tremont Avenue": {
         "lat": 42.0908852,
         "lon": -75.9096584
       },
-      "South Washington Street": {
-        "lat": 42.0876001,
-        "lon": -75.9128074
-      },
       "University Union": {
         "lat": 42.0878147,
         "lon": -75.9669597
+      },
+      "Visions Memorial Arena": {
+        "lat": 42.0957335,
+        "lon": -75.9131945
+      },
+      "Webster Street": {
+        "lat": 42.0995754,
+        "lon": -75.8944804
       }
     }
   },
@@ -4364,62 +4366,62 @@
       ]
     },
     "stop_coords": {
-      "Engineering Building": {
-        "lat": 42.0873058,
-        "lon": -75.9679484
+      "Clearview": {
+        "lat": 42.0890762,
+        "lon": -75.974444
       },
-      "Mohawk": {
-        "lat": 42.0808411,
-        "lon": -75.9036383
+      "Couper Administration": {
+        "lat": 42.0895837,
+        "lon": -75.9667213
       },
       "Decker Health Services(By Request Only)": null,
       "Dickinson": {
         "lat": 42.1423228,
         "lon": -75.8959452
       },
-      "Newing": {
-        "lat": 42.0883942,
-        "lon": -75.962828
-      },
-      "Couper Administration": {
-        "lat": 42.0895837,
-        "lon": -75.9667213
-      },
       "East Gym": {
         "lat": 42.0909313,
         "lon": -75.9672679
       },
-      "Welcome Center": {
-        "lat": 42.0202324,
-        "lon": -75.7799869
-      },
-      "West Gym": {
-        "lat": 42.0917267,
-        "lon": -75.9709546
-      },
-      "McGuire / Physical Facilities": {
-        "lat": 42.090951335799176,
-        "lon": -75.9734320857357
-      },
-      "Clearview": {
-        "lat": 42.0890762,
-        "lon": -75.974444
-      },
-      "Susquehanna": {
-        "lat": 42.0952562,
-        "lon": -75.9110182
+      "Engineering Building": {
+        "lat": 42.0873058,
+        "lon": -75.9679484
       },
       "Hillside": {
         "lat": 42.0871458,
         "lon": -75.9782362
       },
+      "Hinman / Academic A": {
+        "lat": 42.08872203054464,
+        "lon": -75.97315228570167
+      },
+      "McGuire / Physical Facilities": {
+        "lat": 42.090951335799176,
+        "lon": -75.9734320857357
+      },
+      "Mohawk": {
+        "lat": 42.0808411,
+        "lon": -75.9036383
+      },
       "Mountainview": {
         "lat": 42.0840397,
         "lon": -75.9703247
       },
-      "Hinman / Academic A": {
-        "lat": 42.08872203054464,
-        "lon": -75.97315228570167
+      "Newing": {
+        "lat": 42.0883942,
+        "lon": -75.962828
+      },
+      "Susquehanna": {
+        "lat": 42.0952562,
+        "lon": -75.9110182
+      },
+      "Welcome Center": {
+        "lat": 42.0893,
+        "lon": -75.9698
+      },
+      "West Gym": {
+        "lat": 42.0917267,
+        "lon": -75.9709546
       }
     }
   },
@@ -4431,7 +4433,7 @@
       "Newing",
       "Couper Administration",
       "East Gym",
-      "UClub - University Plaza",
+      "UClub / University Plaza",
       "Meadows",
       "Hayes",
       "Oxford Pl & Murray Hill Rd",
@@ -4676,14 +4678,6 @@
       ]
     },
     "stop_coords": {
-      "Mohawk": {
-        "lat": 42.0808411,
-        "lon": -75.9036383
-      },
-      "Newing": {
-        "lat": 42.0883942,
-        "lon": -75.962828
-      },
       "Couper Administration": {
         "lat": 42.0895837,
         "lon": -75.9667213
@@ -4692,29 +4686,37 @@
         "lat": 42.0909313,
         "lon": -75.9672679
       },
-      "UClub - University Plaza": {
-        "lat": 42.092059628508444,
-        "lon": -75.95227932071336
+      "Hayes": {
+        "lat": 42.0978485,
+        "lon": -75.8914495
       },
       "Meadows": {
         "lat": 42.0895218,
         "lon": -75.9529299
       },
-      "Hayes": {
-        "lat": 42.0978485,
-        "lon": -75.8914495
+      "Mohawk": {
+        "lat": 42.0808411,
+        "lon": -75.9036383
+      },
+      "Newing": {
+        "lat": 42.0883942,
+        "lon": -75.962828
       },
       "Oxford Pl & Murray Hill Rd": {
         "lat": 42.088238196941425,
         "lon": -75.95927402869388
       },
-      "Washington Dr & Lehigh Av": {
-        "lat": 42.082471078417036,
-        "lon": -75.9596052964579
+      "UClub / University Plaza": {
+        "lat": 42.092059628508444,
+        "lon": -75.95227932071336
       },
       "University Union": {
         "lat": 42.0878147,
         "lon": -75.9669597
+      },
+      "Washington Dr & Lehigh Av": {
+        "lat": 42.082471078417036,
+        "lon": -75.9596052964579
       }
     }
   },
@@ -4727,7 +4729,7 @@
       "Couper Administration",
       "East Gym",
       "Innovative Technologies Complex (ITC)",
-      "UClub - University Plaza",
+      "UClub / University Plaza",
       "Meadows",
       "Hayes",
       "Oxford Pl & Murray Hill Rd",
@@ -5006,17 +5008,10 @@
             "Innovative Technologies Complex (ITC)": "9:52 PM"
           }
         }
-      ]
+      ],
+      "weekend": []
     },
     "stop_coords": {
-      "Mohawk": {
-        "lat": 42.0808411,
-        "lon": -75.9036383
-      },
-      "Newing": {
-        "lat": 42.0883942,
-        "lon": -75.962828
-      },
       "Couper Administration": {
         "lat": 42.0895837,
         "lon": -75.9667213
@@ -5025,33 +5020,41 @@
         "lat": 42.0909313,
         "lon": -75.9672679
       },
+      "Hayes": {
+        "lat": 42.0978485,
+        "lon": -75.8914495
+      },
       "Innovative Technologies Complex (ITC)": {
         "lat": 42.0935149,
         "lon": -75.9596282
-      },
-      "UClub - University Plaza": {
-        "lat": 42.092059628508444,
-        "lon": -75.95227932071336
       },
       "Meadows": {
         "lat": 42.0895218,
         "lon": -75.9529299
       },
-      "Hayes": {
-        "lat": 42.0978485,
-        "lon": -75.8914495
+      "Mohawk": {
+        "lat": 42.0808411,
+        "lon": -75.9036383
+      },
+      "Newing": {
+        "lat": 42.0883942,
+        "lon": -75.962828
       },
       "Oxford Pl & Murray Hill Rd": {
         "lat": 42.088238196941425,
         "lon": -75.95927402869388
       },
-      "Washington Dr & Lehigh Av": {
-        "lat": 42.082471078417036,
-        "lon": -75.9596052964579
+      "UClub / University Plaza": {
+        "lat": 42.092059628508444,
+        "lon": -75.95227932071336
       },
       "University Union": {
         "lat": 42.0878147,
         "lon": -75.9669597
+      },
+      "Washington Dr & Lehigh Av": {
+        "lat": 42.082471078417036,
+        "lon": -75.9596052964579
       }
     }
   },
@@ -5061,15 +5064,15 @@
     "stops": [
       "University Union",
       "Physical Facilities",
-      "Bunn Hill/Bunn Hill Access Rd",
+      "Bunn Hill / Bunn Hill Access Rd",
       "Chuck E Cheese / Vestal Parkway",
       "Riviera Ridge Stop #1",
       "Riviera Ridge Stop #2",
       "Hollybrook",
       "Burris Rd & Rano Blvd",
       "Target / Parkway Plaza",
-      "Barnes & Noble /Town Square Mall Stop #1",
-      "Walmart /Town Square Mall Stop #2",
+      "Barnes & Noble / Town Square Mall Stop #1",
+      "Walmart / Town Square Mall Stop #2",
       "The Shoppes at Vestal",
       "Rail Trail",
       "Willow Point",
@@ -5083,7 +5086,7 @@
           "stop_times": {
             "University Union": "12:00 PM",
             "Physical Facilities": "12:09 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "12:15 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "12:15 PM",
             "Chuck E Cheese / Vestal Parkway": "12:20 PM",
             "Riviera Ridge Stop #1": "12:40 PM"
           }
@@ -5092,7 +5095,7 @@
           "stop_times": {
             "University Union": "1:00 PM",
             "Physical Facilities": "1:09 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "1:15 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "1:15 PM",
             "Chuck E Cheese / Vestal Parkway": "1:20 PM",
             "Riviera Ridge Stop #1": "1:40 PM"
           }
@@ -5101,7 +5104,7 @@
           "stop_times": {
             "University Union": "2:00 PM",
             "Physical Facilities": "2:09 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "2:15 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "2:15 PM",
             "Chuck E Cheese / Vestal Parkway": "2:20 PM",
             "Riviera Ridge Stop #1": "2:40 PM"
           }
@@ -5110,7 +5113,7 @@
           "stop_times": {
             "University Union": "3:00 PM",
             "Physical Facilities": "3:09 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "3:15 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "3:15 PM",
             "Chuck E Cheese / Vestal Parkway": "3:20 PM",
             "Riviera Ridge Stop #1": "3:40 PM"
           }
@@ -5119,7 +5122,7 @@
           "stop_times": {
             "University Union": "4:00 PM",
             "Physical Facilities": "4:09 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "4:15 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "4:15 PM",
             "Chuck E Cheese / Vestal Parkway": "4:20 PM",
             "Riviera Ridge Stop #1": "4:40 PM"
           }
@@ -5128,7 +5131,7 @@
           "stop_times": {
             "University Union": "5:00 PM",
             "Physical Facilities": "5:09 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "5:15 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "5:15 PM",
             "Chuck E Cheese / Vestal Parkway": "5:20 PM",
             "Riviera Ridge Stop #1": "5:40 PM"
           }
@@ -5137,7 +5140,7 @@
           "stop_times": {
             "University Union": "6:00 PM",
             "Physical Facilities": "6:09 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "6:15 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "6:15 PM",
             "Chuck E Cheese / Vestal Parkway": "6:20 PM",
             "Riviera Ridge Stop #1": "6:40 PM"
           }
@@ -5146,7 +5149,7 @@
           "stop_times": {
             "University Union": "7:00 PM",
             "Physical Facilities": "7:09 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "7:10 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "7:10 PM",
             "Chuck E Cheese / Vestal Parkway": "7:20 PM",
             "Riviera Ridge Stop #1": "7:40 PM"
           }
@@ -5155,7 +5158,7 @@
           "stop_times": {
             "University Union": "8:00 PM",
             "Physical Facilities": "8:09 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "8:10 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "8:10 PM",
             "Chuck E Cheese / Vestal Parkway": "8:20 PM",
             "Riviera Ridge Stop #1": "8:40 PM"
           }
@@ -5164,7 +5167,7 @@
           "stop_times": {
             "University Union": "9:00 PM",
             "Physical Facilities": "9:09 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "9:10 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "9:10 PM",
             "Chuck E Cheese / Vestal Parkway": "9:20 PM",
             "Riviera Ridge Stop #1": "9:40 PM"
           }
@@ -5175,7 +5178,7 @@
           "stop_times": {
             "University Union": "10:00 AM",
             "Physical Facilities": "10:09 AM",
-            "Bunn Hill/Bunn Hill Access Rd": "10:15 AM",
+            "Bunn Hill / Bunn Hill Access Rd": "10:15 AM",
             "Chuck E Cheese / Vestal Parkway": "10:20 AM",
             "Riviera Ridge Stop #1": "10:40 AM"
           }
@@ -5184,7 +5187,7 @@
           "stop_times": {
             "University Union": "10:45 AM",
             "Physical Facilities": "10:54 AM",
-            "Bunn Hill/Bunn Hill Access Rd": "11:00 AM",
+            "Bunn Hill / Bunn Hill Access Rd": "11:00 AM",
             "Chuck E Cheese / Vestal Parkway": "11:05 AM",
             "Riviera Ridge Stop #1": "11:25 AM"
           }
@@ -5193,7 +5196,7 @@
           "stop_times": {
             "University Union": "11:30 AM",
             "Physical Facilities": "11:39 AM",
-            "Bunn Hill/Bunn Hill Access Rd": "11:45 AM",
+            "Bunn Hill / Bunn Hill Access Rd": "11:45 AM",
             "Chuck E Cheese / Vestal Parkway": "11:50 AM",
             "Riviera Ridge Stop #1": "12:10 PM"
           }
@@ -5202,7 +5205,7 @@
           "stop_times": {
             "University Union": "12:15 PM",
             "Physical Facilities": "12:24 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "12:30 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "12:30 PM",
             "Chuck E Cheese / Vestal Parkway": "12:35 PM",
             "Riviera Ridge Stop #1": "12:55 PM"
           }
@@ -5211,7 +5214,7 @@
           "stop_times": {
             "University Union": "1:00 PM",
             "Physical Facilities": "1:09 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "1:15 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "1:15 PM",
             "Chuck E Cheese / Vestal Parkway": "1:20 PM",
             "Riviera Ridge Stop #1": "1:40 PM"
           }
@@ -5220,7 +5223,7 @@
           "stop_times": {
             "University Union": "1:45 PM",
             "Physical Facilities": "1:54 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "2:00 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "2:00 PM",
             "Chuck E Cheese / Vestal Parkway": "2:05 PM",
             "Riviera Ridge Stop #1": "2:25 PM"
           }
@@ -5229,7 +5232,7 @@
           "stop_times": {
             "University Union": "2:30 PM",
             "Physical Facilities": "2:39 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "2:45 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "2:45 PM",
             "Chuck E Cheese / Vestal Parkway": "2:50 PM",
             "Riviera Ridge Stop #1": "3:10 PM"
           }
@@ -5238,7 +5241,7 @@
           "stop_times": {
             "University Union": "3:15 PM",
             "Physical Facilities": "3:24 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "3:30 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "3:30 PM",
             "Chuck E Cheese / Vestal Parkway": "3:35 PM",
             "Riviera Ridge Stop #1": "3:55 PM"
           }
@@ -5247,7 +5250,7 @@
           "stop_times": {
             "University Union": "4:00 PM",
             "Physical Facilities": "4:09 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "4:15 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "4:15 PM",
             "Chuck E Cheese / Vestal Parkway": "4:20 PM",
             "Riviera Ridge Stop #1": "4:40 PM"
           }
@@ -5256,7 +5259,7 @@
           "stop_times": {
             "University Union": "4:45 PM",
             "Physical Facilities": "4:54 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "5:00 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "5:00 PM",
             "Chuck E Cheese / Vestal Parkway": "5:05 PM",
             "Riviera Ridge Stop #1": "5:25 PM"
           }
@@ -5265,7 +5268,7 @@
           "stop_times": {
             "University Union": "5:30 PM",
             "Physical Facilities": "5:39 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "5:45 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "5:45 PM",
             "Chuck E Cheese / Vestal Parkway": "5:50 PM",
             "Riviera Ridge Stop #1": "6:10 PM"
           }
@@ -5274,7 +5277,7 @@
           "stop_times": {
             "University Union": "6:15 PM",
             "Physical Facilities": "6:24 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "6:30 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "6:30 PM",
             "Chuck E Cheese / Vestal Parkway": "6:35 PM",
             "Riviera Ridge Stop #1": "6:55 PM"
           }
@@ -5283,7 +5286,7 @@
           "stop_times": {
             "University Union": "7:00 PM",
             "Physical Facilities": "7:09 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "7:15 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "7:15 PM",
             "Chuck E Cheese / Vestal Parkway": "7:20 PM",
             "Riviera Ridge Stop #1": "7:40 PM"
           }
@@ -5292,7 +5295,7 @@
           "stop_times": {
             "University Union": "7:45 PM",
             "Physical Facilities": "7:54 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "8:00 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "8:00 PM",
             "Chuck E Cheese / Vestal Parkway": "8:05 PM",
             "Riviera Ridge Stop #1": "8:25 PM"
           }
@@ -5301,7 +5304,7 @@
           "stop_times": {
             "University Union": "8:30 PM",
             "Physical Facilities": "8:39 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "8:45 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "8:45 PM",
             "Chuck E Cheese / Vestal Parkway": "8:50 PM",
             "Riviera Ridge Stop #1": "9:10 PM"
           }
@@ -5310,7 +5313,7 @@
           "stop_times": {
             "University Union": "9:15 PM",
             "Physical Facilities": "9:24 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "9:30 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "9:30 PM",
             "Chuck E Cheese / Vestal Parkway": "9:35 PM",
             "Riviera Ridge Stop #1": "9:55 PM"
           }
@@ -5318,21 +5321,41 @@
       ]
     },
     "stop_coords": {
-      "University Union": {
-        "lat": 42.0878147,
-        "lon": -75.9669597
+      "Barnes & Noble / Town Square Mall Stop #1": {
+        "lat": 42.096519,
+        "lon": -76.007201
       },
-      "Physical Facilities": {
-        "lat": 42.09094480979013,
-        "lon": -75.97344190252215
-      },
-      "Bunn Hill/Bunn Hill Access Rd": {
+      "Bunn Hill / Bunn Hill Access Rd": {
         "lat": 42.09216409426842,
         "lon": -75.97456363280493
+      },
+      "Burris Rd & Rano Blvd": {
+        "lat": 42.09141885607213,
+        "lon": -76.0027366481479
+      },
+      "Campus Plaza": {
+        "lat": 42.0973398,
+        "lon": -75.983139
       },
       "Chuck E Cheese / Vestal Parkway": {
         "lat": 42.096509,
         "lon": -75.9789815
+      },
+      "Hinman / Academic A": {
+        "lat": 42.08872203054464,
+        "lon": -75.97315228570167
+      },
+      "Hollybrook": {
+        "lat": 42.0918,
+        "lon": -75.998
+      },
+      "Physical Facilities": {
+        "lat": 42.090995,
+        "lon": -75.9733282
+      },
+      "Rail Trail": {
+        "lat": 42.0878962,
+        "lon": -76.0517817
       },
       "Riviera Ridge Stop #1": {
         "lat": 42.09165518873043,
@@ -5342,49 +5365,29 @@
         "lat": 42.091906485594606,
         "lon": -75.99656376919563
       },
-      "Hollybrook": {
-        "lat": 42.9852262,
-        "lon": -78.713434
-      },
-      "Burris Rd & Rano Blvd": {
-        "lat": 42.09141885607213,
-        "lon": -76.0027366481479
-      },
       "Target / Parkway Plaza": {
         "lat": 42.0938073,
         "lon": -76.0016046
-      },
-      "Barnes & Noble /Town Square Mall Stop #1": {
-        "lat": 42.096519,
-        "lon": -76.007201
-      },
-      "Walmart /Town Square Mall Stop #2": {
-        "lat": 42.09614736713019,
-        "lon": -76.01253644307592
       },
       "The Shoppes at Vestal": {
         "lat": 42.09483127230209,
         "lon": -76.01441438562864
       },
-      "Rail Trail": {
-        "lat": 42.0878962,
-        "lon": -76.0517817
+      "University Union": {
+        "lat": 42.0878147,
+        "lon": -75.9669597
       },
-      "Willow Point": {
-        "lat": 42.1022971,
-        "lon": -75.9904771
+      "Walmart / Town Square Mall Stop #2": {
+        "lat": 42.09614736713019,
+        "lon": -76.01253644307592
       },
       "Westminster Gardens": {
         "lat": 42.098917,
         "lon": -75.9857429
       },
-      "Campus Plaza": {
-        "lat": 42.0973398,
-        "lon": -75.983139
-      },
-      "Hinman / Academic A": {
-        "lat": 42.08872203054464,
-        "lon": -75.97315228570167
+      "Willow Point": {
+        "lat": 42.1022971,
+        "lon": -75.9904771
       }
     }
   },
@@ -5392,9 +5395,9 @@
     "route": "Oakdale Commons Shuttle",
     "url": "https://occtransport.org/pages/routes/oc.html",
     "stops": [
-      "The Union",
+      "University Union",
       "Physical Facilities",
-      "Bunn Hill/Bunn Hill Access Rd",
+      "Bunn Hill / Bunn Hill Access Rd",
       "Aldi",
       "Oakdale Commons",
       "Wegmans",
@@ -5405,36 +5408,36 @@
       "weekday": [
         {
           "stop_times": {
-            "The Union": "2:30 PM",
+            "University Union": "2:30 PM",
             "Physical Facilities": "2:38 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "2:43 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "2:43 PM",
             "Aldi": "2:47 PM",
             "Oakdale Commons": "3:00 PM"
           }
         },
         {
           "stop_times": {
-            "The Union": "4:30 PM",
+            "University Union": "4:30 PM",
             "Physical Facilities": "4:38 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "4:43 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "4:43 PM",
             "Aldi": "4:47 PM",
             "Oakdale Commons": "5:00 PM"
           }
         },
         {
           "stop_times": {
-            "The Union": "6:30 PM",
+            "University Union": "6:30 PM",
             "Physical Facilities": "6:38 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "6:43 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "6:43 PM",
             "Aldi": "6:47 PM",
             "Oakdale Commons": "7:00 PM"
           }
         },
         {
           "stop_times": {
-            "The Union": "8:25 PM",
+            "University Union": "8:25 PM",
             "Physical Facilities": "8:33 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "8:38 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "8:38 PM",
             "Aldi": "8:42 PM",
             "Oakdale Commons": "8:55 PM"
           }
@@ -5443,45 +5446,45 @@
       "weekend": [
         {
           "stop_times": {
-            "The Union": "11:25 AM",
+            "University Union": "11:25 AM",
             "Physical Facilities": "11:33 AM",
-            "Bunn Hill/Bunn Hill Access Rd": "11:38 AM",
+            "Bunn Hill / Bunn Hill Access Rd": "11:38 AM",
             "Aldi": "11:42 AM",
             "Oakdale Commons": "11:55 AM"
           }
         },
         {
           "stop_times": {
-            "The Union": "1:30 PM",
+            "University Union": "1:30 PM",
             "Physical Facilities": "1:38 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "1:43 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "1:43 PM",
             "Aldi": "1:47 PM",
             "Oakdale Commons": "2:00 PM"
           }
         },
         {
           "stop_times": {
-            "The Union": "3:45 PM",
+            "University Union": "3:45 PM",
             "Physical Facilities": "3:53 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "3:58 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "3:58 PM",
             "Aldi": "4:02 PM",
             "Oakdale Commons": "4:15 PM"
           }
         },
         {
           "stop_times": {
-            "The Union": "5:45 PM",
+            "University Union": "5:45 PM",
             "Physical Facilities": "5:53 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "5:58 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "5:58 PM",
             "Aldi": "6:02 PM",
             "Oakdale Commons": "6:15 PM"
           }
         },
         {
           "stop_times": {
-            "The Union": "7:55 PM",
+            "University Union": "7:55 PM",
             "Physical Facilities": "8:03 PM",
-            "Bunn Hill/Bunn Hill Access Rd": "8:08 PM",
+            "Bunn Hill / Bunn Hill Access Rd": "8:08 PM",
             "Aldi": "8:12 PM",
             "Oakdale Commons": "8:25 PM"
           }
@@ -5489,37 +5492,33 @@
       ]
     },
     "stop_coords": {
-      "The Union": {
-        "lat": 42.1113741,
-        "lon": -75.9454366
-      },
-      "Physical Facilities": {
-        "lat": 42.090995,
-        "lon": -75.9733282
-      },
-      "Bunn Hill/Bunn Hill Access Rd": {
-        "lat": 42.09216409426842,
-        "lon": -75.97456363280493
-      },
       "Aldi": {
         "lat": 42.1507524,
         "lon": -75.89957
       },
-      "Oakdale Commons": {
-        "lat": 42.129435441394435,
-        "lon": -75.9735643768694
-      },
-      "Wegmans": {
-        "lat": 42.1229229,
-        "lon": -75.9731638
+      "Bunn Hill / Bunn Hill Access Rd": {
+        "lat": 42.09216409426842,
+        "lon": -75.97456363280493
       },
       "Hinman / Academic A": {
         "lat": 42.08872203054464,
         "lon": -75.97315228570167
       },
+      "Oakdale Commons": {
+        "lat": 42.129435441394435,
+        "lon": -75.9735643768694
+      },
+      "Physical Facilities": {
+        "lat": 42.090995,
+        "lon": -75.9733282
+      },
       "University Union": {
         "lat": 42.0878147,
         "lon": -75.9669597
+      },
+      "Wegmans": {
+        "lat": 42.1229229,
+        "lon": -75.9731638
       }
     }
   },
@@ -5702,16 +5701,13 @@
             "East Gym": "5:48 PM"
           }
         }
-      ]
+      ],
+      "weekend": []
     },
     "stop_coords": {
-      "Mohawk": {
-        "lat": 42.0808411,
-        "lon": -75.9036383
-      },
-      "Newing": {
-        "lat": 42.0883942,
-        "lon": -75.962828
+      "Clearview": {
+        "lat": 42.0890762,
+        "lon": -75.974444
       },
       "Couper Administration": {
         "lat": 42.0895837,
@@ -5721,37 +5717,41 @@
         "lat": 42.0909313,
         "lon": -75.9672679
       },
+      "Hillside": {
+        "lat": 42.0871458,
+        "lon": -75.9782362
+      },
+      "Hinman / Academic A": {
+        "lat": 42.08872203054464,
+        "lon": -75.97315228570167
+      },
       "Innovative Technologies Complex (ITC)": {
         "lat": 42.0935149,
         "lon": -75.9596282
-      },
-      "West Gym": {
-        "lat": 42.0917267,
-        "lon": -75.9709546
       },
       "McGuire / Physical Facilities": {
         "lat": 42.090951335799176,
         "lon": -75.9734320857357
       },
-      "Clearview": {
-        "lat": 42.0890762,
-        "lon": -75.974444
-      },
-      "Susquehanna": {
-        "lat": 42.0952562,
-        "lon": -75.9110182
-      },
-      "Hillside": {
-        "lat": 42.0871458,
-        "lon": -75.9782362
+      "Mohawk": {
+        "lat": 42.0808411,
+        "lon": -75.9036383
       },
       "Mountainview": {
         "lat": 42.0840397,
         "lon": -75.9703247
       },
-      "Hinman / Academic A": {
-        "lat": 42.08872203054464,
-        "lon": -75.97315228570167
+      "Newing": {
+        "lat": 42.0883942,
+        "lon": -75.962828
+      },
+      "Susquehanna": {
+        "lat": 42.0952562,
+        "lon": -75.9110182
+      },
+      "West Gym": {
+        "lat": 42.0917267,
+        "lon": -75.9709546
       }
     }
   },
@@ -5762,7 +5762,7 @@
       "University Union",
       "Hayes",
       "Meadows",
-      "UClub - University Plaza",
+      "UClub / University Plaza",
       "State & Hawley Streets",
       "Hinman / Academic A"
     ],
@@ -5770,106 +5770,106 @@
       "weekday": [
         {
           "stop_times": {
-            "University Union": "9:30\u202fPM",
-            "Hayes": "9:35\u202fPM",
-            "Meadows": "9:45\u202fPM",
-            "UClub - University Plaza": "10:00\u202fPM"
+            "University Union": "9:30 PM",
+            "Hayes": "9:35 PM",
+            "Meadows": "9:45 PM",
+            "UClub / University Plaza": "10:00 PM"
           }
         },
         {
           "stop_times": {
-            "University Union": "9:45\u202fPM",
-            "Hayes": "9:50\u202fPM",
-            "Meadows": "10:00\u202fPM",
-            "UClub - University Plaza": "10:15\u202fPM"
+            "University Union": "9:45 PM",
+            "Hayes": "9:50 PM",
+            "Meadows": "10:00 PM",
+            "UClub / University Plaza": "10:15 PM"
           }
         },
         {
           "stop_times": {
-            "University Union": "10:00\u202fPM",
-            "Hayes": "10:05\u202fPM",
-            "Meadows": "10:15\u202fPM",
-            "UClub - University Plaza": "10:30\u202fPM"
+            "University Union": "10:00 PM",
+            "Hayes": "10:05 PM",
+            "Meadows": "10:15 PM",
+            "UClub / University Plaza": "10:30 PM"
           }
         },
         {
           "stop_times": {
-            "University Union": "10:15\u202fPM",
-            "Hayes": "10:20\u202fPM",
-            "Meadows": "10:30\u202fPM",
-            "UClub - University Plaza": "10:45\u202fPM"
+            "University Union": "10:15 PM",
+            "Hayes": "10:20 PM",
+            "Meadows": "10:30 PM",
+            "UClub / University Plaza": "10:45 PM"
           }
         },
         {
           "stop_times": {
-            "University Union": "10:30\u202fPM",
-            "Hayes": "10:35\u202fPM",
-            "Meadows": "10:45\u202fPM",
-            "UClub - University Plaza": "11:00\u202fPM"
+            "University Union": "10:30 PM",
+            "Hayes": "10:35 PM",
+            "Meadows": "10:45 PM",
+            "UClub / University Plaza": "11:00 PM"
           }
         },
         {
           "stop_times": {
             "University Union": "10:45 PM",
             "Hayes": "10:50 PM",
-            "Meadows": "11:00\u202fPM",
-            "UClub - University Plaza": "11:15\u202fPM"
+            "Meadows": "11:00 PM",
+            "UClub / University Plaza": "11:15 PM"
           }
         },
         {
           "stop_times": {
             "University Union": "11:00 PM",
             "Hayes": "11:05 PM",
-            "Meadows": "11:15\u202fPM",
-            "UClub - University Plaza": "11:30\u202fPM"
+            "Meadows": "11:15 PM",
+            "UClub / University Plaza": "11:30 PM"
           }
         },
         {
           "stop_times": {
-            "University Union": "11:15\u202fPM",
-            "Hayes": "11:20\u202fPM",
-            "Meadows": "11:30\u202fPM",
-            "UClub - University Plaza": "11:45\u202fPM"
+            "University Union": "11:15 PM",
+            "Hayes": "11:20 PM",
+            "Meadows": "11:30 PM",
+            "UClub / University Plaza": "11:45 PM"
           }
         },
         {
           "stop_times": {
             "University Union": "11:30 PM",
             "Hayes": "11:35 PM",
-            "Meadows": "11:45\u202fPM",
-            "UClub - University Plaza": "12:00\u202fAM"
+            "Meadows": "11:45 PM",
+            "UClub / University Plaza": "12:00 AM"
           }
         },
         {
           "stop_times": {
             "University Union": "11:45 PM",
             "Hayes": "11:50 PM",
-            "Meadows": "12:00\u202fAM",
-            "UClub - University Plaza": "12:15\u202fAM"
+            "Meadows": "12:00 AM",
+            "UClub / University Plaza": "12:15 AM"
           }
         },
         {
           "stop_times": {
             "University Union": "12:00 AM",
             "Hayes": "12:05 AM",
-            "Meadows": "12:15\u202fAM",
-            "UClub - University Plaza": "12:30\u202fAM"
+            "Meadows": "12:15 AM",
+            "UClub / University Plaza": "12:30 AM"
           }
         },
         {
           "stop_times": {
             "University Union": "12:15 AM",
             "Hayes": "12:20 AM",
-            "Meadows": "12:30\u202fAM",
-            "UClub - University Plaza": "12:45\u202fAM"
+            "Meadows": "12:30 AM",
+            "UClub / University Plaza": "12:45 AM"
           }
         },
         {
           "stop_times": {
             "University Union": "12:30 AM",
             "Hayes": "12:35 AM",
-            "Meadows": "12:45\u202fAM",
-            "UClub - University Plaza": "1:00\u202fAM"
+            "Meadows": "12:45 AM",
+            "UClub / University Plaza": "1:00 AM"
           }
         }
       ],
@@ -5878,124 +5878,124 @@
           "stop_times": {
             "University Union": "9:45 PM",
             "Hayes": "9:50 PM",
-            "Meadows": "10:00\u202fPM",
-            "UClub - University Plaza": "10:15 PM"
+            "Meadows": "10:00 PM",
+            "UClub / University Plaza": "10:15 PM"
           }
         },
         {
           "stop_times": {
-            "University Union": "10:00\u202fPM",
-            "Hayes": "10:05\u202fPM",
-            "Meadows": "10:15\u202fPM",
-            "UClub - University Plaza": "10:30\u202fPM"
+            "University Union": "10:00 PM",
+            "Hayes": "10:05 PM",
+            "Meadows": "10:15 PM",
+            "UClub / University Plaza": "10:30 PM"
           }
         },
         {
           "stop_times": {
             "University Union": "10:15 PM",
             "Hayes": "10:20 PM",
-            "Meadows": "10:30\u202fPM",
-            "UClub - University Plaza": "10:45 PM"
+            "Meadows": "10:30 PM",
+            "UClub / University Plaza": "10:45 PM"
           }
         },
         {
           "stop_times": {
-            "University Union": "10:30\u202fPM",
-            "Hayes": "10:35\u202fPM",
-            "Meadows": "10:45\u202fPM",
-            "UClub - University Plaza": "11:00\u202fPM"
+            "University Union": "10:30 PM",
+            "Hayes": "10:35 PM",
+            "Meadows": "10:45 PM",
+            "UClub / University Plaza": "11:00 PM"
           }
         },
         {
           "stop_times": {
             "University Union": "10:45 PM",
             "Hayes": "10:50 PM",
-            "Meadows": "11:00\u202fPM",
-            "UClub - University Plaza": "11:15 PM"
+            "Meadows": "11:00 PM",
+            "UClub / University Plaza": "11:15 PM"
           }
         },
         {
           "stop_times": {
-            "University Union": "11:00\u202fPM",
-            "Hayes": "11:05\u202fPM",
-            "Meadows": "11:15\u202fPM",
-            "UClub - University Plaza": "11:30\u202fPM"
+            "University Union": "11:00 PM",
+            "Hayes": "11:05 PM",
+            "Meadows": "11:15 PM",
+            "UClub / University Plaza": "11:30 PM"
           }
         },
         {
           "stop_times": {
-            "University Union": "11:15\u202fPM",
-            "Hayes": "11:20\u202fPM",
-            "Meadows": "11:30\u202fPM",
-            "UClub - University Plaza": "11:45\u202fPM"
+            "University Union": "11:15 PM",
+            "Hayes": "11:20 PM",
+            "Meadows": "11:30 PM",
+            "UClub / University Plaza": "11:45 PM"
           }
         },
         {
           "stop_times": {
             "University Union": "11:30 PM",
             "Hayes": "11:35 PM",
-            "Meadows": "11:45\u202fPM",
-            "UClub - University Plaza": "12:00 AM"
+            "Meadows": "11:45 PM",
+            "UClub / University Plaza": "12:00 AM"
           }
         },
         {
           "stop_times": {
-            "University Union": "11:45\u202fPM",
-            "Hayes": "11:50\u202fPM",
-            "Meadows": "12:00\u202fAM",
-            "UClub - University Plaza": "12:15\u202fAM"
+            "University Union": "11:45 PM",
+            "Hayes": "11:50 PM",
+            "Meadows": "12:00 AM",
+            "UClub / University Plaza": "12:15 AM"
           }
         },
         {
           "stop_times": {
             "University Union": "12:00 AM",
             "Hayes": "12:05 AM",
-            "Meadows": "12:15\u202fAM",
-            "UClub - University Plaza": "12:30 AM"
+            "Meadows": "12:15 AM",
+            "UClub / University Plaza": "12:30 AM"
           }
         },
         {
           "stop_times": {
-            "University Union": "12:15\u202fAM",
-            "Hayes": "12:20\u202fAM",
-            "Meadows": "12:30\u202fAM",
-            "UClub - University Plaza": "12:45\u202fAM"
+            "University Union": "12:15 AM",
+            "Hayes": "12:20 AM",
+            "Meadows": "12:30 AM",
+            "UClub / University Plaza": "12:45 AM"
           }
         },
         {
           "stop_times": {
-            "University Union": "12:30\u202fAM",
-            "Hayes": "12:35\u202fAM",
-            "Meadows": "12:45\u202fAM",
-            "UClub - University Plaza": "1:00\u202fAM"
+            "University Union": "12:30 AM",
+            "Hayes": "12:35 AM",
+            "Meadows": "12:45 AM",
+            "UClub / University Plaza": "1:00 AM"
           }
         }
       ]
     },
     "stop_coords": {
-      "University Union": {
-        "lat": 42.0878147,
-        "lon": -75.9669597
+      "Downtown - State & Hawley Streets": {
+        "lat": 42.09723331476976,
+        "lon": -75.91247100396893
       },
       "Hayes": {
         "lat": 42.0978485,
         "lon": -75.8914495
       },
+      "Hinman / Academic A": {
+        "lat": 42.08872203054464,
+        "lon": -75.97315228570167
+      },
       "Meadows": {
         "lat": 42.0895218,
         "lon": -75.9529299
       },
-      "UClub - University Plaza": {
+      "UClub / University Plaza": {
         "lat": 42.092059628508444,
         "lon": -75.95227932071336
       },
-      "Downtown - State & Hawley Streets": {
-        "lat": 42.09723331476976,
-        "lon": -75.91247100396893
-      },
-      "Hinman / Academic A": {
-        "lat": 42.08872203054464,
-        "lon": -75.97315228570167
+      "University Union": {
+        "lat": 42.0878147,
+        "lon": -75.9669597
       }
     }
   },
@@ -6005,7 +6005,7 @@
     "stops": [
       "University Union",
       "State & Hawley Streets",
-      "UClub - University Plaza",
+      "UClub / University Plaza",
       "Hinman / Academic A"
     ],
     "schedules": {
@@ -6013,151 +6013,151 @@
         {
           "stop_times": {
             "University Union": "1:00 AM",
-            "State & Hawley Streets": "1:15\u202fAM",
-            "UClub - University Plaza": "1:20\u202fAM",
-            "Hinman / Academic A": "1:30\u202fAM"
+            "State & Hawley Streets": "1:15 AM",
+            "UClub / University Plaza": "1:20 AM",
+            "Hinman / Academic A": "1:30 AM"
           }
         },
         {
           "stop_times": {
             "University Union": "1:30 AM",
-            "State & Hawley Streets": "1:45\u202fAM",
-            "UClub - University Plaza": "1:50\u202fAM",
-            "Hinman / Academic A": "2:00\u202fAM"
+            "State & Hawley Streets": "1:45 AM",
+            "UClub / University Plaza": "1:50 AM",
+            "Hinman / Academic A": "2:00 AM"
           }
         },
         {
           "stop_times": {
             "University Union": "1:45 AM",
-            "State & Hawley Streets": "2:00\u202fAM",
-            "UClub - University Plaza": "2:05\u202fAM",
-            "Hinman / Academic A": "2:15\u202fAM"
+            "State & Hawley Streets": "2:00 AM",
+            "UClub / University Plaza": "2:05 AM",
+            "Hinman / Academic A": "2:15 AM"
           }
         },
         {
           "stop_times": {
             "University Union": "2:00 AM",
-            "State & Hawley Streets": "2:15\u202fAM",
-            "UClub - University Plaza": "2:20\u202fAM",
-            "Hinman / Academic A": "2:30\u202fAM"
+            "State & Hawley Streets": "2:15 AM",
+            "UClub / University Plaza": "2:20 AM",
+            "Hinman / Academic A": "2:30 AM"
           }
         },
         {
           "stop_times": {
             "University Union": "2:15 AM",
-            "State & Hawley Streets": "2:30\u202fAM",
-            "UClub - University Plaza": "2:35\u202fAM",
-            "Hinman / Academic A": "2:45\u202fAM"
+            "State & Hawley Streets": "2:30 AM",
+            "UClub / University Plaza": "2:35 AM",
+            "Hinman / Academic A": "2:45 AM"
           }
         },
         {
           "stop_times": {
             "University Union": "2:30 AM",
-            "State & Hawley Streets": "2:45\u202fAM",
-            "UClub - University Plaza": "2:50\u202fAM",
-            "Hinman / Academic A": "3:00\u202fAM"
+            "State & Hawley Streets": "2:45 AM",
+            "UClub / University Plaza": "2:50 AM",
+            "Hinman / Academic A": "3:00 AM"
           }
         },
         {
           "stop_times": {
             "University Union": "2:45 AM",
-            "State & Hawley Streets": "3:00\u202fAM",
-            "UClub - University Plaza": "3:05\u202fAM",
-            "Hinman / Academic A": "3:15\u202fAM"
+            "State & Hawley Streets": "3:00 AM",
+            "UClub / University Plaza": "3:05 AM",
+            "Hinman / Academic A": "3:15 AM"
           }
         },
         {
           "stop_times": {
             "University Union": "3:00 AM",
-            "State & Hawley Streets": "3:15\u202fAM",
-            "UClub - University Plaza": "3:20\u202fAM",
-            "Hinman / Academic A": "3:30\u202fAM"
+            "State & Hawley Streets": "3:15 AM",
+            "UClub / University Plaza": "3:20 AM",
+            "Hinman / Academic A": "3:30 AM"
           }
         },
         {
           "stop_times": {
             "University Union": "3:15 AM",
-            "State & Hawley Streets": "3:30\u202fAM",
-            "UClub - University Plaza": "3:35\u202fAM",
-            "Hinman / Academic A": "3:45\u202fAM"
+            "State & Hawley Streets": "3:30 AM",
+            "UClub / University Plaza": "3:35 AM",
+            "Hinman / Academic A": "3:45 AM"
           }
         }
       ],
       "weekend": [
         {
           "stop_times": {
-            "University Union": "1:00\u202fAM",
-            "State & Hawley Streets": "1:15\u202fAM",
-            "UClub - University Plaza": "1:20\u202fAM",
-            "Hinman / Academic A": "1:30\u202fAM"
+            "University Union": "1:00 AM",
+            "State & Hawley Streets": "1:15 AM",
+            "UClub / University Plaza": "1:20 AM",
+            "Hinman / Academic A": "1:30 AM"
           }
         },
         {
           "stop_times": {
-            "University Union": "1:15\u202fAM",
-            "State & Hawley Streets": "1:30\u202fAM",
-            "UClub - University Plaza": "1:35\u202fAM",
-            "Hinman / Academic A": "1:45\u202fAM"
+            "University Union": "1:15 AM",
+            "State & Hawley Streets": "1:30 AM",
+            "UClub / University Plaza": "1:35 AM",
+            "Hinman / Academic A": "1:45 AM"
           }
         },
         {
           "stop_times": {
-            "University Union": "1:45\u202fAM",
-            "State & Hawley Streets": "2:00\u202fAM",
-            "UClub - University Plaza": "2:05\u202fAM",
-            "Hinman / Academic A": "2:15\u202fAM"
+            "University Union": "1:45 AM",
+            "State & Hawley Streets": "2:00 AM",
+            "UClub / University Plaza": "2:05 AM",
+            "Hinman / Academic A": "2:15 AM"
           }
         },
         {
           "stop_times": {
-            "University Union": "2:15\u202fAM",
-            "State & Hawley Streets": "2:30\u202fAM",
-            "UClub - University Plaza": "2:35\u202fAM",
-            "Hinman / Academic A": "2:45\u202fAM"
+            "University Union": "2:15 AM",
+            "State & Hawley Streets": "2:30 AM",
+            "UClub / University Plaza": "2:35 AM",
+            "Hinman / Academic A": "2:45 AM"
           }
         },
         {
           "stop_times": {
-            "University Union": "2:45\u202fAM",
-            "State & Hawley Streets": "3:00\u202fAM",
-            "UClub - University Plaza": "3:05\u202fAM",
-            "Hinman / Academic A": "3:15\u202fAM"
+            "University Union": "2:45 AM",
+            "State & Hawley Streets": "3:00 AM",
+            "UClub / University Plaza": "3:05 AM",
+            "Hinman / Academic A": "3:15 AM"
           }
         },
         {
           "stop_times": {
             "University Union": "3:00 AM",
-            "State & Hawley Streets": "3:15\u202fAM",
-            "UClub - University Plaza": "3:20\u202fAM",
+            "State & Hawley Streets": "3:15 AM",
+            "UClub / University Plaza": "3:20 AM",
             "Hinman / Academic A": "3:30 AM"
           }
         },
         {
           "stop_times": {
             "University Union": "3:15 AM",
-            "State & Hawley Streets": "3:30\u202fAM",
-            "UClub - University Plaza": "3:35\u202fAM",
+            "State & Hawley Streets": "3:30 AM",
+            "UClub / University Plaza": "3:35 AM",
             "Hinman / Academic A": "3:45 AM"
           }
         }
       ]
     },
     "stop_coords": {
-      "University Union": {
-        "lat": 42.0878147,
-        "lon": -75.9669597
-      },
       "Downtown - State & Hawley Streets": {
         "lat": 42.09723331476976,
         "lon": -75.91247100396893
       },
-      "UClub - University Plaza": {
-        "lat": 42.092059628508444,
-        "lon": -75.95227932071336
-      },
       "Hinman / Academic A": {
         "lat": 42.08872203054464,
         "lon": -75.97315228570167
+      },
+      "UClub / University Plaza": {
+        "lat": 42.092059628508444,
+        "lon": -75.95227932071336
+      },
+      "University Union": {
+        "lat": 42.0878147,
+        "lon": -75.9669597
       }
     }
   }

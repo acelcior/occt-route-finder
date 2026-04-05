@@ -1,6 +1,6 @@
 import json
 import os
-import re
+import sys
 from datetime import datetime, timedelta
 from math import atan2, cos, radians, sin, sqrt
 from pathlib import Path
@@ -11,8 +11,19 @@ import requests
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
+_ROOT = Path(__file__).resolve().parent.parent.parent
+sys.path.insert(0, str(_ROOT / "src"))
+from stop_names import (  # noqa: E402
+    build_norm_to_canonical,
+    coords_for_input,
+    coords_from_routes_stops,
+    load_stop_cache_coords,
+)
 
-DATA_PATH = Path(__file__).resolve().parent.parent.parent / "data" / "occt_routes_geo.json"
+DATA_PATH = _ROOT / "data" / "occt_routes_geo.json"
+STOP_CACHE_PATH = _ROOT / "data" / "stop_cache.json"
+_STOP_CACHE: dict[str, dict[str, float]] = load_stop_cache_coords(STOP_CACHE_PATH)
+_NORM_TO_CANON = build_norm_to_canonical(_STOP_CACHE)
 NOMINATIM_URL = "https://nominatim.openstreetmap.org/search"
 NOMINATIM_UA = "occt-vercel-planner/1.0"
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
@@ -56,31 +67,13 @@ def get_all_stops() -> list[str]:
 
 ROUTES: list[dict[str, Any]] = get_routes_data()
 
-# Colloquial campus phrases → OCCT stop name (coordinates loaded from route data)
-_CAMPUS_STOP_ALIASES: dict[str, str] = {
-    "the union": "University Union",
-    "university union": "University Union",
-    "student union": "University Union",
-    "uu": "University Union",
-}
 
-
-def _coords_for_canonical_stop(stop_name: str) -> tuple[float, float] | None:
-    for route in ROUTES:
-        loc = route.get("stop_coords", {}).get(stop_name)
-        if loc:
-            return float(loc["lat"]), float(loc["lon"])
-    return None
-
-
-def _coords_from_campus_alias(raw: str) -> tuple[float, float] | None:
-    """Resolve a few BU phrases Nominatim gets wrong; not a general POI database."""
-    key = raw.strip().rstrip(".,;").lower()
-    key = re.sub(r"\s+", " ", key)
-    canon = _CAMPUS_STOP_ALIASES.get(key)
-    if not canon:
-        return None
-    return _coords_for_canonical_stop(canon)
+def _coords_from_known_stop(raw: str) -> tuple[float, float] | None:
+    """Autocomplete / OCCT stop names: use data/stop_cache.json then route stop_coords."""
+    c = coords_for_input(raw, _STOP_CACHE, _NORM_TO_CANON)
+    if c is not None:
+        return c
+    return coords_from_routes_stops(raw, ROUTES)
 
 
 @lru_cache(maxsize=128)
@@ -89,7 +82,7 @@ def geocode(address: str) -> tuple[float, float]:
     if not raw:
         raise HTTPException(status_code=400, detail="Address is empty.")
 
-    snapped = _coords_from_campus_alias(raw)
+    snapped = _coords_from_known_stop(raw)
     if snapped is not None:
         return snapped
 
