@@ -1,4 +1,5 @@
 import json
+import os
 from datetime import datetime
 from math import atan2, cos, radians, sin, sqrt
 from pathlib import Path
@@ -14,6 +15,7 @@ from pydantic import BaseModel
 DATA_PATH = Path(__file__).resolve().parent.parent.parent / "data" / "occt_routes_geo.json"
 NOMINATIM_URL = "https://nominatim.openstreetmap.org/search"
 NOMINATIM_UA = "occt-vercel-planner/1.0"
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 MAX_STOP_DISTANCE_M = 2000
 
 
@@ -51,6 +53,25 @@ ROUTES: list[dict[str, Any]] = get_routes_data()
 
 @lru_cache(maxsize=128)
 def geocode(address: str) -> tuple[float, float]:
+    # Try Google Geocoding API if key is available
+    if GOOGLE_API_KEY:
+        try:
+            url = "https://maps.googleapis.com/maps/api/geocode/json"
+            params = {
+                "address": address,
+                "region": "us",
+                "key": GOOGLE_API_KEY
+            }
+            resp = requests.get(url, params=params, timeout=10)
+            resp.raise_for_status()
+            data = resp.json()
+            if data.get("status") == "OK" and data.get("results"):
+                loc = data["results"][0]["geometry"]["location"]
+                return float(loc["lat"]), float(loc["lng"])
+        except requests.RequestException:
+            pass  # Fall back to Nominatim
+
+    # Fall back to Nominatim
     queries = [
         f"{address}, Binghamton University, NY",
         f"{address}, Binghamton, NY",
@@ -209,7 +230,16 @@ def health() -> dict[str, str]:
 
 @app.post("/api/route")
 def route_plan(body: RouteRequest) -> dict[str, Any]:
-    routes = find_top_routes(body.origin, body.destination)
+    # Preprocess addresses to add Binghamton context
+    origin = body.origin.strip()
+    if "binghamton" not in origin.lower():
+        origin += ", Binghamton"
+    
+    destination = body.destination.strip()
+    if "binghamton" not in destination.lower():
+        destination += ", Binghamton"
+    
+    routes = find_top_routes(origin, destination)
     if not routes:
         raise HTTPException(status_code=404, detail="No valid route options found.")
     return {

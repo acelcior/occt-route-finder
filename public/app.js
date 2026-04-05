@@ -31,9 +31,11 @@ themeToggle.addEventListener("click", () => {
 // ============================================
 function updateClock() {
   const now = new Date();
-  const hours = now.getHours().toString().padStart(2, "0");
+  const hours = now.getHours();
   const minutes = now.getMinutes().toString().padStart(2, "0");
-  clockEl.textContent = `Current time: ${hours}:${minutes}`;
+  const ampm = hours >= 12 ? "PM" : "AM";
+  const displayHours = hours % 12 || 12; // Convert 0 to 12 for 12 AM
+  clockEl.textContent = `Current time: ${displayHours}:${minutes} ${ampm}`;
 }
 
 updateClock();
