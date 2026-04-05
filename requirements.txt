@@ -1,5 +1,4 @@
 fastapi
 requests
 uvicorn
-uvicorn
 

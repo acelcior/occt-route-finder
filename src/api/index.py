@@ -8,7 +8,6 @@ from functools import lru_cache
 
 import requests
 from fastapi import FastAPI, HTTPException
-from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 
@@ -25,12 +24,6 @@ class RouteRequest(BaseModel):
 
 
 app = FastAPI(title="OCCT Planner API")
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
 
 def get_routes_data() -> list[dict[str, Any]]:
