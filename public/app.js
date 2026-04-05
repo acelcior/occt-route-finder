@@ -9,14 +9,16 @@ const clockEl = document.getElementById("clock");
 
 let allStops = [];
 
-// ============================================
-// DARK MODE
-// ============================================
 function initTheme() {
-  const isDark = localStorage.getItem("theme") === "dark";
-  if (isDark) {
+  const saved = localStorage.getItem("theme");
+  if (saved === "light") {
+    document.documentElement.classList.remove("dark-mode");
+    themeToggle.textContent = "🌙";
+    themeToggle.setAttribute("aria-label", "Switch to dark mode");
+  } else {
     document.documentElement.classList.add("dark-mode");
     themeToggle.textContent = "☀️";
+    themeToggle.setAttribute("aria-label", "Switch to light mode");
   }
 }
 
@@ -24,26 +26,24 @@ themeToggle.addEventListener("click", () => {
   const isDark = document.documentElement.classList.toggle("dark-mode");
   localStorage.setItem("theme", isDark ? "dark" : "light");
   themeToggle.textContent = isDark ? "☀️" : "🌙";
+  themeToggle.setAttribute(
+    "aria-label",
+    isDark ? "Switch to light mode" : "Switch to dark mode"
+  );
 });
 
-// ============================================
-// REAL-TIME CLOCK
-// ============================================
 function updateClock() {
   const now = new Date();
   const hours = now.getHours();
   const minutes = now.getMinutes().toString().padStart(2, "0");
   const ampm = hours >= 12 ? "PM" : "AM";
-  const displayHours = hours % 12 || 12; // Convert 0 to 12 for 12 AM
+  const displayHours = hours % 12 || 12;
   clockEl.textContent = `Current time: ${displayHours}:${minutes} ${ampm}`;
 }
 
 updateClock();
 setInterval(updateClock, 1000);
 
-// ============================================
-// AUTOCOMPLETE
-// ============================================
 async function loadStops() {
   try {
     const res = await fetch("/api/stops");
@@ -65,7 +65,7 @@ function showSuggestions(input, suggestionsList) {
   const query = input.value.trim();
   const matches = filterStops(query);
 
-  suggestionsList.innerHTML = '';
+  suggestionsList.innerHTML = "";
   if (matches.length > 0) {
     suggestionsList.classList.add("active");
     matches.forEach((stop) => {
@@ -88,7 +88,6 @@ const toSuggestions = document.getElementById("to-suggestions");
 fromInput.addEventListener("input", () => showSuggestions(fromInput, fromSuggestions));
 toInput.addEventListener("input", () => showSuggestions(toInput, toSuggestions));
 
-// Close suggestions when clicking outside
 document.addEventListener("click", (e) => {
   if (!e.target.closest(".autocomplete-wrapper")) {
     fromSuggestions.classList.remove("active");
@@ -96,9 +95,6 @@ document.addEventListener("click", (e) => {
   }
 });
 
-// ============================================
-// HTML ESCAPING
-// ============================================
 function escapeHtml(text) {
   return text
     .replaceAll("&", "&amp;")
@@ -108,37 +104,53 @@ function escapeHtml(text) {
     .replaceAll("'", "&#39;");
 }
 
-// ============================================
-// RENDER RESULTS
-// ============================================
 function renderOptions(options) {
   resultsEl.innerHTML = options
     .map((opt, idx) => {
       const between =
         opt.stops_between.length > 0
-          ? `<ul>${opt.stops_between.map((s) => `<li>${escapeHtml(s)}</li>`).join("")}</ul>`
-          : "<p>No intermediate stops.</p>";
+          ? `<ul class="between-stops">${opt.stops_between
+              .map((s) => `<li>${escapeHtml(s)}</li>`)
+              .join("")}</ul>`
+          : '<p class="between-empty">No intermediate stops on this segment.</p>';
 
-      const tripDuration = opt.trip_duration_minutes
-        ? `<p><strong>Travel time:</strong> ${opt.trip_duration_minutes} minutes</p>`
-        : "";
+      const tripDuration =
+        opt.trip_duration_minutes != null
+          ? `<p class="meta-line"><span class="meta-label">Ride time</span> ~${opt.trip_duration_minutes} min</p>`
+          : "";
 
       return `
-      <article class="route">
-        <h3>Option ${idx + 1}: ${escapeHtml(opt.route_name)}</h3>
-        <p>Walk <strong>${Math.round(opt.walk_to_stop_m)}m</strong> to <strong>${escapeHtml(opt.boarding_stop)}</strong></p>
-        <div class="route-meta">
+      <article class="route-card">
+        <div class="route-card__head">
+          <span class="route-card__badge">Option ${idx + 1}</span>
+          <h2 class="route-card__title">${escapeHtml(opt.route_name)}</h2>
+        </div>
+
+        <div class="route-card__block">
+          <span class="step-label">Board here</span>
+          <p class="step-value">${escapeHtml(opt.boarding_stop)}</p>
+          <p class="step-sub">About <strong>${Math.round(opt.walk_to_stop_m)} m</strong> walk from your start</p>
+        </div>
+
+        <div class="route-card__times">
           <div>
-            <strong>Depart:</strong> ${escapeHtml(opt.departure_time)}
+            <span class="time-label">Depart</span>
+            <span class="time-value">${escapeHtml(opt.departure_time)}</span>
           </div>
           <div>
-            <strong>Arrive:</strong> ${escapeHtml(opt.arrival_time)}
+            <span class="time-label">Arrive</span>
+            <span class="time-value">${escapeHtml(opt.arrival_time)}</span>
           </div>
         </div>
         ${tripDuration}
-        <p>Get off at <strong>${escapeHtml(opt.destination_stop)}</strong></p>
-        <p>Walk <strong>${Math.round(opt.walk_from_stop_m)}m</strong> to destination</p>
-        <details>
+
+        <div class="route-card__block route-card__block--exit">
+          <span class="step-label">Get off here</span>
+          <p class="step-value get-off-stop">${escapeHtml(opt.destination_stop)}</p>
+          <p class="step-sub">Then <strong>${Math.round(opt.walk_from_stop_m)} m</strong> walk to your destination</p>
+        </div>
+
+        <details class="route-details">
           <summary>Stops in between</summary>
           ${between}
         </details>
@@ -147,22 +159,19 @@ function renderOptions(options) {
     .join("");
 }
 
-// ============================================
-// FORM SUBMISSION
-// ============================================
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   const origin = fromInput.value.trim();
   const destination = toInput.value.trim();
   if (!origin || !destination) {
     statusEl.textContent = "Please enter both From and To.";
-    statusEl.className = "status error";
+    statusEl.className = "status status--error";
     return;
   }
 
   submitBtn.disabled = true;
   statusEl.className = "status";
-  statusEl.textContent = "Finding routes...";
+  statusEl.textContent = "Finding routes…";
   resultsEl.innerHTML = "";
 
   try {
@@ -177,19 +186,16 @@ form.addEventListener("submit", async (e) => {
       throw new Error(data.detail || "Failed to fetch routes.");
     }
 
-    statusEl.textContent = `Found ${data.options.length} route option(s).`;
+    statusEl.textContent = `${data.options.length} route option(s) found.`;
+    statusEl.className = "status status--ok";
     renderOptions(data.options);
   } catch (err) {
     statusEl.textContent = err.message || "Unexpected error.";
-    statusEl.className = "status error";
+    statusEl.className = "status status--error";
   } finally {
     submitBtn.disabled = false;
   }
 });
 
-// ============================================
-// INITIALIZATION
-// ============================================
 initTheme();
 loadStops();
-

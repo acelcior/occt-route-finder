@@ -1,55 +1,72 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark-mode">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OCCT Bus Planner</title>
     <link rel="stylesheet" href="/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <main class="container">
       <section class="card">
-        <div class="header">
-          <h1>OCCT Bus Planner</h1>
-          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        <header class="top-bar">
+          <div class="brand">
+            <h1>OCCT Bus Planner</h1>
+            <p class="tagline">Binghamton University &amp; Broome County</p>
+          </div>
+          <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to light mode">
+            ☀️
+          </button>
+        </header>
+
+        <div class="clock" id="clock" aria-live="polite"></div>
+
+        <div class="hint-box">
+          <strong>Tip:</strong> Use a full street address for best results. For example, instead of a store
+          name, enter
+          <span class="hint-example">69 Court St, Binghamton, NY 13901</span>.
         </div>
-        <div class="clock" id="clock"></div>
-        <p class="muted">
-          Places in the Binghamton area (campus, Vestal, Johnson City, etc.). Use a building name,
-          business, or street — full street address optional.
-        </p>
+
         <form id="route-form">
-          <label for="from">From</label>
-          <div class="autocomplete-wrapper">
-            <input
-              id="from"
-              type="text"
-              placeholder="e.g. CIW or Mountainview"
-              list="stops-datalist"
-              autocomplete="off"
-              required
-            />
-            <ul id="from-suggestions" class="suggestions-list"></ul>
+          <div class="field">
+            <label for="from">From</label>
+            <div class="autocomplete-wrapper">
+              <input
+                id="from"
+                type="text"
+                placeholder="Starting address or OCCT stop name"
+                autocomplete="off"
+                required
+              />
+              <ul id="from-suggestions" class="suggestions-list"></ul>
+            </div>
           </div>
-          <label for="to">To</label>
-          <div class="autocomplete-wrapper">
-            <input
-              id="to"
-              type="text"
-              placeholder="e.g. Maryam's Mart or Main St"
-              list="stops-datalist"
-              autocomplete="off"
-              required
-            />
-            <ul id="to-suggestions" class="suggestions-list"></ul>
+          <div class="field">
+            <label for="to">To</label>
+            <div class="autocomplete-wrapper">
+              <input
+                id="to"
+                type="text"
+                placeholder="e.g. 69 Court St, Binghamton, NY 13901"
+                autocomplete="off"
+                required
+              />
+              <ul id="to-suggestions" class="suggestions-list"></ul>
+            </div>
           </div>
-          <button type="submit" id="submit-btn">Find Routes</button>
+          <button type="submit" id="submit-btn" class="submit-btn">Find routes</button>
         </form>
-        <p id="status" class="status"></p>
-        <div id="results"></div>
+
+        <p id="status" class="status" role="status"></p>
+        <div id="results" class="results"></div>
       </section>
     </main>
     <script src="/app.js"></script>
   </body>
 </html>
-
