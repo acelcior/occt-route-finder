@@ -1,6 +1,7 @@
 import json
 import os
-from datetime import datetime
+import re
+from datetime import datetime, timedelta
 from math import atan2, cos, radians, sin, sqrt
 from pathlib import Path
 from typing import Any
@@ -42,12 +43,42 @@ def get_all_stops() -> list[str]:
 
 ROUTES: list[dict[str, Any]] = get_routes_data()
 
+# Colloquial campus phrases → OCCT stop name (coordinates loaded from route data)
+_CAMPUS_STOP_ALIASES: dict[str, str] = {
+    "the union": "University Union",
+    "university union": "University Union",
+    "student union": "University Union",
+    "uu": "University Union",
+}
+
+
+def _coords_for_canonical_stop(stop_name: str) -> tuple[float, float] | None:
+    for route in ROUTES:
+        loc = route.get("stop_coords", {}).get(stop_name)
+        if loc:
+            return float(loc["lat"]), float(loc["lon"])
+    return None
+
+
+def _coords_from_campus_alias(raw: str) -> tuple[float, float] | None:
+    """Resolve a few BU phrases Nominatim gets wrong; not a general POI database."""
+    key = raw.strip().rstrip(".,;").lower()
+    key = re.sub(r"\s+", " ", key)
+    canon = _CAMPUS_STOP_ALIASES.get(key)
+    if not canon:
+        return None
+    return _coords_for_canonical_stop(canon)
+
 
 @lru_cache(maxsize=128)
 def geocode(address: str) -> tuple[float, float]:
-    raw = address.strip()
+    raw = address.strip().rstrip(".,;")
     if not raw:
         raise HTTPException(status_code=400, detail="Address is empty.")
+
+    snapped = _coords_from_campus_alias(raw)
+    if snapped is not None:
+        return snapped
 
     if GOOGLE_API_KEY:
         try:
@@ -119,6 +150,71 @@ def _clock_today(raw: str) -> datetime | None:
     return datetime.combine(datetime.now().date(), pt.time())
 
 
+def _dense_stop_times_today(route: dict[str, Any], trip: dict[str, Any]) -> dict[str, datetime]:
+    """Infer times at each stop when OCCT tables only list the first few columns."""
+    stops = route.get("stops") or []
+    raw = trip.get("stop_times") or {}
+    indexed: list[tuple[int, datetime]] = []
+    for name, r in raw.items():
+        if name not in stops:
+            continue
+        dt = _clock_today(r)
+        if dt:
+            indexed.append((stops.index(name), dt))
+    indexed.sort(key=lambda x: x[0])
+    if not indexed:
+        return {}
+
+    default_seg_s = 240.0
+    n = len(stops)
+    out: dict[str, datetime] = {}
+
+    def time_at_index(i: int) -> datetime | None:
+        exact = next((t for ix, t in indexed if ix == i), None)
+        if exact is not None:
+            return exact
+        prev = [(ix, t) for ix, t in indexed if ix < i]
+        nxt = [(ix, t) for ix, t in indexed if ix > i]
+        if prev and nxt:
+            ix0, t0 = prev[-1]
+            ix1, t1 = nxt[0]
+            if ix1 == ix0:
+                return t0
+            frac = (i - ix0) / (ix1 - ix0)
+            return t0 + timedelta(seconds=(t1 - t0).total_seconds() * frac)
+        if prev and not nxt:
+            ix0, t0 = prev[-1]
+            if len(prev) >= 2:
+                ix_1, t_1 = prev[-2]
+                spd = (
+                    (t0 - t_1).total_seconds() / (ix0 - ix_1)
+                    if ix0 != ix_1
+                    else default_seg_s
+                )
+            else:
+                spd = default_seg_s
+            return t0 + timedelta(seconds=spd * (i - ix0))
+        if nxt and not prev:
+            ix0, t0 = nxt[0]
+            if len(nxt) >= 2:
+                ix1, t1 = nxt[1]
+                spd = (
+                    (t1 - t0).total_seconds() / (ix1 - ix0)
+                    if ix1 != ix0
+                    else default_seg_s
+                )
+            else:
+                spd = default_seg_s
+            return t0 - timedelta(seconds=spd * (ix0 - i))
+        return None
+
+    for i in range(n):
+        tt = time_at_index(i)
+        if tt is not None:
+            out[stops[i]] = tt
+    return out
+
+
 def active_schedule(route: dict[str, Any]) -> list[dict[str, Any]]:
     return route.get("schedules", {}).get("weekday" if datetime.now().weekday() < 5 else "weekend", [])
 
@@ -187,14 +283,9 @@ def find_top_routes(origin: str, destination: str) -> list[dict[str, Any]]:
         depart = None
         arrive = None
         for trip in active_schedule(route):
-            times = trip.get("stop_times", {})
-            dep_raw = times.get(origin_stop)
-            arr_raw = times.get(dest_stop)
-            if not dep_raw or not arr_raw:
-                continue
-
-            dep_dt = _clock_today(dep_raw)
-            arr_dt = _clock_today(arr_raw)
+            dense = _dense_stop_times_today(route, trip)
+            dep_dt = dense.get(origin_stop)
+            arr_dt = dense.get(dest_stop)
             if not dep_dt or not arr_dt:
                 continue
             if dep_dt < now:
