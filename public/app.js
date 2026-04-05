@@ -104,11 +104,15 @@ function escapeHtml(text) {
     .replaceAll("'", "&#39;");
 }
 
-function renderOptions(options) {
-  resultsEl.innerHTML = options
+function renderOptions(options, rankingNote) {
+  const noteHtml = rankingNote
+    ? `<div class="ranking-note" role="note"><p>${escapeHtml(rankingNote)}</p></div>`
+    : "";
+
+  const cards = options
     .map((opt, idx) => {
       const between =
-        opt.stops_between.length > 0
+        opt.stops_between && opt.stops_between.length > 0
           ? `<ul class="between-stops">${opt.stops_between
               .map((s) => `<li>${escapeHtml(s)}</li>`)
               .join("")}</ul>`
@@ -119,17 +123,27 @@ function renderOptions(options) {
           ? `<p class="meta-line"><span class="meta-label">Ride time</span> ~${opt.trip_duration_minutes} min</p>`
           : "";
 
+      const wto = opt.walk_to_stop_min != null ? opt.walk_to_stop_min : Math.max(1, Math.round(opt.walk_to_stop_m / 80));
+      const wfrom = opt.walk_from_stop_min != null ? opt.walk_from_stop_min : Math.max(1, Math.round(opt.walk_from_stop_m / 80));
+      const totalW = opt.total_walk_min != null ? opt.total_walk_min : wto + wfrom;
+
+      const lateBadge =
+        opt.is_late_nite === true
+          ? '<span class="route-badge route-badge--late">Late Nite</span>'
+          : "";
+
       return `
       <article class="route-card">
         <div class="route-card__head">
           <span class="route-card__badge">Option ${idx + 1}</span>
+          ${lateBadge}
           <h2 class="route-card__title">${escapeHtml(opt.route_name)}</h2>
         </div>
 
         <div class="route-card__block">
           <span class="step-label">Board here</span>
           <p class="step-value">${escapeHtml(opt.boarding_stop)}</p>
-          <p class="step-sub">About <strong>${Math.round(opt.walk_to_stop_m)} m</strong> walk from your start</p>
+          <p class="step-sub">About <strong>${Math.round(opt.walk_to_stop_m)} m</strong> (~${wto} min walk) from your start</p>
         </div>
 
         <div class="route-card__times">
@@ -147,8 +161,10 @@ function renderOptions(options) {
         <div class="route-card__block route-card__block--exit">
           <span class="step-label">Get off here</span>
           <p class="step-value get-off-stop">${escapeHtml(opt.destination_stop)}</p>
-          <p class="step-sub">Then <strong>${Math.round(opt.walk_from_stop_m)} m</strong> walk to your destination</p>
+          <p class="step-sub">Then <strong>${Math.round(opt.walk_from_stop_m)} m</strong> (~${wfrom} min walk) to your destination</p>
         </div>
+
+        <p class="total-walk-hint">Total walking (to board + after drop-off): ~<strong>${totalW} min</strong> (${Math.round(opt.total_walk_m != null ? opt.total_walk_m : opt.walk_to_stop_m + opt.walk_from_stop_m)} m)</p>
 
         <details class="route-details">
           <summary>Stops in between</summary>
@@ -157,6 +173,8 @@ function renderOptions(options) {
       </article>`;
     })
     .join("");
+
+  resultsEl.innerHTML = noteHtml + cards;
 }
 
 form.addEventListener("submit", async (e) => {
@@ -186,9 +204,9 @@ form.addEventListener("submit", async (e) => {
       throw new Error(data.detail || "Failed to fetch routes.");
     }
 
-    statusEl.textContent = `${data.options.length} route option(s) found.`;
+    statusEl.textContent = `${data.options.length} route option(s) found — shortest walk after drop-off first, Late Nite ranked later.`;
     statusEl.className = "status status--ok";
-    renderOptions(data.options);
+    renderOptions(data.options, data.ranking_note);
   } catch (err) {
     statusEl.textContent = err.message || "Unexpected error.";
     statusEl.className = "status status--error";

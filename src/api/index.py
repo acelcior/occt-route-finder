@@ -17,6 +17,19 @@ NOMINATIM_URL = "https://nominatim.openstreetmap.org/search"
 NOMINATIM_UA = "occt-vercel-planner/1.0"
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 MAX_STOP_DISTANCE_M = 2000
+# ~4.8 km/h → ~80 m/min for “how many minutes to walk” hints
+WALK_METERS_PER_MINUTE = 80.0
+
+
+def _walk_minutes(m: float) -> int:
+    if m <= 0:
+        return 0
+    return max(1, round(m / WALK_METERS_PER_MINUTE))
+
+
+def _is_late_nite_route(route_name: str) -> bool:
+    n = route_name.lower()
+    return "late nite" in n or "late night" in n or "late-nite" in n
 
 
 class RouteRequest(BaseModel):
@@ -244,6 +257,12 @@ def format_option(option: dict[str, Any]) -> dict[str, Any]:
     if option["depart"] and option["arrive"]:
         trip_duration_minutes = int((option["arrive"] - option["depart"]).total_seconds() / 60)
 
+    w_to = float(option["origin_walk_m"])
+    w_from = float(option["dest_walk_m"])
+    total_m = w_to + w_from
+    wm_to = _walk_minutes(w_to)
+    wm_from = _walk_minutes(w_from)
+
     return {
         "route_name": option["route_name"],
         "boarding_stop": option["origin_stop"],
@@ -251,8 +270,13 @@ def format_option(option: dict[str, Any]) -> dict[str, Any]:
         "departure_time": dep,
         "arrival_time": arr,
         "trip_duration_minutes": trip_duration_minutes,
-        "walk_to_stop_m": round(option["origin_walk_m"], 1),
-        "walk_from_stop_m": round(option["dest_walk_m"], 1),
+        "walk_to_stop_m": round(w_to, 1),
+        "walk_from_stop_m": round(w_from, 1),
+        "walk_to_stop_min": wm_to,
+        "walk_from_stop_min": wm_from,
+        "total_walk_m": round(total_m, 1),
+        "total_walk_min": wm_to + wm_from,
+        "is_late_nite": _is_late_nite_route(option["route_name"]),
         "stops_between": option["stops_between"],
     }
 
@@ -310,11 +334,13 @@ def find_top_routes(origin: str, destination: str) -> list[dict[str, Any]]:
             }
         )
 
+    # Prefer shorter walk from drop-off to destination, then to board; deprioritize Late Nite; then earlier bus
     options.sort(
         key=lambda x: (
-            x["depart"] is None,
+            _is_late_nite_route(x["route_name"]),
+            x["dest_walk_m"],
+            x["origin_walk_m"],
             x["depart"] if x["depart"] else datetime.max,
-            x["origin_walk_m"] + x["dest_walk_m"],
         )
     )
     return [format_option(opt) for opt in options[:3]]
@@ -336,6 +362,12 @@ def route_plan(body: RouteRequest) -> dict[str, Any]:
         "origin": body.origin,
         "destination": body.destination,
         "options": routes,
+        "ranking_note": (
+            "Options are ordered by shortest walk from your drop-off to the destination, then shortest walk to "
+            "the boarding stop. Late Nite routes are listed after other lines when those walks are similar. "
+            "Boarding stops can differ between routes because each line uses the stop on that route closest to your pins—"
+            "different routes follow different paths, so the nearest stop on one line may be farther along the road on another."
+        ),
     }
 
 
