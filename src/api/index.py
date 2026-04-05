@@ -1,5 +1,6 @@
 import json
 import os
+import re
 from datetime import datetime
 from math import atan2, cos, radians, sin, sqrt
 from pathlib import Path
@@ -16,6 +17,13 @@ NOMINATIM_URL = "https://nominatim.openstreetmap.org/search"
 NOMINATIM_UA = "occt-vercel-planner/1.0"
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 MAX_STOP_DISTANCE_M = 2000
+
+# Binghamton metro (Binghamton / Vestal / Johnson City / Endicott area) — bias & reject far-away hits
+BINGHAMTON_METRO_CENTER: tuple[float, float] = (42.10, -75.92)
+# ~45 km covers Broome County core; rejects geocoder matches in other states/cities
+MAX_METRO_RADIUS_M = 45_000
+# Nominatim: southwest lon/lat, northeast lon/lat (bias ranking toward this box)
+NOMINATIM_VIEWBOX = "-76.18,41.93,-75.62,42.28"
 
 
 class RouteRequest(BaseModel):
@@ -44,50 +52,197 @@ def get_all_stops() -> list[str]:
 ROUTES: list[dict[str, Any]] = get_routes_data()
 
 
+def _already_has_local_context(s: str) -> bool:
+    t = s.lower()
+    needles = (
+        "binghamton",
+        "vestal",
+        "johnson city",
+        "endicott",
+        "endwell",
+        "broome",
+        "binghamton university",
+        "bu ",
+        " campus",
+        "ny ",
+        " ny,",
+        ", ny",
+    )
+    return any(n in t for n in needles)
+
+
+def _possessive_variant(raw: str) -> str | None:
+    """Try 'Maryams Mart' -> 'Maryam's Mart' when OSM uses an apostrophe."""
+    s = raw.strip()
+    if "'" in s:
+        return None
+    m = re.match(r"^(\S+?)s(\s+\S.+)$", s)
+    if not m:
+        return None
+    stem, rest = m.group(1), m.group(2)
+    if len(stem) < 3:
+        return None
+    return f"{stem}'s{rest}"
+
+
+def _binghamton_search_queries(raw: str) -> list[str]:
+    """Ordered: city/business-friendly first; campus last (campus-first hurts off-campus POIs)."""
+    base = " ".join(raw.split())
+    if not base:
+        return []
+    out: list[str] = []
+    seen: set[str] = set()
+
+    def add(q: str) -> None:
+        q = q.strip()
+        if q and q not in seen:
+            seen.add(q)
+            out.append(q)
+
+    if _already_has_local_context(base):
+        add(f"{base}, USA")
+        add(base)
+    else:
+        add(f"{base}, Binghamton, NY, USA")
+        add(f"{base}, Vestal, NY, USA")
+        add(f"{base}, Johnson City, NY, USA")
+        add(f"{base}, Broome County, NY, USA")
+        add(f"{base}, Binghamton University, Vestal, NY, USA")
+
+    alt = _possessive_variant(base)
+    if alt:
+        if _already_has_local_context(base):
+            add(f"{alt}, USA")
+        else:
+            add(f"{alt}, Binghamton, NY, USA")
+            add(f"{alt}, Vestal, NY, USA")
+
+    return out
+
+
+def _pick_best_nominatim_hit(results: list[dict[str, Any]]) -> tuple[float, float] | None:
+    """Among Nominatim hits, prefer in-metro results; then importance; then closeness to metro center."""
+    candidates: list[tuple[float, float, float, float]] = []
+    for r in results:
+        try:
+            lat = float(r["lat"])
+            lon = float(r["lon"])
+        except (KeyError, TypeError, ValueError):
+            continue
+        d = distance_m((lat, lon), BINGHAMTON_METRO_CENTER)
+        if d > MAX_METRO_RADIUS_M:
+            continue
+        imp = float(r.get("importance") or 0.0)
+        candidates.append((lat, lon, imp, d))
+    if not candidates:
+        return None
+    candidates.sort(key=lambda x: (-x[2], x[3]))
+    lat, lon, _, _ = candidates[0]
+    return (lat, lon)
+
+
 @lru_cache(maxsize=128)
 def geocode(address: str) -> tuple[float, float]:
-    # Try Google Geocoding API if key is available
+    raw = address.strip()
+    if not raw:
+        raise HTTPException(status_code=400, detail="Address is empty.")
+
+    queries = _binghamton_search_queries(raw)
+    if not queries:
+        raise HTTPException(status_code=400, detail="Address is empty.")
+
+    # Google Geocoding: bias to Binghamton area; prefer first in-metro result
     if GOOGLE_API_KEY:
+        g_addr = raw if _already_has_local_context(raw) else f"{raw}, Binghamton, NY"
         try:
             url = "https://maps.googleapis.com/maps/api/geocode/json"
             params = {
-                "address": address,
+                "address": g_addr,
                 "region": "us",
-                "key": GOOGLE_API_KEY
+                "components": "country:US",
+                "key": GOOGLE_API_KEY,
             }
             resp = requests.get(url, params=params, timeout=10)
             resp.raise_for_status()
             data = resp.json()
             if data.get("status") == "OK" and data.get("results"):
-                loc = data["results"][0]["geometry"]["location"]
-                return float(loc["lat"]), float(loc["lng"])
+                for hit in data["results"]:
+                    loc = hit["geometry"]["location"]
+                    lat, lng = float(loc["lat"]), float(loc["lng"])
+                    if distance_m((lat, lng), BINGHAMTON_METRO_CENTER) <= MAX_METRO_RADIUS_M:
+                        return lat, lng
         except requests.RequestException:
-            pass  # Fall back to Nominatim
+            pass
 
-    # Fall back to Nominatim
-    queries = [
-        f"{address}, Binghamton University, NY",
-        f"{address}, Binghamton, NY",
-        f"{address}, Broome County, NY",
-    ]
+        # Places Text Search: better for business names / POIs missing from OSM (e.g. small marts)
+        try:
+            place_queries: list[str] = []
+            if _already_has_local_context(raw):
+                place_queries.append(raw)
+            else:
+                place_queries.append(f"{raw} Binghamton NY")
+            pv = _possessive_variant(raw)
+            if pv and pv.lower() != raw.lower():
+                place_queries.append(
+                    f"{pv} Binghamton NY" if not _already_has_local_context(raw) else pv
+                )
+            url = "https://maps.googleapis.com/maps/api/place/textsearch/json"
+            for pq in dict.fromkeys(place_queries):
+                params = {
+                    "query": pq,
+                    "key": GOOGLE_API_KEY,
+                    "region": "us",
+                    "location": f"{BINGHAMTON_METRO_CENTER[0]},{BINGHAMTON_METRO_CENTER[1]}",
+                    "radius": min(50000, MAX_METRO_RADIUS_M),
+                }
+                resp = requests.get(url, params=params, timeout=10)
+                resp.raise_for_status()
+                data = resp.json()
+                if data.get("status") != "OK" or not data.get("results"):
+                    continue
+                for hit in data["results"]:
+                    loc = hit.get("geometry", {}).get("location", {})
+                    lat, lng = loc.get("lat"), loc.get("lng")
+                    if lat is None or lng is None:
+                        continue
+                    lat_f, lng_f = float(lat), float(lng)
+                    if distance_m((lat_f, lng_f), BINGHAMTON_METRO_CENTER) <= MAX_METRO_RADIUS_M:
+                        return lat_f, lng_f
+        except (requests.RequestException, TypeError, ValueError):
+            pass
+
     headers = {"User-Agent": NOMINATIM_UA}
+    nominatim_params_base: dict[str, Any] = {
+        "format": "jsonv2",
+        "limit": 15,
+        "countrycodes": "us",
+        "addressdetails": 1,
+        "viewbox": NOMINATIM_VIEWBOX,
+        "bounded": 0,
+    }
 
-    for query in queries:
+    for q in queries:
         try:
             resp = requests.get(
                 NOMINATIM_URL,
-                params={"q": query, "format": "jsonv2", "limit": 1},
+                params={**nominatim_params_base, "q": q},
                 headers=headers,
                 timeout=10,
             )
             resp.raise_for_status()
             data = resp.json()
-            if data:
-                return float(data[0]["lat"]), float(data[0]["lon"])
+            if not data:
+                continue
+            picked = _pick_best_nominatim_hit(data)
+            if picked:
+                return picked
         except requests.RequestException:
             continue
 
-    raise HTTPException(status_code=404, detail=f"Could not geocode: {address}")
+    raise HTTPException(
+        status_code=404,
+        detail=f"Could not find a Binghamton-area location for: {raw}. Try a nearby street or neighborhood name.",
+    )
 
 
 def distance_m(a: tuple[float, float], b: tuple[float, float]) -> float:
@@ -223,15 +378,8 @@ def health() -> dict[str, str]:
 
 @app.post("/api/route")
 def route_plan(body: RouteRequest) -> dict[str, Any]:
-    # Preprocess addresses to add Binghamton context
     origin = body.origin.strip()
-    if "binghamton" not in origin.lower():
-        origin += ", Binghamton"
-    
     destination = body.destination.strip()
-    if "binghamton" not in destination.lower():
-        destination += ", Binghamton"
-    
     routes = find_top_routes(origin, destination)
     if not routes:
         raise HTTPException(status_code=404, detail="No valid route options found.")

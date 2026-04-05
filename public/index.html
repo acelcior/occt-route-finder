@@ -14,14 +14,17 @@
           <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
         </div>
         <div class="clock" id="clock"></div>
-        <p class="muted">Enter where you are and where you are going.</p>
+        <p class="muted">
+          Places in the Binghamton area (campus, Vestal, Johnson City, etc.). Use a building name,
+          business, or street — full street address optional.
+        </p>
         <form id="route-form">
           <label for="from">From</label>
           <div class="autocomplete-wrapper">
             <input
               id="from"
               type="text"
-              placeholder="Binghamton University"
+              placeholder="e.g. CIW or Mountainview"
               list="stops-datalist"
               autocomplete="off"
               required
@@ -33,7 +36,7 @@
             <input
               id="to"
               type="text"
-              placeholder="6 Riverside Drive"
+              placeholder="e.g. Maryam's Mart or Main St"
               list="stops-datalist"
               autocomplete="off"
               required
