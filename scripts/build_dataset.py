@@ -436,7 +436,12 @@ class Builder:
             dir_key = sig_to_key[sig]
 
             names_seq = [self.stops[s]["name"] for s in dir_stop_ids]
-            headsign = " → ".join(names_seq) if cfg["shape"] == "timepoints" else f"{names_seq[0]} → {names_seq[-1]}"
+            if cfg["shape"] == "timepoints":
+                headsign = " → ".join(names_seq)
+            elif names_seq[0] == names_seq[-1]:
+                headsign = f"Loop from {names_seq[0]}"
+            else:
+                headsign = f"{names_seq[0]} → {names_seq[-1]}"
             line["directions"].setdefault(dir_key, {
                 "label": self.direction_label(dir_key),
                 "headsign": headsign,
