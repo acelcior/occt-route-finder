@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Overpass:wght@500;600;700;800;900&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/style.css?v=3" />
+    <link rel="stylesheet" href="/style.css?v=4" />
   </head>
   <body>
     <nav aria-label="Main navigation">
@@ -25,7 +25,7 @@
             <li><a href="https://occtransport.org/news.html" target="_blank" rel="noopener">News</a></li>
             <li><a href="https://binghamtonupublic.etaspot.net/" class="nav-cta" target="_blank" rel="noopener">Live buses</a></li>
           </ul>
-          <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false">
+          <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Dark mode" aria-pressed="false">
             <svg class="tt-moon" aria-hidden="true" focusable="false" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/></svg>
             <svg class="tt-sun" aria-hidden="true" focusable="false" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/></svg>
           </button>
@@ -51,7 +51,7 @@
             <label for="from">From</label>
             <div class="autocomplete-wrapper">
               <input id="from" type="text" placeholder="Stop, building or address" maxlength="120" required
-                     aria-autocomplete="list" aria-controls="from-suggestions" aria-expanded="false" />
+                     role="combobox" aria-autocomplete="list" aria-controls="from-suggestions" aria-expanded="false" />
               <ul id="from-suggestions" class="suggestions-list" role="listbox" aria-label="From suggestions"></ul>
             </div>
           </div>
@@ -59,7 +59,7 @@
             <label for="to">To</label>
             <div class="autocomplete-wrapper">
               <input id="to" type="text" placeholder="e.g. University Downtown Center" maxlength="120" required
-                     aria-autocomplete="list" aria-controls="to-suggestions" aria-expanded="false" />
+                     role="combobox" aria-autocomplete="list" aria-controls="to-suggestions" aria-expanded="false" />
               <ul id="to-suggestions" class="suggestions-list" role="listbox" aria-label="To suggestions"></ul>
             </div>
           </div>
@@ -92,7 +92,7 @@
       </form>
 
       <p id="status" class="status" role="status" aria-live="polite"></p>
-      <div id="results" class="results" aria-live="polite"></div>
+      <div id="results" class="results"></div>
     </main>
 
     <footer>
@@ -103,6 +103,6 @@
           Buses are free with a Binghamton University ID.</p>
       </div>
     </footer>
-    <script src="/app.js?v=4"></script>
+    <script src="/app.js?v=5"></script>
   </body>
 </html>
