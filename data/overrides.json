@@ -1,0 +1,4 @@
+{
+ "_about": "One-off service changes applied after the calendar: detours, closed stops, cancelled lines, alerts. Each entry needs from/to (inclusive ISO dates), kind, message and source. kinds: alert (message only), cancel_line (line_id not served), close_stop (stop_id not boardable/alightable). Example: {\"from\": \"2026-11-07\", \"to\": \"2026-11-07\", \"kind\": \"cancel_line\", \"line\": \"de\", \"message\": \"Downtown Express cancelled Saturday night\", \"source\": \"https://occtransport.org/news.html\"}",
+ "overrides": []
+}
