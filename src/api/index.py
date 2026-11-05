@@ -176,8 +176,9 @@ def route_get(
 
 
 @app.get("/api/stops")
-def stops() -> dict[str, list[str]]:
-    return {"stops": PLANNER.suggestions}
+def stops() -> dict[str, Any]:
+    """Autocomplete data: names plus every alias that resolves to them."""
+    return {"stops": PLANNER.suggestions, "entries": PLANNER.suggestion_entries}
 
 
 if os.getenv("OCCT_SERVE_STATIC"):  # local dev only; on Vercel the static build serves public/

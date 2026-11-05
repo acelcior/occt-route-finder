@@ -46,17 +46,17 @@ MAX_JOURNEYS = 5
 INF = float("inf")
 
 # What students type -> the stop/place it means.
-SHORT_ALIASES = {
-    "uu": "University Union", "the union": "University Union", "student union": "University Union",
-    "union": "University Union", "union university": "University Union", "marketplace": "University Union",
-    "udc": "University Downtown Center", "downtown center": "University Downtown Center",
-    "downtown": "State & Hawley Streets", "state and hawley": "State & Hawley Streets",
-    "itc": "Innovative Technologies Complex (ITC)", "uclub": "UClub / University Plaza",
-    "u club": "UClub / University Plaza", "university plaza": "UClub / University Plaza",
-    "hinman": "Hinman / Academic A", "acad a": "Hinman / Academic A", "ciw": "Appalachian Collegiate Center",
-    "college in the woods": "Appalachian Collegiate Center", "library": "Bartle Library",
-    "bus terminal": "Greater Binghamton Transportation Center", "arena": "Visions Memorial Arena",
-    "walmart": "Walmart / Town Square Mall Stop #2", "target": "Target / Parkway Plaza",
+SHORT_ALIASES = {  # keys keep their display casing; matching is case-insensitive
+    "UU": "University Union", "The Union": "University Union", "Student Union": "University Union",
+    "Union": "University Union", "Union University": "University Union", "Marketplace": "University Union",
+    "UDC": "University Downtown Center", "Downtown Center": "University Downtown Center",
+    "Downtown": "State & Hawley Streets", "State and Hawley": "State & Hawley Streets",
+    "ITC": "Innovative Technologies Complex (ITC)", "UClub": "UClub / University Plaza",
+    "U Club": "UClub / University Plaza", "University Plaza": "UClub / University Plaza",
+    "Hinman": "Hinman / Academic A", "Acad A": "Hinman / Academic A", "CIW": "Appalachian Collegiate Center",
+    "College in the Woods": "Appalachian Collegiate Center", "Library": "Bartle Library",
+    "Bus Terminal": "Greater Binghamton Transportation Center", "Arena": "Visions Memorial Arena",
+    "Walmart": "Walmart / Town Square Mall Stop #2", "Target": "Target / Parkway Plaza",
 }
 
 
@@ -451,16 +451,34 @@ class Planner:
         for name, pl in self.places.items():
             for n in [name, *pl.get("aliases", [])]:
                 self.name_index.setdefault(normalize_stop_name(n), ((pl["lat"], pl["lon"]), name))
+        for short, full in SHORT_ALIASES.items():  # before the cache so "Union University" resolves to the canonical name
+            target = self.name_index.get(normalize_stop_name(full))
+            if target:
+                self.name_index.setdefault(normalize_stop_name(short), target)
         cache = self.data_dir / "stop_cache.json"
         if cache.exists():
             for n, loc in json.loads(cache.read_text()).items():
                 self.name_index.setdefault(normalize_stop_name(n), ((loc["lat"], loc["lon"]), n))
+        # Autocomplete entries: canonical name + every spelling that resolves to it.
+        aliases: dict[str, list[str]] = {}
+        for sid, s in ds.stops.items():
+            if s.get("lat") is not None:
+                aliases.setdefault(s["name"], []).extend(s.get("aliases", []))
+        for name, pl in self.places.items():
+            aliases.setdefault(name, []).extend(pl.get("aliases", []))
+        if cache.exists():
+            for n in json.loads(cache.read_text()):
+                hit = self.name_index.get(normalize_stop_name(n))
+                if hit and hit[1] != n and hit[1] in aliases:
+                    aliases[hit[1]].append(n)
         for short, full in SHORT_ALIASES.items():
-            target = self.name_index.get(normalize_stop_name(full))
-            if target:
-                self.name_index.setdefault(normalize_stop_name(short), target)
-        self.suggestions = sorted({ds.stops[s]["name"] for s in ds.stops if ds.stops[s].get("lat") is not None}
-                                  | set(self.places))
+            if full in aliases:
+                aliases[full].append(short)
+        self.suggestion_entries = []
+        for n, a in sorted(aliases.items(), key=lambda kv: kv[0].lower()):
+            uniq = {x.lower(): x for x in a if x.lower() != n.lower()}
+            self.suggestion_entries.append({"name": n, "aliases": sorted(uniq.values(), key=str.lower)})
+        self.suggestions = [e["name"] for e in self.suggestion_entries]
 
     def resolve_place(self, text: str) -> tuple[tuple[float, float], str] | None:
         key = normalize_stop_name(text)
