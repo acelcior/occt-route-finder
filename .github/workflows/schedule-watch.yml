@@ -1,0 +1,55 @@
+# Watches occtransport.org for schedule changes. On change: refreshes the raw
+# snapshot, rebuilds the candidate dataset strictly, and opens a PR for review.
+# It never touches the live dataset (data/occt_dataset.<season>.json) — that is
+# scripts/promote.py, run by a human after reviewing the PR.
+name: schedule-watch
+
+on:
+  schedule:
+    - cron: "0 11 * * 1"        # weekly, Monday 11:00 UTC
+    - cron: "0 11 * 1,8 *"      # daily in January and August (semester starts)
+  workflow_dispatch:
+    inputs:
+      season:
+        description: "Season key (must exist in scripts/build_dataset.py SEASONS)"
+        default: "fall2026"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      SEASON: ${{ inputs.season || vars.OCCT_SEASON || 'fall2026' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements-dev.txt
+      - name: Check live site against snapshot
+        id: check
+        continue-on-error: true
+        run: |
+          python scripts/check_for_updates.py --season "$SEASON" --write | tee check.log
+          echo "status=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
+      - name: Fail loudly on fetch errors
+        if: steps.check.outputs.status == '2'
+        run: exit 2
+      - name: Rebuild candidate dataset (strict)
+        if: steps.check.outputs.status == '1'
+        run: python scripts/build_dataset.py --season "$SEASON" --strict | tee build.log
+      - name: Open PR with the new snapshot + candidate
+        if: steps.check.outputs.status == '1'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: schedule-update/${{ env.SEASON }}
+          title: "OCCT schedule change detected (${{ env.SEASON }})"
+          commit-message: "data: refresh ${{ env.SEASON }} snapshot and candidate dataset"
+          body-path: check.log
+          labels: schedule-update
+          add-paths: |
+            data/raw/${{ env.SEASON }}/*
+            data/occt_dataset.${{ env.SEASON }}.candidate.json
