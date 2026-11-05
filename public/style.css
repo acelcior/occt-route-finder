@@ -424,3 +424,158 @@ html:not(.dark-mode) .route-badge--late {
   font-size: 0.8125rem;
   color: var(--text-muted);
 }
+
+/* ---------- planner v2: controls, journeys, legs, banners ---------- */
+.controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.field--inline label {
+  font-size: 0.85rem;
+}
+.controls select,
+.controls input[type="datetime-local"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-elevated);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.95rem;
+}
+.controls select:focus,
+.controls input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--focus-ring);
+}
+.suggestions-list li button {
+  all: unset;
+  display: block;
+  width: 100%;
+  padding: 9px 12px;
+  cursor: pointer;
+  color: var(--text);
+}
+.suggestions-list li button:hover,
+.suggestions-list li button:focus-visible {
+  background: var(--bg-elevated);
+  outline: none;
+}
+.alerts {
+  margin: 0 0 14px;
+}
+.alert {
+  margin: 0 0 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+.alert--service {
+  border-color: var(--error);
+}
+.journey__times {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 4px 0 2px;
+}
+.journey__times .arrow {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+.journey__times .day,
+.leg .day {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-left: 2px;
+}
+.legs {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  border-left: 2px solid var(--border);
+}
+.leg {
+  position: relative;
+  padding: 6px 0 10px 16px;
+  font-size: 0.95rem;
+}
+.leg::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 12px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--border);
+}
+.leg--ride::before {
+  background: var(--accent);
+}
+.leg--walk {
+  color: var(--text-muted);
+}
+.leg__line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+.leg__dir {
+  flex-basis: 100%;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+.leg__stop {
+  margin: 2px 0;
+}
+.leg__stop--off strong:first-of-type {
+  color: var(--get-off);
+}
+.leg__note {
+  margin: 4px 0 0;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+.t-muted {
+  color: var(--text-muted);
+  font-size: 0.85em;
+}
+.route-badge--est {
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  border: 1px dashed var(--border);
+}
+.legend {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: 6px 0 0;
+}
+.meta {
+  margin-top: 22px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.meta a {
+  color: var(--accent);
+}
+@media (max-width: 420px) {
+  .journey__times {
+    font-size: 1.15rem;
+  }
+}

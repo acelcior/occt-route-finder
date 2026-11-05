@@ -27,44 +27,63 @@
 
         <div class="clock" id="clock" aria-live="polite"></div>
 
+        <div id="alerts" class="alerts" role="status" aria-live="polite" hidden></div>
+
         <div class="hint-box">
-          <strong>Tip:</strong> For off-campus places, use a full street address (e.g.
-          <span class="hint-example">69 Court St, Binghamton, NY 13901</span>). On campus,
-          <strong>The Union</strong> or <strong>University Union</strong> both work.
+          <strong>Tip:</strong> Type an OCCT stop (<span class="hint-example">Mohawk</span>), a campus building
+          (<span class="hint-example">Bartle Library</span>) or a street address
+          (<span class="hint-example">69 Court St, Binghamton</span>).
         </div>
 
         <form id="route-form">
           <div class="field">
             <label for="from">From</label>
             <div class="autocomplete-wrapper">
-              <input
-                id="from"
-                type="text"
-                placeholder="Starting address or OCCT stop name"
-                autocomplete="off"
-                required
-              />
-              <ul id="from-suggestions" class="suggestions-list"></ul>
+              <input id="from" type="text" placeholder="Stop, building or address" autocomplete="off"
+                     maxlength="120" required aria-autocomplete="list" aria-controls="from-suggestions" />
+              <ul id="from-suggestions" class="suggestions-list" role="listbox" aria-label="From suggestions"></ul>
             </div>
           </div>
           <div class="field">
             <label for="to">To</label>
             <div class="autocomplete-wrapper">
-              <input
-                id="to"
-                type="text"
-                placeholder="e.g. 69 Court St, Binghamton, NY 13901"
-                autocomplete="off"
-                required
-              />
-              <ul id="to-suggestions" class="suggestions-list"></ul>
+              <input id="to" type="text" placeholder="e.g. University Downtown Center" autocomplete="off"
+                     maxlength="120" required aria-autocomplete="list" aria-controls="to-suggestions" />
+              <ul id="to-suggestions" class="suggestions-list" role="listbox" aria-label="To suggestions"></ul>
             </div>
           </div>
+
+          <div class="controls">
+            <div class="field field--inline">
+              <label for="mode">When</label>
+              <select id="mode">
+                <option value="now">Leave now</option>
+                <option value="depart">Depart at</option>
+                <option value="arrive">Arrive by</option>
+              </select>
+            </div>
+            <div class="field field--inline" id="when-field" hidden>
+              <label for="when">Date &amp; time</label>
+              <input id="when" type="datetime-local" step="60" />
+            </div>
+            <div class="field field--inline">
+              <label for="access">Max walk to a stop</label>
+              <select id="access">
+                <option value="400">5 min (400 m)</option>
+                <option value="800" selected>10 min (800 m)</option>
+                <option value="1200">15 min (1.2 km)</option>
+                <option value="2000">25 min (2 km)</option>
+              </select>
+            </div>
+          </div>
+
           <button type="submit" id="submit-btn" class="submit-btn">Find routes</button>
         </form>
 
-        <p id="status" class="status" role="status"></p>
-        <div id="results" class="results"></div>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+        <div id="results" class="results" aria-live="polite"></div>
+
+        <footer class="meta" id="meta"></footer>
       </section>
     </main>
     <script src="/app.js"></script>
