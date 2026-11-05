@@ -1,0 +1,6 @@
+# Dev-only tooling for the schedule-update pipeline (scripts/) and tests.
+# NOT installed in the Vercel serverless function — keep runtime deps in requirements.txt.
+-r requirements.txt
+beautifulsoup4>=4.12
+pytest
+httpx
