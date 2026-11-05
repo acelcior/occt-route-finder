@@ -1,342 +1,152 @@
-import json
+"""OCCT Planner API (FastAPI on Vercel).
+
+Endpoints
+---------
+POST /api/route   {origin, destination, mode?: now|depart|arrive, when?: ISO local time, access_m?}
+GET  /api/route   same as query parameters (shareable links)
+GET  /api/meta    dataset freshness, today's service profile, alerts
+GET  /api/stops   names for autocomplete (stops + campus places)
+GET  /api/health
+
+Geocoding order: known stop / place names → Google (if GOOGLE_API_KEY) → Nominatim,
+all bounded to the OCCT service area. External lookups are cached per serverless
+instance (lru_cache is process-local; that is fine at this scale).
+"""
+
+from __future__ import annotations
+
 import os
 import sys
-from datetime import datetime, timedelta
-from math import atan2, cos, radians, sin, sqrt
-from pathlib import Path
-from typing import Any
+import threading
+import time
+from datetime import datetime
 from functools import lru_cache
+from pathlib import Path
+from typing import Any, Literal
 
 import requests
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
+from fastapi import FastAPI, HTTPException, Query
+from pydantic import BaseModel, Field
 
 _ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(_ROOT / "src"))
-from stop_names import (  # noqa: E402
-    build_norm_to_canonical,
-    coords_for_input,
-    coords_from_routes_stops,
-    load_stop_cache_coords,
-)
+from planner import DEFAULT_ACCESS_M, MAX_ACCESS_M, TZ, Planner  # noqa: E402
 
-DATA_PATH = _ROOT / "data" / "occt_routes_geo.json"
-STOP_CACHE_PATH = _ROOT / "data" / "stop_cache.json"
-_STOP_CACHE: dict[str, dict[str, float]] = load_stop_cache_coords(STOP_CACHE_PATH)
-_NORM_TO_CANON = build_norm_to_canonical(_STOP_CACHE)
+PLANNER = Planner(_ROOT / "data")
+
 NOMINATIM_URL = "https://nominatim.openstreetmap.org/search"
-NOMINATIM_UA = "occt-vercel-planner/1.0"
+NOMINATIM_UA = "occt-route-finder/2.0 (trip planner; contact severesalt@gmail.com)"
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-MAX_STOP_DISTANCE_M = 2000
-# ~4.8 km/h → ~80 m/min for “how many minutes to walk” hints
-WALK_METERS_PER_MINUTE = 80.0
-
-
-def _walk_minutes(m: float) -> int:
-    if m <= 0:
-        return 0
-    return max(1, round(m / WALK_METERS_PER_MINUTE))
-
-
-def _is_late_nite_route(route_name: str) -> bool:
-    n = route_name.lower()
-    return "late nite" in n or "late night" in n or "late-nite" in n
-
-
-class RouteRequest(BaseModel):
-    origin: str
-    destination: str
-
+# Broome County-ish box: results outside it are rejected rather than routed to nothing.
+BBOX = {"lat_min": 41.95, "lat_max": 42.30, "lon_min": -76.20, "lon_max": -75.70}
+_NOMINATIM_LOCK = threading.Lock()
+_NOMINATIM_LAST = 0.0
 
 app = FastAPI(title="OCCT Planner API")
 
 
-def get_routes_data() -> list[dict[str, Any]]:
-    """Load all routes from JSON file."""
-    with DATA_PATH.open("r", encoding="utf-8") as f:
-        return json.load(f)
+class RouteRequest(BaseModel):
+    origin: str = Field(min_length=1, max_length=120)
+    destination: str = Field(min_length=1, max_length=120)
+    mode: Literal["now", "depart", "arrive"] = "now"
+    when: str | None = Field(default=None, max_length=40, description="ISO local date-time, e.g. 2026-11-06T23:40")
+    access_m: float = Field(default=DEFAULT_ACCESS_M, ge=100, le=MAX_ACCESS_M)
 
 
-def get_all_stops() -> list[str]:
-    """Extract all unique stop names from routes."""
-    stops = set()
-    for route in ROUTES:
-        stops.update(route.get("stops", []))
-    return sorted(list(stops))
+def _in_bbox(lat: float, lon: float) -> bool:
+    return BBOX["lat_min"] <= lat <= BBOX["lat_max"] and BBOX["lon_min"] <= lon <= BBOX["lon_max"]
 
 
-ROUTES: list[dict[str, Any]] = get_routes_data()
+def _google(raw: str) -> tuple[float, float] | None:
+    if not GOOGLE_API_KEY:
+        return None
+    try:
+        resp = requests.get(
+            "https://maps.googleapis.com/maps/api/geocode/json",
+            params={"address": f"{raw}, Binghamton, NY", "region": "us", "key": GOOGLE_API_KEY,
+                    "bounds": f"{BBOX['lat_min']},{BBOX['lon_min']}|{BBOX['lat_max']},{BBOX['lon_max']}"},
+            timeout=8,
+        )
+        resp.raise_for_status()
+        data = resp.json()
+        if data.get("status") == "OK" and data.get("results"):
+            loc = data["results"][0]["geometry"]["location"]
+            return float(loc["lat"]), float(loc["lng"])
+    except (requests.RequestException, KeyError, ValueError):
+        pass
+    return None
 
 
-def _coords_from_known_stop(raw: str) -> tuple[float, float] | None:
-    """Autocomplete / OCCT stop names: use data/stop_cache.json then route stop_coords."""
-    c = coords_for_input(raw, _STOP_CACHE, _NORM_TO_CANON)
-    if c is not None:
-        return c
-    return coords_from_routes_stops(raw, ROUTES)
-
-
-@lru_cache(maxsize=128)
-def geocode(address: str) -> tuple[float, float]:
-    raw = address.strip().rstrip(".,;")
-    if not raw:
-        raise HTTPException(status_code=400, detail="Address is empty.")
-
-    snapped = _coords_from_known_stop(raw)
-    if snapped is not None:
-        return snapped
-
-    if GOOGLE_API_KEY:
-        try:
-            url = "https://maps.googleapis.com/maps/api/geocode/json"
-            params = {
-                "address": f"{raw}, Binghamton, NY",
-                "region": "us",
-                "key": GOOGLE_API_KEY,
-            }
-            resp = requests.get(url, params=params, timeout=10)
-            resp.raise_for_status()
-            data = resp.json()
-            if data.get("status") == "OK" and data.get("results"):
-                loc = data["results"][0]["geometry"]["location"]
-                return float(loc["lat"]), float(loc["lng"])
-        except requests.RequestException:
-            pass
-
-    queries = [
-        f"{raw}, Binghamton, NY, USA",
-        f"{raw}, Vestal, NY, USA",
-        f"{raw}, Broome County, NY, USA",
-    ]
-    headers = {"User-Agent": NOMINATIM_UA}
-
-    for q in queries:
+def _nominatim(raw: str) -> tuple[float, float] | None:
+    global _NOMINATIM_LAST
+    for q in (f"{raw}, Binghamton, NY, USA", f"{raw}, Vestal, NY, USA", f"{raw}, Broome County, NY, USA"):
+        with _NOMINATIM_LOCK:  # Nominatim usage policy: at most one request per second
+            wait = 1.0 - (time.monotonic() - _NOMINATIM_LAST)
+            if wait > 0:
+                time.sleep(wait)
+            _NOMINATIM_LAST = time.monotonic()
         try:
             resp = requests.get(
                 NOMINATIM_URL,
-                params={"q": q, "format": "jsonv2", "limit": 1, "countrycodes": "us"},
-                headers=headers,
-                timeout=10,
+                params={"q": q, "format": "jsonv2", "limit": 1, "countrycodes": "us",
+                        "viewbox": f"{BBOX['lon_min']},{BBOX['lat_max']},{BBOX['lon_max']},{BBOX['lat_min']}", "bounded": 1},
+                headers={"User-Agent": NOMINATIM_UA},
+                timeout=8,
             )
             resp.raise_for_status()
             data = resp.json()
             if data:
                 return float(data[0]["lat"]), float(data[0]["lon"])
-        except requests.RequestException:
+        except (requests.RequestException, KeyError, ValueError):
             continue
-
-    raise HTTPException(
-        status_code=404,
-        detail=f"Could not find that location. Try a full street address (e.g. 69 Court St, Binghamton, NY 13901).",
-    )
+    return None
 
 
-def distance_m(a: tuple[float, float], b: tuple[float, float]) -> float:
-    lat1, lon1 = a
-    lat2, lon2 = b
-    r = 6371000
-    dlat = radians(lat2 - lat1)
-    dlon = radians(lon2 - lon1)
-    x = sin(dlat / 2) ** 2 + cos(radians(lat1)) * cos(radians(lat2)) * sin(dlon / 2) ** 2
-    return 2 * r * atan2(sqrt(x), sqrt(1 - x))
+@lru_cache(maxsize=256)
+def geocode_external(raw: str) -> tuple[float, float] | None:
+    return _google(raw) or _nominatim(raw)
 
 
-def parse_time(raw: str):
-    cleaned = "".join(c for c in raw if c.isdigit() or c in ": APMapm")
+def geocode(text: str) -> tuple[tuple[float, float], str]:
+    """-> ((lat, lon), label). Known stop/place names never hit the network."""
+    raw = text.strip().rstrip(".,;")
+    if not raw:
+        raise HTTPException(status_code=400, detail="Location is empty.")
+    hit = PLANNER.resolve_place(raw)
+    if hit:
+        return hit
+    coord = geocode_external(raw)
+    if coord is None:
+        raise HTTPException(
+            status_code=404,
+            detail=f"Could not find “{raw}”. Try an OCCT stop name, a campus building, or a full street "
+                   f"address (e.g. 69 Court St, Binghamton, NY 13901).",
+        )
+    if not _in_bbox(*coord):
+        raise HTTPException(status_code=404, detail=f"“{raw}” is outside the OCCT service area.")
+    return coord, raw
+
+
+def _parse_when(mode: str, when: str | None) -> tuple[datetime | None, str]:
+    if mode == "now" or not when:
+        return None, "depart"
     try:
-        return datetime.strptime(cleaned.strip(), "%I:%M %p")
+        dt = datetime.fromisoformat(when)
     except ValueError:
-        return None
+        raise HTTPException(status_code=400, detail="`when` must be an ISO date-time like 2026-11-06T23:40.")
+    dt = dt.replace(tzinfo=TZ) if dt.tzinfo is None else dt.astimezone(TZ)
+    return dt, mode
 
 
-def _clock_today(raw: str) -> datetime | None:
-    pt = parse_time(raw)
-    if not pt:
-        return None
-    return datetime.combine(datetime.now().date(), pt.time())
-
-
-def _dense_stop_times_today(route: dict[str, Any], trip: dict[str, Any]) -> dict[str, datetime]:
-    """Infer times at each stop when OCCT tables only list the first few columns."""
-    stops = route.get("stops") or []
-    raw = trip.get("stop_times") or {}
-    indexed: list[tuple[int, datetime]] = []
-    for name, r in raw.items():
-        if name not in stops:
-            continue
-        dt = _clock_today(r)
-        if dt:
-            indexed.append((stops.index(name), dt))
-    indexed.sort(key=lambda x: x[0])
-    if not indexed:
-        return {}
-
-    default_seg_s = 240.0
-    n = len(stops)
-    out: dict[str, datetime] = {}
-
-    def time_at_index(i: int) -> datetime | None:
-        exact = next((t for ix, t in indexed if ix == i), None)
-        if exact is not None:
-            return exact
-        prev = [(ix, t) for ix, t in indexed if ix < i]
-        nxt = [(ix, t) for ix, t in indexed if ix > i]
-        if prev and nxt:
-            ix0, t0 = prev[-1]
-            ix1, t1 = nxt[0]
-            if ix1 == ix0:
-                return t0
-            frac = (i - ix0) / (ix1 - ix0)
-            return t0 + timedelta(seconds=(t1 - t0).total_seconds() * frac)
-        if prev and not nxt:
-            ix0, t0 = prev[-1]
-            if len(prev) >= 2:
-                ix_1, t_1 = prev[-2]
-                spd = (
-                    (t0 - t_1).total_seconds() / (ix0 - ix_1)
-                    if ix0 != ix_1
-                    else default_seg_s
-                )
-            else:
-                spd = default_seg_s
-            return t0 + timedelta(seconds=spd * (i - ix0))
-        if nxt and not prev:
-            ix0, t0 = nxt[0]
-            if len(nxt) >= 2:
-                ix1, t1 = nxt[1]
-                spd = (
-                    (t1 - t0).total_seconds() / (ix1 - ix0)
-                    if ix1 != ix0
-                    else default_seg_s
-                )
-            else:
-                spd = default_seg_s
-            return t0 - timedelta(seconds=spd * (ix0 - i))
-        return None
-
-    for i in range(n):
-        tt = time_at_index(i)
-        if tt is not None:
-            out[stops[i]] = tt
-    return out
-
-
-def active_schedule(route: dict[str, Any]) -> list[dict[str, Any]]:
-    return route.get("schedules", {}).get("weekday" if datetime.now().weekday() < 5 else "weekend", [])
-
-
-def closest_stop_in_route(
-    route: dict[str, Any], point: tuple[float, float]
-) -> tuple[str | None, float]:
-    best_stop = None
-    best_dist = float("inf")
-    coords = route.get("stop_coords", {})
-    for stop in route.get("stops", []):
-        loc = coords.get(stop)
-        if not loc:
-            continue
-        d = distance_m(point, (float(loc["lat"]), float(loc["lon"])))
-        if d < best_dist:
-            best_dist = d
-            best_stop = stop
-    return best_stop, best_dist
-
-
-def format_option(option: dict[str, Any]) -> dict[str, Any]:
-    dep = option["depart"].strftime("%I:%M %p").lstrip("0") if option["depart"] else "No upcoming time"
-    arr = option["arrive"].strftime("%I:%M %p").lstrip("0") if option["arrive"] else "N/A"
-
-    trip_duration_minutes = None
-    if option["depart"] and option["arrive"]:
-        trip_duration_minutes = int((option["arrive"] - option["depart"]).total_seconds() / 60)
-
-    w_to = float(option["origin_walk_m"])
-    w_from = float(option["dest_walk_m"])
-    total_m = w_to + w_from
-    wm_to = _walk_minutes(w_to)
-    wm_from = _walk_minutes(w_from)
-
-    return {
-        "route_name": option["route_name"],
-        "boarding_stop": option["origin_stop"],
-        "destination_stop": option["dest_stop"],
-        "departure_time": dep,
-        "arrival_time": arr,
-        "trip_duration_minutes": trip_duration_minutes,
-        "walk_to_stop_m": round(w_to, 1),
-        "walk_from_stop_m": round(w_from, 1),
-        "walk_to_stop_min": wm_to,
-        "walk_from_stop_min": wm_from,
-        "total_walk_m": round(total_m, 1),
-        "total_walk_min": wm_to + wm_from,
-        "is_late_nite": _is_late_nite_route(option["route_name"]),
-        "stops_between": option["stops_between"],
-    }
-
-
-def find_top_routes(origin: str, destination: str) -> list[dict[str, Any]]:
-    now = datetime.now()
-    origin_coord = geocode(origin)
-    dest_coord = geocode(destination)
-    options: list[dict[str, Any]] = []
-
-    for route in ROUTES:
-        stops = route.get("stops", [])
-        if not stops:
-            continue
-
-        origin_stop, origin_dist = closest_stop_in_route(route, origin_coord)
-        dest_stop, dest_dist = closest_stop_in_route(route, dest_coord)
-        if not origin_stop or not dest_stop:
-            continue
-        if origin_dist > MAX_STOP_DISTANCE_M or dest_dist > MAX_STOP_DISTANCE_M:
-            continue
-
-        origin_idx = stops.index(origin_stop)
-        dest_idx = stops.index(dest_stop)
-        if dest_idx <= origin_idx:
-            continue
-
-        depart = None
-        arrive = None
-        for trip in active_schedule(route):
-            dense = _dense_stop_times_today(route, trip)
-            dep_dt = dense.get(origin_stop)
-            arr_dt = dense.get(dest_stop)
-            if not dep_dt or not arr_dt:
-                continue
-            if dep_dt < now:
-                continue
-            if depart is None or dep_dt < depart:
-                depart = dep_dt
-                arrive = arr_dt
-
-        if depart is None:
-            continue
-
-        options.append(
-            {
-                "route_name": route.get("route", "Unknown"),
-                "origin_stop": origin_stop,
-                "dest_stop": dest_stop,
-                "origin_walk_m": origin_dist,
-                "dest_walk_m": dest_dist,
-                "depart": depart,
-                "arrive": arrive,
-                "stops_between": stops[origin_idx + 1 : dest_idx],
-            }
-        )
-
-    # Prefer shorter walk from drop-off to destination, then to board; deprioritize Late Nite; then earlier bus
-    options.sort(
-        key=lambda x: (
-            _is_late_nite_route(x["route_name"]),
-            x["dest_walk_m"],
-            x["origin_walk_m"],
-            x["depart"] if x["depart"] else datetime.max,
-        )
-    )
-    return [format_option(opt) for opt in options[:3]]
+def plan_route(req: RouteRequest) -> dict[str, Any]:
+    o_coord, o_label = geocode(req.origin)
+    d_coord, d_label = geocode(req.destination)
+    when, mode = _parse_when(req.mode, req.when)
+    result = PLANNER.plan(o_coord, d_coord, when=when, mode=mode, access_m=req.access_m,
+                          origin_label=o_label, destination_label=d_label)
+    result["origin"] = {"input": req.origin, "resolved": o_label, "lat": o_coord[0], "lon": o_coord[1]}
+    result["destination"] = {"input": req.destination, "resolved": d_label, "lat": d_coord[0], "lon": d_coord[1]}
+    return result
 
 
 @app.get("/api/health")
@@ -344,27 +154,33 @@ def health() -> dict[str, str]:
     return {"status": "ok"}
 
 
+@app.get("/api/meta")
+def meta() -> dict[str, Any]:
+    return PLANNER.meta()
+
+
 @app.post("/api/route")
-def route_plan(body: RouteRequest) -> dict[str, Any]:
-    origin = body.origin.strip()
-    destination = body.destination.strip()
-    routes = find_top_routes(origin, destination)
-    if not routes:
-        raise HTTPException(status_code=404, detail="No valid route options found.")
-    return {
-        "origin": body.origin,
-        "destination": body.destination,
-        "options": routes,
-        "ranking_note": (
-            "Options are ordered by shortest walk from your drop-off to the destination, then shortest walk to "
-            "the boarding stop. Late Nite routes are listed after other lines when those walks are similar. "
-            "Boarding stops can differ between routes because each line uses the stop on that route closest to your pins—"
-            "different routes follow different paths, so the nearest stop on one line may be farther along the road on another."
-        ),
-    }
+def route_post(body: RouteRequest) -> dict[str, Any]:
+    return plan_route(body)
+
+
+@app.get("/api/route")
+def route_get(
+    origin: str = Query(alias="from", min_length=1, max_length=120),
+    destination: str = Query(alias="to", min_length=1, max_length=120),
+    mode: Literal["now", "depart", "arrive"] = "now",
+    when: str | None = Query(default=None, max_length=40),
+    access_m: float = Query(default=DEFAULT_ACCESS_M, ge=100, le=MAX_ACCESS_M),
+) -> dict[str, Any]:
+    return plan_route(RouteRequest(origin=origin, destination=destination, mode=mode, when=when, access_m=access_m))
 
 
 @app.get("/api/stops")
-def get_stops_list() -> dict[str, list[str]]:
-    stops = get_all_stops()
-    return {"stops": stops}
+def stops() -> dict[str, list[str]]:
+    return {"stops": PLANNER.suggestions}
+
+
+if os.getenv("OCCT_SERVE_STATIC"):  # local dev only; on Vercel the static build serves public/
+    from fastapi.staticfiles import StaticFiles
+
+    app.mount("/", StaticFiles(directory=str(_ROOT / "public"), html=True), name="static")
