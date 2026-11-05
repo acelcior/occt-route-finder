@@ -66,41 +66,14 @@ SAT_SUN = ["Sat", "Sun"]
 FRI_SAT = ["Fri", "Sat"]
 NIGHT_CUTOFF_MIN = 4 * 60
 
-# Season registry: effective_from comes from OCCT's semester bulletin, never guessed.
-SEASONS: dict[str, dict[str, Any]] = {
-    "fall2026": {
-        "label": "Fall 2026",
-        "effective_from": "2026-08-18",
-        "effective_to": None,
-        "source": "https://occtransport.org/news.html — Semester Bulletin (Aug 6, 2026): "
-                  "\"Regular service begins Tuesday, August 18.\"",
-    },
-}
-
-# Lines the index labels as seasonal. They are parsed like any other line; the
-# service calendar decides when they run.
-SEASONAL_LINES = {"riu": "summer", "ics": "interim"}
-
-# shape "scroll": the page's ordered stop list is the running order; timepoint
-#                 headers resolve to positions in it (intermediate stops get
-#                 estimated times in the planner).
-# shape "timepoints": stops are the header columns only (stop list absent or
-#                 not in running order).
-PAGES: dict[str, dict[str, Any]] = {
-    "ws":  {"name": "Westside Shuttle", "shape": "scroll"},
-    "dcl": {"name": "Downtown Center–Leroy St Shuttle", "shape": "scroll"},
-    "ds":  {"name": "Downtown Southside Shuttle", "shape": "scroll"},
-    "ms":  {"name": "Main Street Shuttle", "shape": "scroll"},
-    "udc": {"name": "University Downtown Center Shuttle", "shape": "scroll"},
-    "oc":  {"name": "Oakdale Commons Shuttle", "shape": "scroll"},
-    "vs":  {"name": "Vestal Shopping Shuttle", "shape": "scroll"},
-    "iu":  {"name": "ITC–UClub Shuttle", "shape": "scroll"},
-    "uc":  {"name": "UClub Shuttle", "shape": "scroll"},
-    "riu": {"name": "Residential–ITC–UClub Shuttle", "shape": "scroll"},
-    "ics": {"name": "ITC–Campus Shuttle", "shape": "scroll"},
-    "cs":  {"name": "Campus Shuttle", "shape": "timepoints"},
-    "de":  {"name": "Downtown Express", "shape": "timepoints"},
-}
+# Routine-update configuration lives in data/build_config.json (seasons, pages,
+# stop and timepoint aliases, seasonal lines) so maintainers edit data, not code.
+CONFIG = json.loads((ROOT / "data" / "build_config.json").read_text(encoding="utf-8"))
+SEASONS: dict[str, dict[str, Any]] = CONFIG["seasons"]
+SEASONAL_LINES: dict[str, str] = CONFIG["seasonal_lines"]
+PAGES: dict[str, dict[str, Any]] = CONFIG["pages"]
+STOP_ALIASES: dict[str, str] = CONFIG["stop_aliases"]
+TIMEPOINT_ALIASES: dict[str, str] = CONFIG["timepoint_aliases"]
 
 # Untimed continuous loops. Hours are parsed from the page text with these
 # patterns so a site change is caught; stop lists come from the page's
@@ -119,57 +92,6 @@ FREQUENCY_SERVICES: dict[str, list[dict[str, Any]]] = {
          "note": "Continuous loop with no fixed timetable; check ETA Transit. "
                  "No service evenings, weekends or holidays."},
     ],
-}
-
-# normalized raw label -> canonical stop NAME (all spellings of one curb).
-STOP_ALIASES: dict[str, str] = {
-    "academic a hinman": "Hinman / Academic A",
-    "hawley and court streets": "Court & Hawley Streets",
-    "state and hawley sts": "State & Hawley Streets",
-    "downtown state and hawley": "State & Hawley Streets",
-    "downtown state and hawley street": "State & Hawley Streets",
-    "univ union": "University Union",
-    "union": "University Union",
-    "uclub univ plaza": "UClub / University Plaza",
-    "uclub university plaza bus shelter": "UClub / University Plaza",
-    "uclub university plaza clock tower": "UClub / University Plaza",
-    "uclub": "UClub / University Plaza",
-    # Downtown Express "Returns to Campus" column: the page's stop list ends
-    # "Hinman / Academic A — Returns to University Union".
-    "campus": "Hinman / Academic A",
-    # Campus Shuttle Blue Bus "Returns to Lower Campus": first lower-campus stop
-    # after Mountainview is Hinman / Academic A (judgment call; confirm with OCCT).
-    "lower campus": "Hinman / Academic A",
-    "bc junction henry and chenango streets": "BC Junction Bus Terminal - Henry & Chenango Streets",
-    "henry and chenango streets bc junction bus terminal": "BC Junction Bus Terminal - Henry & Chenango Streets",
-    "bc junction": "BC Junction Bus Terminal - Henry & Chenango Streets",
-    "fayette and henry streets mirabito stadium": "Mirabito Stadium / Henry & Fayette Streets",
-    "riverside drive and beethoven street": "Riverside Dr & Beethoven St - Lourdes Hospital",
-    "welcome center lot g1": "Welcome Center",
-    "mcguire physical facilities": "Physical Facilities",
-    "physical facilities inbound outbound": "Physical Facilities",
-    "nursing school jenison and corliss avenues": "Nursing School",
-    "beethoven and leroy streets": "Leroy & Beethoven Streets",
-    "leroy and front streets": "Front & Leroy Streets",
-    "floral avenue and main street": "Floral Ave & Main St",
-    "floral av and main street": "Floral Ave & Main St",
-}
-
-# Timepoint header label (lowercased) -> canonical stop name, only where the
-# abbreviated column label does not normalize to a stop on the line.
-TIMEPOINT_ALIASES: dict[str, str] = {
-    "floral & main": "Floral Ave & Main St",
-    "main & murray": "Murray Street",
-    "murray & main": "Murray Street",
-    "murray st": "Murray Street",
-    "riverside & columbus": "Columbus Place",
-    "leroy & columbus": "Columbus Place",
-    "leroy & murray": "Murray Street",
-    "conklin & s washington st.": "South Washington Street",
-    "meadows & hayes": "Meadows",  # one timepoint spanning the Meadows/Hayes pair
-    "town square mall / walmart": "Walmart / Town Square Mall Stop #2",
-    "washington & lehigh": "Washington Dr & Lehigh Av",
-    "itc": "Innovative Technologies Complex (ITC)",
 }
 
 # Row day-qualifier tag -> service-day override and/or stops skipped.

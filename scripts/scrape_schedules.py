@@ -69,15 +69,17 @@ def parse_index(html: str) -> dict[str, str]:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
+    ap.add_argument("--season", default=SEASON, help="snapshot folder name, e.g. spring2027")
     ap.add_argument("--only", help="fetch a single route slug (e.g. ws)")
     ap.add_argument("--index-only", action="store_true")
     args = ap.parse_args()
 
-    RAW_DIR.mkdir(parents=True, exist_ok=True)
+    raw_dir = ROOT / "data" / "raw" / args.season
+    raw_dir.mkdir(parents=True, exist_ok=True)
 
     print(f"Fetching index: {INDEX_URL}")
     index_html = fetch(INDEX_URL)
-    (RAW_DIR / "routeschedule.html").write_text(index_html, encoding="utf-8")
+    (raw_dir / "routeschedule.html").write_text(index_html, encoding="utf-8")
     routes = parse_index(index_html)
     print(f"Index lists {len(routes)} route pages: {', '.join(routes)}")
 
@@ -90,12 +92,12 @@ def main() -> int:
             print(f"  !! slug {slug!r} not present in current index; skipping")
             continue
         url = routes[slug]
-        dest = RAW_DIR / f"{slug}.html"
+        dest = raw_dir / f"{slug}.html"
         print(f"  fetching {slug:6} -> {url}")
         dest.write_text(fetch(url), encoding="utf-8")
         time.sleep(REQUEST_DELAY_S)
 
-    print(f"\nSnapshots written to {RAW_DIR.relative_to(ROOT)}")
+    print(f"\nSnapshots written to {raw_dir.relative_to(ROOT)}")
     return 0
 
 
