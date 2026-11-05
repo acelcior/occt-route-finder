@@ -23,7 +23,7 @@ from bs4 import BeautifulSoup
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
-from scrape_schedules import BASE, INDEX_URL, REQUEST_DELAY_S, fetch, parse_index  # noqa: E402
+from scrape_schedules import BASE, INDEX_URL, REQUEST_DELAY_S, fetch, parse_index, write_fetched_at  # noqa: E402
 
 NEWS_URL = BASE + "news.html"
 
@@ -110,6 +110,7 @@ def main() -> int:
         raw_dir.mkdir(parents=True, exist_ok=True)
         for slug, html in pages.items():
             (raw_dir / f"{slug}.html").write_text(html, encoding="utf-8")
+        write_fetched_at(raw_dir)
         print(f"\nsnapshot refreshed in {raw_dir.relative_to(ROOT)}")
 
     if changed:
