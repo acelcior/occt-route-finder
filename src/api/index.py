@@ -26,6 +26,7 @@ from typing import Any, Literal
 
 import requests
 from fastapi import FastAPI, HTTPException, Query
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
 _ROOT = Path(__file__).resolve().parent.parent.parent
@@ -43,6 +44,15 @@ _NOMINATIM_LOCK = threading.Lock()
 _NOMINATIM_LAST = 0.0
 
 app = FastAPI(title="OCCT Planner API")
+# Lets the static frontend be hosted elsewhere (e.g. embedded on occtransport.org)
+# while the API stays here. Comma-separated origins; see HANDOFF.md.
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[o.strip() for o in os.getenv(
+        "ALLOWED_ORIGINS", "https://occtransport.org,https://www.occtransport.org").split(",") if o.strip()],
+    allow_methods=["GET", "POST"],
+    allow_headers=["Content-Type"],
+)
 
 
 class RouteRequest(BaseModel):

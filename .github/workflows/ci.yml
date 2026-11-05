@@ -1,0 +1,30 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements-dev.txt
+      - run: python -m pytest -q
+      - name: Live dataset must equal a strict rebuild of its snapshot
+        run: |
+          for f in data/occt_dataset.*.json; do
+            case "$f" in *.candidate.json) continue;; esac
+            season=$(basename "$f" .json | sed 's/occt_dataset\.//')
+            python scripts/build_dataset.py --season "$season" --strict > /dev/null
+            python - "$season" <<'EOF'
+          import json, sys
+          s = sys.argv[1]
+          a = json.load(open(f"data/occt_dataset.{s}.json")); b = json.load(open(f"data/occt_dataset.{s}.candidate.json"))
+          a["meta"].pop("built_at", None); b["meta"].pop("built_at", None)
+          assert a == b, f"{s}: live dataset differs from a strict rebuild — run make promote"
+          EOF
+          done

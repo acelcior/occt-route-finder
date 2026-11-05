@@ -230,6 +230,7 @@ class Calendar:
                 raise ValueError(f"calendar period ends before it starts: {p}")
             if p["profile"] not in self.profiles:
                 raise ValueError(f"calendar period uses unknown profile {p['profile']!r}")
+        self.horizon: date = max(p["to_d"] for p in self.periods)
 
     def lookup(self, d: date) -> dict[str, Any]:
         for p in self.periods:
@@ -508,6 +509,14 @@ class Planner:
         ds, warnings = self.dataset_for(now.date())
         cal = self.calendar.lookup(now.date())
         alerts = [o["message"] for o in active_overrides(self.overrides, now.date())]
+        # Maintenance nudges, shown in the footer so an expiring dataset never goes unnoticed.
+        days_left = (self.calendar.horizon - now.date()).days
+        if days_left < 45:
+            warnings.append(f"calendar_horizon: the service calendar ends {self.calendar.horizon.isoformat()}; "
+                            "dates after that show the regular timetable without holiday breaks (see HANDOFF.md).")
+        if (now.date() - ds.effective_from).days > 170:
+            warnings.append(f"dataset_age: the {ds.meta['label']} timetable is over {((now.date() - ds.effective_from).days) // 30} "
+                            "months old; check occtransport.org for a newer schedule (make update).")
         return {
             "dataset": {"season": ds.meta["season"], "label": ds.meta["label"],
                         "effective_from": ds.meta["effective_from"], "effective_to": ds.meta.get("effective_to"),

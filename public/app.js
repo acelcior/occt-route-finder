@@ -14,6 +14,9 @@ const themeToggle = document.getElementById("theme-toggle");
 const clockEl = document.getElementById("clock");
 
 const ETA_URL = "https://binghamtonupublic.etaspot.net/";
+// Set window.OCCT_API_BASE before this script to point an embedded copy of the
+// page at the API host (e.g. "https://occt-route-finder.vercel.app").
+const API_BASE = (window.OCCT_API_BASE || "").replace(/\/$/, "");
 let entries = []; // [{name, aliases}]
 
 /* ---------- theme + clock ---------- */
@@ -101,7 +104,7 @@ function highlight(name, query) {
 
 async function loadStops() {
   try {
-    const res = await fetch("/api/stops");
+    const res = await fetch(`${API_BASE}/api/stops`);
     const data = await res.json();
     entries = Array.isArray(data.entries) ? data.entries : (data.stops || []).map((name) => ({ name, aliases: [] }));
   } catch (err) {
@@ -198,7 +201,7 @@ function renderBanners(warnings, alerts) {
 }
 async function loadMeta() {
   try {
-    const res = await fetch("/api/meta");
+    const res = await fetch(`${API_BASE}/api/meta`);
     const m = await res.json();
     const fetched = m.dataset.fetched_at ? new Date(m.dataset.fetched_at) : null;
     const fetchedText = fetched
@@ -318,7 +321,7 @@ async function runQuery() {
   statusEl.textContent = "Finding routes…";
   resultsEl.innerHTML = "";
   try {
-    const res = await fetch("/api/route", {
+    const res = await fetch(`${API_BASE}/api/route`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(q),

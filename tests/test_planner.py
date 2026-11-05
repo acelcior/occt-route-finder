@@ -210,3 +210,9 @@ def test_meta(planner):
     assert m["dataset"]["label"] == "Fall 2026"
     assert m["today"]["profile"] == "regular" and m["today"]["status"] == "confirmed"
     assert m["alerts"] == [] and m["warnings"] == []
+
+
+def test_meta_nudges_maintainers_before_data_goes_stale(planner):
+    late = planner.meta(at(2027, 11, 15, 12, 0))
+    kinds = {w.split(":")[0] for w in late["warnings"]}
+    assert {"calendar_horizon", "dataset_age"} <= kinds
