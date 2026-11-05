@@ -5,6 +5,10 @@ Vestal, with transfers, Late Nite service, the academic-year service calendar an
 "depart at" / "arrive by" queries. Runs as a FastAPI function on Vercel with a static
 vanilla-JS frontend.
 
+**Maintaining it:** read [HANDOFF.md](HANDOFF.md) — the semester cycle, adding a season,
+what to edit when OCCT changes a stop, and how to put it on occtransport.org.
+`make help` lists the commands.
+
 ## Layout
 
 | Path | What |
