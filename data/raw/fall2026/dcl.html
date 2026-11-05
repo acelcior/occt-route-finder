@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>(function(){try{var t=localStorage.getItem('occt-theme');if(!t)t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Overpass:wght@500;600;700;800;900&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="../css/shared.css">
+<link rel="stylesheet" href="../css/wayfinding.css">
+<style>:root { --route-color: #D2042D; }</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DCL, Downtown Center&ndash;Leroy St, OCC Transport</title>
+<link rel="icon" type="image/png" href="../img/OCCTransportLogo(1) (1).png">
+<style>
+/* ── SERVICE TOGGLE ── */
+.svc-toggle { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.svc-toggle-btn { display: flex; align-items: center; gap: 14px; background: var(--white); border: 2px solid var(--gray-200); border-radius: var(--radius); padding: 16px 20px; cursor: pointer; transition: all .2s; text-align: left; font-family: var(--font); box-shadow: var(--shadow); }
+.svc-toggle-btn:hover { border-color: var(--blue-muted); background: var(--blue-pale); }
+.svc-toggle-icon { width: 46px; height: 46px; border-radius: 10px; background: var(--off-white); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.svc-toggle-icon svg { width: 22px; height: 22px; color: var(--gray-400); }
+.svc-toggle-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.svc-toggle-label { font-size: 15px; font-weight: 700; color: var(--navy); white-space: nowrap; }
+.svc-toggle-sub { font-size: 12px; color: var(--gray-400); }
+/* Regular active */
+.svc-toggle-btn.active { border-color: var(--route-color); background: rgba(210,4,45,0.04); box-shadow: 0 2px 10px rgba(210,4,45,0.12); }
+.svc-toggle-btn.active .svc-toggle-icon { background: rgba(210,4,45,0.1); }
+.svc-toggle-btn.active .svc-toggle-icon svg { color: var(--route-color); }
+.svc-toggle-btn.active .svc-toggle-label { color: var(--route-color); }
+/* Late Nite active */
+.svc-toggle-btn.ln-active { border-color: #7c3aed; background: #faf5ff; box-shadow: 0 2px 10px rgba(124,58,237,0.15); }
+.svc-toggle-btn.ln-active .svc-toggle-icon { background: #ede9fe; }
+.svc-toggle-btn.ln-active .svc-toggle-icon svg { color: #7c3aed; }
+.svc-toggle-btn.ln-active .svc-toggle-label { color: #6d28d9; }
+.svc-toggle-btn.ln-active .svc-toggle-sub { color: #7c3aed; }
+
+/* ── SERVICE PANELS ── */
+.svc-panel { display: none; }
+.svc-panel.active { display: block; }
+
+/* ── DIRECTION TABS ── */
+.dir-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 0; }
+.dir-btn { font-family: var(--font); background: var(--off-white); border: 1px solid var(--gray-200); border-radius: var(--radius-sm); padding: 14px 16px; cursor: pointer; transition: all .15s; text-align: left; display: flex; flex-direction: column; gap: 2px; }
+.dir-btn:hover { border-color: var(--blue-muted); background: var(--blue-pale); }
+.dir-btn .dir-arrow { font-size: 18px; font-weight: 700; color: var(--gray-400); transition: color .15s; margin-bottom: 2px; }
+.dir-btn .dir-label { font-size: 15px; font-weight: 600; color: var(--navy); transition: color .15s; }
+.dir-btn .dir-desc { font-size: 12px; color: var(--gray-400); transition: color .15s; }
+
+/* ── DIRECTION PANELS ── */
+.dir-panel { display: none; }
+.dir-panel.active { display: flex; flex-direction: column; gap: 20px; padding-top: 20px; }
+
+/*stoplist*/
+.stop-scroll { max-height: 340px; overflow-y: auto; border: 1px solid var(--gray-100); border-radius: var(--radius-sm); background: var(--off-white); scroll-behavior: smooth; }
+.stop-scroll::-webkit-scrollbar { width: 8px; }
+.stop-scroll::-webkit-scrollbar-track { background: var(--gray-200); border-radius: 4px; }
+.stop-scroll::-webkit-scrollbar-thumb { background: var(--route-color); border-radius: 4px; }
+.stop-row { display: flex; align-items: center; gap: 14px; padding: 11px 16px; border-bottom: 1px solid var(--gray-100); position: relative; }
+.stop-row:last-child { border-bottom: none; }
+.stop-row:hover { background: var(--blue-pale); }
+.stop-num { width: 24px; height: 24px; border-radius: 50%; background: var(--route-color); color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.stop-row.terminus .stop-num { background: var(--navy); }
+.stop-row.timepoint .stop-num { background: var(--blue); }
+.stop-info-wrap { flex: 1; min-width: 0; }
+.stop-name { font-size: 14px; font-weight: 600; color: var(--navy); line-height: 1.3; }
+.stop-sub { font-size: 12px; color: var(--gray-400); margin-top: 1px; }
+.stop-badge { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 2px 6px; border-radius: 3px; background: var(--blue-pale); color: var(--blue); flex-shrink: 0; }
+.stop-badge.terminus { background: rgba(12,35,64,0.08); color: var(--navy); }
+.stop-badge.tp { background: rgba(26,111,186,0.1); color: var(--blue); }
+
+/*schedule*/
+.schedule-tabs { display: flex; gap: 6px; margin-bottom: 16px; flex-wrap: wrap; }
+.sched-tab { font-family: var(--font); font-size: 13px; font-weight: 500; padding: 7px 16px; border-radius: var(--radius-sm); border: 1px solid var(--gray-200); background: var(--off-white); color: var(--gray-600); cursor: pointer; transition: all .12s; }
+.sched-panel { display: none; }
+.sched-panel.active { display: block; }
+.sched-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: var(--radius-sm); border: 1px solid var(--gray-100); }
+.sched-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.sched-table th { background: var(--navy); color: rgba(255,255,255,0.85); font-weight: 500; font-size: 12px; text-align: left; padding: 9px 13px; white-space: nowrap; }
+.sched-table td { padding: 9px 13px; border-bottom: 1px solid var(--gray-100); color: var(--gray-800); white-space: nowrap; vertical-align: middle; }
+.sched-table tr:last-child td { border-bottom: none; }
+.sched-table tr:nth-child(even) td { background: var(--off-white); }
+.sched-table td:first-child { font-weight: 600; color: var(--navy); }
+.sched-note { font-size: 12px; color: var(--gray-400); margin-top: 10px; line-height: 1.55; }
+.sched-day-tag { font-size: 10px; font-weight: 700; color: var(--gray-400); text-transform: uppercase; letter-spacing: .04em; margin-left: 5px; text-decoration: underline; }
+.sched-table tr.day-variant td { font-style: italic; }
+
+/* Late Nite light purple theme */
+.latenite-tint { --ln-accent: #7c3aed; --ln-dark: #5b21b6; --ln-deep: #4c1d95; background: #faf5ff; border: 1px solid #e9d5ff; border-radius: var(--radius-sm); }
+.latenite-tint .stop-scroll { background: #f3eeff; border-color: #e9d5ff; }
+.latenite-tint .stop-row { border-color: #e9d5ff; }
+.latenite-tint .stop-row:hover { background: #ede9fe; }
+.latenite-tint .stop-name { color: #3b0764; }
+.latenite-tint .stop-sub { color: #7c3aed; opacity: 0.75; }
+.latenite-tint .stop-num { background: #7c3aed; }
+.latenite-tint .stop-row.terminus .stop-num { background: #5b21b6; }
+.latenite-tint .dir-btn { background: var(--white); border-color: #e9d5ff; }
+.latenite-tint .dir-btn .dir-label { color: #4c1d95; }
+.latenite-tint .dir-btn .dir-desc { color: #7c3aed; opacity: 0.7; }
+.latenite-tint .dir-btn .dir-arrow { color: #7c3aed; }
+.latenite-tint .dir-btn:hover { background: #ede9fe; border-color: #c4b5fd; }
+.latenite-tint .dir-btn.active { background: #7c3aed; border-color: #6d28d9; }
+.latenite-tint .dir-btn.active .dir-label,
+.latenite-tint .dir-btn.active .dir-arrow { color: #fff; }
+.latenite-tint .dir-btn.active .dir-desc { color: rgba(255,255,255,0.7); opacity: 1; }
+.latenite-tint .sched-tab { background: #f3eeff; border-color: #e9d5ff; color: #6d28d9; }
+.latenite-tint .sched-tab.active { background: #7c3aed; border-color: #6d28d9; color: #fff; }
+.latenite-tint .sched-table th { background: #4c1d95; }
+.latenite-tint .sched-table td { border-color: #e9d5ff; color: var(--gray-800); }
+.latenite-tint .sched-table tr:nth-child(even) td { background: #f5f0ff; }
+.latenite-tint .sched-table td:first-child { color: #5b21b6; font-weight: 600; }
+.latenite-tint .sched-note { color: #7c3aed; opacity: 0.7; }
+.latenite-tint .ln-section-label { font-size: 13px; font-weight: 600; color: #7c3aed; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 8px; }
+
+/*callout*/ .callout { background: var(--gold-light); border: 1px solid var(--gold); border-radius: var(--radius-sm); padding: 12px 14px; font-size: 13px; color: #5c3a00; line-height: 1.6; }
+.callout strong { font-weight: 600; }
+.callout-night { background: #ede9fe; border: 1px solid #c4b5fd; color: #4c1d95; }
+
+/* ── SERVICE SELECTOR CARD ── */
+.svc-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+.svc-card-head { background: var(--route-color); padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.svc-card-head .route-id { display: flex; align-items: center; gap: 12px; }
+.svc-card-head .badge { font-size: 15px; font-weight: 700; color: #fff; background: rgba(255,255,255,0.15); border-radius: 6px; padding: 4px 10px; }
+.svc-card-head .title { font-size: 16px; font-weight: 600; color: #fff; }
+.svc-card-body { padding: 20px 24px; }
+
+/* Late Nite card head */
+.svc-card.latenite .svc-card-head { background: #0d0d2e; border-bottom: 1px solid rgba(100,100,200,0.3); }
+
+/*sidebar*/ .sidebar { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+.sb-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.sb-card-head { background: var(--navy); padding: 17px 22px; display: flex; align-items: center; gap: 11px; }
+.sb-card-head svg { width: 18px; height: 18px; color: rgba(255,255,255,0.5); flex-shrink: 0; }
+.sb-card-head h3 { font-size: 16px; font-weight: 500; color: rgba(255,255,255,0.9); }
+.sb-card-body { padding: 20px 22px; }
+.sb-card-body p { font-size: 14px; color: var(--gray-600); line-height: 1.7; margin-bottom: 12px; }
+.sb-card-body p:last-of-type { margin-bottom: 0; }
+.btn-sb { display: inline-flex; align-items: center; justify-content: center; width: 100%; font-family: var(--font); font-size: 14px; font-weight: 500; padding: 11px; border-radius: var(--radius-sm); background: var(--blue-pale); color: var(--blue); border: 1px solid var(--blue-muted); cursor: pointer; transition: background .12s; text-decoration: none; margin-bottom: 8px; }
+.btn-sb:last-child { margin-bottom: 0; }
+.btn-sb:hover { background: var(--blue-muted); }
+
+/*operatingtimes*/ .op-times { display: flex; flex-direction: column; gap: 10px; }
+.op-row { display: flex; flex-direction: column; gap: 2px; padding: 11px 14px; background: var(--off-white); border-radius: var(--radius-sm); border: 1px solid var(--gray-100); }
+.op-row-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray-400); }
+.op-row-time { font-size: 15px; font-weight: 600; color: var(--navy); }
+
+/*other routes*/ 
+.other-routes { display: flex; flex-direction: column; gap: 6px; }
+.other-route-link { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: var(--radius-sm); border: 1px solid var(--gray-100); background: var(--off-white); text-decoration: none; transition: border-color .12s, background .12s; }
+.other-route-link:hover { background: var(--blue-pale); border-color: var(--blue-muted); }
+.other-route-link.current { background: rgba(210,4,45,0.07); border-color: rgba(210,4,45,0.25); cursor: default; pointer-events: none; }
+.other-route-badge { font-size: 11px; font-weight: 700; color: #fff; border-radius: 4px; padding: 2px 7px; letter-spacing: 0.04em; flex-shrink: 0; min-width: 38px; text-align: center; }
+.other-route-name { font-size: 13px; color: var(--gray-800); font-weight: 500; }
+.badge-ws  { background: #191970; }
+.badge-ms  { background: #6495ED; color: #000; }
+.badge-dcl { background: #D2042D; }
+.badge-udc { background: #FF7F50; color: #000; }
+.badge-ds  { background: #708090; color: #000; }
+.badge-cs  { background: #228B22; color: #000; }
+.badge-uc  { background: #BF40BF; color: #000; }
+.badge-iu  { background: #CF9FFF; color: #000; }
+.badge-vs  { background: #E37383; color: #000; }
+.badge-oc  { background: #FFC000; color: #000; }
+.badge-ics { background: rgb(174,225,174); color: #000; }
+.badge-de  { background: #000000; }
+.badge-riu { background: #AEE1AE; color: #000; }
+
+/*footer*/ footer { background: var(--navy); padding: 44px 28px 32px; color: rgba(255,255,255,0.45); }
+.footer-logo p   { font-size: 14px; line-height: 1.6; }
+
+/*responsive*/ 
+@media (max-width: 960px) {
+  .main { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; gap: 22px; }
+  .op-times { flex-direction: row; }
+  .op-row { flex: 1; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+}
+@media (max-width: 620px) {
+  .alert-bar { padding: 12px 16px; }
+  .page-header { padding: 24px 16px 20px; }
+  .page-header h1 { font-size: 24px; }
+  .page-header p { font-size: 14px; }
+  .route-badge-lg { font-size: 16px; padding: 5px 11px; }
+  .main { padding: 20px 14px 56px; gap: 14px; }
+  .card-head { padding: 16px 16px 0; gap: 10px; }
+  .card-head h2 { font-size: 17px; }
+  .card-body { padding: 0 14px 18px; }
+  .svc-toggle { grid-template-columns: 1fr; gap: 10px; }
+  .svc-toggle-btn { padding: 14px 16px; }
+  .svc-toggle-label { white-space: normal; font-size: 14px; }
+  .svc-toggle-sub { font-size: 11px; }
+  .svc-toggle-icon { width: 40px; height: 40px; }
+  .dir-tabs { grid-template-columns: 1fr; gap: 8px; }
+  .dir-btn { padding: 11px 12px; }
+  .dir-btn .dir-label { font-size: 13px; }
+  .sb-card-body { padding: 14px 16px; }
+  .svc-card-body { padding: 16px 16px; }
+  .sidebar { order: 1; }
+  .footer-links { grid-template-columns: 1fr 1fr; }
+  .footer-inner { gap: 18px; }
+  .op-times { flex-direction: column; }
+  .op-row { flex: none; }
+}
+
+/* ── Wayfinding alignment layer (keeps route identity, aligns type/geometry/dark) ── */
+:root { --radius: var(--r); --radius-sm: var(--r-sm); --shadow: none; }
+.page-header { background: var(--header-bg, var(--route-color)); }
+.page-header h1 { font-family: var(--head); font-weight: 800; letter-spacing: -0.02em; color: var(--header-fg, #fff); }
+.route-badge-lg { font-family: var(--head); font-weight: 800; }
+.card-head { padding: 0 0 8px; margin-bottom: 14px; border-bottom: 1px solid var(--line); gap: 10px; }
+.card-head-icon { display: none; }
+.card-head h2 { font-family: var(--head); font-weight: 800; font-size: 21px; letter-spacing: -0.01em; color: var(--ink); }
+.card-body { padding: 0; }
+.sb-card-head { background: var(--ink); }
+.sb-card-head h3 { font-family: var(--head); font-weight: 700; font-size: 15px; color: #fff; }
+.btn-sb { background: #1a6fba; color: #fff; border: none; font-weight: 600; }
+.btn-sb:hover { background: #2684d4; }
+.stop-name, .op-row-time, .other-route-name { color: var(--ink); }
+.dir-btn .dir-label, .svc-toggle-label { color: var(--ink); }
+.sched-table td:first-child { color: var(--ink); }
+.stop-badge.terminus { color: var(--ink); background: var(--surf-2); }
+.sched-table th { font-family: var(--head); font-weight: 700; letter-spacing: .04em; }
+.op-row-time, .other-route-badge, .stop-num { font-family: var(--head); }
+.other-route-badge, .stop-num { font-weight: 800; }
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <img src="https://occtransport.s3.amazonaws.com/Logos/OCC+Transport+Logo.png" alt="OCC Transport">
+    </a>
+    <div class="nav-right">
+<ul class="nav-links">
+      <li><a href="../routeschedule.html" class="active">Routes &amp; Schedules</a></li>
+      <li><a href="../employment.html">Employment</a></li>
+      <li><a href="../passtips.html">Passenger Tips</a></li>
+      <li><a href="../services.html">Additional Services</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../news.html">News</a></li>
+      <li><a href="../contactus.html" class="nav-cta">Contact Us</a></li>
+    </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" aria-pressed="false" onclick="toggleTheme()">
+        <svg class="tt-moon" aria-hidden="true" focusable="false" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/></svg>
+        <svg class="tt-sun" aria-hidden="true" focusable="false" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/></svg>
+      </button>
+
+    <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMobile" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </button>
+    </div>
+  </div>
+</nav>
+<div class="nav-mobile" id="navMobile" aria-hidden="true">
+  <a href="../routeschedule.html" class="active">Routes &amp; Schedules</a>
+  <a href="../employment.html">Employment</a>
+  <a href="../passtips.html">Passenger Tips</a>
+  <a href="../services.html">Additional Services</a>
+  <a href="../about.html">About</a>
+  <a href="../news.html">News</a>
+  <a href="../contactus.html" class="mob-cta">Contact Us</a>
+</div>
+
+<!-- ALERT BAR -->
+
+
+<div class="alert-bar" role="region" aria-label="Service alert"></div>
+
+
+
+<!-- PAGE HEADER -->
+<div class="page-header" role="region" aria-label="Page header">
+  <div class="page-header-inner">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a><span>&rsaquo;</span>
+      <a href="../routeschedule.html">Routes &amp; Schedules</a><span>&rsaquo;</span>
+      DCL: Downtown Center&ndash;Leroy St
+    </div>
+    <div class="page-header-title">
+      <span class="route-badge-lg">DCL</span>
+      <h1>Downtown Center&ndash;Leroy St</h1>
+    </div>
+    <p>Local service via Leroy St &amp; Riverside Dr to and from the University Downtown Center</p>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main id="main-content" class="main">
+  <div class="main-col">
+
+    <!-- ── SERVICE TOGGLE ── -->
+    <div class="svc-toggle">
+      <button class="svc-toggle-btn active" id="svc-regular" onclick="setService('regular')">
+        <div class="svc-toggle-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/></svg>
+        </div>
+        <div class="svc-toggle-text">
+          <div class="svc-toggle-label">Regular Service</div>
+          <div class="svc-toggle-sub">Daily</div>
+        </div>
+      </button>
+      <button class="svc-toggle-btn" id="svc-latenite" onclick="setService('latenite')">
+        <div class="svc-toggle-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/></svg>
+        </div>
+        <div class="svc-toggle-text">
+          <div class="svc-toggle-label">Late Nite Service</div>
+          <div class="svc-toggle-sub">Fri &amp; Sat only</div>
+        </div>
+      </button>
+    </div>
+
+    <!-- ── SERVICE CARD ── -->
+    <div class="card" id="regular-card">
+      <div class="card-head">
+        <div class="card-head-icon" id="svc-card-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/></svg>
+        </div>
+        <h2 id="svc-card-title">Regular Service</h2>
+      </div>
+
+      <div class="card-body">
+
+        <!-- REGULAR panel -->
+        <div class="svc-panel active" id="panel-regular">
+          <!-- Direction tabs -->
+          <div class="dir-tabs">
+            <button class="dir-btn active" id="reg-out-btn" onclick="setDir('reg','out')">
+              <span class="dir-arrow">&#x2192;</span>
+              <span class="dir-label">Outbound</span>
+              <span class="dir-desc">BU &rarr; Visions Arena</span>
+            </button>
+            <button class="dir-btn" id="reg-in-btn" onclick="setDir('reg','in')">
+              <span class="dir-arrow">&#x2190;</span>
+              <span class="dir-label">Inbound</span>
+              <span class="dir-desc">Downtown &rarr; BU</span>
+            </button>
+          </div>
+
+          <!-- Outbound stops + schedule -->
+          <div class="dir-panel active" id="reg-out">
+            <div class="callout">
+              <strong>Outbound</strong>: Departs Binghamton University, travels via Leroy St &amp; Riverside Dr to the University Downtown Center. All buses return to campus.
+            </div>
+
+            <!-- Stops -->
+            <div>
+              <div style="font-size:13px; font-weight:600; color:var(--gray-400); text-transform:uppercase; letter-spacing:.05em; margin-bottom:8px;">Stops: BU to Visions Arena</div>
+              <div class="stop-scroll">
+                <div class="stop-row terminus">
+                  <div class="stop-num">1</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/union.html">University Union</a></div>
+                  </div>
+                  <span class="stop-badge terminus">Origin</span>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">2</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/physical-out.html">Physical Facilities</a> <sup>*</sup></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">3</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/bunnhill-out.html">Bunn Hill / Bunn Hill Access Rd</a> <sup>*</sup></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">4</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/ethel-out.html">Ethel Street</a></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">5</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/elfred-out.html">Elfred Street</a></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">6</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/columbus-out.html">Columbus Place</a></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">7</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/margaret-out.html">Margaret Street</a></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">8</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/rivbeet-out.html">Riverside Dr &amp; Beethoven St</a></div>
+                    <div class="stop-sub">Lourdes Hospital</div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">9</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/leroybeet.html">Beethoven &amp; Leroy Streets</a></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">10</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/laurel-out.html">Laurel Avenue</a></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">11</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/chestnut-out.html">Chestnut Street</a></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">12</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/murrayleroy-out.html">Murray Street</a></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">13</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/frontriv.html">Riverside Dr &amp; Front St</a></div>
+                  </div>
+                </div>
+                <div class="stop-row terminus">
+                  <div class="stop-num">14</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/visions-arena.html">Visions Memorial Arena</a></div>
+                    <div class="stop-sub">All buses return to campus</div>
+                  </div>
+                  <span class="stop-badge terminus">Terminus</span>
+                </div>
+              </div>
+              <p class="sched-note"><sup>*</sup> This stop will be skipped every day from 12:00 A.M. until 7:00 A.M. due to the side entrance closure on campus.</p>
+            </div>
+
+            <!-- Schedule -->
+            <div>
+              <div style="font-size:13px; font-weight:600; color:var(--gray-400); text-transform:uppercase; letter-spacing:.05em; margin-bottom:10px;">Schedule: Departs BU (Outbound)</div>
+              <div class="schedule-tabs">
+                <button class="sched-tab active" onclick="showSched(this,'ro-wkd')">Mon &ndash; Fri</button>
+                <button class="sched-tab" onclick="showSched(this,'ro-wkn')">Weekend</button>
+              </div>
+              <div class="sched-panel active" id="ro-wkd">
+                <div class="sched-table-wrap">
+                  <table class="sched-table">
+                    <thead><tr><th>Depart Union</th><th>Riverside &amp; Columbus</th><th>Leroy &amp; Murray</th><th>Arrive UDC</th></tr></thead>
+                    <tbody>
+                      <tr><td>Skips Union</td><td>7:01 AM</td><td>7:06 AM</td><td>7:13 AM</td></tr>
+                      <tr><td>7:50 AM</td><td>7:56 AM</td><td>8:01 AM</td><td>8:08 AM</td></tr>
+                      <tr><td>9:25 AM</td><td>9:31 AM</td><td>9:36 AM</td><td>9:43 AM</td></tr>
+                      <tr><td>9:45 AM</td><td>9:51 AM</td><td>9:56 AM</td><td>10:03 AM</td></tr>
+                      <tr><td>10:20 AM</td><td>10:26 AM</td><td>10:31 AM</td><td>10:38 AM</td></tr>
+                      <tr><td>11:10 AM</td><td>11:16 AM</td><td>11:21 AM</td><td>11:28 AM</td></tr>
+                      <tr><td>11:55 AM</td><td>12:01 PM</td><td>12:06 PM</td><td>12:13 PM</td></tr>
+                      <tr><td>12:35 PM</td><td>12:41 PM</td><td>12:46 PM</td><td>12:53 PM</td></tr>
+                      <tr><td>1:55 PM</td><td>2:01 PM</td><td>2:06 PM</td><td>2:13 PM</td></tr>
+                      <tr><td>2:40 PM</td><td>2:46 PM</td><td>2:51 PM</td><td>2:58 PM</td></tr>
+                      <tr><td>3:35 PM</td><td>3:41 PM</td><td>3:46 PM</td><td>3:53 PM</td></tr>
+                      <tr><td>4:15 PM</td><td>4:21 PM</td><td>4:26 PM</td><td>4:33 PM</td></tr>
+                      <tr><td>4:50 PM</td><td>4:56 PM</td><td>5:01 PM</td><td>5:08 PM</td></tr>
+                      <tr><td>5:05 PM</td><td>5:11 PM</td><td>5:16 PM</td><td>5:23 PM</td></tr>
+                      <tr><td>5:40 PM</td><td>5:46 PM</td><td>5:51 PM</td><td>5:58 PM</td></tr>
+                      <tr><td>6:25 PM</td><td>6:31 PM</td><td>6:36 PM</td><td>6:45 PM</td></tr>
+                      <tr><td>6:45 PM</td><td>6:51 PM</td><td>6:56 PM</td><td>7:03 PM</td></tr>
+                      <tr><td>7:10 PM</td><td>7:16 PM</td><td>7:21 PM</td><td>7:28 PM</td></tr>
+                      <tr><td>7:40 PM</td><td>7:46 PM</td><td>7:51 PM</td><td>7:58 PM</td></tr>
+                      <tr><td>8:20 PM</td><td>8:26 PM</td><td>8:31 PM</td><td>8:38 PM</td></tr>
+                      <tr><td>9:15 PM</td><td>9:21 PM</td><td>9:26 PM</td><td>9:33 PM</td></tr>
+                      <tr><td>11:00 PM</td><td>11:06 PM</td><td>11:11 PM</td><td>11:18 PM</td></tr>
+                      <tr><td>11:45 PM</td><td>11:51 PM</td><td>11:56 PM</td><td>12:03 AM</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="sched-panel" id="ro-wkn">
+                <div class="sched-table-wrap">
+                  <table class="sched-table">
+                    <thead><tr><th>Depart Union</th><th>Riverside &amp; Columbus</th><th>Leroy &amp; Murray</th><th>Arrive UDC</th></tr></thead>
+                    <tbody>
+                      <tr><td>8:45 AM</td><td>8:51 AM</td><td>8:56 AM</td><td>9:03 AM</td></tr>
+                      <tr><td>9:30 AM</td><td>9:36 AM</td><td>9:41 AM</td><td>9:48 AM</td></tr>
+                      <tr><td>10:15 AM</td><td>10:21 AM</td><td>10:26 AM</td><td>10:33 AM</td></tr>
+                      <tr><td>11:35 AM</td><td>11:41 AM</td><td>11:46 AM</td><td>11:53 AM</td></tr>
+                      <tr><td>12:40 PM</td><td>12:46 PM</td><td>12:51 PM</td><td>12:58 PM</td></tr>
+                      <tr><td>1:40 PM</td><td>1:46 PM</td><td>1:51 PM</td><td>1:58 PM</td></tr>
+                      <tr><td>2:45 PM</td><td>2:51 PM</td><td>2:56 PM</td><td>3:03 PM</td></tr>
+                      <tr><td>4:15 PM</td><td>4:21 PM</td><td>4:26 PM</td><td>4:33 PM</td></tr>
+                      <tr><td>6:15 PM</td><td>6:21 PM</td><td>6:26 PM</td><td>6:33 PM</td></tr>
+                      <tr><td>7:30 PM</td><td>7:36 PM</td><td>7:41 PM</td><td>7:48 PM</td></tr>
+                      <tr><td>8:20 PM</td><td>8:26 PM</td><td>8:31 PM</td><td>8:38 PM</td></tr>
+                      <tr><td>9:15 PM</td><td>9:21 PM</td><td>9:26 PM</td><td>9:33 PM</td></tr>
+                      <tr class="day-variant"><td>10:15 PM <span class="sched-day-tag">Sun only</span></td><td>10:21 PM <span class="sched-day-tag">Sun only</span></td><td>10:26 PM <span class="sched-day-tag">Sun only</span></td><td>10:33 PM <span class="sched-day-tag">Sun only</span></td></tr>
+                      <tr class="day-variant"><td>11:00 PM <span class="sched-day-tag">Sat only</span></td><td>11:06 PM <span class="sched-day-tag">Sat only</span></td><td>11:12 PM <span class="sched-day-tag">Sat only</span></td><td>11:18 PM <span class="sched-day-tag">Sat only</span></td></tr>
+                      <tr class="day-variant"><td>11:10 PM <span class="sched-day-tag">Sun only</span></td><td>11:16 PM <span class="sched-day-tag">Sun only</span></td><td>11:22 PM <span class="sched-day-tag">Sun only</span></td><td>11:28 PM <span class="sched-day-tag">Sun only</span></td></tr>
+                      <tr class="day-variant"><td>11:45 PM <span class="sched-day-tag">Sat only</span></td><td>11:51 PM <span class="sched-day-tag">Sat only</span></td><td>11:56 PM <span class="sched-day-tag">Sat only</span></td><td>12:03 AM <span class="sched-day-tag">Sat only</span></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p class="sched-note">Saturday &amp; Sunday service. Runs marked <em>Sat only</em> or <em>Sun only</em> operate on that day only.</p>
+              </div>
+              <p class="sched-note">All buses return to campus after reaching the UDC.</p>
+            </div>
+          </div><!-- /reg-out -->
+
+          <!-- Inbound stops + schedule -->
+          <div class="dir-panel" id="reg-in">
+            <div class="callout">
+              <strong>Inbound</strong>: Departs State &amp; Hawley Streets, travels via Leroy St &amp; Riverside Dr back to Binghamton University.
+            </div>
+
+            <!-- Stops -->
+            <div>
+              <div style="font-size:13px; font-weight:600; color:var(--gray-400); text-transform:uppercase; letter-spacing:.05em; margin-bottom:8px;">Stops: Downtown to BU</div>
+              <div class="stop-scroll">
+                <div class="stop-row terminus">
+                  <div class="stop-num">1</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/udc-near.html">University Downtown Center</a></div>
+                  </div>
+                  <span class="stop-badge terminus">Origin</span>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">2</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/frontleroy.html">Leroy &amp; Front Streets</a></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">3</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/murrayleroy-in.html">Murray Street</a></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">4</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/chestnut-in.html">Chestnut Street</a></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">5</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/laurel-in.html">Laurel Avenue</a></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">6</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/beetleroy-dcl.html">Leroy &amp; Beethoven Streets</a></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">7</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/rivbeet-in.html">Riverside Dr &amp; Beethoven St</a></div>
+                    <div class="stop-sub">Lourdes Hospital</div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">8</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/margaret-in.html">Margaret Street</a></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">9</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/columbus-in.html">Columbus Place</a></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">10</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/elfred-in.html">Elfred Street</a></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">11</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/ethel-in.html">Ethel Street</a></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">12</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/hinman.html">Hinman / Academic A</a></div>
+                  </div>
+                </div>
+                <div class="stop-row terminus">
+                  <div class="stop-num">13</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/union.html">University Union</a></div>
+                  </div>
+                  <span class="stop-badge terminus">Terminus</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Schedule -->
+            <div>
+              <div style="font-size:13px; font-weight:600; color:var(--gray-400); text-transform:uppercase; letter-spacing:.05em; margin-bottom:10px;">Schedule: Departs Downtown (Inbound)</div>
+              <div class="schedule-tabs">
+                <button class="sched-tab active" onclick="showSched(this,'ri-wkd')">Mon &ndash; Fri</button>
+                <button class="sched-tab" onclick="showSched(this,'ri-wkn')">Weekend</button>
+              </div>
+              <div class="sched-panel active" id="ri-wkd">
+                <div class="sched-table-wrap">
+                  <table class="sched-table">
+                    <thead><tr><th>Depart UDC</th><th>Leroy &amp; Murray</th><th>Riverside &amp; Columbus</th><th>Arrive BU</th></tr></thead>
+                    <tbody>
+                      <tr><td>7:20 AM</td><td>7:23 AM</td><td>7:29 AM</td><td>7:40 AM</td></tr>
+                      <tr><td>8:00 AM</td><td>8:03 AM</td><td>8:09 AM</td><td>8:20 AM</td></tr>
+                      <tr><td>8:50 AM</td><td>8:53 AM</td><td>8:59 AM</td><td>9:10 AM</td></tr>
+                      <tr><td>9:05 AM</td><td>9:08 AM</td><td>9:14 AM</td><td>9:25 AM <span class="sched-day-tag">Skips Acad A</span></td></tr>
+                      <tr><td>9:15 AM</td><td>9:18 AM</td><td>9:24 AM</td><td>9:45 AM</td></tr>
+                      <tr><td>9:55 AM</td><td>9:58 AM</td><td>10:04 AM</td><td>10:15 AM</td></tr>
+                      <tr><td>10:30 AM</td><td>10:33 AM</td><td>10:39 AM</td><td>10:56 AM</td></tr>
+                      <tr><td>10:55 AM</td><td>10:58 AM</td><td>11:04 AM</td><td>11:15 AM</td></tr>
+                      <tr><td>11:30 AM</td><td>11:33 AM</td><td>11:39 AM</td><td>11:56 AM</td></tr>
+                      <tr><td>12:00 PM</td><td>12:03 PM</td><td>12:09 PM</td><td>12:26 PM</td></tr>
+                      <tr><td>12:50 PM <span class="sched-day-tag">No Acad&nbsp;A</span></td><td>12:53 PM</td><td>12:59 PM</td><td>1:10 PM</td></tr>
+                      <tr><td>1:35 PM</td><td>1:38 PM</td><td>1:44 PM</td><td>1:55 PM</td></tr>
+                      <tr><td>2:40 PM</td><td>2:43 PM</td><td>2:49 PM</td><td>3:00 PM</td></tr>
+                      <tr><td>3:33 PM</td><td>3:36 PM</td><td>3:42 PM</td><td>3:59 PM <span class="sched-day-tag">Skips Acad A</span></td></tr>
+                      <tr><td>4:27 PM</td><td>4:30 PM</td><td>4:36 PM</td><td>4:50 PM</td></tr>
+                      <tr><td>5:15 PM</td><td>5:18 PM</td><td>5:24 PM</td><td>5:35 PM</td></tr>
+                      <tr><td>5:55 PM</td><td>5:58 PM</td><td>6:04 PM</td><td>6:15 PM</td></tr>
+                      <tr><td>6:45 PM</td><td>6:48 PM</td><td>6:54 PM</td><td>7:05 PM</td></tr>
+                      <tr><td>7:35 PM</td><td>7:38 PM</td><td>7:44 PM</td><td>7:55 PM</td></tr>
+                      <tr><td>8:10 PM</td><td>8:13 PM</td><td>8:19 PM</td><td>8:30 PM</td></tr>
+                      <tr><td>9:15 PM</td><td>9:18 PM</td><td>9:24 PM</td><td>9:35 PM</td></tr>
+                      <tr class="day-variant"><td>10:05 PM <span class="sched-day-tag">No Fri</span></td><td>10:08 PM <span class="sched-day-tag">No Fri</span></td><td>10:14 PM <span class="sched-day-tag">No Fri</span></td><td>10:25 PM <span class="sched-day-tag">No Fri</span></td></tr>
+                      <tr><td>10:35 PM</td><td>10:38 PM</td><td>10:44 PM</td><td>10:55 PM</td></tr>
+                      <tr><td>12:05 AM</td><td>12:08 AM</td><td>12:14 AM</td><td>12:25 AM</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="sched-panel" id="ri-wkn">
+                <div class="sched-table-wrap">
+                  <table class="sched-table">
+                    <thead><tr><th>Depart UDC</th><th>Leroy &amp; Murray</th><th>Riverside &amp; Columbus</th><th>Arrive BU</th></tr></thead>
+                    <tbody>
+                      <tr><td>9:40 AM</td><td>9:43 AM</td><td>9:49 AM</td><td>10:00 AM</td></tr>
+                      <tr><td>9:50 AM</td><td>9:53 AM</td><td>9:59 AM</td><td>10:10 AM</td></tr>
+                      <tr><td>11:35 AM</td><td>11:38 AM</td><td>11:44 AM</td><td>11:55 AM</td></tr>
+                      <tr><td>12:40 PM</td><td>12:43 PM</td><td>12:49 PM</td><td>1:00 PM</td></tr>
+                      <tr><td>1:40 PM</td><td>1:43 PM</td><td>1:49 PM</td><td>2:00 PM</td></tr>
+                      <tr><td>2:40 PM</td><td>2:43 PM</td><td>2:49 PM</td><td>3:00 PM</td></tr>
+                      <tr><td>5:25 PM</td><td>5:28 PM</td><td>5:34 PM</td><td>5:45 PM</td></tr>
+                      <tr><td>7:10 PM</td><td>7:13 PM</td><td>7:19 PM</td><td>7:30 PM</td></tr>
+                      <tr><td>8:00 PM</td><td>8:03 PM</td><td>8:09 PM</td><td>8:20 PM</td></tr>
+                      <tr><td>8:55 PM</td><td>8:58 PM</td><td>9:04 PM</td><td>9:15 PM</td></tr>
+                      <tr class="day-variant"><td>9:40 PM <span class="sched-day-tag">Sun only</span></td><td>9:43 PM <span class="sched-day-tag">Sun only</span></td><td>9:49 PM <span class="sched-day-tag">Sun only</span></td><td>10:00 PM <span class="sched-day-tag">Sun only</span></td></tr>
+                      <tr class="day-variant"><td>10:35 PM <span class="sched-day-tag">Sat only</span></td><td>10:38 PM <span class="sched-day-tag">Sat only</span></td><td>10:44 PM <span class="sched-day-tag">Sat only</span></td><td>10:55 PM <span class="sched-day-tag">Sat only</span></td></tr>
+                      <tr class="day-variant"><td>10:50 PM <span class="sched-day-tag">Sun only</span></td><td>10:53 PM <span class="sched-day-tag">Sun only</span></td><td>10:59 PM <span class="sched-day-tag">Sun only</span></td><td>11:10 PM <span class="sched-day-tag">Sun only</span></td></tr>
+                      <tr><td>12:05 AM</td><td>12:08 AM</td><td>12:14 AM</td><td>12:25 AM</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p class="sched-note">Saturday &amp; Sunday service. Runs marked <em>Sat only</em> or <em>Sun only</em> operate on that day only.</p>
+              </div>
+            </div>
+          </div><!-- /reg-in -->
+        </div><!-- /panel-regular -->
+
+        <!-- LATE NITE panel -->
+        <div class="svc-panel" id="panel-latenite">
+          <div class="latenite-tint" style="padding:20px;">
+
+            <div class="callout callout-night" style="margin-bottom:16px;">
+              <strong>Late Nite runs Friday &amp; Saturday nights only.</strong> Late Nite DCL operates after midnight on Fri &amp; Sat, with buses loading at the Union barricades and Downtown at the Hawley Street barricades.
+            </div>
+
+            <!-- Direction tabs -->
+            <div class="dir-tabs" style="margin-bottom:0;">
+              <button class="dir-btn active" id="ln-out-btn" onclick="setDir('ln','out')">
+                <span class="dir-arrow">&#x2192;</span>
+                <span class="dir-label">Outbound</span>
+                <span class="dir-desc">BU &rarr; Visions Arena</span>
+              </button>
+              <button class="dir-btn" id="ln-in-btn" onclick="setDir('ln','in')">
+                <span class="dir-arrow">&#x2190;</span>
+                <span class="dir-label">Inbound</span>
+                <span class="dir-desc">Downtown &rarr; BU</span>
+              </button>
+            </div>
+
+            <!-- LN Outbound -->
+            <div class="dir-panel active" id="ln-out" style="padding-top:16px;">
+              <div class="ln-section-label">Stops: BU to Downtown (Late Nite)</div>
+              <div class="stop-scroll">
+                <div class="stop-row terminus">
+                  <div class="stop-num">1</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/union.html">University Union</a></div>
+                  </div>
+                  <span class="stop-badge terminus">Origin</span>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">2</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/ethel-out.html">Ethel Street</a></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">3</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/elfred-out.html">Elfred Street</a></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">4</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/columbus-out.html">Columbus Place</a></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">5</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/margaret-out.html">Margaret Street</a></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">6</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/rivbeet-out.html">Riverside Dr &amp; Beethoven St</a></div>
+                    <div class="stop-sub">Lourdes Hospital</div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">7</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/leroybeet.html">Beethoven &amp; Leroy Streets</a></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">8</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/laurel-out.html">Laurel Avenue</a></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">9</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/chestnut-out.html">Chestnut Street</a></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">10</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/murrayleroy-out.html">Murray Street</a></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">11</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/frontriv.html">Riverside Dr &amp; Front St</a></div>
+                  </div>
+                </div>
+                <div class="stop-row terminus">
+                  <div class="stop-num">12</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/ln-statehawley.html">State &amp; Hawley Sts</a></div>
+                    <div class="stop-sub">Late Nite Downtown Stop: all buses return to campus</div>
+                  </div>
+                  <span class="stop-badge terminus">Terminus</span>
+                </div>
+              </div>
+              <div class="ln-section-label" style="margin-top:16px; margin-bottom:10px;">Schedule: Fri &amp; Sat Nights (Outbound)</div>
+              <div class="sched-table-wrap">
+                <table class="sched-table">
+                  <thead><tr><th>Depart Union</th><th>Riverside &amp; Columbus</th><th>Murray St</th><th>State &amp; Hawley Sts</th></tr></thead>
+                                    <tbody>
+                    <tr><td>12:25 AM</td><td>12:31 AM</td><td>12:36 AM</td><td>12:40 AM</td></tr>
+                    <tr><td>1:00 AM</td><td>1:06 AM</td><td>1:11 AM</td><td>1:15 AM</td></tr>
+                    <tr><td>1:30 AM</td><td>1:36 AM</td><td>1:41 AM</td><td>1:45 AM</td></tr>
+                    <tr><td>2:15 AM</td><td>2:21 AM</td><td>2:26 AM</td><td>2:30 AM</td></tr>
+                    <tr><td>3:05 AM</td><td>3:11 AM</td><td>3:16 AM</td><td>3:20 AM</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="sched-note">* Late Nite service runs Fri &amp; Sat nights only when Late Nite service is in effect.</p>
+            </div><!-- /ln-out -->
+
+            <!-- LN Inbound -->
+            <div class="dir-panel" id="ln-in" style="padding-top:16px;">
+              <div class="ln-section-label">Stops: Downtown to BU (Late Nite)</div>
+              <div class="stop-scroll">
+                <div class="stop-row terminus">
+                  <div class="stop-num">1</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/ln-statehawley.html">State &amp; Hawley Streets</a></div>
+                  </div>
+                  <span class="stop-badge terminus">Origin</span>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">2</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/frontleroy.html">Leroy &amp; Front Streets</a></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">3</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/murrayleroy-in.html">Murray Street</a></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">4</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/chestnut-in.html">Chestnut Street</a></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">5</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/laurel-in.html">Laurel Avenue</a></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">6</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/beetleroy-dcl.html">Leroy &amp; Beethoven Streets</a></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">7</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/rivbeet-in.html">Riverside Dr &amp; Beethoven St</a></div>
+                    <div class="stop-sub">Lourdes Hospital</div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">8</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/margaret-in.html">Margaret Street</a></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">9</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/columbus-in.html">Columbus Place</a></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">10</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/elfred-in.html">Elfred Street</a></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">11</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/ethel-in.html">Ethel Street</a></div>
+                  </div>
+                </div>
+                <div class="stop-row">
+                  <div class="stop-num">12</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/hinman.html">Hinman / Academic A</a></div>
+                  </div>
+                </div>
+                <div class="stop-row terminus">
+                  <div class="stop-num">13</div>
+                  <div class="stop-info-wrap">
+                    <div class="stop-name"><a href="../stops/union.html">University Union</a></div>
+                  </div>
+                  <span class="stop-badge terminus">Terminus</span>
+                </div>
+              </div>
+
+              <div class="ln-section-label" style="margin-top:16px; margin-bottom:10px;">Schedule: Fri &amp; Sat Nights (Inbound)</div>
+              <div class="sched-table-wrap">
+                <table class="sched-table">
+                  <thead><tr><th>Depart State &amp; Hawley</th><th>Murray St</th><th>Leroy &amp; Columbus</th><th>Arrive BU</th></tr></thead>
+                                    <tbody>
+                    <tr><td>1:10 AM</td><td>1:13 AM</td><td>1:19 AM</td><td>1:29 AM</td></tr>
+                    <tr><td>1:35 AM</td><td>1:38 AM</td><td>1:44 AM</td><td>1:54 AM</td></tr>
+                    <tr><td>2:30 AM</td><td>2:33 AM</td><td>2:39 AM</td><td>2:49 AM</td></tr>
+                    <tr><td>3:25 AM</td><td>3:28 AM</td><td>3:34 AM</td><td>3:44 AM</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="sched-note">* Late Nite service runs Fri &amp; Sat nights only when Late Nite service is in effect.</p>
+            </div><!-- /ln-in -->
+
+          </div>
+        </div><!-- /panel-latenite -->
+
+      </div><!-- /card-body -->
+    </div><!-- /card -->
+
+  </div><!-- /main-col -->
+
+  <!-- ── SIDEBAR ── -->
+  <div class="sidebar">
+
+    <!-- Operating Times -->
+    <div class="sb-card">
+      <div class="sb-card-head">
+        <svg aria-hidden="true" focusable="false" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <h3>Operating Times</h3>
+      </div>
+      <div class="sb-card-body" id="op-times-body">
+        <p style="font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:.05em; color:var(--gray-400); margin-bottom:10px;" id="op-times-label">Regular Service</p>
+        <div class="op-times">
+          <div class="op-row">
+            <span class="op-row-label">Weekdays</span>
+            <span class="op-row-time" id="op-wkd">7:01 AM &ndash; 12:25 AM</span>
+          </div>
+          <div class="op-row">
+            <span class="op-row-label">Weekends</span>
+            <span class="op-row-time" id="op-wknd">8:45 AM &ndash; 12:25 AM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Late Nite Info (shown only when Late Nite is selected) -->
+    <div class="sb-card" id="sb-latenite-info" style="display:none;">
+      <div class="sb-card-head" style="background:var(--gold); color:#5c3a00;">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0118 15.75 9.75 9.75 0 018.25 6a9.72 9.72 0 01.748-3.752A9.753 9.753 0 003 12c0 5.385 4.365 9.75 9.75 9.75 4.596 0 8.477-3.182 9.502-7.498a.75.75 0 000-.25z"/></svg>
+        <h3>Late Nite Service</h3>
+      </div>
+      <div class="sb-card-body" style="gap:0; padding-bottom:18px;">
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0;">
+          <li style="font-size:13px; color:var(--gray-600); line-height:1.6; padding:9px 0; border-bottom:1px solid var(--gray-100);">Buses may be delayed due to incidents: allow extra wait time.</li>
+          <li style="font-size:13px; color:var(--gray-600); line-height:1.6; padding:9px 0; border-bottom:1px solid var(--gray-100);">If you feel sick, notify the driver immediately. They can provide you with bags.</li>
+          <li style="font-size:13px; color:var(--gray-600); line-height:1.6; padding:9px 0; border-bottom:1px solid var(--gray-100);"><strong style="color:var(--gray-800);">No standing</strong> on buses past midnight on Friday and Saturday nights.</li>
+          <li style="font-size:13px; color:var(--gray-600); line-height:1.6; padding:9px 0; border-bottom:1px solid var(--gray-100);">Campus loading uses <strong style="color:var(--gray-800);">Union barricades</strong>; Downtown loading uses <strong style="color:var(--gray-800);">Hawley Street barricades</strong>.</li>
+          <li style="font-size:13px; color:var(--gray-600); line-height:1.6; padding:9px 0; border-bottom:1px solid var(--gray-100);">Rule violations will result in <strong style="color:var(--gray-800);">expulsion from the bus</strong>.</li>
+          <li class="ln-fee-note"><strong>Cleaning fee:</strong> Vomiting on a bus will result in a <strong>$150 biohazard fee</strong> charged to the responsible passenger.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Download -->
+    <div class="sb-card">
+      <div class="sb-card-head">
+        <svg aria-hidden="true" focusable="false" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+        <h3>Download Schedule</h3>
+      </div>
+      <div class="sb-card-body">
+        <a href="https://occtransport.s3.us-east-1.amazonaws.com/Fall+2026/OCCT+Fall+2026+Full+Primary+Schedule_rev083126.pdf" class="btn-sb" target="_blank" rel="noopener noreferrer">Fall 2026 Primary Schedule</a>
+      </div>
+    </div>
+
+    <!-- Other Routes -->
+    <div class="sb-card">
+      <div class="sb-card-head">
+        <svg aria-hidden="true" focusable="false" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/></svg>
+        <h3>Other Routes</h3>
+      </div>
+      <div class="sb-card-body">
+        <div class="other-routes">
+          <a href="ws.html" class="other-route-link">
+            <span class="other-route-badge badge-ws">WS</span>
+            <span class="other-route-name">Westside</span>
+          </a>
+          <a href="ms.html" class="other-route-link">
+            <span class="other-route-badge badge-ms">MS</span>
+            <span class="other-route-name">Main Street</span>
+          </a>
+          <a href="dcl.html" class="other-route-link current">
+            <span class="other-route-badge badge-dcl">DCL</span>
+            <span class="other-route-name">Downtown Center&ndash;Leroy St</span>
+          </a>
+          <a href="udc.html" class="other-route-link">
+            <span class="other-route-badge badge-udc">UDC</span>
+            <span class="other-route-name">University Downtown Center</span>
+          </a>
+          <a href="ds.html" class="other-route-link">
+            <span class="other-route-badge badge-ds">DS</span>
+            <span class="other-route-name">Downtown Southside</span>
+          </a>
+          <a href="cs.html" class="other-route-link">
+            <span class="other-route-badge badge-cs">CS</span>
+            <span class="other-route-name">Campus Shuttle</span>
+          </a>
+          <a href="uc.html" class="other-route-link">
+            <span class="other-route-badge badge-uc">UC</span>
+            <span class="other-route-name">UClub</span>
+          </a>
+          <a href="iu.html" class="other-route-link">
+            <span class="other-route-badge badge-iu">IU</span>
+            <span class="other-route-name">ITC&ndash;UClub</span>
+          </a>
+          <a href="riu.html" class="other-route-link">
+            <span class="other-route-badge badge-riu">RIU</span>
+            <span class="other-route-name">Residential&ndash;ITC&ndash;UClub</span>
+          </a>
+          <a href="vs.html" class="other-route-link">
+            <span class="other-route-badge badge-vs">VS</span>
+            <span class="other-route-name">Vestal Shopping</span>
+          </a>
+          <a href="oc.html" class="other-route-link">
+            <span class="other-route-badge badge-oc">OC</span>
+            <span class="other-route-name">Oakdale Commons</span>
+          </a>
+          <a href="ics.html" class="other-route-link">
+            <span class="other-route-badge badge-ics">ICS</span>
+            <span class="other-route-name">ITC Campus Shuttle</span>
+          </a>
+          <a href="de.html" class="other-route-link">
+            <span class="other-route-badge badge-de">DE</span>
+            <span class="other-route-name">Downtown Express</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service Alerts -->
+    <div class="sb-card">
+      <div class="sb-card-head">
+        <svg aria-hidden="true" focusable="false" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.008v.008H12v-.008z"/></svg>
+        <h3>Service Alerts</h3>
+      </div>
+      <div class="sb-card-body">
+        <p>Check News &amp; Info for the latest service changes, delays, and early closures.</p>
+        <a href="../news.html" class="btn-sb">News &amp; Info</a>
+      </div>
+    </div>
+
+    <!-- Questions -->
+    <div class="sb-card">
+      <div class="sb-card-head">
+        <svg aria-hidden="true" focusable="false" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"/></svg>
+        <h3>Questions?</h3>
+      </div>
+      <div class="sb-card-body">
+        <p>Can&rsquo;t find what you&rsquo;re looking for? Our team is happy to help.</p>
+        <a href="../contactus.html" class="btn-sb">Contact Us</a>
+      </div>
+    </div>
+
+  </div><!-- /sidebar -->
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="https://occtransport.s3.amazonaws.com/Logos/OCC+Transport+Logo.png" alt="OCC Transport">
+      <p>Serving the Binghamton University community since 1971.</p>
+    </div>
+    <div class="footer-links">
+      <a href="../routeschedule.html">Routes &amp; Schedules</a>
+      <a href="../employment.html">Employment</a>
+      <a href="../passtips.html">Passenger Tips</a>
+      <a href="../services.html">Additional Services</a>
+      <a href="../about.html">About</a>
+      <a href="../news.html">News</a>
+      <a href="../contactus.html">Contact Us</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/occtransport/" class="footer-soc-link" target="_blank" rel="noopener noreferrer"><img src="https://occtransport.s3.amazonaws.com/Logos/Facebook+Logo.png" alt="Facebook"></a>
+      <a href="https://twitter.com/OCCT" class="footer-soc-link" target="_blank" rel="noopener noreferrer"><img src="https://occtransport.s3.amazonaws.com/Logos/X+Logo.png" alt="X"></a>
+      <a href="https://www.instagram.com/buocct/" class="footer-soc-link" target="_blank" rel="noopener noreferrer"><img src="https://occtransport.s3.amazonaws.com/Logos/Instagram+Logo.png" alt="Instagram"></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; OCC Transport Inc.</span>
+    <span>Office: UUW-B20</span>
+    <span>Free to ride with your Binghamton University ID</span>
+  </div>
+</footer>
+
+<script>
+/* ── Service selector (Regular / Late Nite) ── */
+function setService(svc) {
+  document.getElementById('panel-regular').classList.toggle('active', svc === 'regular');
+  document.getElementById('panel-latenite').classList.toggle('active', svc === 'latenite');
+
+  const regBtn = document.getElementById('svc-regular');
+  const lnBtn  = document.getElementById('svc-latenite');
+  if (svc === 'regular') {
+    regBtn.classList.add('active');
+    lnBtn.classList.remove('active', 'ln-active');
+    document.getElementById('svc-card-title').textContent = 'Regular Service';
+    document.getElementById('op-times-label').textContent = 'Regular Service';
+    document.getElementById('op-times-body').style.background = '';
+    document.getElementById('op-wkd').textContent = '7:01\u00A0AM\u00A0\u2013\u00A012:25\u00A0AM';
+    document.getElementById('op-wknd').textContent = '8:45\u00A0AM\u00A0\u2013\u00A012:25\u00A0AM';
+    document.getElementById('sb-latenite-info').style.display = 'none';
+  } else {
+    lnBtn.classList.add('ln-active');
+    regBtn.classList.remove('active');
+    document.getElementById('svc-card-title').textContent = 'Late Nite Service';
+    document.getElementById('op-times-label').textContent = 'Late Nite Service';
+    document.getElementById('op-wkd').textContent = 'Not operated';
+    document.getElementById('op-wknd').textContent = '12:25\u00A0AM\u00A0\u2013\u00A03:39\u00A0AM';
+    document.getElementById('sb-latenite-info').style.display = '';
+  }
+}
+
+/* ── Direction tabs ── */
+function setDir(service, dir) {
+  if (service === 'reg') {
+    document.getElementById('reg-out').classList.toggle('active', dir === 'out');
+    document.getElementById('reg-in').classList.toggle('active',  dir === 'in');
+    document.getElementById('reg-out-btn').classList.toggle('active', dir === 'out');
+    document.getElementById('reg-in-btn').classList.toggle('active',  dir === 'in');
+  } else {
+    document.getElementById('ln-out').classList.toggle('active', dir === 'out');
+    document.getElementById('ln-in').classList.toggle('active',  dir === 'in');
+    document.getElementById('ln-out-btn').classList.toggle('active', dir === 'out');
+    document.getElementById('ln-in-btn').classList.toggle('active',  dir === 'in');
+  }
+}
+</script>
+
+<script src="../js/shared.js"></script>
+<script src="../js/alerts.js"></script>
+<script src="../js/theme.js"></script>
+</body>
+</html>

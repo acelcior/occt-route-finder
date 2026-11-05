@@ -1,0 +1,329 @@
+{
+ "_about": "Named places with coordinates sourced from OpenStreetMap via Nominatim (osm id recorded per entry). kind=stop entries supply coordinates for OCCT stops the schedule pages name but stop_cache.json lacks; kind=place entries are campus/area landmarks users can type instead of an address. Never hand-edit lat/lon without a source.",
+ "Rafuse": {
+  "lat": 42.0871939,
+  "lon": -75.9638317,
+  "aliases": [
+   "Rafuse Hall"
+  ],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/way/520331162",
+  "osm_name": "Rafuse Hall"
+ },
+ "Lot K: Academic A&B / Science 2": {
+  "lat": 42.0894089,
+  "lon": -75.9716609,
+  "aliases": [
+   "Lot K"
+  ],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/way/593610110",
+  "osm_name": "Lot K"
+ },
+ "Lot C: Science Buildings / Fine Arts": {
+  "lat": 42.0911015,
+  "lon": -75.9695608,
+  "aliases": [
+   "Lot C"
+  ],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/way/749106898",
+  "osm_name": "Lot C"
+ },
+ "Lot U: Newing": {
+  "lat": 42.089173,
+  "lon": -75.9634334,
+  "aliases": [
+   "Lot U"
+  ],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/way/557163310",
+  "osm_name": "Lot U"
+ },
+ "Parking Garage / Lot D": {
+  "lat": 42.0903826,
+  "lon": -75.9678786,
+  "aliases": [
+   "Lot D",
+   "Parking Garage"
+  ],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/way/557800397",
+  "osm_name": "Lot D"
+ },
+ "Lot G1": {
+  "lat": 42.0939498,
+  "lon": -75.9684969,
+  "aliases": [],
+  "kind": "place",
+  "source": "https://www.openstreetmap.org/way/624910297",
+  "osm_name": "Lot G1"
+ },
+ "Bartle Library": {
+  "lat": 42.0877904,
+  "lon": -75.969533,
+  "aliases": [
+   "Glenn G. Bartle Library",
+   "Library",
+   "Bartle"
+  ],
+  "kind": "place",
+  "source": "https://www.openstreetmap.org/relation/11034611",
+  "osm_name": "Bartle Library"
+ },
+ "Lecture Hall": {
+  "lat": 42.0880703,
+  "lon": -75.9711402,
+  "aliases": [
+   "LH"
+  ],
+  "kind": "place",
+  "source": "https://www.openstreetmap.org/way/178419281",
+  "osm_name": "Lecture Hall"
+ },
+ "Science Library": {
+  "lat": 42.0897694,
+  "lon": -75.9702499,
+  "aliases": [],
+  "kind": "place",
+  "source": "https://www.openstreetmap.org/way/733721002",
+  "osm_name": "Science Library"
+ },
+ "Anderson Center": {
+  "lat": 42.0898359,
+  "lon": -75.9684111,
+  "aliases": [
+   "Anderson Center for the Performing Arts"
+  ],
+  "kind": "place",
+  "source": "https://www.openstreetmap.org/way/178419496",
+  "osm_name": "Anderson Center"
+ },
+ "Events Center": {
+  "lat": 42.0933917,
+  "lon": -75.9719273,
+  "aliases": [],
+  "kind": "place",
+  "source": "https://www.openstreetmap.org/way/204616192",
+  "osm_name": "Events Center"
+ },
+ "Appalachian Collegiate Center": {
+  "lat": 42.0854105,
+  "lon": -75.9698474,
+  "aliases": [
+   "Appalachian",
+   "App Dining"
+  ],
+  "kind": "place",
+  "source": "https://www.openstreetmap.org/relation/7773976",
+  "osm_name": "Appalachian Collegiate Center"
+ },
+ "Academic A": {
+  "lat": 42.0886519,
+  "lon": -75.972372,
+  "aliases": [
+   "Acad A"
+  ],
+  "kind": "place",
+  "source": "https://www.openstreetmap.org/way/178419356",
+  "osm_name": "Academic A"
+ },
+ "Academic B": {
+  "lat": 42.0891228,
+  "lon": -75.9716487,
+  "aliases": [
+   "Acad B"
+  ],
+  "kind": "place",
+  "source": "https://www.openstreetmap.org/way/178419366",
+  "osm_name": "Academic B"
+ },
+ "Hinman Dining Hall": {
+  "lat": 42.0864799,
+  "lon": -75.9728144,
+  "aliases": [
+   "Hinman Dining"
+  ],
+  "kind": "place",
+  "source": "https://www.openstreetmap.org/way/544690439",
+  "osm_name": "Hinman Dining Hall"
+ },
+ "Science 1": {
+  "lat": 42.0890994,
+  "lon": -75.970637,
+  "aliases": [],
+  "kind": "place",
+  "source": "https://www.openstreetmap.org/way/178419387",
+  "osm_name": "Science 1"
+ },
+ "Science 2": {
+  "lat": 42.0898158,
+  "lon": -75.9719361,
+  "aliases": [],
+  "kind": "place",
+  "source": "https://www.openstreetmap.org/way/733721004",
+  "osm_name": "Science 2"
+ },
+ "Science 3": {
+  "lat": 42.0903435,
+  "lon": -75.9710736,
+  "aliases": [],
+  "kind": "place",
+  "source": "https://www.openstreetmap.org/relation/12596266",
+  "osm_name": "Science 3"
+ },
+ "Science 4": {
+  "lat": 42.0909914,
+  "lon": -75.9703107,
+  "aliases": [],
+  "kind": "place",
+  "source": "https://www.openstreetmap.org/way/178419448",
+  "osm_name": "Science 4"
+ },
+ "Science 5": {
+  "lat": 42.0907033,
+  "lon": -75.970898,
+  "aliases": [],
+  "kind": "place",
+  "source": "https://www.openstreetmap.org/way/178419445",
+  "osm_name": "Science 5"
+ },
+ "Peace Quad": {
+  "lat": 42.0889428,
+  "lon": -75.9669813,
+  "aliases": [],
+  "kind": "place",
+  "source": "https://www.openstreetmap.org/way/749108640",
+  "osm_name": "Peace Quad"
+ },
+ "Rockefeller Center": {
+  "lat": 42.0869919,
+  "lon": -75.9711084,
+  "aliases": [
+   "Nelson A. Rockefeller Center"
+  ],
+  "kind": "place",
+  "source": "https://www.openstreetmap.org/relation/13928732",
+  "osm_name": "Nelson A. Rockefeller Center"
+ },
+ "Smart Energy Building": {
+  "lat": 42.0943508,
+  "lon": -75.9612939,
+  "aliases": [],
+  "kind": "place",
+  "source": "https://www.openstreetmap.org/way/564146512",
+  "osm_name": "Smart Energy Building"
+ },
+ "Decker College of Nursing and Health Sciences": {
+  "lat": 42.112944,
+  "lon": -75.9544746,
+  "aliases": [
+   "Health Sciences Campus",
+   "Decker College",
+   "Nursing School Johnson City"
+  ],
+  "kind": "place",
+  "source": "https://www.openstreetmap.org/node/8793458115",
+  "osm_name": "Decker College of Nursing and Health Sciences"
+ },
+ "Oakdale Mall": {
+  "lat": 42.1289232,
+  "lon": -75.9742083,
+  "aliases": [],
+  "kind": "place",
+  "source": "https://www.openstreetmap.org/way/1533096555",
+  "osm_name": "Oakdale Mall"
+ },
+ "Town Square Mall": {
+  "lat": 42.0970703,
+  "lon": -76.0096509,
+  "aliases": [],
+  "kind": "place",
+  "source": "https://www.openstreetmap.org/way/295105371",
+  "osm_name": "Town Square Mall"
+ },
+ "Greater Binghamton Transportation Center": {
+  "lat": 42.1011741,
+  "lon": -75.9102509,
+  "aliases": [
+   "Binghamton Bus Terminal",
+   "Greyhound Binghamton",
+   "BC Transit Terminal"
+  ],
+  "kind": "place",
+  "source": "https://www.openstreetmap.org/way/289899339",
+  "osm_name": "Greater Binghamton Transportation Center"
+ },
+ "Harrison Street": {
+  "lat": 42.109538,
+  "lon": -75.958545,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/way/12732097",
+  "osm_name": "Harrison Street, Johnson City (WS corridor between Ackley Ave and Roberts St)"
+ },
+ "Roberts Street": {
+  "lat": 42.109218,
+  "lon": -75.956293,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/way/12762201",
+  "osm_name": "Roberts Street, Johnson City"
+ },
+ "St Charles Street": {
+  "lat": 42.10931,
+  "lon": -75.960664,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/way/12752774",
+  "osm_name": "Saint Charles Street, Johnson City (between Albert St and Baldwin St on MS)"
+ },
+ "Baldwin Street": {
+  "lat": 42.110483,
+  "lon": -75.957572,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/way/12767276",
+  "osm_name": "Baldwin Street, Johnson City"
+ },
+ "Gannett Building": {
+  "lat": 42.117337,
+  "lon": -75.948143,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/way/59467387",
+  "osm_name": "Gannett Drive, Johnson City (street centroid; the stop is at the building)"
+ },
+ "Mohawk": {
+  "lat": 42.086916,
+  "lon": -75.965938,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/node/2934639492",
+  "osm_name": "Mohawk Hall bus stop"
+ },
+ "Susquehanna": {
+  "lat": 42.085596,
+  "lon": -75.975191,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/way/733797802",
+  "osm_name": "Susquehanna Community (area centroid)"
+ },
+ "Dickinson": {
+  "lat": 42.08671,
+  "lon": -75.963915,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/way/616129875",
+  "osm_name": "Dickinson Community (area centroid)"
+ },
+ "Hayes": {
+  "lat": null,
+  "lon": null,
+  "aliases": [],
+  "kind": "stop",
+  "source": null,
+  "osm_name": "No OpenStreetMap match near University Plaza; old cache value pointed at Hayes St in Binghamton's south side, which is wrong for a UClub-route stop. Location unknown until confirmed with OCCT."
+ }
+}

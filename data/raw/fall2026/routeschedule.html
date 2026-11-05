@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>(function(){try{var t=localStorage.getItem('occt-theme');if(!t)t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Overpass:wght@500;600;700;800;900&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="css/shared.css">
+<link rel="stylesheet" href="css/wayfinding.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Routes &amp; Schedules, OCC Transport</title>
+<link rel="icon" type="image/png" href="img/OCCTransportLogo(1) (1).png">
+<style>
+/* ============================================================
+   OCCT routes & schedules: transit & wayfinding language
+   Matches index.html. Type: Overpass (headings) + Public Sans.
+   ============================================================ */
+:root {
+  /* Brand: OCCT blue / navy */
+  --brand:        #1a6fba;
+  --brand-dark:   #134e86;
+  --brand-darker: #0C2340;
+  --brand-600:    #2684d4;
+  --brand-tint:   #e8f2fb;
+
+  /* Ink + cool neutral scale */
+  --ink:      #16202b;
+  --ink-2:    #3b4756;
+  --ink-3:    #667180;
+  --line:     #d7dde3;
+  --line-2:   #e6eaee;
+  --paper:    #ffffff;
+  --surf:     #f4f6f8;
+  --surf-2:   #e9edf1;
+
+  /* Status: the only saturated colors */
+  --run:      #1a7f43;   --run-bg:   #e5f2ea;
+  --warn:     #9a5b06;   --warn-bg:  #fbefd7;
+  --off:      #5b6560;   --off-bg:   #eceeec;
+  --info:     #5b21b6;   --info-bg:  #f1edfb;
+
+  --font: 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --head: 'Overpass', 'Public Sans', system-ui, sans-serif;
+  --r:  6px;
+  --r-sm: 4px;
+}
+
+html { scroll-behavior: smooth; }
+::-webkit-scrollbar { width: 10px; }
+body { background: var(--paper); color: var(--ink); font-size: 15px; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+/* ── NAV (restyle: navy bar, crisp) ── */
+nav { background: var(--brand-darker); }
+.nav-inner { height: 66px; }
+.nav-links a { color: rgba(255,255,255,0.78); font-family: var(--font); font-weight: 500; font-size: 15px; border-radius: var(--r-sm); padding: 8px 13px; }
+.nav-links a:hover, .nav-links a.active { color: #fff; background: rgba(255,255,255,0.10); }
+.nav-cta { background: var(--brand) !important; border-radius: var(--r-sm) !important; font-weight: 600 !important; }
+.nav-cta:hover { background: var(--brand-600) !important; }
+.nav-mobile { background: var(--brand-darker); }
+.nav-mobile .mob-cta { background: var(--brand) !important; border-radius: var(--r-sm); }
+
+/* ── PAGE TITLE BAND (extends index's hero language to a secondary page) ── */
+.page-header { background: var(--brand-darker); padding: 24px 24px 22px; }
+.page-header-inner { max-width: 1180px; margin: 0 auto; padding: 0; }
+.breadcrumb { font-size: 13px; margin-bottom: 8px; }
+.page-header h1 { font-family: var(--head); font-weight: 800; font-size: clamp(24px, 3.6vw, 32px); letter-spacing: -0.02em; line-height: 1.05; color: #fff; }
+
+/* ── SECTION SCAFFOLD ── */
+.section { padding: 30px 0; }
+.section--alt { background: var(--surf); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.section--alt + .section--alt { border-top: none; }
+.sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 13px; flex-wrap: wrap; }
+.sec-title { font-family: var(--head); font-weight: 800; font-size: 21px; letter-spacing: -0.01em; color: var(--ink); display: flex; align-items: center; gap: 11px; }
+.sec-eyebrow { font-family: var(--head); font-weight: 700; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
+
+/* ── SCHEDULE DOWNLOADS (extends the language: PDF file-type badge) ── */
+.dl-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 360px)); gap: 10px; }
+.dl-item { display: flex; align-items: center; gap: 12px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--r); padding: 12px 14px; text-decoration: none; transition: border-color .12s, box-shadow .12s; }
+.dl-item:hover { border-color: var(--brand); box-shadow: inset 0 0 0 1px var(--brand); }
+.fbadge { font-family: var(--head); font-weight: 800; font-size: 11px; letter-spacing: .05em; background: var(--surf-2); color: var(--ink-2); border-radius: var(--r-sm); padding: 6px 8px; flex-shrink: 0; }
+.dl-item-text { flex: 1; min-width: 0; }
+.dl-item-title { font-family: var(--head); font-weight: 700; font-size: 14.5px; color: var(--ink); line-height: 1.25; }
+.dl-item-meta { font-size: 12.5px; color: var(--ink-3); margin-top: 2px; }
+.dl-note { font-size: 13px; color: var(--ink-2); margin-top: 12px; line-height: 1.55; }
+.dl-note strong { color: var(--ink); font-weight: 700; }
+.dl-note a { color: var(--brand-dark); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+
+/* ── SUMMER CALLOUT (index's .banner box: full border, no accent rail) ── */
+.banner { background: var(--brand-tint); border: 1px solid #bcd6f0; border-radius: var(--r); padding: 14px 16px; font-size: 15px; line-height: 1.55; color: var(--ink-2); margin-top: 16px; }
+.banner strong { color: var(--ink); font-weight: 700; }
+.banner a { color: var(--brand-dark); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+
+/* ── DEPARTURE BOARD STRIP (extends the language: compact link row) ── */
+.dep-strip { display: flex; align-items: center; gap: 8px 12px; flex-wrap: wrap; background: var(--paper); border: 1px solid var(--line); border-radius: var(--r); padding: 11px 14px; margin-top: 12px; }
+.dep-strip-label { font-family: var(--head); font-weight: 700; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); white-space: nowrap; margin-right: 2px; }
+.dep-strip-links { display: flex; gap: 8px; flex-wrap: wrap; }
+.dep-strip-link { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font); font-size: 13px; font-weight: 600; color: var(--brand); background: var(--paper); border: 1px solid var(--line); border-radius: var(--r-sm); padding: 6px 11px; text-decoration: none; transition: border-color .12s, background .12s; white-space: nowrap; }
+.dep-strip-link:hover { border-color: var(--brand); background: var(--brand-tint); }
+.dep-strip-link svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+/* ── ROUTES (index's .route-row pattern, extended with a stop line) ── */
+.route-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 6px; }
+.route-row { display: flex; align-items: center; gap: 11px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--r-sm); padding: 9px 11px; text-decoration: none; transition: border-color .12s, background .12s; }
+.route-row:hover { border-color: var(--brand); background: var(--brand-tint); }
+.rbadge { font-family: var(--head); font-weight: 800; font-size: 13px; letter-spacing: .02em; min-width: 42px; text-align: center; padding: 5px 8px; border-radius: var(--r-sm); flex-shrink: 0; }
+.route-row-text { flex: 1; min-width: 0; }
+.route-row-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.route-row-name { font-family: var(--font); font-size: 14.5px; font-weight: 600; color: var(--ink); line-height: 1.25; }
+.route-row-via { font-size: 12px; color: var(--ink-3); line-height: 1.45; margin-top: 1px; }
+.chip { font-family: var(--font); font-size: 11px; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; padding: 3px 8px; border-radius: 100px; white-space: nowrap; flex-shrink: 0; }
+.chip-run { color: var(--run); background: var(--run-bg); }
+.chip-eve { color: var(--warn); background: var(--warn-bg); }
+.chip-int { color: var(--info); background: var(--info-bg); }
+.chip-off { color: var(--off); background: var(--off-bg); }
+
+/* ── HELP BOXES (index's .box treatment) ── */
+.help-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; align-items: start; }
+.box { border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; background: var(--paper); }
+.box-head { display: flex; align-items: center; gap: 10px; padding: 11px 15px; background: var(--ink); }
+.box-head svg { width: 18px; height: 18px; color: rgba(255,255,255,0.7); flex-shrink: 0; }
+.box-head h3 { font-family: var(--head); font-weight: 700; font-size: 15px; color: #fff; }
+.box-body { padding: 13px 15px 14px; }
+.box-body p { font-size: 13.5px; color: var(--ink-2); line-height: 1.5; margin-bottom: 11px; }
+.btn-box { display: block; text-align: center; font-family: var(--font); font-weight: 600; font-size: 14px; padding: 10px; border-radius: var(--r-sm); background: var(--brand); color: #fff; text-decoration: none; transition: background .12s; }
+.btn-box:hover { background: var(--brand-600); }
+.btn-box + .btn-box { margin-top: 8px; }
+
+/* ── FOOTER (restyle) ── */
+footer { background: var(--brand-darker); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 940px) {
+  .dl-grid { grid-template-columns: 1fr; }
+  .help-grid { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; gap: 22px; }
+  .footer-links { grid-template-columns: 1fr 1fr 1fr; }
+}
+@media (max-width: 620px) {
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .section { padding: 24px 0; }
+  .page-header { padding: 20px 16px 18px; }
+  .route-grid { grid-template-columns: 1fr; }
+  .wrap { padding: 0 16px; }
+}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://occtransport.s3.amazonaws.com/Logos/OCC+Transport+Logo.png" alt="OCC Transport">
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="routeschedule.html" class="active">Routes &amp; Schedules</a></li>
+        <li><a href="employment.html">Employment</a></li>
+        <li><a href="passtips.html">Passenger Tips</a></li>
+        <li><a href="services.html">Additional Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contactus.html" class="nav-cta">Contact Us</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" aria-pressed="false" onclick="toggleTheme()">
+        <svg class="tt-moon" aria-hidden="true" focusable="false" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/></svg>
+        <svg class="tt-sun" aria-hidden="true" focusable="false" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/></svg>
+      </button>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMobile" onclick="toggleMobileNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="nav-mobile" id="navMobile" aria-hidden="true">
+  <a href="routeschedule.html" class="active">Routes &amp; Schedules</a>
+  <a href="employment.html">Employment</a>
+  <a href="passtips.html">Passenger Tips</a>
+  <a href="services.html">Additional Services</a>
+  <a href="about.html">About</a>
+  <a href="news.html">News</a>
+  <a href="contactus.html" class="mob-cta">Contact Us</a>
+</div>
+
+<!-- ALERT BAR -->
+<div class="alert-bar" role="region" aria-label="Service alert"></div>
+
+<!-- PAGE HEADER -->
+<div class="page-header" role="region" aria-label="Page header">
+  <div class="page-header-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>&rsaquo;</span> Routes &amp; Schedules</div>
+    <h1>Routes &amp; Schedules</h1>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main id="main-content">
+
+<!-- SCHEDULE DOWNLOADS + SUMMER CALLOUT + BOARDS -->
+<section class="section section--alt" aria-labelledby="dl-heading">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="sec-title" id="dl-heading">Schedule Downloads</h2>
+      <span class="sec-eyebrow">Fall 2026 &middot; PDF</span>
+    </div>
+
+    <div class="dl-grid">
+      <a href="https://occtransport.s3.us-east-1.amazonaws.com/Fall+2026/OCCT+Fall+2026+Full+Primary+Schedule_rev083126.pdf" class="dl-item" target="_blank" rel="noopener noreferrer">
+        <span class="fbadge">PDF</span>
+        <span class="dl-item-text">
+          <span class="dl-item-title">Fall 2026 Primary Schedule</span>
+          <div class="dl-item-meta">Regular service &middot; Fall 2026 &middot; PDF</div>
+        </span>
+      </a>
+      <a href="https://occtransport.s3.us-east-1.amazonaws.com/Fall+2026/OCCT+Fall+2026+Fall+Break+Schedule.pdf" class="dl-item" target="_blank" rel="noopener noreferrer">
+        <span class="fbadge">PDF</span>
+        <span class="dl-item-text">
+          <span class="dl-item-title">Fall 2026 Fall Break Schedule</span>
+          <div class="dl-item-meta">ICS service only &middot; Fall Break 10/12&ndash;10/16 &middot; PDF</div>
+        </span>
+      </a>
+      <a href="https://occtransport.s3.us-east-1.amazonaws.com/Fall+2026/OCCT+Fall+2026+Alternate+Schedule_reviii.pdf" class="dl-item" target="_blank" rel="noopener noreferrer">
+        <span class="fbadge">PDF</span>
+        <span class="dl-item-text">
+          <span class="dl-item-title">Fall 2026 Alternate Schedule</span>
+          <div class="dl-item-meta">Reduced service &middot; break weekends &middot; PDF</div>
+        </span>
+      </a>
+    </div>
+    <p class="dl-note"><strong>Weekday and weekend service is running this fall.</strong> All buses return to campus.</p>
+
+    <div class="banner">
+      <strong>Fall 2026 Service.</strong> Full weekday and weekend service is now in effect, with regular service having begun Tuesday, 8/18. Late Nite (WS, DCL, CS) and the Downtown Express run Friday &amp; Saturday nights. See the <a href="news.html">News &amp; Info page</a> for the latest schedule details.
+    </div>
+
+    <div class="dep-strip">
+      <span class="dep-strip-label">Live Departure Boards</span>
+      <div class="dep-strip-links">
+        <a href="union-departures.html" class="dep-strip-link" target="_blank">
+          <svg aria-hidden="true" focusable="false" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z"/></svg>
+          University Union
+        </a>
+        <a href="udc-departures.html" class="dep-strip-link" target="_blank">
+          <svg aria-hidden="true" focusable="false" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z"/></svg>
+          Downtown Center
+        </a>
+        <a href="hsc-departures.html" class="dep-strip-link" target="_blank">
+          <svg aria-hidden="true" focusable="false" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z"/></svg>
+          Health Science Campus
+        </a>
+        <a href="itc-departures.html" class="dep-strip-link" target="_blank">
+          <svg aria-hidden="true" focusable="false" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z"/></svg>
+          ITC
+        </a>
+        <a href="uclub-departures.html" class="dep-strip-link" target="_blank">
+          <svg aria-hidden="true" focusable="false" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z"/></svg>
+          UClub
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROUTES -->
+<section class="section" aria-labelledby="routes-heading">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="sec-title" id="routes-heading">Routes <span class="sec-eyebrow" style="align-self:center;">Fall 2026</span></h2>
+      <span class="sec-eyebrow">Select a route for full schedule &amp; stops</span>
+    </div>
+
+    <div class="route-grid">
+
+      <a href="routes/ws.html" class="route-row">
+        <span class="rbadge" style="background:#191970;color:#fff;">WS</span>
+        <span class="route-row-text">
+          <div class="route-row-name">Westside</div>
+          <div class="route-row-via">Binghamton University &middot; Floral Avenue (Johnson City) &middot; Main Street (Binghamton) &middot; University Downtown Center</div>
+        </span>
+      </a>
+
+      <a href="routes/ms.html" class="route-row">
+        <span class="rbadge" style="background:#6495ED;color:#0b1b33;">MS</span>
+        <span class="route-row-text">
+          <div class="route-row-name">Main Street</div>
+          <div class="route-row-via">Binghamton University &middot; Pharmacy &amp; Nursing Schools &middot; Main Street (Johnson City &amp; Binghamton) &middot; University Downtown Center</div>
+        </span>
+      </a>
+
+      <a href="routes/dcl.html" class="route-row">
+        <span class="rbadge" style="background:#D2042D;color:#fff;">DCL</span>
+        <span class="route-row-text">
+          <div class="route-row-name">Downtown Center&ndash;Leroy St</div>
+          <div class="route-row-via">Binghamton University &middot; Riverside Drive (Johnson City &amp; Binghamton) &middot; Leroy Street (Westside) &middot; University Downtown Center</div>
+        </span>
+      </a>
+
+      <a href="routes/udc.html" class="route-row">
+        <span class="rbadge" style="background:#FF7F50;color:#3a1400;">UDC</span>
+        <span class="route-row-text">
+          <div class="route-row-name">University Downtown Center</div>
+          <div class="route-row-via">Binghamton University &middot; University Downtown Center</div>
+        </span>
+      </a>
+
+      <a href="routes/ds.html" class="route-row">
+        <span class="rbadge" style="background:#708090;color:#0c1114;">DS</span>
+        <span class="route-row-text">
+          <div class="route-row-name">Downtown Southside</div>
+          <div class="route-row-via">Binghamton University &middot; Conklin Ave / Tompkins St (Southside) &middot; Water &amp; Henry Streets &middot; BC Junction &middot; University Downtown Center</div>
+        </span>
+      </a>
+
+      <a href="routes/uc.html" class="route-row">
+        <span class="rbadge" style="background:#A030A0;color:#fff;">UC</span>
+        <span class="route-row-text">
+          <div class="route-row-name">UClub</div>
+          <div class="route-row-via">UClub (University Plaza) &middot; Meadows &amp; Hayes Communities &middot; Lehigh Avenue &amp; Washington Drive &middot; Binghamton University</div>
+        </span>
+      </a>
+
+      <a href="routes/iu.html" class="route-row">
+        <span class="rbadge" style="background:#CF9FFF;color:#25103f;">IU</span>
+        <span class="route-row-text">
+          <div class="route-row-top"><span class="route-row-name">ITC&ndash;UClub</span><span class="chip chip-eve">Weekdays Only</span></div>
+          <div class="route-row-via">Innovative Technologies Complex (ITC) &middot; UClub (University Plaza) &middot; Meadows &amp; Hayes Communities &middot; Lehigh Avenue &amp; Washington Drive &middot; Binghamton University</div>
+        </span>
+      </a>
+
+      <a href="routes/cs.html" class="route-row">
+        <span class="rbadge" style="background:#228B22;color:#04180a;">CS</span>
+        <span class="route-row-text">
+          <div class="route-row-name">Campus Shuttle</div>
+          <div class="route-row-via">Campus Residential Communities &middot; Couper Administration Building &middot; East &amp; West Gyms &middot; McGuire Building / Physical Facilities &middot; Clearview &amp; Academic A</div>
+        </span>
+      </a>
+
+      <a href="routes/vs.html" class="route-row">
+        <span class="rbadge" style="background:#E37383;color:#3a0a13;">VS</span>
+        <span class="route-row-text">
+          <div class="route-row-name">Vestal Shopping</div>
+          <div class="route-row-via">Binghamton University &middot; Riviera Ridge &amp; Hollybrook Communities &middot; Target &amp; Parkway Plaza &middot; Walmart &amp; Town Square Mall &middot; The Shoppes at Vestal</div>
+        </span>
+      </a>
+
+      <a href="routes/oc.html" class="route-row">
+        <span class="rbadge" style="background:#FFC000;color:#3a2a00;">OC</span>
+        <span class="route-row-text">
+          <div class="route-row-name">Oakdale Commons</div>
+          <div class="route-row-via">Binghamton University &middot; Aldi &middot; Oakdale Commons &middot; Wegmans</div>
+        </span>
+      </a>
+
+      <a href="routes/de.html" class="route-row">
+        <span class="rbadge" style="background:#000000;color:#fff;">DE</span>
+        <span class="route-row-text">
+          <div class="route-row-top"><span class="route-row-name">Downtown Express</span><span class="chip chip-eve">Fri &amp; Sat Nights</span></div>
+          <div class="route-row-via">UClub (University Plaza) &middot; Downtown Binghamton (State &amp; Hawley Streets) &middot; Binghamton University</div>
+        </span>
+      </a>
+
+      <a href="routes/riu.html" class="route-row">
+        <span class="rbadge" style="background:#AEE1AE;color:#0b2a17;">RIU</span>
+        <span class="route-row-text">
+          <div class="route-row-top"><span class="route-row-name">Residential&ndash;ITC&ndash;UClub</span><span class="chip chip-off">Summer Only</span></div>
+          <div class="route-row-via">Campus Residential Communities &middot; Innovative Technologies Complex (ITC) &middot; UClub (University Plaza) &middot; Meadows &amp; Hayes Communities &middot; Lehigh Avenue &amp; Washington Drive</div>
+        </span>
+      </a>
+
+      <a href="routes/ics.html" class="route-row">
+        <span class="rbadge" style="background:#AEE1AE;color:#0b2a17;">ICS</span>
+        <span class="route-row-text">
+          <div class="route-row-top"><span class="route-row-name">ITC Campus Shuttle</span><span class="chip chip-int">Interim Weeks Only</span></div>
+          <div class="route-row-via">Innovative Technologies Complex (ITC) &middot; Susquehanna &amp; Hillside &middot; Mohawk / University Union</div>
+        </span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- HELP BOXES -->
+<section class="section section--alt" aria-label="Schedules and help">
+  <div class="wrap">
+    <div class="help-grid">
+
+      <div class="box">
+        <div class="box-head">
+          <svg aria-hidden="true" focusable="false" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+          <h3>Download Schedules</h3>
+        </div>
+        <div class="box-body">
+          <a href="https://occtransport.s3.us-east-1.amazonaws.com/Fall+2026/OCCT+Fall+2026+Full+Primary+Schedule_rev083126.pdf" class="btn-box" target="_blank" rel="noopener noreferrer">Fall 2026 Primary Schedule</a>
+          <a href="https://occtransport.s3.us-east-1.amazonaws.com/Fall+2026/OCCT+Fall+2026+Fall+Break+Schedule.pdf" class="btn-box" target="_blank" rel="noopener noreferrer">Fall 2026 Fall Break Schedule</a>
+          <a href="https://occtransport.s3.us-east-1.amazonaws.com/Fall+2026/OCCT+Fall+2026+Alternate+Schedule_reviii.pdf" class="btn-box" target="_blank" rel="noopener noreferrer">Fall 2026 Alternate Schedule</a>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="box-head">
+          <svg aria-hidden="true" focusable="false" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.008v.008H12v-.008z"/></svg>
+          <h3>Service Alerts</h3>
+        </div>
+        <div class="box-body">
+          <p>Check News &amp; Info for the latest service changes, delays, and early closures.</p>
+          <a href="news.html" class="btn-box">News &amp; Info</a>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="box-head">
+          <svg aria-hidden="true" focusable="false" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"/></svg>
+          <h3>Questions?</h3>
+        </div>
+        <div class="box-body">
+          <p>Can&rsquo;t find what you&rsquo;re looking for? Our team is happy to help.</p>
+          <a href="contactus.html" class="btn-box">Contact Us</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="https://occtransport.s3.amazonaws.com/Logos/OCC+Transport+Logo.png" alt="OCC Transport">
+      <p>Serving the Binghamton University community since 1971.</p>
+    </div>
+    <div class="footer-links">
+      <a href="routeschedule.html">Routes &amp; Schedules</a>
+      <a href="employment.html">Employment</a>
+      <a href="passtips.html">Passenger Tips</a>
+      <a href="services.html">Additional Services</a>
+      <a href="about.html">About</a>
+      <a href="news.html">News</a>
+      <a href="contactus.html">Contact Us</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/occtransport/" class="footer-soc-link" target="_blank" rel="noopener noreferrer"><img src="https://occtransport.s3.amazonaws.com/Logos/Facebook+Logo.png" alt="Facebook"></a>
+      <a href="https://twitter.com/OCCT" class="footer-soc-link" target="_blank" rel="noopener noreferrer"><img src="https://occtransport.s3.amazonaws.com/Logos/X+Logo.png" alt="X"></a>
+      <a href="https://www.instagram.com/buocct/" class="footer-soc-link" target="_blank" rel="noopener noreferrer"><img src="https://occtransport.s3.amazonaws.com/Logos/Instagram+Logo.png" alt="Instagram"></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; OCC Transport Inc.</span>
+    <span>Office: UUW-B20</span>
+    <span>Free to ride with your Binghamton University ID</span>
+  </div>
+</footer>
+
+<script src="js/shared.js"></script>
+<script src="js/alerts.js"></script>
+<script src="js/theme.js"></script>
+</body>
+</html>

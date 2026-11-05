@@ -35,7 +35,11 @@ def normalize_stop_name(name: str) -> str:
     if not s:
         return ""
     out: list[str] = []
-    for w in s.split():
+    for i, w in enumerate(s.split()):
+        # A leading "St" before another word is Saint ("St Charles Street"), not Street.
+        if i == 0 and w == "st" and len(s.split()) > 1:
+            out.append("saint")
+            continue
         out.append(_ABBREV.get(w, w))
     return " ".join(out)
 
