@@ -1,91 +1,108 @@
 <!doctype html>
-<html lang="en" class="dark-mode">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OCCT Bus Planner</title>
-    <link rel="stylesheet" href="/style.css" />
+    <meta name="description" content="Plan OCCT bus trips around Binghamton University: campus, downtown, Johnson City and Vestal, with transfers, Late Nite service and the semester calendar." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@500;600;700;800;900&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="/style.css?v=3" />
   </head>
   <body>
-    <main class="container">
-      <section class="card">
-        <header class="top-bar">
-          <div class="brand">
-            <h1>OCCT Bus Planner</h1>
-            <p class="tagline">Binghamton University &amp; Broome County</p>
-          </div>
-          <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to light mode">
-            ☀️
+    <nav aria-label="Main navigation">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo" aria-label="OCCT Bus Planner home">
+          <span class="nav-mark">OCCT</span><span class="nav-title">Bus Planner</span>
+        </a>
+        <div class="nav-right">
+          <ul class="nav-links">
+            <li><a href="https://occtransport.org/routeschedule.html" target="_blank" rel="noopener">Routes &amp; Schedules</a></li>
+            <li><a href="https://occtransport.org/news.html" target="_blank" rel="noopener">News</a></li>
+            <li><a href="https://binghamtonupublic.etaspot.net/" class="nav-cta" target="_blank" rel="noopener">Live buses</a></li>
+          </ul>
+          <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false">
+            <svg class="tt-moon" aria-hidden="true" focusable="false" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/></svg>
+            <svg class="tt-sun" aria-hidden="true" focusable="false" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/></svg>
           </button>
-        </header>
-
-        <div class="clock" id="clock" aria-live="polite"></div>
-
-        <div id="alerts" class="alerts" role="status" aria-live="polite" hidden></div>
-
-        <div class="hint-box">
-          <strong>Tip:</strong> Type an OCCT stop (<span class="hint-example">Mohawk</span>), a campus building
-          (<span class="hint-example">Bartle Library</span>) or a street address
-          (<span class="hint-example">69 Court St, Binghamton</span>).
         </div>
+      </div>
+    </nav>
 
-        <form id="route-form">
+    <div id="alerts" class="alert-bar" role="status" aria-live="polite" hidden></div>
+
+    <header class="page-header">
+      <div class="wrap">
+        <p class="sec-eyebrow">Trip planner</p>
+        <h1>Find your bus</h1>
+        <p class="lede">Campus, downtown, Johnson City and Vestal on OCCT — with transfers, Late Nite service and the semester calendar built in.</p>
+        <p class="clock" id="clock" aria-live="off"></p>
+      </div>
+    </header>
+
+    <main class="wrap section">
+      <form id="route-form" class="planner" autocomplete="off">
+        <div class="planner-grid">
           <div class="field">
             <label for="from">From</label>
             <div class="autocomplete-wrapper">
-              <input id="from" type="text" placeholder="Stop, building or address" autocomplete="off"
-                     maxlength="120" required aria-autocomplete="list" aria-controls="from-suggestions" />
+              <input id="from" type="text" placeholder="Stop, building or address" maxlength="120" required
+                     aria-autocomplete="list" aria-controls="from-suggestions" aria-expanded="false" />
               <ul id="from-suggestions" class="suggestions-list" role="listbox" aria-label="From suggestions"></ul>
             </div>
           </div>
           <div class="field">
             <label for="to">To</label>
             <div class="autocomplete-wrapper">
-              <input id="to" type="text" placeholder="e.g. University Downtown Center" autocomplete="off"
-                     maxlength="120" required aria-autocomplete="list" aria-controls="to-suggestions" />
+              <input id="to" type="text" placeholder="e.g. University Downtown Center" maxlength="120" required
+                     aria-autocomplete="list" aria-controls="to-suggestions" aria-expanded="false" />
               <ul id="to-suggestions" class="suggestions-list" role="listbox" aria-label="To suggestions"></ul>
             </div>
           </div>
-
-          <div class="controls">
-            <div class="field field--inline">
-              <label for="mode">When</label>
-              <select id="mode">
-                <option value="now">Leave now</option>
-                <option value="depart">Depart at</option>
-                <option value="arrive">Arrive by</option>
-              </select>
-            </div>
-            <div class="field field--inline" id="when-field" hidden>
-              <label for="when">Date &amp; time</label>
-              <input id="when" type="datetime-local" step="60" />
-            </div>
-            <div class="field field--inline">
-              <label for="access">Max walk to a stop</label>
-              <select id="access">
-                <option value="400">5 min (400 m)</option>
-                <option value="800" selected>10 min (800 m)</option>
-                <option value="1200">15 min (1.2 km)</option>
-                <option value="2000">25 min (2 km)</option>
-              </select>
-            </div>
+          <div class="field">
+            <label for="mode">When</label>
+            <select id="mode">
+              <option value="now">Leave now</option>
+              <option value="depart">Depart at</option>
+              <option value="arrive">Arrive by</option>
+            </select>
           </div>
+          <div class="field" id="when-field" hidden>
+            <label for="when">Date &amp; time</label>
+            <input id="when" type="datetime-local" step="60" />
+          </div>
+          <div class="field">
+            <label for="access">Max walk to a stop</label>
+            <select id="access">
+              <option value="400">5 min (400 m)</option>
+              <option value="800" selected>10 min (800 m)</option>
+              <option value="1200">15 min (1.2 km)</option>
+              <option value="2000">25 min (2 km)</option>
+            </select>
+          </div>
+          <div class="field field--submit">
+            <button type="submit" id="submit-btn" class="btn-primary">Find routes</button>
+          </div>
+        </div>
+        <p class="hint">Type an OCCT stop (<b>Mohawk</b>), a campus building (<b>Bartle Library</b>) or a street address (<b>69 Court St, Binghamton</b>). Short forms like <b>UU</b>, <b>UDC</b>, <b>downtown</b> work too.</p>
+      </form>
 
-          <button type="submit" id="submit-btn" class="submit-btn">Find routes</button>
-        </form>
-
-        <p id="status" class="status" role="status" aria-live="polite"></p>
-        <div id="results" class="results" aria-live="polite"></div>
-
-        <footer class="meta" id="meta"></footer>
-      </section>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+      <div id="results" class="results" aria-live="polite"></div>
     </main>
-    <script src="/app.js"></script>
+
+    <footer>
+      <div class="wrap footer-inner">
+        <p id="meta" class="footer-meta"></p>
+        <p class="footer-note">Independent planner built on the timetables OCC Transport publishes at
+          <a href="https://occtransport.org" target="_blank" rel="noopener">occtransport.org</a>. Not affiliated with OCC Transport Inc.
+          Buses are free with a Binghamton University ID.</p>
+      </div>
+    </footer>
+    <script src="/app.js?v=3"></script>
   </body>
 </html>

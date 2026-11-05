@@ -14,32 +14,34 @@ const themeToggle = document.getElementById("theme-toggle");
 const clockEl = document.getElementById("clock");
 
 const ETA_URL = "https://binghamtonupublic.etaspot.net/";
-let allStops = [];
+let entries = []; // [{name, aliases}]
 
 /* ---------- theme + clock ---------- */
+function applyTheme(dark) {
+  document.documentElement.classList.toggle("dark-mode", dark);
+  themeToggle.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+  themeToggle.setAttribute("aria-pressed", String(dark));
+}
 function initTheme() {
   let saved = null;
   try { saved = localStorage.getItem("theme"); } catch (e) { /* private mode */ }
-  const dark = saved !== "light";
-  document.documentElement.classList.toggle("dark-mode", dark);
-  themeToggle.textContent = dark ? "☀️" : "🌙";
-  themeToggle.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+  const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  applyTheme(saved ? saved === "dark" : prefersDark);
 }
 themeToggle.addEventListener("click", () => {
-  const isDark = document.documentElement.classList.toggle("dark-mode");
-  try { localStorage.setItem("theme", isDark ? "dark" : "light"); } catch (e) { /* ignore */ }
-  themeToggle.textContent = isDark ? "☀️" : "🌙";
-  themeToggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+  const dark = !document.documentElement.classList.contains("dark-mode");
+  applyTheme(dark);
+  try { localStorage.setItem("theme", dark ? "dark" : "light"); } catch (e) { /* ignore */ }
 });
 
 function updateClock() {
   const now = new Date();
   const h = now.getHours();
   const m = now.getMinutes().toString().padStart(2, "0");
-  clockEl.textContent = `Current time: ${h % 12 || 12}:${m} ${h >= 12 ? "PM" : "AM"}`;
+  clockEl.textContent = `Now: ${now.toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric" })} · ${h % 12 || 12}:${m} ${h >= 12 ? "PM" : "AM"}`;
 }
 updateClock();
-setInterval(updateClock, 1000);
+setInterval(updateClock, 15000);
 
 /* ---------- helpers ---------- */
 function escapeHtml(text) {
@@ -51,60 +53,132 @@ function localIsoMinutes(d) {
   const p = (n) => String(n).padStart(2, "0");
   return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}T${p(d.getHours())}:${p(d.getMinutes())}`;
 }
-function stampText(stamp, estimated) {
-  const t = `${estimated ? "~" : ""}${stamp.text}`;
-  return stamp.same_day ? t : `${t} <span class="day">${escapeHtml(stamp.day)}</span>`;
+function stampText(stamp) {
+  return stamp.same_day
+    ? escapeHtml(stamp.text)
+    : `${escapeHtml(stamp.text)} <span class="day">${escapeHtml(stamp.day)}</span>`;
 }
 function timeText(stop) {
   return `${stop.estimated ? "~" : ""}${escapeHtml(stop.time)}`;
 }
 
 /* ---------- autocomplete ---------- */
+const norm = (s) => s.toLowerCase().replace(/&/g, " and ").replace(/[^a-z0-9]+/g, " ").trim();
+const wordStart = (hay, q) => hay.split(" ").some((w) => w.startsWith(q));
+
+// Lower rank = better. "union" → University Union (word start) beats a mid-word hit;
+// alias hits ("Union University", "UU") still surface, labelled with what matched.
+function rankEntry(q, e) {
+  const nn = norm(e.name);
+  if (nn.startsWith(q)) return [0, null];
+  if (wordStart(nn, q)) return [1, null];
+  if (nn.includes(q)) return [2, null];
+  const qw = q.split(" ");
+  if (qw.length > 1 && qw.every((w) => wordStart(nn, w))) return [3, null];
+  for (const a of e.aliases) {
+    const na = norm(a);
+    if (na === q || na.startsWith(q) || wordStart(na, q)) return [4, a];
+    if (na.includes(q)) return [5, a];
+  }
+  return null;
+}
+function matchEntries(query) {
+  const q = norm(query);
+  if (!q) return [];
+  const scored = [];
+  for (const e of entries) {
+    const r = rankEntry(q, e);
+    if (r) scored.push({ rank: r[0], via: r[1], e });
+  }
+  scored.sort((a, b) => a.rank - b.rank || a.e.name.length - b.e.name.length || a.e.name.localeCompare(b.e.name));
+  return scored.slice(0, 8);
+}
+function highlight(name, query) {
+  const i = name.toLowerCase().indexOf(query.toLowerCase());
+  if (i < 0 || !query) return escapeHtml(name);
+  return `${escapeHtml(name.slice(0, i))}<mark>${escapeHtml(name.slice(i, i + query.length))}</mark>${escapeHtml(name.slice(i + query.length))}`;
+}
+
 async function loadStops() {
   try {
     const res = await fetch("/api/stops");
     const data = await res.json();
-    allStops = data.stops || [];
+    entries = Array.isArray(data.entries) ? data.entries : (data.stops || []).map((name) => ({ name, aliases: [] }));
   } catch (err) {
-    allStops = [];
+    entries = [];
   }
 }
-function showSuggestions(input, list) {
-  const q = input.value.trim().toLowerCase();
-  const matches = q ? allStops.filter((s) => s.toLowerCase().includes(q)).slice(0, 8) : [];
-  list.innerHTML = "";
-  list.classList.toggle("active", matches.length > 0);
-  matches.forEach((stop) => {
-    const li = document.createElement("li");
-    li.setAttribute("role", "option");
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.textContent = stop;
-    btn.addEventListener("click", () => {
-      input.value = stop;
-      list.classList.remove("active");
-      input.focus();
+
+function setupAutocomplete(input, list) {
+  let items = [];
+  let active = -1;
+
+  function close() {
+    list.classList.remove("active");
+    list.innerHTML = "";
+    input.setAttribute("aria-expanded", "false");
+    items = [];
+    active = -1;
+  }
+  function pick(i) {
+    if (i < 0 || i >= items.length) return;
+    input.value = items[i].e.name;
+    close();
+  }
+  function render() {
+    const q = input.value.trim();
+    items = matchEntries(q);
+    active = -1;
+    list.innerHTML = "";
+    if (!items.length) { close(); return; }
+    items.forEach((it, i) => {
+      const li = document.createElement("li");
+      li.setAttribute("role", "option");
+      li.id = `${list.id}-${i}`;
+      li.setAttribute("aria-selected", "false");
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.tabIndex = -1;
+      btn.innerHTML = `<span>${highlight(it.e.name, q)}</span>` +
+        (it.via ? `<span class="sugg-alias">also called <b>${escapeHtml(it.via)}</b></span>` : "");
+      btn.addEventListener("mousedown", (e) => { e.preventDefault(); pick(i); });
+      li.appendChild(btn);
+      list.appendChild(li);
     });
-    li.appendChild(btn);
-    list.appendChild(li);
+    list.classList.add("active");
+    input.setAttribute("aria-expanded", "true");
+  }
+  function setActive(i) {
+    active = i;
+    [...list.children].forEach((li, k) => li.setAttribute("aria-selected", String(k === i)));
+    if (i >= 0) {
+      input.setAttribute("aria-activedescendant", list.children[i].id);
+      list.children[i].scrollIntoView({ block: "nearest" });
+    } else {
+      input.removeAttribute("aria-activedescendant");
+    }
+  }
+
+  input.addEventListener("input", render);
+  input.addEventListener("focus", () => { if (input.value.trim()) render(); });
+  input.addEventListener("keydown", (e) => {
+    const open = list.classList.contains("active") && items.length > 0;
+    if (e.key === "ArrowDown" && open) { e.preventDefault(); setActive((active + 1) % items.length); }
+    else if (e.key === "ArrowUp" && open) { e.preventDefault(); setActive((active - 1 + items.length) % items.length); }
+    else if (e.key === "Enter" && open) {
+      // Enter completes the suggestion (highlighted one, else the best match)
+      // instead of submitting a half-typed name.
+      const exact = items.some((it) => it.e.name.toLowerCase() === input.value.trim().toLowerCase());
+      if (active >= 0 || !exact) { e.preventDefault(); pick(active >= 0 ? active : 0); }
+      else close();
+    }
+    else if (e.key === "Tab" && open) { pick(active >= 0 ? active : 0); }
+    else if (e.key === "Escape") { close(); }
   });
+  input.addEventListener("blur", () => setTimeout(close, 120));
 }
-const fromSuggestions = document.getElementById("from-suggestions");
-const toSuggestions = document.getElementById("to-suggestions");
-fromInput.addEventListener("input", () => showSuggestions(fromInput, fromSuggestions));
-toInput.addEventListener("input", () => showSuggestions(toInput, toSuggestions));
-document.addEventListener("click", (e) => {
-  if (!e.target.closest(".autocomplete-wrapper")) {
-    fromSuggestions.classList.remove("active");
-    toSuggestions.classList.remove("active");
-  }
-});
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    fromSuggestions.classList.remove("active");
-    toSuggestions.classList.remove("active");
-  }
-});
+setupAutocomplete(fromInput, document.getElementById("from-suggestions"));
+setupAutocomplete(toInput, document.getElementById("to-suggestions"));
 
 /* ---------- mode / time controls ---------- */
 function syncModeUI() {
@@ -117,11 +191,8 @@ modeSelect.addEventListener("change", syncModeUI);
 /* ---------- meta + alerts ---------- */
 function renderBanners(warnings, alerts) {
   const items = [];
-  (alerts || []).forEach((a) => items.push(`<p class="alert alert--service">⚠️ ${escapeHtml(a)}</p>`));
-  (warnings || []).forEach((w) => {
-    const text = w.replace(/^[a-z_]+:\s*/, "");
-    items.push(`<p class="alert">ℹ️ ${escapeHtml(text)}</p>`);
-  });
+  (alerts || []).forEach((a) => items.push(`<p>⚠️ ${escapeHtml(a)}</p>`));
+  (warnings || []).forEach((w) => items.push(`<p class="alert--info">ℹ️ ${escapeHtml(w.replace(/^[a-z_]+:\s*/, ""))}</p>`));
   alertsEl.innerHTML = items.join("");
   alertsEl.hidden = items.length === 0;
 }
@@ -134,10 +205,8 @@ async function loadMeta() {
       ? fetched.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" })
       : "unknown";
     metaEl.innerHTML =
-      `Schedule: <strong>${escapeHtml(m.dataset.label)}</strong> · OCCT pages checked ${escapeHtml(fetchedText)} · ` +
-      `Today: ${escapeHtml(m.today.profile)} service (${escapeHtml(m.today.status)})` +
-      ` · <a href="https://occtransport.org/news.html" target="_blank" rel="noopener">OCCT news</a>` +
-      ` · <a href="${ETA_URL}" target="_blank" rel="noopener">Live buses</a>`;
+      `Schedule: ${escapeHtml(m.dataset.label)} · OCCT pages checked ${escapeHtml(fetchedText)} · ` +
+      `Today: ${escapeHtml(m.today.profile)} service (${escapeHtml(m.today.status)})`;
     renderBanners(m.warnings, m.alerts);
   } catch (err) {
     metaEl.textContent = "Schedule information unavailable.";
@@ -149,7 +218,7 @@ function renderLeg(leg) {
   if (leg.type === "walk") {
     if (leg.minutes === 0) return "";
     const kind = leg.transfer ? "Transfer: walk" : "Walk";
-    return `<li class="leg leg--walk">🚶 ${kind} <strong>${leg.minutes} min</strong> (${leg.meters} m) to <strong>${escapeHtml(leg.to)}</strong></li>`;
+    return `<li class="leg leg--walk">🚶 ${kind} <b>${leg.minutes} min</b> (${leg.meters} m) to <b>${escapeHtml(leg.to)}</b></li>`;
   }
   const between = leg.stops.slice(1, -1);
   const stopsHtml = between.length
@@ -157,53 +226,54 @@ function renderLeg(leg) {
          <ul class="between-stops">${between.map((s) => `<li>${escapeHtml(s.name)} <span class="t-muted">${timeText(s)}</span></li>`).join("")}</ul>
        </details>`
     : "";
-  const badge = leg.late_nite ? '<span class="route-badge route-badge--late">Late Nite</span>' : "";
+  const badge = leg.late_nite ? '<span class="chip chip-eve">Late Nite</span>' : "";
   const dir = [leg.direction_label, leg.headsign].filter(Boolean).join(" · ");
   const note = leg.note ? `<p class="leg__note">${escapeHtml(leg.note)}</p>` : "";
   return `<li class="leg leg--ride">
-    <div class="leg__line">🚌 <strong>${escapeHtml(leg.line_name)}</strong> ${badge}<span class="leg__dir">${escapeHtml(dir)}</span></div>
-    <div class="leg__stop"><span class="step-label">Board</span> <strong>${escapeHtml(leg.board.name)}</strong> at <strong class="time-value">${timeText(leg.board)}</strong></div>
-    <div class="leg__stop leg__stop--off"><span class="step-label">Get off</span> <strong>${escapeHtml(leg.alight.name)}</strong> at <strong class="time-value">${timeText(leg.alight)}</strong> <span class="t-muted">(${leg.ride_minutes} min ride)</span></div>
+    <div class="leg__line">🚌 <b>${escapeHtml(leg.line_name)}</b> ${badge}<span class="leg__dir">${escapeHtml(dir)}</span></div>
+    <div class="leg__stop">Board <b>${escapeHtml(leg.board.name)}</b> at <span class="time">${timeText(leg.board)}</span></div>
+    <div class="leg__stop leg__stop--off">Get off <b>${escapeHtml(leg.alight.name)}</b> at <span class="time">${timeText(leg.alight)}</span> <span class="t-muted">(${leg.ride_minutes} min ride)</span></div>
     ${note}${stopsHtml}
   </li>`;
 }
 
 function renderJourney(j, idx) {
-  const badges = [];
-  if (j.walk_only) badges.push('<span class="route-badge">Walk only</span>');
-  if (j.late_nite) badges.push('<span class="route-badge route-badge--late">Late Nite</span>');
-  if (j.has_estimates) badges.push('<span class="route-badge route-badge--est" title="Times marked ~ are estimated between published timepoints">~ estimated</span>');
-  const xfer = j.transfers === 0 ? "direct" : `${j.transfers} transfer${j.transfers === 1 ? "" : "s"}`;
-  return `<article class="route-card journey">
-    <div class="route-card__head">
-      <span class="route-card__badge">Option ${idx + 1}</span>${badges.join("")}
+  const chips = [];
+  if (j.walk_only) chips.push('<span class="chip chip-int">Walk only</span>');
+  else if (j.transfers === 0) chips.push('<span class="chip chip-run">Direct</span>');
+  else chips.push(`<span class="chip chip-off">${j.transfers} transfer${j.transfers === 1 ? "" : "s"}</span>`);
+  if (j.late_nite) chips.push('<span class="chip chip-eve">Late Nite</span>');
+  if (j.has_estimates) chips.push('<span class="chip chip-off" title="Times marked ~ are estimated between published timepoints">~ estimated</span>');
+  return `<article class="box journey">
+    <div class="box-head"><h2>Option ${idx + 1}</h2><div class="chips">${chips.join("")}</div></div>
+    <div class="box-body">
+      <div class="journey-times">
+        <span>${stampText(j.depart)}</span><span class="arrow">→</span><span>${stampText(j.arrive)}</span>
+      </div>
+      <p class="journey-meta">${j.duration_min} min total · ${j.walk_min} min walking</p>
+      <ol class="legs">${j.legs.map(renderLeg).join("")}</ol>
     </div>
-    <div class="journey__times">
-      <span class="time-value">${stampText(j.depart, false)}</span> <span class="arrow">→</span>
-      <span class="time-value">${stampText(j.arrive, false)}</span>
-    </div>
-    <p class="meta-line">${j.duration_min} min · ${xfer} · ${j.walk_min} min walking</p>
-    <ol class="legs">${j.legs.map(renderLeg).join("")}</ol>
   </article>`;
 }
 
 function renderUntimed(u) {
-  return `<article class="route-card untimed">
-    <div class="route-card__head"><span class="route-badge">No timetable</span>
-      <h2 class="route-card__title">${escapeHtml(u.line_name)} — ${escapeHtml(u.service)}</h2></div>
-    <p class="meta-line">Runs continuously ${escapeHtml(u.hours)}, ${escapeHtml(u.days.join("–").replace(/^Mon–.*Fri$/, "Mon–Fri"))}.
-      Board at <strong>${escapeHtml(u.board)}</strong> (${u.walk_to_min} min walk), get off at <strong>${escapeHtml(u.alight)}</strong> (${u.walk_from_min} min walk).</p>
-    <p class="step-sub">${escapeHtml(u.note)} <a href="${ETA_URL}" target="_blank" rel="noopener">Open ETA Transit</a></p>
+  const days = u.days.length === 5 ? "Mon–Fri" : u.days.join(", ");
+  return `<article class="box untimed">
+    <div class="box-head"><h2>${escapeHtml(u.line_name)} — ${escapeHtml(u.service)}</h2><div class="chips"><span class="chip chip-off">No timetable</span></div></div>
+    <div class="box-body">
+      <p>Runs continuously <b>${escapeHtml(u.hours)}</b>, ${escapeHtml(days)}. Board at <b>${escapeHtml(u.board)}</b> (${u.walk_to_min} min walk), get off at <b>${escapeHtml(u.alight)}</b> (${u.walk_from_min} min walk).</p>
+      <p class="t-muted" style="margin-top:6px">${escapeHtml(u.note)} <a href="${ETA_URL}" target="_blank" rel="noopener">Open ETA Transit</a></p>
+    </div>
   </article>`;
 }
 
 function renderResults(data) {
   const parts = [];
-  if (data.message) parts.push(`<div class="ranking-note" role="note"><p>${escapeHtml(data.message)}</p></div>`);
+  if (data.message) parts.push(`<div class="notice-box">${escapeHtml(data.message)}</div>`);
   parts.push(...data.journeys.map(renderJourney));
   parts.push(...(data.untimed_services || []).map(renderUntimed));
   if (data.journeys.some((j) => j.has_estimates)) {
-    parts.push('<p class="legend">Times marked <strong>~</strong> are estimated between the timepoints OCCT publishes.</p>');
+    parts.push('<p class="legend">Times marked <b>~</b> are estimated between the timepoints OCCT publishes.</p>');
   }
   resultsEl.innerHTML = parts.join("");
 }
@@ -257,6 +327,10 @@ async function runQuery() {
     if (!res.ok) {
       const detail = Array.isArray(data.detail) ? data.detail.map((d) => d.msg).join("; ") : data.detail;
       throw new Error(detail || "Failed to fetch routes.");
+    }
+    if (!Array.isArray(data.journeys)) {
+      // An old copy of this page talking to a newer API (or vice versa).
+      throw new Error("This page is out of date — reload it to get the latest planner.");
     }
     syncUrl(q);
     const n = data.journeys.length;
