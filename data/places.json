@@ -255,36 +255,36 @@
   "osm_name": "Greater Binghamton Transportation Center"
  },
  "Harrison Street": {
-  "lat": 42.109538,
-  "lon": -75.958545,
+  "lat": 42.1076878,
+  "lon": -75.9583479,
   "aliases": [],
   "kind": "stop",
-  "source": "https://www.openstreetmap.org/way/12732097",
-  "osm_name": "Harrison Street, Johnson City (WS corridor between Ackley Ave and Roberts St)"
+  "source": "https://www.openstreetmap.org/node/116452759",
+  "osm_name": "intersection of Harrison Street & Floral Avenue (OSM road node; the line runs on Floral Avenue)"
  },
  "Roberts Street": {
-  "lat": 42.109218,
-  "lon": -75.956293,
+  "lat": 42.1079701,
+  "lon": -75.956144,
   "aliases": [],
   "kind": "stop",
-  "source": "https://www.openstreetmap.org/way/12762201",
-  "osm_name": "Roberts Street, Johnson City"
+  "source": "https://www.openstreetmap.org/node/116619011",
+  "osm_name": "intersection of Roberts Street & Floral Avenue (OSM road node; the line runs on Floral Avenue)"
  },
  "St Charles Street": {
-  "lat": 42.10931,
-  "lon": -75.960664,
+  "lat": 42.115754,
+  "lon": -75.961417,
   "aliases": [],
   "kind": "stop",
-  "source": "https://www.openstreetmap.org/way/12752774",
-  "osm_name": "Saint Charles Street, Johnson City (between Albert St and Baldwin St on MS)"
+  "source": "https://www.openstreetmap.org/node/116533721",
+  "osm_name": "intersection of Saint Charles Street & Main Street (OSM road node; the line runs on Main Street)"
  },
  "Baldwin Street": {
-  "lat": 42.110483,
-  "lon": -75.957572,
+  "lat": 42.115856,
+  "lon": -75.9582,
   "aliases": [],
   "kind": "stop",
-  "source": "https://www.openstreetmap.org/way/12767276",
-  "osm_name": "Baldwin Street, Johnson City"
+  "source": "https://www.openstreetmap.org/node/116533709",
+  "osm_name": "intersection of Baldwin Street & Main Street (OSM road node; the line runs on Main Street)"
  },
  "Gannett Building": {
   "lat": 42.117337,
@@ -325,5 +325,301 @@
   "kind": "stop",
   "source": null,
   "osm_name": "No OpenStreetMap match near University Plaza; old cache value pointed at Hayes St in Binghamton's south side, which is wrong for a UClub-route stop. Location unknown until confirmed with OCCT."
+ },
+ "Murray Street": {
+  "lat": 42.0994577,
+  "lon": -75.9210986,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/node/116533766",
+  "osm_name": "intersection of Murray Street & Main Street (OSM road node; the line runs on Main Street)"
+ },
+ "Murray Street (Leroy St)": {
+  "lat": 42.0954968,
+  "lon": -75.9225061,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/way/59463927",
+  "osm_name": "south end of Murray St, the Leroy St side (DCL stop; 'Leroy & Murray' timepoint). Within ~100 m of the junction."
+ },
+ "Front Street": {
+  "lat": 42.0987937,
+  "lon": -75.9175204,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/way/45416093",
+  "osm_name": "south end of Front St at Main St (WS stop between Murray St and Court & Hawley). Old cache value was 1.2 km north on the same street."
+ },
+ "First Street": {
+  "lat": 42.115706,
+  "lon": -75.964298,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/node/116533738",
+  "osm_name": "intersection of 1st Street & Main Street (OSM road node; the line runs on Main Street)"
+ },
+ "Rail Trail": {
+  "lat": 42.0999826,
+  "lon": -76.0069766,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/way/33110494",
+  "osm_name": "east end of the Vestal Rail Trail segment nearest the VS sequence (Shoppes at Vestal -> Rail Trail -> Willow Point). APPROXIMATE: the stop's exact point along the trail is not published; old cache value was the trail's far-west end, 4 km off-route."
+ },
+ "Admissions": {
+  "lat": 42.0876375,
+  "lon": -75.9658777,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/relation/12596265",
+  "osm_name": "Admissions Building, West Drive (Inner Loop stop)"
+ },
+ "New York Avenue": {
+  "lat": 42.1071155,
+  "lon": -75.9630439,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/node/116504766",
+  "osm_name": "intersection of New York Avenue & Floral Avenue (OSM road node; the line runs on Floral Avenue)"
+ },
+ "Ackley Avenue": {
+  "lat": 42.1074372,
+  "lon": -75.9603289,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/node/116451719",
+  "osm_name": "intersection of Ackley Avenue & Floral Avenue (OSM road node; the line runs on Floral Avenue)"
+ },
+ "Willow Street": {
+  "lat": 42.1081997,
+  "lon": -75.9542771,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/node/116591919",
+  "osm_name": "intersection of Willow Street & Floral Avenue (OSM road node; the line runs on Floral Avenue)"
+ },
+ "Burbank Avenue": {
+  "lat": 42.1085514,
+  "lon": -75.9522527,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/node/116330042",
+  "osm_name": "intersection of Burbank Avenue & Floral Avenue (OSM road node; the line runs on Floral Avenue)"
+ },
+ "Cleveland Avenue": {
+  "lat": 42.1090364,
+  "lon": -75.9488986,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/node/116618958",
+  "osm_name": "intersection of Cleveland Avenue & Floral Avenue (OSM road node; the line runs on Floral Avenue)"
+ },
+ "Matthews Street": {
+  "lat": 42.109461,
+  "lon": -75.941542,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/node/116323364",
+  "osm_name": "intersection of Matthews Street & Main Street (OSM road node; the line runs on Main Street)"
+ },
+ "Crestmont Road": {
+  "lat": 42.108232,
+  "lon": -75.939312,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/node/116531369",
+  "osm_name": "intersection of Crestmont Road & Main Street (OSM road node; the line runs on Main Street)"
+ },
+ "Crary Avenue": {
+  "lat": 42.1099629,
+  "lon": -75.9424519,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/node/116531394",
+  "osm_name": "intersection of Crary Avenue & Main Street (OSM road node; the line runs on Main Street)"
+ },
+ "Helen Street": {
+  "lat": 42.107084,
+  "lon": -75.93721,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/node/116531354",
+  "osm_name": "intersection of Helen Street & Main Street (OSM road node; the line runs on Main Street)"
+ },
+ "Schiller Street": {
+  "lat": 42.1053556,
+  "lon": -75.9340747,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/node/116531327",
+  "osm_name": "intersection of Schiller Street & Main Street (OSM road node; the line runs on Main Street)"
+ },
+ "Clarke Street": {
+  "lat": 42.103168,
+  "lon": -75.93013,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/node/116358259",
+  "osm_name": "intersection of Clarke Street & Main Street (OSM road node; the line runs on Main Street)"
+ },
+ "Cedar Street": {
+  "lat": 42.102245,
+  "lon": -75.928464,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/node/116533799",
+  "osm_name": "intersection of Cedar Street & Main Street (OSM road node; the line runs on Main Street)"
+ },
+ "Arthur Street": {
+  "lat": 42.100289,
+  "lon": -75.924486,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/node/116435276",
+  "osm_name": "intersection of Arthur Street & Main Street (OSM road node; the line runs on Main Street)"
+ },
+ "Mather Street": {
+  "lat": 42.100377,
+  "lon": -75.924764,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/node/116524104",
+  "osm_name": "intersection of Mather Street & Main Street (OSM road node; the line runs on Main Street)"
+ },
+ "Baker Street": {
+  "lat": 42.115705,
+  "lon": -75.96552,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/node/116532792",
+  "osm_name": "intersection of Baker Street & Main Street (OSM road node; the line runs on Main Street)"
+ },
+ "Albert Street": {
+  "lat": 42.115715,
+  "lon": -75.963557,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/node/116533733",
+  "osm_name": "intersection of Albert Street & Main Street (OSM road node; the line runs on Main Street)"
+ },
+ "Ethel Street": {
+  "lat": 42.102237,
+  "lon": -75.961422,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/node/116513265",
+  "osm_name": "intersection of Ethel Street & Riverside Drive (OSM road node; the line runs on Riverside Drive)"
+ },
+ "Elfred Street": {
+  "lat": 42.100606,
+  "lon": -75.959115,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/node/116325004",
+  "osm_name": "intersection of Elfred Street & Riverside Drive (OSM road node; the line runs on Riverside Drive)"
+ },
+ "Columbus Place": {
+  "lat": 42.099389,
+  "lon": -75.954983,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/node/116502058",
+  "osm_name": "intersection of Columbus Place & Riverside Drive (OSM road node; the line runs on Riverside Drive)"
+ },
+ "Margaret Street": {
+  "lat": 42.098119,
+  "lon": -75.949298,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/node/116630846",
+  "osm_name": "intersection of Margaret Street & Riverside Drive (OSM road node; the line runs on Riverside Drive)"
+ },
+ "Riverside Dr & Beethoven St - Lourdes Hospital": {
+  "lat": 42.0924118,
+  "lon": -75.9343028,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/node/116375501",
+  "osm_name": "intersection of Beethoven Street & Riverside Drive (OSM road node; the line runs on Riverside Drive)"
+ },
+ "Chestnut Street": {
+  "lat": 42.095734,
+  "lon": -75.926715,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/node/116450640",
+  "osm_name": "intersection of Chestnut Street & Leroy Street (OSM road node; the line runs on Leroy Street)"
+ },
+ "Riverside Dr & Front St": {
+  "lat": 42.092938,
+  "lon": -75.919366,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/node/116522416",
+  "osm_name": "intersection of Front Street & Riverside Drive (OSM road node; the line runs on Riverside Drive)"
+ },
+ "South Washington Street": {
+  "lat": 42.0913903,
+  "lon": -75.9143287,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/node/116242246",
+  "osm_name": "intersection of South Washington Street & Conklin Avenue (OSM road node; the line runs on Conklin Avenue)"
+ },
+ "Tremont Avenue": {
+  "lat": 42.0925339,
+  "lon": -75.9099571,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/node/116498488",
+  "osm_name": "intersection of Tremont Avenue & Conklin Avenue (OSM road node; the line runs on Conklin Avenue)"
+ },
+ "Livingston Street": {
+  "lat": 42.0927142,
+  "lon": -75.9085134,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/node/116667058",
+  "osm_name": "intersection of Livingston Street & Conklin Avenue (OSM road node; the line runs on Conklin Avenue)"
+ },
+ "Telegraph Street": {
+  "lat": 42.093711,
+  "lon": -75.901791,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/node/116656597",
+  "osm_name": "intersection of Telegraph Street & Conklin Avenue (OSM road node; the line runs on Conklin Avenue)"
+ },
+ "Alfred Street": {
+  "lat": 42.094322,
+  "lon": -75.897745,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/node/116358015",
+  "osm_name": "intersection of Alfred Street & Conklin Avenue (OSM road node; the line runs on Conklin Avenue)"
+ },
+ "Mirabito Stadium / Henry & Fayette Streets": {
+  "lat": 42.1020011,
+  "lon": -75.9056197,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/node/116604579",
+  "osm_name": "intersection of Fayette Street & Henry Street (OSM road node; the line runs on Henry Street)"
+ },
+ "St Charles Street (Floral Ave)": {
+  "lat": 42.1074203,
+  "lon": -75.9604655,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/node/116616720",
+  "osm_name": "intersection of Saint Charles Street & Floral Avenue (Westside inbound stop; the opposite-curb twin of the outbound Ackley Avenue stop). MS's 'St Charles Street' is a different stop on Main St."
+ },
+ "Cook Street": {
+  "lat": 42.1070578,
+  "lon": -75.963546,
+  "aliases": [],
+  "kind": "stop",
+  "source": "https://www.openstreetmap.org/node/116619043",
+  "osm_name": "intersection of Cook Street & Floral Avenue (Westside inbound; opposite-curb twin of the outbound New York Avenue stop)"
  }
 }

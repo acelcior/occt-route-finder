@@ -50,13 +50,46 @@ Rosh Hashanah 10-01/02, Yom Kippur 10-11, Thanksgiving 11-24..28), Spring 2028.
 4. **Early-end days**: the planner cannot cut a day short without the "final runs" list.
    Add `cancel_trip`-style overrides when OCCT posts them (not implemented yet).
 
-## Stops without coordinates (excluded from map snapping, still searchable by name)
+## Stop coordinates: audit status (Nov 2026)
 
-- `admissions` — Admissions Center (Inner Loop). No OSM feature found.
-- `decker_health_services` — Decker Student Health Services (Outer Loop, by request).
-- `lot_b_old_dickinson` — Lot B (Inner Loop). No OSM feature found.
-- `hayes` — UClub/IU/RIU stop "Hayes" near Meadows / University Plaza. The old cache
-  pointed at Hayes St in Binghamton's south side (wrong); no OSM match near Vestal.
+How they were checked: every stop was cross-checked against OpenStreetMap by name and
+against its neighbours in each route's stop sequence (a wrong point shows up as a
+detour); street-named stops were then placed at the **intersection of the street with
+the road the line runs on** (OCCT's route pages state the road: WS = Floral Ave / Main St,
+DCL = Riverside Dr / Leroy St, MS = Main St, DS = Conklin Ave) using the shared OSM road
+node. OCCT's own stop pages say "coordinates coming soon", so there is no official
+source yet. Every sourced point is in `data/places.json` with its OSM id.
+
+Still open:
+
+- **No coordinates** (searchable by name, not snapped from addresses):
+  `decker_health_services` (Outer Loop, request stop), `lot_b_old_dickinson` (Inner Loop),
+  `hayes` (UClub/IU/RIU stop near Meadows / University Plaza; the old value was Hayes St in
+  Binghamton's south side, which is wrong). Ask OCCT where the curb is.
+- **Approximate** (street centroid or segment end, ±200–500 m): `jackson_street`,
+  `webster_street` (DS; no OSM intersection with Conklin or Vestal Ave found),
+  `nursing_school`, `rail_trail` (east end of the Vestal Rail Trail segment nearest the
+  VS sequence — the stop's exact point along the trail is unpublished).
+- **Confirm with OCCT**: `first_street` = 1st Street, Johnson City (the only "First
+  Street" in the area; fits MS inbound St Charles → First → campus). The old value was
+  the First Congregational Church on Main St.
+- **Same name, different curb** — handled with `page_stop_renames` in
+  `data/build_config.json`: DCL's "Murray Street" (Leroy St) vs WS/MS's (Main St);
+  WS's "St Charles Street" (Floral Ave, opposite curb of Ackley Ave) vs MS's (Main St).
+  Add an entry there if OCCT introduces another shared name.
+Overpass query used to find an intersection node (paste at https://overpass-turbo.eu,
+replace the two street names; the result's node id goes into `places.json` as `source`):
+
+```
+[out:json][timeout:60];
+way["name"="Ackley Avenue"](42.05,-76.05,42.16,-75.85);  node(w)->.a;
+way["name"="Floral Avenue"](42.05,-76.05,42.16,-75.85);  node(w)->.b;
+node.a.b; out;
+```
+
+- `ds` weekend outbound table shows Union 10:15 → Conklin & S Washington 10:18 (3 min for
+  4.5 km; weekdays take 8 min). That is OCCT's published table, reproduced as-is — worth
+  asking OCCT whether it is a typo.
 
 ## Judgment calls baked into `scripts/build_dataset.py` (confirm with OCCT)
 

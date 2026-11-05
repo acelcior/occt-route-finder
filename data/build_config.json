@@ -1,5 +1,5 @@
 {
- "_about": "Everything a maintainer edits for a routine schedule update. seasons: one entry per OCCT schedule period (effective_from comes from OCCT's semester bulletin). pages: route page slug -> display name and shape ('scroll' = the page's stop list is the running order; 'timepoints' = only the timetable columns are reliable). stop_aliases: normalized spelling -> canonical stop name, so one curb has one id. timepoint_aliases: lowercased timetable column header -> canonical stop name, only where the header does not normalize to a stop on the line. seasonal_lines: lines that only run in summer / interim weeks (the service calendar decides when).",
+ "_about": "Everything a maintainer edits for a routine schedule update. seasons: one entry per OCCT schedule period (effective_from comes from OCCT's semester bulletin). pages: route page slug -> display name and shape ('scroll' = the page's stop list is the running order; 'timepoints' = only the timetable columns are reliable). stop_aliases: normalized spelling -> canonical stop name, so one curb has one id. timepoint_aliases: lowercased timetable column header -> canonical stop name, only where the header does not normalize to a stop on the line. seasonal_lines: lines that only run in summer / interim weeks (the service calendar decides when). page_stop_renames: page slug -> {name on that page: distinct canonical name} for stops that share a name with a different physical stop on another line.",
  "seasons": {
   "fall2026": {
    "label": "Fall 2026",
@@ -101,11 +101,19 @@
   "murray st": "Murray Street",
   "riverside & columbus": "Columbus Place",
   "leroy & columbus": "Columbus Place",
-  "leroy & murray": "Murray Street",
+  "leroy & murray": "Murray Street (Leroy St)",
   "conklin & s washington st.": "South Washington Street",
   "meadows & hayes": "Meadows",
   "town square mall / walmart": "Walmart / Town Square Mall Stop #2",
   "washington & lehigh": "Washington Dr & Lehigh Av",
   "itc": "Innovative Technologies Complex (ITC)"
+ },
+ "page_stop_renames": {
+  "dcl": {
+   "Murray Street": "Murray Street (Leroy St)"
+  },
+  "ws": {
+   "St Charles Street": "St Charles Street (Floral Ave)"
+  }
  }
 }

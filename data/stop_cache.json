@@ -23,65 +23,9 @@
     "lat": 42.09216409426842,
     "lon": -75.97456363280493
   },
-  "New York Avenue": {
-    "lat": 42.1053975,
-    "lon": -75.9622644
-  },
-  "Ackley Avenue": {
-    "lat": 42.1035335,
-    "lon": -75.958513
-  },
-  "Willow Street": {
-    "lat": 42.1106888,
-    "lon": -75.9544986
-  },
-  "Burbank Avenue": {
-    "lat": 42.1022672,
-    "lon": -75.9519296
-  },
-  "Cleveland Avenue": {
-    "lat": 42.1064621,
-    "lon": -75.948449
-  },
   "Floral Av & Main St": {
     "lat": 42.11117673469614,
     "lon": -75.94504207513248
-  },
-  "Matthews Street": {
-    "lat": 42.100612,
-    "lon": -75.9426101
-  },
-  "Crestmont Road": {
-    "lat": 42.1056131,
-    "lon": -75.9418972
-  },
-  "Helen Street": {
-    "lat": 42.1018129,
-    "lon": -75.940559
-  },
-  "Schiller Street": {
-    "lat": 42.10335,
-    "lon": -75.936082
-  },
-  "Clarke Street": {
-    "lat": 42.1011424,
-    "lon": -75.9299103
-  },
-  "Cedar Street": {
-    "lat": 42.1007204,
-    "lon": -75.9284275
-  },
-  "Arthur Street": {
-    "lat": 42.099065,
-    "lon": -75.924912
-  },
-  "Murray Street": {
-    "lat": 42.1026284,
-    "lon": -75.9199777
-  },
-  "Front Street": {
-    "lat": 42.1093226,
-    "lon": -75.9121503
   },
   "Court & Hawley Streets": {
     "lat": 42.09869704982519,
@@ -95,18 +39,6 @@
     "lat": 42.0957335,
     "lon": -75.9131945
   },
-  "Mather Street": {
-    "lat": 42.101208,
-    "lon": -75.9244775
-  },
-  "Crary Avenue": {
-    "lat": 42.1008476,
-    "lon": -75.9435537
-  },
-  "Cook Street": {
-    "lat": 42.1085516,
-    "lon": -75.9637017
-  },
   "Hinman / Academic A": {
     "lat": 42.08872203054464,
     "lon": -75.97315228570167
@@ -114,14 +46,6 @@
   "State & Hawley Streets": {
     "lat": 42.09716773831353,
     "lon": -75.91249679662828
-  },
-  "Baker Street": {
-    "lat": 42.1136505,
-    "lon": -75.9653395
-  },
-  "Albert Street": {
-    "lat": 42.113739,
-    "lon": -75.963348
   },
   "Pharmacy School": {
     "lat": 42.1128116,
@@ -151,30 +75,6 @@
     "lat": 42.11278062483488,
     "lon": -75.95472014020399
   },
-  "First Street": {
-    "lat": 42.0991667,
-    "lon": -75.9177778
-  },
-  "Ethel Street": {
-    "lat": 42.103361,
-    "lon": -75.958456
-  },
-  "Elfred Street": {
-    "lat": 42.100835,
-    "lon": -75.9582355
-  },
-  "Columbus Place": {
-    "lat": 42.1001055,
-    "lon": -75.9550694
-  },
-  "Margaret Street": {
-    "lat": 42.1072929,
-    "lon": -75.9498316
-  },
-  "Riverside Dr & Beethoven St - Lourdes Hospital": {
-    "lat": 42.09256241852081,
-    "lon": -75.93491469962213
-  },
   "Leroy & Beethoven Streets": {
     "lat": 42.09533190281066,
     "lon": -75.93463327116427
@@ -183,37 +83,9 @@
     "lat": 42.0955758,
     "lon": -75.93082
   },
-  "Chestnut Street": {
-    "lat": 42.0968036,
-    "lon": -75.926814
-  },
-  "Riverside Dr & Front St": {
-    "lat": 42.09275141019801,
-    "lon": -75.92176110017888
-  },
-  "South Washington Street": {
-    "lat": 42.0876001,
-    "lon": -75.9128074
-  },
-  "Tremont Avenue": {
-    "lat": 42.0908852,
-    "lon": -75.9096584
-  },
-  "Livingston Street": {
-    "lat": 42.0915453,
-    "lon": -75.9083036
-  },
   "Park Diner - High Street": {
     "lat": 42.0929815870476,
     "lon": -75.90494687946698
-  },
-  "Telegraph Street": {
-    "lat": 42.0923641,
-    "lon": -75.9016151
-  },
-  "Alfred Street": {
-    "lat": 42.0929303,
-    "lon": -75.897551
   },
   "Tompkins St & Conklin Av": {
     "lat": 42.09514295994718,
@@ -334,10 +206,6 @@
   "The Shoppes at Vestal": {
     "lat": 42.09483127230209,
     "lon": -76.01441438562864
-  },
-  "Rail Trail": {
-    "lat": 42.0878962,
-    "lon": -76.0517817
   },
   "Willow Point": {
     "lat": 42.1022971,

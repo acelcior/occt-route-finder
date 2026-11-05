@@ -74,6 +74,9 @@ SEASONAL_LINES: dict[str, str] = CONFIG["seasonal_lines"]
 PAGES: dict[str, dict[str, Any]] = CONFIG["pages"]
 STOP_ALIASES: dict[str, str] = CONFIG["stop_aliases"]
 TIMEPOINT_ALIASES: dict[str, str] = CONFIG["timepoint_aliases"]
+# page slug -> {name on that page: distinct canonical name}, for stops that share a
+# name with a different physical stop on another line (e.g. two "Murray Street"s).
+PAGE_STOP_RENAMES: dict[str, dict[str, str]] = CONFIG.get("page_stop_renames", {})
 
 # Untimed continuous loops. Hours are parsed from the page text with these
 # patterns so a site change is caught; stop lists come from the page's
@@ -317,6 +320,9 @@ class Builder:
     # -- one line ---------------------------------------------------------------
     def build_line(self, slug: str, cfg: dict[str, Any], html: str, url: str | None) -> dict[str, Any]:
         soup = BeautifulSoup(html, "html.parser")
+        renames = PAGE_STOP_RENAMES.get(slug, {})
+        register = self.stop_id
+        self.stop_id = lambda n: register(renames.get(n.rstrip(" *").strip(), n))  # page-scoped names
         for names in self.scroll_names(soup):
             for n in names:
                 self.stop_id(n)
@@ -433,6 +439,7 @@ class Builder:
                 line["trips"].append(trip)
 
         freq = self.frequency_services(slug, soup, slug)
+        self.stop_id = register
         if freq:
             line["frequency"] = freq
         if not line["trips"] and not freq:

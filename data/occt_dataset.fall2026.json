@@ -6,13 +6,12 @@
   "source": "https://occtransport.org/news.html — Semester Bulletin (Aug 6, 2026): \"Regular service begins Tuesday, August 18.\"",
   "season": "fall2026",
   "fetched_at": "2026-11-05T13:51:31-05:00",
-  "built_at": "2026-11-05T15:42:52-05:00",
+  "built_at": "2026-11-05T17:49:02-05:00",
   "seasonal_lines": {
    "riu": "summer",
    "ics": "interim"
   },
   "stops_missing_coords": [
-   "admissions",
    "decker_health_services",
    "hayes",
    "lot_b_old_dickinson"
@@ -43,44 +42,44 @@
   },
   "new_york_avenue": {
    "name": "New York Avenue",
-   "lat": 42.1053975,
-   "lon": -75.9622644,
+   "lat": 42.1071155,
+   "lon": -75.9630439,
    "aliases": []
   },
   "ackley_avenue": {
    "name": "Ackley Avenue",
-   "lat": 42.1035335,
-   "lon": -75.958513,
+   "lat": 42.1074372,
+   "lon": -75.9603289,
    "aliases": []
   },
   "harrison_street": {
    "name": "Harrison Street",
-   "lat": 42.109538,
-   "lon": -75.958545,
+   "lat": 42.1076878,
+   "lon": -75.9583479,
    "aliases": []
   },
   "roberts_street": {
    "name": "Roberts Street",
-   "lat": 42.109218,
-   "lon": -75.956293,
+   "lat": 42.1079701,
+   "lon": -75.956144,
    "aliases": []
   },
   "willow_street": {
    "name": "Willow Street",
-   "lat": 42.1106888,
-   "lon": -75.9544986,
+   "lat": 42.1081997,
+   "lon": -75.9542771,
    "aliases": []
   },
   "burbank_avenue": {
    "name": "Burbank Avenue",
-   "lat": 42.1022672,
-   "lon": -75.9519296,
+   "lat": 42.1085514,
+   "lon": -75.9522527,
    "aliases": []
   },
   "cleveland_avenue": {
    "name": "Cleveland Avenue",
-   "lat": 42.1064621,
-   "lon": -75.948449,
+   "lat": 42.1090364,
+   "lon": -75.9488986,
    "aliases": []
   },
   "floral_avenue_and_main_street": {
@@ -91,56 +90,56 @@
   },
   "matthews_street": {
    "name": "Matthews Street",
-   "lat": 42.100612,
-   "lon": -75.9426101,
+   "lat": 42.109461,
+   "lon": -75.941542,
    "aliases": []
   },
   "crestmont_road": {
    "name": "Crestmont Road",
-   "lat": 42.1056131,
-   "lon": -75.9418972,
+   "lat": 42.108232,
+   "lon": -75.939312,
    "aliases": []
   },
   "helen_street": {
    "name": "Helen Street",
-   "lat": 42.1018129,
-   "lon": -75.940559,
+   "lat": 42.107084,
+   "lon": -75.93721,
    "aliases": []
   },
   "schiller_street": {
    "name": "Schiller Street",
-   "lat": 42.10335,
-   "lon": -75.936082,
+   "lat": 42.1053556,
+   "lon": -75.9340747,
    "aliases": []
   },
   "clarke_street": {
    "name": "Clarke Street",
-   "lat": 42.1011424,
-   "lon": -75.9299103,
+   "lat": 42.103168,
+   "lon": -75.93013,
    "aliases": []
   },
   "cedar_street": {
    "name": "Cedar Street",
-   "lat": 42.1007204,
-   "lon": -75.9284275,
+   "lat": 42.102245,
+   "lon": -75.928464,
    "aliases": []
   },
   "arthur_street": {
    "name": "Arthur Street",
-   "lat": 42.099065,
-   "lon": -75.924912,
+   "lat": 42.100289,
+   "lon": -75.924486,
    "aliases": []
   },
   "murray_street": {
    "name": "Murray Street",
-   "lat": 42.1026284,
-   "lon": -75.9199777,
+   "lat": 42.0994577,
+   "lon": -75.9210986,
    "aliases": []
   },
   "front_street": {
    "name": "Front Street",
-   "lat": 42.1093226,
-   "lon": -75.9121503,
+   "lat": 42.0987937,
+   "lon": -75.9175204,
    "aliases": []
   },
   "court_and_hawley_streets": {
@@ -165,26 +164,26 @@
   },
   "mather_street": {
    "name": "Mather Street",
-   "lat": 42.101208,
-   "lon": -75.9244775,
+   "lat": 42.100377,
+   "lon": -75.924764,
    "aliases": []
   },
   "crary_avenue": {
    "name": "Crary Avenue",
-   "lat": 42.1008476,
-   "lon": -75.9435537,
+   "lat": 42.1099629,
+   "lon": -75.9424519,
    "aliases": []
   },
-  "saint_charles_street": {
-   "name": "St Charles Street",
-   "lat": 42.10931,
-   "lon": -75.960664,
+  "saint_charles_street_floral_avenue": {
+   "name": "St Charles Street (Floral Ave)",
+   "lat": 42.1074203,
+   "lon": -75.9604655,
    "aliases": []
   },
   "cook_street": {
    "name": "Cook Street",
-   "lat": 42.1085516,
-   "lon": -75.9637017,
+   "lat": 42.1070578,
+   "lon": -75.963546,
    "aliases": []
   },
   "hinman_academic_a": {
@@ -208,32 +207,32 @@
   },
   "ethel_street": {
    "name": "Ethel Street",
-   "lat": 42.103361,
-   "lon": -75.958456,
+   "lat": 42.102237,
+   "lon": -75.961422,
    "aliases": []
   },
   "elfred_street": {
    "name": "Elfred Street",
-   "lat": 42.100835,
-   "lon": -75.9582355,
+   "lat": 42.100606,
+   "lon": -75.959115,
    "aliases": []
   },
   "columbus_place": {
    "name": "Columbus Place",
-   "lat": 42.1001055,
-   "lon": -75.9550694,
+   "lat": 42.099389,
+   "lon": -75.954983,
    "aliases": []
   },
   "margaret_street": {
    "name": "Margaret Street",
-   "lat": 42.1072929,
-   "lon": -75.9498316,
+   "lat": 42.098119,
+   "lon": -75.949298,
    "aliases": []
   },
   "riverside_drive_and_beethoven_street_lourdes_hospital": {
    "name": "Riverside Dr & Beethoven St - Lourdes Hospital",
-   "lat": 42.09256241852081,
-   "lon": -75.93491469962213,
+   "lat": 42.0924118,
+   "lon": -75.9343028,
    "aliases": [
     "Riverside Dr & Beethoven St"
    ]
@@ -254,14 +253,20 @@
   },
   "chestnut_street": {
    "name": "Chestnut Street",
-   "lat": 42.0968036,
-   "lon": -75.926814,
+   "lat": 42.095734,
+   "lon": -75.926715,
+   "aliases": []
+  },
+  "murray_street_leroy_street": {
+   "name": "Murray Street (Leroy St)",
+   "lat": 42.0954968,
+   "lon": -75.9225061,
    "aliases": []
   },
   "riverside_drive_and_front_street": {
    "name": "Riverside Dr & Front St",
-   "lat": 42.09275141019801,
-   "lon": -75.92176110017888,
+   "lat": 42.092938,
+   "lon": -75.919366,
    "aliases": []
   },
   "front_and_leroy_streets": {
@@ -274,20 +279,20 @@
   },
   "south_washington_street": {
    "name": "South Washington Street",
-   "lat": 42.0876001,
-   "lon": -75.9128074,
+   "lat": 42.0913903,
+   "lon": -75.9143287,
    "aliases": []
   },
   "tremont_avenue": {
    "name": "Tremont Avenue",
-   "lat": 42.0908852,
-   "lon": -75.9096584,
+   "lat": 42.0925339,
+   "lon": -75.9099571,
    "aliases": []
   },
   "livingston_street": {
    "name": "Livingston Street",
-   "lat": 42.0915453,
-   "lon": -75.9083036,
+   "lat": 42.0927142,
+   "lon": -75.9085134,
    "aliases": []
   },
   "park_diner_high_street": {
@@ -298,14 +303,14 @@
   },
   "telegraph_street": {
    "name": "Telegraph Street",
-   "lat": 42.0923641,
-   "lon": -75.9016151,
+   "lat": 42.093711,
+   "lon": -75.901791,
    "aliases": []
   },
   "alfred_street": {
    "name": "Alfred Street",
-   "lat": 42.0929303,
-   "lon": -75.897551,
+   "lat": 42.094322,
+   "lon": -75.897745,
    "aliases": []
   },
   "tompkins_street_and_conklin_avenue": {
@@ -334,8 +339,8 @@
   },
   "mirabito_stadium_henry_and_fayette_streets": {
    "name": "Mirabito Stadium / Henry & Fayette Streets",
-   "lat": 42.102194933269324,
-   "lon": -75.90494908790288,
+   "lat": 42.1020011,
+   "lon": -75.9056197,
    "aliases": [
     "Fayette & Henry Streets - Mirabito Stadium"
    ]
@@ -357,20 +362,26 @@
   },
   "baker_street": {
    "name": "Baker Street",
-   "lat": 42.1136505,
-   "lon": -75.9653395,
+   "lat": 42.115705,
+   "lon": -75.96552,
    "aliases": []
   },
   "albert_street": {
    "name": "Albert Street",
-   "lat": 42.113739,
-   "lon": -75.963348,
+   "lat": 42.115715,
+   "lon": -75.963557,
+   "aliases": []
+  },
+  "saint_charles_street": {
+   "name": "St Charles Street",
+   "lat": 42.115754,
+   "lon": -75.961417,
    "aliases": []
   },
   "baldwin_street": {
    "name": "Baldwin Street",
-   "lat": 42.110483,
-   "lon": -75.957572,
+   "lat": 42.115856,
+   "lon": -75.9582,
    "aliases": []
   },
   "pharmacy_school": {
@@ -413,8 +424,8 @@
   },
   "first_street": {
    "name": "First Street",
-   "lat": 42.0991667,
-   "lon": -75.9177778,
+   "lat": 42.115706,
+   "lon": -75.964298,
    "aliases": []
   },
   "aldi": {
@@ -491,8 +502,8 @@
   },
   "rail_trail": {
    "name": "Rail Trail",
-   "lat": 42.0878962,
-   "lon": -76.0517817,
+   "lat": 42.0999826,
+   "lon": -76.0069766,
    "aliases": []
   },
   "willow_point": {
@@ -646,8 +657,8 @@
   },
   "admissions": {
    "name": "Admissions",
-   "lat": null,
-   "lon": null,
+   "lat": 42.0876375,
+   "lon": -75.9658777,
    "aliases": []
   },
   "lot_k_academic_a_and_b_science_2": {
@@ -730,7 +741,7 @@
       "willow_street",
       "roberts_street",
       "harrison_street",
-      "saint_charles_street",
+      "saint_charles_street_floral_avenue",
       "cook_street",
       "hinman_academic_a",
       "university_union"
@@ -782,7 +793,7 @@
       "willow_street",
       "roberts_street",
       "harrison_street",
-      "saint_charles_street",
+      "saint_charles_street_floral_avenue",
       "cook_street",
       "hinman_academic_a",
       "university_union"
@@ -3852,7 +3863,7 @@
       "leroy_and_beethoven_streets",
       "laurel_avenue",
       "chestnut_street",
-      "murray_street",
+      "murray_street_leroy_street",
       "riverside_drive_and_front_street",
       "visions_memorial_arena"
      ]
@@ -3863,7 +3874,7 @@
      "stops": [
       "university_downtown_center",
       "front_and_leroy_streets",
-      "murray_street",
+      "murray_street_leroy_street",
       "chestnut_street",
       "laurel_avenue",
       "leroy_and_beethoven_streets",
@@ -3889,7 +3900,7 @@
       "leroy_and_beethoven_streets",
       "laurel_avenue",
       "chestnut_street",
-      "murray_street",
+      "murray_street_leroy_street",
       "riverside_drive_and_front_street",
       "state_and_hawley_streets"
      ]
@@ -3900,7 +3911,7 @@
      "stops": [
       "state_and_hawley_streets",
       "front_and_leroy_streets",
-      "murray_street",
+      "murray_street_leroy_street",
       "chestnut_street",
       "laurel_avenue",
       "leroy_and_beethoven_streets",
@@ -3934,7 +3945,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "7:06 AM",
        "min": 426
       },
@@ -3975,7 +3986,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "8:01 AM",
        "min": 481
       },
@@ -4012,7 +4023,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "9:36 AM",
        "min": 576
       },
@@ -4049,7 +4060,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "9:56 AM",
        "min": 596
       },
@@ -4086,7 +4097,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "10:31 AM",
        "min": 631
       },
@@ -4123,7 +4134,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "11:21 AM",
        "min": 681
       },
@@ -4160,7 +4171,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "12:06 PM",
        "min": 726
       },
@@ -4197,7 +4208,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "12:46 PM",
        "min": 766
       },
@@ -4234,7 +4245,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "2:06 PM",
        "min": 846
       },
@@ -4271,7 +4282,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "2:51 PM",
        "min": 891
       },
@@ -4308,7 +4319,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "3:46 PM",
        "min": 946
       },
@@ -4345,7 +4356,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "4:26 PM",
        "min": 986
       },
@@ -4382,7 +4393,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "5:01 PM",
        "min": 1021
       },
@@ -4419,7 +4430,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "5:16 PM",
        "min": 1036
       },
@@ -4456,7 +4467,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "5:51 PM",
        "min": 1071
       },
@@ -4493,7 +4504,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "6:36 PM",
        "min": 1116
       },
@@ -4530,7 +4541,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "6:56 PM",
        "min": 1136
       },
@@ -4567,7 +4578,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "7:21 PM",
        "min": 1161
       },
@@ -4604,7 +4615,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "7:51 PM",
        "min": 1191
       },
@@ -4641,7 +4652,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "8:31 PM",
        "min": 1231
       },
@@ -4678,7 +4689,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "9:26 PM",
        "min": 1286
       },
@@ -4715,7 +4726,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "11:11 PM",
        "min": 1391
       },
@@ -4752,7 +4763,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "11:56 PM",
        "min": 1436
       },
@@ -4786,7 +4797,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "8:56 AM",
        "min": 536
       },
@@ -4820,7 +4831,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "9:41 AM",
        "min": 581
       },
@@ -4854,7 +4865,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "10:26 AM",
        "min": 626
       },
@@ -4888,7 +4899,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "11:46 AM",
        "min": 706
       },
@@ -4922,7 +4933,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "12:51 PM",
        "min": 771
       },
@@ -4956,7 +4967,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "1:51 PM",
        "min": 831
       },
@@ -4990,7 +5001,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "2:56 PM",
        "min": 896
       },
@@ -5024,7 +5035,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "4:26 PM",
        "min": 986
       },
@@ -5058,7 +5069,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "6:26 PM",
        "min": 1106
       },
@@ -5092,7 +5103,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "7:41 PM",
        "min": 1181
       },
@@ -5126,7 +5137,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "8:31 PM",
        "min": 1231
       },
@@ -5160,7 +5171,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "9:26 PM",
        "min": 1286
       },
@@ -5193,7 +5204,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "10:26 PM",
        "min": 1346
       },
@@ -5227,7 +5238,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "11:12 PM",
        "min": 1392
       },
@@ -5261,7 +5272,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "11:22 PM",
        "min": 1402
       },
@@ -5295,7 +5306,7 @@
       },
       {
        "seq": 11,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "11:56 PM",
        "min": 1436
       },
@@ -5327,7 +5338,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "7:23 AM",
        "min": 443
       },
@@ -5364,7 +5375,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "8:03 AM",
        "min": 483
       },
@@ -5401,7 +5412,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "8:53 AM",
        "min": 533
       },
@@ -5438,7 +5449,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "9:08 AM",
        "min": 548
       },
@@ -5479,7 +5490,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "9:18 AM",
        "min": 558
       },
@@ -5516,7 +5527,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "9:58 AM",
        "min": 598
       },
@@ -5553,7 +5564,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "10:33 AM",
        "min": 633
       },
@@ -5590,7 +5601,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "10:58 AM",
        "min": 658
       },
@@ -5627,7 +5638,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "11:33 AM",
        "min": 693
       },
@@ -5664,7 +5675,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "12:03 PM",
        "min": 723
       },
@@ -5701,7 +5712,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "12:53 PM",
        "min": 773
       },
@@ -5742,7 +5753,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "1:38 PM",
        "min": 818
       },
@@ -5779,7 +5790,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "2:43 PM",
        "min": 883
       },
@@ -5816,7 +5827,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "3:36 PM",
        "min": 936
       },
@@ -5857,7 +5868,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "4:30 PM",
        "min": 990
       },
@@ -5894,7 +5905,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "5:18 PM",
        "min": 1038
       },
@@ -5931,7 +5942,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "5:58 PM",
        "min": 1078
       },
@@ -5968,7 +5979,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "6:48 PM",
        "min": 1128
       },
@@ -6005,7 +6016,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "7:38 PM",
        "min": 1178
       },
@@ -6042,7 +6053,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "8:13 PM",
        "min": 1213
       },
@@ -6079,7 +6090,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "9:18 PM",
        "min": 1278
       },
@@ -6115,7 +6126,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "10:08 PM",
        "min": 1328
       },
@@ -6153,7 +6164,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "10:38 PM",
        "min": 1358
       },
@@ -6190,7 +6201,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "12:08 AM",
        "min": 1448
       },
@@ -6224,7 +6235,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "9:43 AM",
        "min": 583
       },
@@ -6258,7 +6269,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "9:53 AM",
        "min": 593
       },
@@ -6292,7 +6303,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "11:38 AM",
        "min": 698
       },
@@ -6326,7 +6337,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "12:43 PM",
        "min": 763
       },
@@ -6360,7 +6371,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "1:43 PM",
        "min": 823
       },
@@ -6394,7 +6405,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "2:43 PM",
        "min": 883
       },
@@ -6428,7 +6439,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "5:28 PM",
        "min": 1048
       },
@@ -6462,7 +6473,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "7:13 PM",
        "min": 1153
       },
@@ -6496,7 +6507,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "8:03 PM",
        "min": 1203
       },
@@ -6530,7 +6541,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "8:58 PM",
        "min": 1258
       },
@@ -6563,7 +6574,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "9:43 PM",
        "min": 1303
       },
@@ -6597,7 +6608,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "10:38 PM",
        "min": 1358
       },
@@ -6631,7 +6642,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "10:53 PM",
        "min": 1373
       },
@@ -6666,7 +6677,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "12:08 AM",
        "min": 1448
       },
@@ -6706,7 +6717,7 @@
       },
       {
        "seq": 9,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "12:36 AM",
        "min": 1476
       },
@@ -6740,7 +6751,7 @@
       },
       {
        "seq": 9,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "1:11 AM",
        "min": 1511
       },
@@ -6774,7 +6785,7 @@
       },
       {
        "seq": 9,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "1:41 AM",
        "min": 1541
       },
@@ -6808,7 +6819,7 @@
       },
       {
        "seq": 9,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "2:26 AM",
        "min": 1586
       },
@@ -6842,7 +6853,7 @@
       },
       {
        "seq": 9,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "3:16 AM",
        "min": 1636
       },
@@ -6870,7 +6881,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "1:13 AM",
        "min": 1513
       },
@@ -6904,7 +6915,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "1:38 AM",
        "min": 1538
       },
@@ -6938,7 +6949,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "2:33 AM",
        "min": 1593
       },
@@ -6972,7 +6983,7 @@
       },
       {
        "seq": 2,
-       "stop": "murray_street",
+       "stop": "murray_street_leroy_street",
        "time": "3:28 AM",
        "min": 1648
       },

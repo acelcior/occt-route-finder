@@ -82,7 +82,14 @@ Commit, push; it is live in ~1 minute. Remove or let expire afterwards.
 
 A renamed stop usually shows up as a *new* stop with no coordinates plus the old one
 disappearing from the lines. Add the new spelling to `stop_aliases` so it keeps the
-same id (transfers and coordinates depend on it).
+same id (transfers and coordinates depend on it). The opposite case — one name used for
+two different curbs on two lines (DCL's and WS's "Murray Street") — goes in
+`page_stop_renames`, keyed by the route page it appears on.
+
+Placing a new stop: find the OSM node where the stop's street meets the road the line
+runs on (OCCT's route page says which road) — `scripts/` has no tool for this yet, the
+Overpass query used in Nov 2026 is recorded in `CALENDAR_TODO.md` — and add it to
+`data/places.json` with the node URL as `source`. Never type coordinates from memory.
 
 `make check` (or the weekly Action) tells you *what* changed on the live site before
 you rebuild. The committed snapshot in `data/raw/<season>/` is the source of truth;
