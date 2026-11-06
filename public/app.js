@@ -22,7 +22,6 @@ let entries = []; // [{name, aliases}]
 /* ---------- theme + clock ---------- */
 function applyTheme(dark) {
   document.documentElement.classList.toggle("dark-mode", dark);
-  themeToggle.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
   themeToggle.setAttribute("aria-pressed", String(dark));
 }
 function initTheme() {
@@ -62,7 +61,8 @@ function stampText(stamp) {
     : `${escapeHtml(stamp.text)} <span class="day">${escapeHtml(stamp.day)}</span>`;
 }
 function timeText(stop) {
-  return `${stop.estimated ? "~" : ""}${escapeHtml(stop.time)}`;
+  // Screen readers may skip "~", so estimated times also say "about".
+  return `${stop.estimated ? '<span aria-hidden="true">~</span><span class="sr-only">about </span>' : ""}${escapeHtml(stop.time)}`;
 }
 
 /* ---------- autocomplete ---------- */
@@ -121,7 +121,7 @@ function setupAutocomplete(input, list) {
     list.innerHTML = "";
     input.setAttribute("aria-expanded", "false");
     items = [];
-    active = -1;
+    setActive(-1); // also drops a stale aria-activedescendant
   }
   function pick(i) {
     if (i < 0 || i >= items.length) return;
@@ -131,7 +131,7 @@ function setupAutocomplete(input, list) {
   function render() {
     const q = input.value.trim();
     items = matchEntries(q);
-    active = -1;
+    setActive(-1);
     list.innerHTML = "";
     if (!items.length) { close(); return; }
     items.forEach((it, i) => {
@@ -316,6 +316,7 @@ async function runQuery() {
     statusEl.className = "status status--error";
     return;
   }
+  const refocus = document.activeElement === submitBtn;
   submitBtn.disabled = true;
   statusEl.className = "status";
   statusEl.textContent = "Finding routes…";
@@ -349,6 +350,8 @@ async function runQuery() {
     statusEl.className = "status status--error";
   } finally {
     submitBtn.disabled = false;
+    // Disabling the focused button dropped focus to <body>; put it back.
+    if (refocus && document.activeElement === document.body) submitBtn.focus();
   }
 }
 

@@ -13,13 +13,14 @@
   --banner-line: #bcd6f0;
   --ink: #16202b;
   --ink-2: #3b4756;
-  --ink-3: #667180;
+  --ink-3: #616c7b;
   --line: #d7dde3;
   --line-2: #e6eaee;
+  --field-line: #828c98; /* input/select edges: 3:1 against the card (WCAG 1.4.11) */
   --paper: #ffffff;
   --surf: #f4f6f8;
   --surf-2: #e9edf1;
-  --run: #1a7f43;  --run-bg: #e5f2ea;
+  --run: #18783f;  --run-bg: #e5f2ea;
   --warn: #9a5b06; --warn-bg: #fbefd7;
   --off: #5b6560;  --off-bg: #eceeec;
   --info: #5b21b6; --info-bg: #f1edfb;
@@ -42,6 +43,7 @@ html.dark-mode {
   --ink-3: #b3c0cd;
   --line: #2b3746;
   --line-2: #223040;
+  --field-line: #6b7b8e;
   --paper: #131c26;
   --surf: #0d151e;
   --surf-2: #1f2b39;
@@ -69,6 +71,10 @@ a { color: var(--brand); text-decoration: none; }
 a:hover { text-decoration: underline; text-underline-offset: 2px; }
 .wrap { max-width: 1180px; width: 100%; margin: 0 auto; padding: 0 24px; }
 @media (max-width: 480px) { .wrap { padding: 0 16px; } }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
 
 /* ── NAV ── */
 nav { background: var(--brand-darker); position: sticky; top: 0; z-index: 100; }
@@ -150,7 +156,7 @@ html.dark-mode .theme-toggle .tt-moon { display: none; }
 }
 .field input, .field select {
   width: 100%; height: 44px; padding: 0 12px; font: inherit; font-size: 15px; color: var(--ink);
-  background: var(--paper); border: 1px solid var(--line); border-radius: var(--r);
+  background: var(--paper); border: 1px solid var(--field-line); border-radius: var(--r);
   transition: border-color .12s, box-shadow .12s;
 }
 .field input::placeholder { color: var(--ink-3); }
@@ -159,11 +165,12 @@ html.dark-mode .field input, html.dark-mode .field select { background: var(--su
 html.dark-mode .field select option { background: var(--surf-2); }
 .btn-primary {
   width: 100%; height: 44px; border: none; border-radius: var(--r); cursor: pointer;
-  background: var(--brand); color: #fff; font: inherit; font-weight: 600; font-size: 15px;
-  transition: background .12s, box-shadow .12s;
+  /* not var(--brand): the dark-mode brand is too light for white text */
+  background: #1a6fba; color: #fff; font: inherit; font-weight: 600; font-size: 15px;
+  transition: background .12s;
 }
 .btn-primary:hover { background: #2272be; }
-.btn-primary:focus-visible { outline: none; box-shadow: var(--focus); }
+.btn-primary:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
 .btn-primary:disabled { opacity: .6; cursor: wait; }
 .hint { margin-top: 12px; font-size: 13px; color: var(--ink-3); line-height: 1.5; }
 .hint b { color: var(--ink-2); font-weight: 600; }
@@ -177,7 +184,7 @@ html.dark-mode .field select option { background: var(--surf-2); }
 }
 .suggestions-list.active { display: block; }
 .suggestions-list li button {
-  all: unset; display: flex; flex-direction: column; gap: 1px; width: 100%; padding: 9px 12px;
+  all: unset; box-sizing: border-box; display: flex; flex-direction: column; gap: 1px; width: 100%; padding: 9px 12px;
   cursor: pointer; color: var(--ink); font-size: 15px;
 }
 .suggestions-list li button:hover, .suggestions-list li[aria-selected="true"] button { background: var(--brand-tint); }
