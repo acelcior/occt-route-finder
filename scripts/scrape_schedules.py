@@ -27,6 +27,7 @@ import argparse
 import re
 import sys
 import time
+from datetime import datetime
 from pathlib import Path
 from urllib.parse import urljoin
 
@@ -48,6 +49,11 @@ def fetch(url: str) -> str:
     resp = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=20)
     resp.raise_for_status()
     return resp.text
+
+
+def write_fetched_at(raw_dir: Path) -> None:
+    """Record when the snapshot was taken; build_dataset.py puts it in meta.fetched_at."""
+    (raw_dir / "fetched_at.txt").write_text(datetime.now().astimezone().isoformat(timespec="seconds") + "\n")
 
 
 def parse_index(html: str) -> dict[str, str]:
@@ -97,6 +103,7 @@ def main() -> int:
         dest.write_text(fetch(url), encoding="utf-8")
         time.sleep(REQUEST_DELAY_S)
 
+    write_fetched_at(raw_dir)
     print(f"\nSnapshots written to {raw_dir.relative_to(ROOT)}")
     return 0
 

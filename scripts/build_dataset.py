@@ -464,12 +464,16 @@ def build(season: str) -> tuple[dict[str, Any], list[str]]:
         if slug not in PAGES:
             b.err(f"index lists route page {slug!r} that PAGES does not configure")
 
-    fetched = max(p.stat().st_mtime for p in raw_dir.glob("*.html"))
+    # Written by the scrapers. Not file mtimes: git resets those on every checkout.
+    stamp = raw_dir / "fetched_at.txt"
+    fetched_at = stamp.read_text().strip() if stamp.exists() else None
+    if not fetched_at:
+        b.err(f"no {stamp.relative_to(ROOT)}: snapshot the season with scripts/scrape_schedules.py --season {season}")
     no_coord = sorted(sid for sid, s in b.stops.items() if s["lat"] is None)
     meta = dict(SEASONS[season])
     meta.update({
         "season": season,
-        "fetched_at": datetime.fromtimestamp(fetched).astimezone().isoformat(timespec="seconds"),
+        "fetched_at": fetched_at,
         "built_at": datetime.now().astimezone().isoformat(timespec="seconds"),
         "seasonal_lines": SEASONAL_LINES,
         "stops_missing_coords": no_coord,
